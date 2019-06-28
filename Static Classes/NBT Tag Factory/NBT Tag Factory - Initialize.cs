@@ -1,0 +1,43 @@
+﻿/*ISC License
+
+Copyright (c) 2019, Daan Verstraten, daanverstraten@hotmail.com
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DaanV2.NBT {
+    ///DOLATER <summary> add description for class: NBTTagFactory</summary>
+    public static partial class NBTTagFactory {
+        /// <summary>Creates a new instance of <see cref="NBTTagFactory"/></summary>
+        static NBTTagFactory() {
+            NBTTagFactory.Types = new Dictionary<NBTTagType, Type>() {
+                { NBTTagType.Byte, typeof(NBTTagByte) },
+                { NBTTagType.ByteArray, typeof(NBTTagByteArray) },
+                { NBTTagType.Compound, typeof(NBTTagCompound) },
+                { NBTTagType.Double, typeof(NBTTagDouble) },
+                { NBTTagType.Float, typeof(NBTTagByteArray) },
+                { NBTTagType.Int, typeof(NBTTagByteArray) },
+                { NBTTagType.IntArray, typeof(NBTTagByteArray) },
+                { NBTTagType.List, typeof(NBTTagByteArray) },
+                { NBTTagType.Long, typeof(NBTTagByteArray) },
+                { NBTTagType.LongArray, typeof(NBTTagByteArray) },
+                { NBTTagType.Short, typeof(NBTTagByteArray) },
+                { NBTTagType.String, typeof(NBTTagByteArray) }
+            };
+        }
+    }
+}
