@@ -37,10 +37,10 @@ namespace DaanV2.NBT {
                 default:
                     return stream;
                 case NBTCompression.Gzip:
-                    return new GZipStream(stream, CompressionLevel.Fastest);
+                    return new Compression.GzipStream(stream, CompressionMode.Decompress);
 
                 case NBTCompression.Zlib:
-                    return new ComponentAce.Compression.Libs.zlib.ZOutputStream(stream);
+                    return new Compression.ZlibStream(stream);
 
             }
         }

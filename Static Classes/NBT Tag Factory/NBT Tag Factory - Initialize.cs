@@ -29,14 +29,14 @@ namespace DaanV2.NBT {
                 { NBTTagType.ByteArray, typeof(NBTTagByteArray) },
                 { NBTTagType.Compound, typeof(NBTTagCompound) },
                 { NBTTagType.Double, typeof(NBTTagDouble) },
-                { NBTTagType.Float, typeof(NBTTagByteArray) },
-                { NBTTagType.Int, typeof(NBTTagByteArray) },
-                { NBTTagType.IntArray, typeof(NBTTagByteArray) },
-                { NBTTagType.List, typeof(NBTTagByteArray) },
-                { NBTTagType.Long, typeof(NBTTagByteArray) },
-                { NBTTagType.LongArray, typeof(NBTTagByteArray) },
-                { NBTTagType.Short, typeof(NBTTagByteArray) },
-                { NBTTagType.String, typeof(NBTTagByteArray) }
+                { NBTTagType.Float, typeof(NBTTagFloat) },
+                { NBTTagType.Int, typeof(NBTTagInt) },
+                { NBTTagType.IntArray, typeof(NBTTagIntArray) },
+                { NBTTagType.List, typeof(NBTTagList) },
+                { NBTTagType.Long, typeof(NBTTagLong) },
+                { NBTTagType.LongArray, typeof(NBTTagLongArray) },
+                { NBTTagType.Short, typeof(NBTTagShort) },
+                { NBTTagType.String, typeof(NBTTagString) }
             };
         }
     }

@@ -24,7 +24,7 @@ namespace DaanV2.NBT {
         /// <param name="Filepath"></param>
         /// <returns></returns>
         public static ITag ReadFile(String Filepath, NBTCompression Compression = NBTCompression.Auto) {
-            return ReadFile(new FileStream(Filepath, FileMode.Open, FileAccess.Read), Compression);
+            return ReadFile(new FileStream(Filepath, FileMode.Open, FileAccess.ReadWrite), Compression);
         }
 
         /// <summary>

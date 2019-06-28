@@ -41,6 +41,8 @@ namespace DaanV2.NBT {
             Byte[] Buffer = new Byte[2];
             stream.Read(Buffer, 0, 2);
 
+            if (BitConverter.IsLittleEndian) Array.Reverse(Buffer);
+
             return BitConverter.ToInt16(Buffer, 0);
         }
 
@@ -52,6 +54,8 @@ namespace DaanV2.NBT {
         public static Int32 ReadInt32(this Stream stream) {
             Byte[] Buffer = new Byte[4];
             stream.Read(Buffer, 0, 4);
+
+            if (BitConverter.IsLittleEndian) Array.Reverse(Buffer);
 
             return BitConverter.ToInt32(Buffer, 0);
         }
@@ -65,6 +69,8 @@ namespace DaanV2.NBT {
             Byte[] Buffer = new Byte[8];
             stream.Read(Buffer, 0, 8);
 
+            if (BitConverter.IsLittleEndian) Array.Reverse(Buffer);
+
             return BitConverter.ToInt64(Buffer, 0);
         }
 
@@ -76,6 +82,8 @@ namespace DaanV2.NBT {
         public static Single ReadFloat(this Stream stream) {
             Byte[] Buffer = new Byte[4];
             stream.Read(Buffer, 0, 4);
+
+            if (BitConverter.IsLittleEndian) Array.Reverse(Buffer);
 
             return BitConverter.ToSingle(Buffer, 0);
         }
@@ -89,6 +97,8 @@ namespace DaanV2.NBT {
             Byte[] Buffer = new Byte[8];
             stream.Read(Buffer, 0, 8);
 
+            if (BitConverter.IsLittleEndian) Array.Reverse(Buffer);
+
             return BitConverter.ToDouble(Buffer, 0);
         }
 
@@ -101,6 +111,8 @@ namespace DaanV2.NBT {
         public static Byte[] ReadByteArray(this Stream stream, Int32 Length) {
             Byte[] Buffer = new Byte[Length];
             stream.Read(Buffer, 0, Buffer.Length);
+
+            if (BitConverter.IsLittleEndian) Array.Reverse(Buffer);
 
             return Buffer;
         }
@@ -116,6 +128,7 @@ namespace DaanV2.NBT {
             Int32[] Out = new Int32[Length];
 
             stream.Read(Buffer, 0, Buffer.Length);
+            if (BitConverter.IsLittleEndian) Array.Reverse(Buffer);
             Int32 J = 0;
 
             for (Int32 I = 0; I < Length; I++) {
@@ -137,6 +150,7 @@ namespace DaanV2.NBT {
             Int64[] Out = new Int64[Length];
 
             stream.Read(Buffer, 0, Buffer.Length);
+            if (BitConverter.IsLittleEndian) Array.Reverse(Buffer);
             Int32 J = 0;
 
             for (Int32 I = 0; I < Length; I++) {

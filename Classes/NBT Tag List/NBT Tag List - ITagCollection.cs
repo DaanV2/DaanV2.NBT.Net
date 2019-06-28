@@ -66,6 +66,10 @@ namespace DaanV2.NBT {
                 if (value.Type == this.SubType)
                     throw new ArgumentException($"value type must be same as the lists subtype");
 
+                if (this._Tags.Count <= Index) {
+                    this.Tags.AddRange(new ITag[Index - this._Tags.Count + 1]);
+                }
+
                 this._Tags[Index] = value;
             }
         }

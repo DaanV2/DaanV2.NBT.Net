@@ -49,7 +49,7 @@ namespace DaanV2.NBT {
                     Name = ReadName(Reader);
                     NBTTagType Subtype = (NBTTagType)Reader.ReadByte();
                     Length = Reader.ReadInt32();
-                    NBTTagList List = new NBTTagList(Name, Subtype,Length);
+                    NBTTagList List = new NBTTagList(Name, Subtype, Length);
 
                     for (Int32 I = 0; I < Length; I++) {
                         List[I] = Read(Reader);
@@ -90,7 +90,7 @@ namespace DaanV2.NBT {
 
             switch (Type) {
                 case NBTTagType.Byte:
-                    return (Name, Reader.ReadByte());
+                    return (Name, (Byte)Reader.ReadByte());
 
                 case NBTTagType.ByteArray:
                     Length = Reader.ReadInt32();
