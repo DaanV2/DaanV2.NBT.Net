@@ -14,7 +14,6 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     ///DOLATER <summary> add description for interface: ITag</summary>
@@ -47,5 +46,17 @@ namespace DaanV2.NBT {
         /// </summary>
         /// <param name="O"></param>
         void SetValue(Object O);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        void SetInformation(NBTTagInformation InfoType, Object Info);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="InfoType"></param>
+        /// <returns></returns>
+        Object GetInformation(NBTTagInformation InfoType);
     }
 }

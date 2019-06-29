@@ -21,6 +21,9 @@ namespace DaanV2.NBT {
 	[Serializable, DataContract]
     public partial class NBTTagList {
         /// <summary>Creates a new instance of <see cref="NBTTagList"/></summary>
+        public NBTTagList() : this(NBTTagType.Unknown) { }
+
+        /// <summary>Creates a new instance of <see cref="NBTTagList"/></summary>
         public NBTTagList(NBTTagType SubType) : base(100) {
             this._SubType = SubType;
         }

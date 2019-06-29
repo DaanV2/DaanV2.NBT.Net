@@ -14,59 +14,42 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Runtime.Serialization;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
-    public abstract partial class NBTTag : ITag {
-
+    public partial class NBTTagList {
         /// <summary>
         /// 
         /// </summary>
-        [DataMember]
-        public String Name {
-            get => this._Name;
-            set => this._Name = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [IgnoreDataMember]
-        public abstract NBTTagType Type { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public abstract Object GetValue();
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public abstract T GetValue<T>();
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="O"></param>
-        public abstract void SetValue(Object O);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public virtual void SetInformation(NBTTagInformation InfoType, Object Info) {
+        public override void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
                     this._Name = (String)Info;
                     break;
+
                 case NBTTagInformation.Tag:
                     this._Tags.Add((ITag)Info);
                     break;
+
                 case NBTTagInformation.ListSize:
+                    Int32 I = (Int32)Info;
+                    if (I > 0)
+                        this._Tags.AddRange(new ITag[I - this._Tags.Count]);
+                    break;
+
                 case NBTTagInformation.ListSubtype:
+                    this._SubType = (NBTTagType)Info;
+                    break;
+
                 case NBTTagInformation.Value:
+                    if (Info is List<ITag> NewList) {
+                        this._Tags = NewList;
+                    }
+
+                    break;
                 default:
                     break;
             }
@@ -77,11 +60,12 @@ namespace DaanV2.NBT {
         /// </summary>
         /// <param name="InfoType"></param>
         /// <returns></returns>
-        public virtual Object GetInformation(NBTTagInformation InfoType) {
+        public override Object GetInformation(NBTTagInformation InfoType) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
                     return this._Name;
 
+                case NBTTagInformation.Value:
                 case NBTTagInformation.Tag:
                     return this._Tags;
 
@@ -89,7 +73,8 @@ namespace DaanV2.NBT {
                     return this._Tags.Count;
 
                 case NBTTagInformation.ListSubtype:
-                case NBTTagInformation.Value:
+                    return this._SubType;
+
                 default:
                     return null;
             }

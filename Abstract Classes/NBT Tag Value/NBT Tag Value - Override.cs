@@ -14,10 +14,6 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> {
@@ -27,6 +23,55 @@ namespace DaanV2.NBT {
         /// <returns></returns>
         public override String ToString() {
             return $"'{this.Name}': {this.Type}: {this._Value}";
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override void SetInformation(NBTTagInformation InfoType, Object Info) {
+            switch (InfoType) {
+                case NBTTagInformation.Name:
+                    this._Name = (String)Info;
+                    break;
+
+                case NBTTagInformation.Tag:
+                    this._Tags.Add((ITag)Info);
+                    break;
+
+                case NBTTagInformation.Value:
+                    this._Value = (TypeValue)Info;
+                    break;
+
+                case NBTTagInformation.ListSize:
+                case NBTTagInformation.ListSubtype:
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="InfoType"></param>
+        /// <returns></returns>
+        public override Object GetInformation(NBTTagInformation InfoType) {
+            switch (InfoType) {
+                case NBTTagInformation.Name:
+                    return this._Name;
+
+                case NBTTagInformation.Tag:
+                    return this._Tags;
+
+                case NBTTagInformation.ListSize:
+                    return this._Tags.Count;
+
+                case NBTTagInformation.Value:
+                    return this._Value;
+
+                case NBTTagInformation.ListSubtype:                
+                default:
+                    return null;
+            }
         }
     }
 }

@@ -36,6 +36,7 @@ namespace DaanV2.NBT {
             switch (Compression) {
                 default:
                     return stream;
+
                 case NBTCompression.Gzip:
                     return new Compression.GzipStream(stream, CompressionMode.Decompress);
 
@@ -74,8 +75,10 @@ namespace DaanV2.NBT {
             switch (Temp) {
                 case 0x1F:
                     return NBTCompression.Gzip;
+
                 case 0x78:
                     return NBTCompression.Zlib;
+
                 case -1:
                     throw new EndOfStreamException();
 

@@ -24,7 +24,7 @@ namespace DaanV2.NBT {
         /// </summary>
         /// <param name="Reader"></param>
         /// <returns></returns>
-        public static String ReadName(Stream Reader) {
+        public static String ReadString(Stream Reader) {
             Int32 Length = Reader.ReadInt16();
             return Encoding.UTF8.GetString(Reader.ReadBytes(Length));
         }

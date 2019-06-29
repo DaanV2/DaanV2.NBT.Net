@@ -34,9 +34,9 @@ namespace DaanV2.NBT {
         private static readonly NBTTagType _Type = NBTTagType.Byte;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
+        [IgnoreDataMember]
         public override NBTTagType Type => _Type;
-
     }
 }

@@ -40,6 +40,7 @@ namespace DaanV2.NBT {
         /// <summary>
         /// 
         /// </summary>
+        [IgnoreDataMember]
         public override NBTTagType Type => _Type;
     }
 }

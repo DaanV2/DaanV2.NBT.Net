@@ -84,6 +84,8 @@ namespace DaanV2.NBT {
                     return;
                 }
             }
+
+            this._Tags.Add(tag);
         }
 
         /// <summary>

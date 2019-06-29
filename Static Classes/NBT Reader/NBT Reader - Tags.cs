@@ -26,10 +26,9 @@ namespace DaanV2.NBT {
         /// <returns></returns>
         public static ITag Read(Stream Reader) {
             Int32 FirstByte = Reader.ReadByte();
+
             NBTTagType Type = (NBTTagType)FirstByte;
-            string Name;
-            Object Value;
-            Int32 Length;
+            ITag Out = NBTTagFactory.Create(Type);
 
             switch (Type) {
                 case NBTTagType.Byte:
@@ -42,33 +41,12 @@ namespace DaanV2.NBT {
                 case NBTTagType.LongArray:
                 case NBTTagType.Short:
                 case NBTTagType.String:
-                    (Name, Value) = ReadNameAndValue(Reader, Type);
-                    return NBTTagFactory.Create(Type, Name, Value);
-
                 case NBTTagType.List:
-                    Name = ReadName(Reader);
-                    NBTTagType Subtype = (NBTTagType)Reader.ReadByte();
-                    Length = Reader.ReadInt32();
-                    NBTTagList List = new NBTTagList(Name, Subtype, Length);
-
-                    for (Int32 I = 0; I < Length; I++) {
-                        List[I] = Read(Reader);
-                    }
-
-                    return List;
-
                 case NBTTagType.Compound:
-                    Name = ReadName(Reader);
-                    NBTTagCompound Com = new NBTTagCompound(Name, 10);
-                    ITag Tag = Read(Reader);
+                    ReadHeader(Type, Reader, Out);
+                    ReadPayload(Type, Reader, Out);
 
-                    while (Tag != null) {
-                        Com.Add(Tag);
-                        Tag = Read(Reader);
-                    }
-
-                    return Com;
-
+                    return Out;
                 case NBTTagType.End:
                     return null;
                 case NBTTagType.Unknown:
@@ -83,48 +61,118 @@ namespace DaanV2.NBT {
         /// <param name="Reader"></param>
         /// <param name="Type"></param>
         /// <returns></returns>
-        private static (String Name, Object Value) ReadNameAndValue(Stream Reader, NBTTagType Type) {
-            String Name = ReadName(Reader);
-            Object Value = null;
-            Int32 Length;
+        private static void ReadHeader(NBTTagType Type, Stream Reader, ITag Receiver) {
 
             switch (Type) {
-                case NBTTagType.Byte:
-                    return (Name, (Byte)Reader.ReadByte());
+                case NBTTagType.List:
+                    Receiver.Name = ReadString(Reader);
+                    Receiver.SetInformation(NBTTagInformation.ListSubtype, (NBTTagType)Reader.ReadByte());
+                    Receiver.SetInformation(NBTTagInformation.ListSize, Reader.ReadInt32());
+                    break;
 
+                case NBTTagType.Compound:
+                case NBTTagType.Byte:
+                case NBTTagType.ByteArray:
+                case NBTTagType.Double:
+                case NBTTagType.Float:
+                case NBTTagType.Int:
+                case NBTTagType.IntArray:
+                case NBTTagType.Long:
+                case NBTTagType.LongArray:
+                case NBTTagType.Short:
+                case NBTTagType.String:
+                    Receiver.Name = ReadString(Reader);
+                    break;
+
+                case NBTTagType.End:
+                case NBTTagType.Unknown:
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Type"></param>
+        /// <param name="Tag"></param>
+        private static void ReadPayload(NBTTagType Type, Stream Reader, ITag Receiver) {
+            Int32 Length;
+            ITag SubTag;
+
+            switch (Type) {
+                //Arrays
                 case NBTTagType.ByteArray:
                     Length = Reader.ReadInt32();
-                    return (Name, Reader.ReadByteArray(Length));
-
-                case NBTTagType.Double:
-                    return (Name, Reader.ReadDouble());
-
-                case NBTTagType.Float:
-                    return (Name, Reader.ReadFloat());
-
-                case NBTTagType.Int:
-                    return (Name, Reader.ReadInt32());
+                    Receiver.SetValue(Reader.ReadByteArray(Length));
+                    return;
 
                 case NBTTagType.IntArray:
                     Length = Reader.ReadInt32();
-                    return (Name, Reader.ReadInt32Array(Length));
-
-                case NBTTagType.Long:
-                    return (Name, Reader.ReadInt64());
+                    Receiver.SetValue(Reader.ReadInt32Array(Length));
+                    return;
 
                 case NBTTagType.LongArray:
                     Length = Reader.ReadInt32();
-                    return (Name, Reader.ReadInt64Array(Length));
+                    Receiver.SetValue(Reader.ReadInt64Array(Length));
+                    return;
+
+                //Values
+                case NBTTagType.Byte:
+                    Receiver.SetValue((Byte)Reader.ReadByte());
+                    return;
 
                 case NBTTagType.Short:
-                    return (Name, Reader.ReadInt16());
+                    Receiver.SetValue(Reader.ReadInt16());
+                    return;
+
+                case NBTTagType.Int:
+                    Receiver.SetValue(Reader.ReadInt32());
+                    return;
+
+                case NBTTagType.Long:
+                    Receiver.SetValue(Reader.ReadInt64());
+                    return;
+
+                case NBTTagType.Double:
+                    Receiver.SetValue(Reader.ReadDouble());
+                    return;
+
+                case NBTTagType.Float:
+                    Receiver.SetValue(Reader.ReadFloat());
+                    return;
 
                 case NBTTagType.String:
-                    Length = Reader.ReadInt16();
-                    return (Name, Encoding.UTF8.GetString(Reader.ReadBytes(Length)));
-            }
+                    Receiver.SetValue(ReadString(Reader));
+                    return;
 
-            return (Name, Value);
+                //Special
+                case NBTTagType.List:
+                    Object O = Receiver.GetInformation(NBTTagInformation.ListSubtype);
+                    if (O == null) throw new Exception("List returned no subtype");
+                    NBTTagType SubTagType = (NBTTagType)O;
+
+                    for (Int32 I = 0; I < Receiver.Count; I++) {
+                        SubTag = NBTTagFactory.Create(SubTagType);
+                        Receiver[I] = SubTag;
+                        ReadPayload(SubTagType, Reader, SubTag);
+                    }
+
+                    return;
+                case NBTTagType.Compound:
+                    SubTag = Read(Reader);
+
+                    while (SubTag != null) {
+                        Receiver.Add(SubTag);
+                        SubTag = Read(Reader);
+                    }
+
+                    return;
+                case NBTTagType.Unknown:
+                case NBTTagType.End:
+                default:
+                    return;
+            }
         }
     }
 }

@@ -16,44 +16,22 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DaanV2.NBT {
-    public partial class NBTTagCompound : NBTTag {
-        private const NBTTagType _Type = NBTTagType.Compound;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [IgnoreDataMember]
-        public override NBTTagType Type => _Type;
-
+namespace DaanV2.NBT.Compression {
+    public partial class ZlibStream : ComponentAce.Compression.Libs.zlib.ZOutputStream {
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public override Object GetValue() {
-            return this._Tags;
-        }
+        public override Int32 ReadByte() {
+            if (this.Position > this.Length)
+                return -1;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public override T GetValue<T>() {
-            return this._Tags is T Out ? Out : (default);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="O"></param>
-        public override void SetValue(Object O) {
-            if (O is List<ITag> Temp)
-                this._Tags = Temp;
+            byte[] Buffer = new byte[1];
+            this.Read(Buffer, 0, 1);
+            return Buffer[0];
         }
     }
 }

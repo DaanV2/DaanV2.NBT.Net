@@ -15,45 +15,20 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DaanV2.NBT {
-    public partial class NBTTagCompound : NBTTag {
-        private const NBTTagType _Type = NBTTagType.Compound;
+namespace DaanV2.NBT.Compression {
+    ///DOLATER <summary> add description for class: ZlibStream</summary>
+	[Serializable, DataContract]
+    public partial class ZlibStream {
+        /// <summary>Creates a new instance of <see cref="ZlibStream"/></summary>
+        public ZlibStream(Stream stream) : base(stream) { }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        [IgnoreDataMember]
-        public override NBTTagType Type => _Type;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public override Object GetValue() {
-            return this._Tags;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public override T GetValue<T>() {
-            return this._Tags is T Out ? Out : (default);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="O"></param>
-        public override void SetValue(Object O) {
-            if (O is List<ITag> Temp)
-                this._Tags = Temp;
-        }
+        /// <summary>Creates a new instance of <see cref="ZlibStream"/></summary>
+        public ZlibStream(Stream stream, int Level) : base(stream, Level) { }
     }
 }

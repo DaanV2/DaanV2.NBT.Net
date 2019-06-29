@@ -15,45 +15,34 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagCompound : NBTTag {
-        private const NBTTagType _Type = NBTTagType.Compound;
-
+    ///DOLATER <summary> add description for enumerator: NBTTagInformation</summary>
+	[Serializable, DataContract]
+    public enum NBTTagInformation {
         /// <summary>
         /// 
         /// </summary>
-        [IgnoreDataMember]
-        public override NBTTagType Type => _Type;
-
+        Value,
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
-        public override Object GetValue() {
-            return this._Tags;
-        }
-
+        Name,
         /// <summary>
         /// 
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public override T GetValue<T>() {
-            return this._Tags is T Out ? Out : (default);
-        }
-
+        Tag,
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="O"></param>
-        public override void SetValue(Object O) {
-            if (O is List<ITag> Temp)
-                this._Tags = Temp;
-        }
+        ListSize,
+        /// <summary>
+        /// 
+        /// </summary>
+        ListSubtype
     }
 }

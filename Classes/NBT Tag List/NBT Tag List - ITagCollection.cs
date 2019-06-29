@@ -63,7 +63,7 @@ namespace DaanV2.NBT {
         public new ITag this[Int32 Index] {
             get => this._Tags[Index];
             set {
-                if (value.Type == this.SubType)
+                if (value.Type != this.SubType)
                     throw new ArgumentException($"value type must be same as the lists subtype");
 
                 if (this._Tags.Count <= Index) {
@@ -79,17 +79,19 @@ namespace DaanV2.NBT {
         /// </summary>
         /// <param name=""></param>
         public override void Add(ITag tag) {
-            if (tag.Type == this.SubType)
+            if (tag.Type != this.SubType)
                 throw new ArgumentException($"value type must be same as the lists subtype");
 
             Int32 Max = this._Tags.Count;            
 
             for (Int32 I = 0; I < Max; I++) {
-                if (this._Tags[I].Name == tag.Name) {
+                if (this._Tags[I] == null || this._Tags[I].Name == tag.Name) {
                     this._Tags[I] = tag;
                     return;
                 }
             }
+
+            this._Tags.Add(tag);
         }
     }
 }
