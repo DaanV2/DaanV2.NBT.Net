@@ -26,6 +26,7 @@ namespace DaanV2.NBT {
         /// <returns></returns>
         public static ITag Read(Stream Reader) {
             Int32 FirstByte = Reader.ReadByte();
+            if (FirstByte == -1) return default;
 
             NBTTagType Type = (NBTTagType)FirstByte;
             ITag Out = NBTTagFactory.Create(Type);

@@ -14,21 +14,24 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO.Compression;
 
-namespace DaanV2.NBT.Compression {
-    ///DOLATER <summary> add description for class: ZlibStream</summary>
-	[Serializable, DataContract]
-    public partial class ZlibStream {
-        /// <summary>Creates a new instance of <see cref="ZlibStream"/></summary>
-        public ZlibStream(Stream stream) : base(stream) { }
+namespace DaanV2.NBT {
 
-        /// <summary>Creates a new instance of <see cref="ZlibStream"/></summary>
-        public ZlibStream(Stream stream, int Level) : base(stream, Level) { }
+    public static partial class StreamExtension {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public static Int32 ReadByte(this GZipStream stream) {
+            if (stream.Length < stream.Position)
+                return -1;
+
+            Byte[] Buffer = new Byte[1];
+            stream.Read(Buffer, 0, 1);
+            return Buffer[0];
+        }
     }
 }

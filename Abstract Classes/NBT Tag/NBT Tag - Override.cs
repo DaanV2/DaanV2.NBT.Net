@@ -28,5 +28,39 @@ namespace DaanV2.NBT {
         public override String ToString() {
             return $"'{this.Name}': {this.Type}";
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override Boolean Equals(Object obj) {
+
+            if (obj is NBTTag Tag) {
+                if (this._Name.Equals(Tag._Name) && this._Tags.Count == Tag.Count) {
+                    for (Int32 I = 0; I < this._Tags.Count; I++) {
+                        if (!this._Tags[I].Equals(Tag[I])) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+            }
+            else if (obj is ITag Interface) {
+                if (this._Name.Equals(Interface.Name) && this._Tags.Count == Interface.Count) {
+
+                    for (Int32 I = 0; I < this._Tags.Count; I++) {
+                        if (!this._Tags[I].Equals(Interface[I])) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+            }
+
+            return base.Equals(obj);
+        }
     }
 }

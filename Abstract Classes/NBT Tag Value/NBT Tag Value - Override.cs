@@ -28,6 +28,28 @@ namespace DaanV2.NBT {
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override Boolean Equals(Object obj) {
+
+            if (obj is NBTTagValue<TypeValue> TValue) {
+                if (this._Value.Equals(TValue._Value) && this._Name.Equals(TValue._Name) && this._Tags.Count == TValue._Tags.Count) {
+                    for (Int32 I = 0; I < this._Tags.Count; I++) {
+                        if (!this._Tags[I].Equals(TValue[I])) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+            }
+
+            return base.Equals(obj);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public override void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
                 case NBTTagInformation.Name:

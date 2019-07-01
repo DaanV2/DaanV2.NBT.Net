@@ -14,24 +14,19 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace DaanV2.NBT.Compression {
-    public partial class GzipStream : System.IO.Compression.GZipStream {
+namespace DaanV2.NBT {
+    public static partial class NBTWriter {
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="Reader"></param>
         /// <returns></returns>
-        public override Int32 ReadByte() {
-            if (this.BaseStream.Length < this.BaseStream.Position)
-                return -1;
-
-            byte[] Buffer = new byte[1];
-            this.Read(Buffer, 0, 1);
-            return Buffer[0];
+        public static void WriteString(Stream Writer, String Text) {
+            Writer.WriteInt16((Int16)Text.Length);
+            Writer.WriteBytes(Encoding.UTF8.GetBytes(Text));
         }
     }
 }
