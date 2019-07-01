@@ -7,4 +7,4 @@ Check that the nuget packages have been downloaded.
 ## Dependencies:
 
 ### Solved with NuGet
-- (Zlib)[https://github.com/cinderblocks/zlib.net]
+- [Zlib](https://github.com/cinderblocks/zlib.net)
