@@ -22,21 +22,21 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> : NBTTag {
-        ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        /// <summary>Returns the value of this <see cref="NBTTagValue{TypeValue}"/> as an <see cref="Object"/></summary>
+        /// <returns>Returns a <see cref="Object"/> that represents the value of this <see cref="NBTTagValue{TypeValue}"/></returns>
         public override Object GetValue() {
             return this._Value;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <summary>Returns the value of this <see cref="NBTTagValue{TypeValue}"/> as an <see cref="T"/>, returns null if castings values</summary>
+        /// <typeparam name="T">The generic type to return</typeparam>
+        /// <returns>Returns a <see cref="T"/> that represents the value of this <see cref="NBTTagValue{TypeValue}"/>, returns null if castings values</returns>
         public override T GetValue<T>() {
             return this._Value is T val ? val : (default);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="O"></param>
+        /// <summary>Sets the value of this <see cref="NBTTagValue{TypeValue}"/></summary>
+        /// <param name="O">The object to store inside</param>
         public override void SetValue(Object O) {
             this._Value = (TypeValue)O;
         }

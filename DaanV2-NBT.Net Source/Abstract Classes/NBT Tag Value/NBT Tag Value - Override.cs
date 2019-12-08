@@ -14,9 +14,10 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public abstract partial class NBTTagValue<TypeValue> {
+    public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<TypeValue>> {
         ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public override String ToString() {
@@ -86,6 +87,29 @@ namespace DaanV2.NBT {
                 default:
                     return null;
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public Boolean Equals(NBTTagValue<TypeValue> other) {
+            return other != null &&
+                   base.Equals(other) &&
+                   EqualityComparer<TypeValue>.Default.Equals(this._Value, other._Value) &&
+                   EqualityComparer<TypeValue>.Default.Equals(this.Value, other.Value);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override Int32 GetHashCode() {
+            var hashCode = 1513385649;
+            hashCode = hashCode * -1521134295 + EqualityComparer<TypeValue>.Default.GetHashCode(this._Value);
+            hashCode = hashCode * -1521134295 + EqualityComparer<TypeValue>.Default.GetHashCode(this.Value);
+            return hashCode;
         }
     }
 }

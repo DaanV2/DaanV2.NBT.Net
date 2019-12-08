@@ -18,34 +18,34 @@ using System;
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> {
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
-        /// <returns></returns>
+        /// <summary>Compare two <see cref="NBTTagValue{TypeValue}"/> to see if they are equal</summary>
+        /// <param name="A">The first object to compare to</param>
+        /// <param name="B">The second object to compare</param>
+        /// <returns>Compare two <see cref="NBTTagValue{TypeValue}"/> to see if they are equal</returns>
         public static Boolean operator ==(NBTTagValue<TypeValue> A, NBTTagValue<TypeValue> B) {
             return A._Value.Equals(B._Value) && A._Name.Equals(B._Name);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
-        /// <returns></returns>
+        /// <summary>Compare two <see cref="NBTTagValue{TypeValue}"/> to see if they are not equal</summary>
+        /// <param name="A">The first object to compare to</param>
+        /// <param name="B">The second object to compare</param>
+        /// <returns>Compare two <see cref="NBTTagValue{TypeValue}"/> to see if they are not equal</returns>
         public static Boolean operator !=(NBTTagValue<TypeValue> A, NBTTagValue<TypeValue> B) {
             return !(A._Value.Equals(B._Value) || A._Name.Equals(B._Name));
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
-        /// <returns></returns>
+        /// <summary>Compare one <see cref="NBTTagValue{TypeValue}"/> equals a given object</summary>
+        /// <param name="A">The first object to compare to</param>
+        /// <param name="B">The second object to compare</param>
+        /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> equals a given object</returns>
         public static Boolean operator ==(NBTTagValue<TypeValue> A, Object B) {
             return A.Equals(B);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
-        /// <returns></returns>
+        /// <summary>Compare one <see cref="NBTTagValue{TypeValue}"/> not equals a given object</summary>
+        /// <param name="A">The first object to compare to</param>
+        /// <param name="B">The second object to compare</param>
+        /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> not equals a given object</returns>
         public static Boolean operator !=(NBTTagValue<TypeValue> A, Object B) {
             return !A.Equals(B);
         }

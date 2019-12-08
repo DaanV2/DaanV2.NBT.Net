@@ -14,10 +14,11 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for abstract class: NBTTagValue</summary>
+    /// <summary>The base class that handles generic values of an <see cref="NBTTag"/></summary>
     [Serializable, DataContract]
     public abstract partial class NBTTagValue<TypeValue> {
         /// <summary>Creates a new instance of <see cref="NBTTagValue"/></summary>
@@ -32,5 +33,6 @@ namespace DaanV2.NBT {
             this.Name = Name;
             this._Value = Value;
         }
+
     }
 }
