@@ -4,9 +4,13 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <RootNamespace>DaanV2.NBT</RootNamespace>
     <AssemblyName>DaanV2-NBT.Net</AssemblyName>
+    <Platforms>AnyCPU;x64;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
+    <None Remove="LICENSE" />
     <None Remove="LICENSE.txt" />
   </ItemGroup>
 
@@ -14,8 +18,6 @@
     <PackageReference Include="zlib.net-mutliplatform" Version="1.0.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="LICENSE.txt" />
-  </ItemGroup>
+  <Import Project="..\DaanV2-NBT.Net Source\DaanV2-NBT.Net Source.projitems" Label="Shared" />
 
 </Project>

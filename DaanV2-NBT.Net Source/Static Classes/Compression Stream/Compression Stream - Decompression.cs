@@ -13,14 +13,10 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
-using ComponentAce.Compression.Libs.zlib;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ComponentAce.Compression.Libs.zlib;
 
 namespace DaanV2.NBT {
     public static partial class CompressionStream {
@@ -31,8 +27,9 @@ namespace DaanV2.NBT {
         /// <param name="Compression"></param>
         /// <returns></returns>
         public static Stream GetDecompressionStream(Stream stream, NBTCompression Compression = NBTCompression.Auto) {
-            if (Compression == NBTCompression.Auto)
+            if (Compression == NBTCompression.Auto) {
                 Compression = DetectCompression(stream);
+            }
 
             switch (Compression) {
                 default:
@@ -42,8 +39,8 @@ namespace DaanV2.NBT {
                     return new GZipStream(stream, CompressionMode.Decompress);
 
                 case NBTCompression.Zlib:
-                    return new ZOutputStream(stream);
-
+                    stream.Seek(2, SeekOrigin.Begin);
+                    return new DeflateStream(stream, CompressionMode.Decompress, true);
             }
         }
 

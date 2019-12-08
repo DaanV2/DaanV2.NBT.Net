@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>f600936b-a6c7-4f31-8907-a2d4944feeb7</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>DaanV2.NBT</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag Value\NBT Tag Value - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag Value\NBT Tag Value - NBTTag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag Value\NBT Tag Value - Operators.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag Value\NBT Tag Value - Override.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag Value\NBT Tag Value - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag Value\NBT Tag Value - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - ITag Collection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - ITag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - Override.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte Array\NBT Tag Byte Array - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte Array\NBT Tag Byte Array - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte\NBT Tag Byte - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte\NBT Tag Byte - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Compound\NBT Tag Compound - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Compound\NBT Tag Compound - NBTTag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Compound\NBT Tag Compound - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Compound\NBT Tag Compound - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Double\NBT Tag Double - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Double\NBT Tag Double - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Float\NBT Tag Float - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Float\NBT Tag Float - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Int Array\NBT Tag Int Array - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Int Array\NBT Tag Int Array - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Int\NBT Tag Int - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Int\NBT Tag Int - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag List\NBT Tag List - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag List\NBT Tag List - ITagCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag List\NBT Tag List - NBT Tag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag List\NBT Tag List - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag List\NBT Tag List - Override.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag List\NBT Tag List - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag List\NBT Tag List - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Long Array\NBT Tag Long Array - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Long Array\NBT Tag Long Array - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Long\NBT Tag Long - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Long\NBT Tag Long - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Short\NBT Tag Short - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Short\NBT Tag Short - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag String\NBT Tag String - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag String\NBT Tag String - Operator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enumerators\NBT Compression\NBT Compression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enumerators\NBT Tag Information\NBTTagInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enumerators\NBT Tag Type\NBT Tag Type.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITag Collection\ITag Collection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITag\ITag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Compression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Decompression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Detect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - ReadFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - ReadString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Tags.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Create.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - Tags.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - WriteFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - WriteString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - GzipStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - Read.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - Writer.cs" />
+  </ItemGroup>
+</Project>

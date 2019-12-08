@@ -14,31 +14,13 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.IO;
+using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public static partial class NBTReader {
+    public static partial class NBTTagFactory {
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Filepath"></param>
-        /// <returns></returns>
-        public static ITag ReadFile(String Filepath, NBTCompression Compression = NBTCompression.Auto) {
-            Stream Stream = CompressionStream.GetDecompressionStream(new FileStream(Filepath, FileMode.Open, FileAccess.ReadWrite), Compression);
-            ITag Out = ReadFile(Stream);
-            Stream.Close();
-
-            return Out;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="Filepath"></param>
-        /// <returns></returns>
-        public static ITag ReadFile(Stream stream) {
-            
-            return Read(stream);
-        }
+        public static Dictionary<NBTTagType, Type> Types { get; set; }
     }
 }
