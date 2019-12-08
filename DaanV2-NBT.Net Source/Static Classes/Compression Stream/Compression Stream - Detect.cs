@@ -22,9 +22,7 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public static partial class CompressionStream {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         public static NBTCompression DetectCompression(Stream stream) {
             if (!stream.CanSeek)

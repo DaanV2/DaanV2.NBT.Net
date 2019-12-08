@@ -19,43 +19,31 @@ using System.Runtime.Serialization;
 namespace DaanV2.NBT {
     public abstract partial class NBTTag : ITag {
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         [DataMember]
         public String Name {
             get => this._Name;
             set => this._Name = value;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         [IgnoreDataMember]
         public abstract NBTTagType Type { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public abstract Object GetValue();
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public abstract T GetValue<T>();
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="O"></param>
         public abstract void SetValue(Object O);
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public virtual void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -72,9 +60,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="InfoType"></param>
         /// <returns></returns>
         public virtual Object GetInformation(NBTTagInformation InfoType) {

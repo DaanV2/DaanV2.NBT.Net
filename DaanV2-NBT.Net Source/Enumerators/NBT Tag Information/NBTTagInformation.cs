@@ -24,25 +24,15 @@ namespace DaanV2.NBT {
     ///DOLATER <summary> add description for enumerator: NBTTagInformation</summary>
 	[Serializable, DataContract]
     public enum NBTTagInformation {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         Value,
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         Name,
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         Tag,
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         ListSize,
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         ListSubtype
     }
 }

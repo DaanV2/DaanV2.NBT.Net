@@ -32,14 +32,10 @@ namespace DaanV2.NBT {
         /// <param name="Value"></param>
         public NBTTagIntArray(String Name, Int32[] Value) : base(Name, Value) { }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         private static readonly NBTTagType _Type = NBTTagType.IntArray;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public override NBTTagType Type => _Type;
     }
 }

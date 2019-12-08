@@ -22,9 +22,7 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         [DataMember]
         public TypeValue Value { get => this._Value; set => this._Value = value; }
     }

@@ -21,36 +21,26 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList : NBTTag {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         private static readonly NBTTagType _Type = NBTTagType.List;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public override NBTTagType Type => _Type;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public override Object GetValue() {
             return this.Tags;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public override T GetValue<T>() {                        
             return this.Tags is T val ? val : default;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="O"></param>
         public override void SetValue(Object O) {
             if (O is List<ITag> T)

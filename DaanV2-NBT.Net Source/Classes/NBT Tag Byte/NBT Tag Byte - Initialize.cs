@@ -28,14 +28,10 @@ namespace DaanV2.NBT {
         /// <param name="Value"></param>
         public NBTTagByte(String Name, Byte Value) : base(Name, Value) { }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         private static readonly NBTTagType _Type = NBTTagType.Byte;
 
-        /// <summary>
-        ///
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         [IgnoreDataMember]
         public override NBTTagType Type => _Type;
     }

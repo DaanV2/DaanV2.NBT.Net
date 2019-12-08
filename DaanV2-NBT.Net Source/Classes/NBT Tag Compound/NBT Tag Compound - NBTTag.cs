@@ -24,32 +24,24 @@ namespace DaanV2.NBT {
     public partial class NBTTagCompound : NBTTag {
         private const NBTTagType _Type = NBTTagType.Compound;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         [IgnoreDataMember]
         public override NBTTagType Type => _Type;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public override Object GetValue() {
             return this._Tags;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public override T GetValue<T>() {
             return this._Tags is T Out ? Out : (default);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="O"></param>
         public override void SetValue(Object O) {
             if (O is List<ITag> Temp)

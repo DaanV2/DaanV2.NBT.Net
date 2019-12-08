@@ -18,9 +18,7 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
     public partial class NBTTagIntArray {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
@@ -28,9 +26,7 @@ namespace DaanV2.NBT {
             return A._Value.Equals(B._Value) && A._Name.Equals(B._Name);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
@@ -38,9 +34,7 @@ namespace DaanV2.NBT {
             return !(A._Value.Equals(B._Value) || A._Name.Equals(B._Name));
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
@@ -48,9 +42,7 @@ namespace DaanV2.NBT {
             return A.Equals(B);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>

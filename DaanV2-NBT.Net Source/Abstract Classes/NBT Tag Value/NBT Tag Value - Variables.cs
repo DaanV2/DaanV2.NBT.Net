@@ -21,9 +21,7 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         internal TypeValue _Value;
     }
 }

@@ -19,9 +19,7 @@ using System.Text;
 
 namespace DaanV2.NBT {
     public static partial class NBTReader {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
         /// <returns></returns>
         public static ITag Read(Stream Reader) {
@@ -56,9 +54,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
         /// <param name="Type"></param>
         /// <returns></returns>
@@ -92,9 +88,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Type"></param>
         /// <param name="Tag"></param>
         private static void ReadPayload(NBTTagType Type, Stream Reader, ITag Receiver) {

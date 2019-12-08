@@ -3,9 +3,7 @@ using System.IO;
 
 namespace DaanV2.NBT {
     public static partial class NBTWriter {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name=""></param>
         /// <param name="stream"></param>
         public static void Write(ITag tag, Stream stream) {
@@ -13,9 +11,7 @@ namespace DaanV2.NBT {
             WritePayload(tag, stream);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="tag"></param>
         /// <param name="stream"></param>
         public static void WriteHeader(ITag tag, Stream stream) {
@@ -53,9 +49,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="tag"></param>
         /// <param name="stream"></param>
         public static void WritePayload(ITag tag, Stream stream) {

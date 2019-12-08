@@ -24,21 +24,13 @@ namespace DaanV2.NBT {
     ///DOLATER <summary> add description for enumerator: NBTCompression</summary>
 	[Serializable, DataContract]
     public enum NBTCompression {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         None = 0,
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         Auto,
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         Gzip,
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         Zlib
     }
 }

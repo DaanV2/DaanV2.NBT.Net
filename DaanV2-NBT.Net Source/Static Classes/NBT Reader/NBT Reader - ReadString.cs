@@ -19,9 +19,7 @@ using System.Text;
 
 namespace DaanV2.NBT {
     public static partial class NBTReader {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
         /// <returns></returns>
         public static String ReadString(Stream Reader) {

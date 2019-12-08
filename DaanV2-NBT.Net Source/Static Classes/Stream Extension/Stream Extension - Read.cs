@@ -19,9 +19,7 @@ using System.IO;
 namespace DaanV2.NBT {
 
     public static partial class StreamExtension {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Length"></param>
         /// <returns></returns>
@@ -32,9 +30,7 @@ namespace DaanV2.NBT {
             return Buffer;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static Int16 ReadInt16(this Stream stream) {
@@ -46,9 +42,7 @@ namespace DaanV2.NBT {
             return BitConverter.ToInt16(Buffer, 0);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static Int32 ReadInt32(this Stream stream) {
@@ -60,9 +54,7 @@ namespace DaanV2.NBT {
             return BitConverter.ToInt32(Buffer, 0);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static Int64 ReadInt64(this Stream stream) {
@@ -74,9 +66,7 @@ namespace DaanV2.NBT {
             return BitConverter.ToInt64(Buffer, 0);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static Single ReadFloat(this Stream stream) {
@@ -88,9 +78,7 @@ namespace DaanV2.NBT {
             return BitConverter.ToSingle(Buffer, 0);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static Double ReadDouble(this Stream stream) {
@@ -102,9 +90,7 @@ namespace DaanV2.NBT {
             return BitConverter.ToDouble(Buffer, 0);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Length"></param>
         /// <returns></returns>
@@ -117,9 +103,7 @@ namespace DaanV2.NBT {
             return Buffer;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Length"></param>
         /// <returns></returns>
@@ -139,9 +123,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Length"></param>
         /// <returns></returns>

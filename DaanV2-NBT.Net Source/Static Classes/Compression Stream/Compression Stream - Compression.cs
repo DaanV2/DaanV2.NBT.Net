@@ -24,9 +24,7 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public static partial class CompressionStream {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Compression"></param>
         /// <returns></returns>
@@ -45,9 +43,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Compression"></param>
         /// <returns></returns>

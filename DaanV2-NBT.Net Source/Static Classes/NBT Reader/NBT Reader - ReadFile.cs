@@ -18,9 +18,7 @@ using System.IO;
 
 namespace DaanV2.NBT {
     public static partial class NBTReader {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
         /// <returns></returns>
         public static ITag ReadFile(String Filepath, NBTCompression Compression = NBTCompression.Auto) {
@@ -31,9 +29,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
         /// <returns></returns>
         public static ITag ReadFile(Stream stream) {            

@@ -22,26 +22,20 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> : NBTTag {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public override Object GetValue() {
             return this._Value;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public override T GetValue<T>() {
             return this._Value is T val ? val : (default);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="O"></param>
         public override void SetValue(Object O) {
             this._Value = (TypeValue)O;

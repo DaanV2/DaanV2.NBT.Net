@@ -19,9 +19,7 @@ using System.Text;
 
 namespace DaanV2.NBT {
     public static partial class NBTWriter {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
         /// <returns></returns>
         public static void WriteString(Stream Writer, String Text) {

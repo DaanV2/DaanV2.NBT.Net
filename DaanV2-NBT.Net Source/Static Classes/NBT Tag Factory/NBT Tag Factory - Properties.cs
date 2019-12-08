@@ -18,9 +18,7 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public static partial class NBTTagFactory {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public static Dictionary<NBTTagType, Type> Types { get; set; }
     }
 }

@@ -21,17 +21,13 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTag {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public override String ToString() {
             return $"'{this.Name}': {this.Type}";
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public override Boolean Equals(Object obj) {

@@ -17,9 +17,7 @@ using System;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTag {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
@@ -27,9 +25,7 @@ namespace DaanV2.NBT {
             return A._Name.Equals(B._Name) && A._Tags.Equals(B._Tags);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
@@ -37,9 +33,7 @@ namespace DaanV2.NBT {
             return !A._Name.Equals(B._Name) && A._Tags.Equals(B._Tags);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
@@ -47,9 +41,7 @@ namespace DaanV2.NBT {
             return A.Equals(B);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>

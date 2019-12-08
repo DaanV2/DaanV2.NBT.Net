@@ -21,14 +21,10 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTag {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         internal List<ITag> _Tags;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         internal String _Name;
     }
 }

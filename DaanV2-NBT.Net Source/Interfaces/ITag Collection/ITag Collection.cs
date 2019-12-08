@@ -22,46 +22,32 @@ using System.Threading.Tasks;
 namespace DaanV2.NBT {
     ///DOLATER <summary> add description for interface: ITagCollection</summary>
     public interface ITagCollection {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         Int32 Count { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <returns></returns>
         ITag this[String Name] { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="IIndex"></param>
         /// <returns></returns>
         ITag this[Int32 Index] { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="tag"></param>
         void Add(ITag tag);
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Index"></param>
         void Remove(Int32 Index);
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         void Remove(String Name);
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         void Clear();
     }
 }

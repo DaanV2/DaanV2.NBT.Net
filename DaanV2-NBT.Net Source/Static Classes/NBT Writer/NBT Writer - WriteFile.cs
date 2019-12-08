@@ -3,9 +3,7 @@ using System.IO;
 
 namespace DaanV2.NBT {
     public static partial class NBTWriter {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
         /// <param name="Object"></param>
         /// <param name="compression"></param>
@@ -17,9 +15,7 @@ namespace DaanV2.NBT {
             return stream;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
         /// <param name="Object"></param>
         /// <param name="compression"></param>

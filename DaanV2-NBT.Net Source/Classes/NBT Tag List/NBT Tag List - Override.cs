@@ -21,9 +21,7 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public override void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -55,9 +53,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="InfoType"></param>
         /// <returns></returns>
         public override Object GetInformation(NBTTagInformation InfoType) {

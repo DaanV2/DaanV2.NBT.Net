@@ -17,9 +17,7 @@ using System;
 
 namespace DaanV2.NBT {
     public static partial class NBTTagFactory {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="type"></param>
         /// <returns></returns>
         public static ITag Create(NBTTagType type) {
@@ -28,9 +26,7 @@ namespace DaanV2.NBT {
                 null;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="type"></param>
         /// <returns></returns>
         public static ITag Create(NBTTagType type, String Name, Object Value) {

@@ -22,9 +22,7 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList : ITagCollection {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <returns></returns>
         [IgnoreDataMember]
@@ -74,9 +72,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name=""></param>
         public override void Add(ITag tag) {
             if (tag.Type != this.SubType)

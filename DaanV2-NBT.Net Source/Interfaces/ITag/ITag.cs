@@ -18,43 +18,29 @@ using System;
 namespace DaanV2.NBT {
     ///DOLATER <summary> add description for interface: ITag</summary>
     public interface ITag : ITagCollection {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         String Name { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         NBTTagType Type { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         Object GetValue();
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         T GetValue<T>();
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="O"></param>
         void SetValue(Object O);
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         void SetInformation(NBTTagInformation InfoType, Object Info);
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="InfoType"></param>
         /// <returns></returns>
         Object GetInformation(NBTTagInformation InfoType);

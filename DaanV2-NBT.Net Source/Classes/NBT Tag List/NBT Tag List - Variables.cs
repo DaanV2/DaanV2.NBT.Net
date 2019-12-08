@@ -21,9 +21,7 @@ using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         private NBTTagType _SubType;
     }
 }

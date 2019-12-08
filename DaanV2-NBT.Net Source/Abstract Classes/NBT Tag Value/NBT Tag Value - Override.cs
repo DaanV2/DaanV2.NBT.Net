@@ -17,17 +17,13 @@ using System;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public override String ToString() {
             return $"'{this.Name}': {this.Type}: {this._Value}";
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public override Boolean Equals(Object obj) {
@@ -47,9 +43,7 @@ namespace DaanV2.NBT {
             return base.Equals(obj);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public override void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -71,9 +65,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="InfoType"></param>
         /// <returns></returns>
         public override Object GetInformation(NBTTagInformation InfoType) {

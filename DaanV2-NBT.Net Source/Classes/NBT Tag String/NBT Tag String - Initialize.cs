@@ -32,14 +32,10 @@ namespace DaanV2.NBT {
         /// <param name="Value"></param>
         public NBTTagString(String Name, String Value) : base(Name, Value) { }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         private static readonly NBTTagType _Type = NBTTagType.String;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public override NBTTagType Type => _Type;
     }
 }

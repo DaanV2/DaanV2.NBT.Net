@@ -20,9 +20,7 @@ using System.IO.Compression;
 namespace DaanV2.NBT {
 
     public static partial class StreamExtension {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static Int32 ReadByte(this GZipStream stream) {

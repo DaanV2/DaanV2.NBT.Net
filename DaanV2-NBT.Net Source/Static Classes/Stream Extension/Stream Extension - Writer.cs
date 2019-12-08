@@ -19,9 +19,7 @@ using System.IO;
 namespace DaanV2.NBT {
 
     public static partial class StreamExtension {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Length"></param>
         /// <returns></returns>
@@ -29,9 +27,7 @@ namespace DaanV2.NBT {
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static void WriteInt16(this Stream stream, Int16 Value) {
@@ -42,9 +38,7 @@ namespace DaanV2.NBT {
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static void WriteInt32(this Stream stream, Int32 Value) {
@@ -55,9 +49,7 @@ namespace DaanV2.NBT {
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static void WriteInt64(this Stream stream, Int64 Value) {
@@ -68,9 +60,7 @@ namespace DaanV2.NBT {
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static void WriteFloat(this Stream stream, Single Value) {
@@ -81,9 +71,7 @@ namespace DaanV2.NBT {
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <returns></returns>
         public static void WriteDouble(this Stream stream, Double Value) {
@@ -94,9 +82,7 @@ namespace DaanV2.NBT {
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Length"></param>
         /// <returns></returns>
@@ -112,9 +98,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Length"></param>
         /// <returns></returns>

@@ -19,21 +19,15 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTag : ITagCollection {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         [IgnoreDataMember]
         public Int32 Count => this._Tags.Count;
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         [DataMember]
         public List<ITag> Tags { get => this._Tags; set => this._Tags = value; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <returns></returns>
         [IgnoreDataMember]
@@ -71,9 +65,7 @@ namespace DaanV2.NBT {
             set => this._Tags[Index] = value;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name=""></param>
         public virtual void Add(ITag tag) {
             Int32 Max = this._Tags.Count;
@@ -88,24 +80,18 @@ namespace DaanV2.NBT {
             this._Tags.Add(tag);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public virtual void Clear() {
             this._Tags.Clear();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Index"></param>
         public virtual void Remove(Int32 Index) {
             this._Tags.RemoveAt(Index);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         public virtual void Remove(String Name) {
             Int32 Max = this._Tags.Count;
