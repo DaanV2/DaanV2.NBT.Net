@@ -80,15 +80,6 @@ namespace DaanV2.NBT {
                 throw new ArgumentException($"value type must be same as the lists subtype");
             }
 
-            Int32 Max = this._Tags.Count;
-
-            for (Int32 I = 0; I < Max; I++) {
-                if (this._Tags[I] == null || this._Tags[I].Name == tag.Name) {
-                    this._Tags[I] = tag;
-                    return;
-                }
-            }
-
             this._Tags.Add(tag);
         }
 
