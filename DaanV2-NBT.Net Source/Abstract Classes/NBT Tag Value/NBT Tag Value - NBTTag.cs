@@ -35,5 +35,12 @@ namespace DaanV2.NBT {
         public override void SetValue(Object O) {
             this._Value = (TypeValue)O;
         }
+
+        /// <summary>Casts the value of this <see cref="NBTTagValue{T}"/> to the specifed type, routes through <see cref="NBTCasting"/></summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public override T ConvertValue<T>() {
+            return NBTCasting.ConvertTo<T>(this._Value);
+        }
     }
 }

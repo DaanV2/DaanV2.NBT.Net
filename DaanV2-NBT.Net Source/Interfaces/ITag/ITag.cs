@@ -34,6 +34,11 @@ namespace DaanV2.NBT {
         T GetValue<T>();
 
         ///DOLATER <summary>Add Description</summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        T ConvertValue<T>();
+
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="O"></param>
         void SetValue(Object O);
 

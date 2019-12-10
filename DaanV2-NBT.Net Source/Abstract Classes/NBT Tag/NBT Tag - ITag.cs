@@ -80,5 +80,12 @@ namespace DaanV2.NBT {
                     return null;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public abstract T ConvertValue<T>();
     }
 }
