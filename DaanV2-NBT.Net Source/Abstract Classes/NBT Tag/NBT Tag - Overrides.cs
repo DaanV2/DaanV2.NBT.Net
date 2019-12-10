@@ -48,9 +48,7 @@ namespace DaanV2.NBT {
             return base.Equals(obj);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="other"></param>
         /// <returns></returns>
         public Boolean Equals(NBTTag other) {
@@ -60,9 +58,7 @@ namespace DaanV2.NBT {
                    EqualityComparer<String>.Default.Equals(this._Name, other._Name);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="other"></param>
         /// <returns></returns>
         public Boolean Equals(ITag other) {
@@ -80,9 +76,7 @@ namespace DaanV2.NBT {
             return false;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
