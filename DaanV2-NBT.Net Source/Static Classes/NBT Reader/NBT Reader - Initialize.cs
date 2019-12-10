@@ -14,12 +14,25 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
+using System;
+using System.Collections.Generic;
+using DaanV2.NBT.Serialization;
+
 namespace DaanV2.NBT {
     ///DOLATER <summary> add description for class: NBTReader</summary>
     public static partial class NBTReader {
         /// <summary>Creates a new instance of <see cref="NBTReader"/></summary>
         static NBTReader() {
+            NBTReader.Readers = new Dictionary<NBTTagType, ITagReader>();
 
+            List<ITagReader> Readers = Utillity.GetInterfaces<ITagReader>();
+            Int32 Length = Readers.Count;
+
+            for (Int32 I = 0; I < Length; I++) {
+                for (Int32 J = 0; J < Readers[I].ForType.Length; J++) {
+                    NBTReader.Readers[Readers[I].ForType[J]] = Readers[I];
+                }
+            }
         }
     }
 }

@@ -20,6 +20,6 @@ using DaanV2.NBT.Serialization;
 namespace DaanV2.NBT {
     public static partial class NBTReader {
         /// <summary>The dictionary of readers</summary>
-        public static Dictionary<NBTTagType, ITagReader> Readers { get => _Readers; set => _Readers = value; }
+        private static Dictionary<NBTTagType, ITagReader> _Readers;
     }
 }
