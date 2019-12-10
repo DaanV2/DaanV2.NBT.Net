@@ -25,7 +25,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="obj"></param>
+        /// <param name="obj">The object to compare to</param>
         /// <returns></returns>
         public override Boolean Equals(Object obj) {
 

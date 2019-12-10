@@ -19,7 +19,7 @@ using System.Collections.Generic;
 namespace DaanV2.NBT {
     public partial class NBTTagCompound {
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="Obj"></param>
+        /// <param name="obj">The object to compare to</param>
         /// <returns></returns>
         public override Boolean Equals(Object Obj) {
             if (Obj is NBTTagCompound Tag) {
