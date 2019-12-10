@@ -15,10 +15,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public partial class NBTTagCompound : NBTTag {
@@ -44,8 +41,9 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="O"></param>
         public override void SetValue(Object O) {
-            if (O is List<ITag> Temp)
+            if (O is List<ITag> Temp) {
                 this._Tags = Temp;
+            }
         }
     }
 }

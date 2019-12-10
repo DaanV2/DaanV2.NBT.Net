@@ -16,7 +16,6 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
 using System.IO.Compression;
-using ComponentAce.Compression.Libs.zlib;
 
 namespace DaanV2.NBT {
     public static partial class CompressionStream {

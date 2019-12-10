@@ -15,9 +15,6 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList : NBTTag {
@@ -36,18 +33,19 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public override T GetValue<T>() {                        
+        public override T GetValue<T>() {
             return this.Tags is T val ? val : default;
         }
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="O"></param>
         public override void SetValue(Object O) {
-            if (O is List<ITag> T)
+            if (O is List<ITag> T) {
                 this.Tags = T;
-
-            else
+            }
+            else {
                 throw new ArgumentException($"{nameof(O)} must be of type {nameof(List<ITag>)}");
+            }
         }
     }
 }

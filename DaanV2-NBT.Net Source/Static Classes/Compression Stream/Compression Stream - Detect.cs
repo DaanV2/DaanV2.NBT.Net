@@ -14,26 +14,24 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public static partial class CompressionStream {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         public static NBTCompression DetectCompression(Stream stream) {
-            if (!stream.CanSeek)
+            if (!stream.CanSeek) {
                 throw new ArgumentException($"{nameof(stream)} must be able to seek");
+            }
 
             Int32 Temp = (Byte)stream.ReadByte();
             stream.Seek(-1, SeekOrigin.Current);
 
             //Byte is a nbt tag type
-            if (Temp >= 0 && Temp <= 12)
+            if (Temp >= 0 && Temp <= 12) {
                 return NBTCompression.None;
+            }
 
             //Magical numbers
             switch (Temp) {

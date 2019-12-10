@@ -15,9 +15,6 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTag {
@@ -33,15 +30,7 @@ namespace DaanV2.NBT {
         public override Boolean Equals(Object obj) {
 
             if (obj is NBTTag Tag) {
-                if (this._Name.Equals(Tag._Name) && this._Tags.Count == Tag.Count) {
-                    for (Int32 I = 0; I < this._Tags.Count; I++) {
-                        if (!this._Tags[I].Equals(Tag[I])) {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                }
+                return this.Equals(Tag);
             }
             else if (obj is ITag Interface) {
                 if (this._Name.Equals(Interface.Name) && this._Tags.Count == Interface.Count) {
@@ -57,6 +46,49 @@ namespace DaanV2.NBT {
             }
 
             return base.Equals(obj);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public Boolean Equals(NBTTag other) {
+            return other != null &&
+                   base.Equals(other) &&
+                   EqualityComparer<List<ITag>>.Default.Equals(this._Tags, other._Tags) &&
+                   EqualityComparer<String>.Default.Equals(this._Name, other._Name);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public Boolean Equals(ITag other) {
+            if (other != null && base.Equals(other) && EqualityComparer<String>.Default.Equals(this._Name, other.Name)) {
+
+                for (Int32 I = 0; I < this._Tags.Count; I++) {
+                    if (!this._Tags[I].Equals(other[I])) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override Int32 GetHashCode() {
+            Int32 hashCode = 1513385649;
+            hashCode = (hashCode * -1521134295) + EqualityComparer<List<ITag>>.Default.GetHashCode(this._Tags);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode(this._Name);
+            return hashCode;
         }
     }
 }

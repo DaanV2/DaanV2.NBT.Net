@@ -14,11 +14,7 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList : ITagCollection {
@@ -31,15 +27,17 @@ namespace DaanV2.NBT {
                 Int32 Max = this._Tags.Count;
 
                 for (Int32 I = 0; I < Max; I++) {
-                    if (this._Tags[I].Name == Name)
+                    if (this._Tags[I].Name == Name) {
                         return this._Tags[I];
+                    }
                 }
 
                 return null;
             }
             set {
-                if (value.Type == this.SubType)
+                if (value.Type == this.SubType) {
                     throw new ArgumentException($"value type must be same as the lists subtype");
+                }
 
                 Int32 Max = this._Tags.Count;
 
@@ -61,8 +59,9 @@ namespace DaanV2.NBT {
         public new ITag this[Int32 Index] {
             get => this._Tags[Index];
             set {
-                if (value.Type != this.SubType)
+                if (value.Type != this.SubType) {
                     throw new ArgumentException($"value type must be same as the lists subtype");
+                }
 
                 if (this._Tags.Count <= Index) {
                     this.Tags.AddRange(new ITag[Index - this._Tags.Count + 1]);
@@ -75,10 +74,11 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name=""></param>
         public override void Add(ITag tag) {
-            if (tag.Type != this.SubType)
+            if (tag.Type != this.SubType) {
                 throw new ArgumentException($"value type must be same as the lists subtype");
+            }
 
-            Int32 Max = this._Tags.Count;            
+            Int32 Max = this._Tags.Count;
 
             for (Int32 I = 0; I < Max; I++) {
                 if (this._Tags[I] == null || this._Tags[I].Name == tag.Name) {

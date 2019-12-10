@@ -34,9 +34,17 @@ namespace DaanV2.NBT {
                 (ITag)Activator.CreateInstance(Types[type]) :
                 null;
 
-            if (Tag == null) return Tag;
-            if (Name != null) Tag.Name = Name;
-            if (Value != null) Tag.SetValue(Value);
+            if (Tag == null) {
+                return Tag;
+            }
+
+            if (Name != null) {
+                Tag.Name = Name;
+            }
+
+            if (Value != null) {
+                Tag.SetValue(Value);
+            }
 
             return Tag;
         }

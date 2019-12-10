@@ -14,7 +14,6 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.IO;
 using System.IO.Compression;
 
 namespace DaanV2.NBT {
@@ -24,8 +23,9 @@ namespace DaanV2.NBT {
         /// <param name="stream"></param>
         /// <returns></returns>
         public static Int32 ReadByte(this GZipStream stream) {
-            if (stream.Length < stream.Position)
+            if (stream.Length < stream.Position) {
                 return -1;
+            }
 
             Byte[] Buffer = new Byte[1];
             stream.Read(Buffer, 0, 1);

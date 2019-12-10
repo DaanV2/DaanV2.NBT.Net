@@ -36,8 +36,9 @@ namespace DaanV2.NBT {
                 Int32 Max = this._Tags.Count;
 
                 for (Int32 I = 0; I < Max; I++) {
-                    if (this._Tags[I].Name == Name)
+                    if (this._Tags[I].Name == Name) {
                         return this._Tags[I];
+                    }
                 }
 
                 return null;

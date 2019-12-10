@@ -15,7 +15,6 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
-using System.Text;
 
 namespace DaanV2.NBT {
     public static partial class NBTReader {
@@ -24,7 +23,9 @@ namespace DaanV2.NBT {
         /// <returns></returns>
         public static ITag Read(Stream Reader) {
             Int32 FirstByte = Reader.ReadByte();
-            if (FirstByte == -1) return default;
+            if (FirstByte == -1) {
+                return default;
+            }
 
             NBTTagType Type = (NBTTagType)FirstByte;
             ITag Out = NBTTagFactory.Create(Type);
@@ -144,7 +145,10 @@ namespace DaanV2.NBT {
                 //Special
                 case NBTTagType.List:
                     Object O = Receiver.GetInformation(NBTTagInformation.ListSubtype);
-                    if (O == null) throw new Exception("List returned no subtype");
+                    if (O == null) {
+                        throw new Exception("List returned no subtype");
+                    }
+
                     NBTTagType SubTagType = (NBTTagType)O;
 
                     for (Int32 I = 0; I < Receiver.Count; I++) {

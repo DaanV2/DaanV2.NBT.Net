@@ -17,33 +17,7 @@ using System;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<TypeValue>> {
-        ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
-        public override String ToString() {
-            return $"'{this.Name}': {this.Type}: {this._Value}";
-        }
-
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public override Boolean Equals(Object obj) {
-
-            if (obj is NBTTagValue<TypeValue> TValue) {
-                if (this._Value.Equals(TValue._Value) && this._Name.Equals(TValue._Name) && this._Tags.Count == TValue._Tags.Count) {
-                    for (Int32 I = 0; I < this._Tags.Count; I++) {
-                        if (!this._Tags[I].Equals(TValue[I])) {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                }
-            }
-
-            return base.Equals(obj);
-        }
-
+    public partial class NBTTagList {
         ///DOLATER <summary>Add Description</summary>
         public override void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
@@ -55,12 +29,24 @@ namespace DaanV2.NBT {
                     this._Tags.Add((ITag)Info);
                     break;
 
-                case NBTTagInformation.Value:
-                    this._Value = (TypeValue)Info;
+                case NBTTagInformation.ListSize:
+                    Int32 I = (Int32)Info;
+                    if (I > 0) {
+                        this._Tags.AddRange(new ITag[I - this._Tags.Count]);
+                    }
+
                     break;
 
-                case NBTTagInformation.ListSize:
                 case NBTTagInformation.ListSubtype:
+                    this._SubType = (NBTTagType)Info;
+                    break;
+
+                case NBTTagInformation.Value:
+                    if (Info is List<ITag> NewList) {
+                        this._Tags = NewList;
+                    }
+
+                    break;
                 default:
                     break;
             }
@@ -74,16 +60,16 @@ namespace DaanV2.NBT {
                 case NBTTagInformation.Name:
                     return this._Name;
 
+                case NBTTagInformation.Value:
                 case NBTTagInformation.Tag:
                     return this._Tags;
 
                 case NBTTagInformation.ListSize:
                     return this._Tags.Count;
 
-                case NBTTagInformation.Value:
-                    return this._Value;
+                case NBTTagInformation.ListSubtype:
+                    return this._SubType;
 
-                case NBTTagInformation.ListSubtype:                
                 default:
                     return null;
             }
@@ -94,11 +80,25 @@ namespace DaanV2.NBT {
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
-        public Boolean Equals(NBTTagValue<TypeValue> other) {
+        public override Boolean Equals(Object Obj) {
+            if (Obj is NBTTagList Tag) {
+                return this.Equals(Tag);
+            }
+
+            return base.Equals(Obj);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public Boolean Equals(NBTTagList other) {
             return other != null &&
                    base.Equals(other) &&
-                   EqualityComparer<TypeValue>.Default.Equals(this._Value, other._Value) &&
-                   EqualityComparer<TypeValue>.Default.Equals(this.Value, other.Value);
+                   EqualityComparer<NBTTagType>.Default.Equals(this._SubType, other._SubType) &&
+                   EqualityComparer<List<ITag>>.Default.Equals(this._Tags, other._Tags) &&
+                   EqualityComparer<String>.Default.Equals(this._Name, other._Name);
         }
 
         /// <summary>
@@ -106,9 +106,10 @@ namespace DaanV2.NBT {
         /// </summary>
         /// <returns></returns>
         public override Int32 GetHashCode() {
-            var hashCode = 1513385649;
-            hashCode = hashCode * -1521134295 + EqualityComparer<TypeValue>.Default.GetHashCode(this._Value);
-            hashCode = hashCode * -1521134295 + EqualityComparer<TypeValue>.Default.GetHashCode(this.Value);
+            Int32 hashCode = 1513385649;
+            hashCode = (hashCode * -1521134295) + EqualityComparer<NBTTagType>.Default.GetHashCode(this._SubType);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<List<ITag>>.Default.GetHashCode(this._Tags);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode(this._Name);
             return hashCode;
         }
     }

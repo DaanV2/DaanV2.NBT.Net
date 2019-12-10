@@ -14,11 +14,16 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Generic;
+using System.
+/* Unmerged change from project 'EP-API-Nbt-Data.Net Core'
+Before:
 using System.Runtime.Serialization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+After:
+using System.Linq;
+using System.Runtime.Serialization;
+*/
+Runtime.Serialization;
 
 namespace DaanV2.NBT {
     ///DOLATER <summary> add description for enumerator: TagType</summary>

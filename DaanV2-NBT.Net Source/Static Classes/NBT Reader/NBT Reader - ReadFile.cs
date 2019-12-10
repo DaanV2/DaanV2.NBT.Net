@@ -32,7 +32,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
         /// <returns></returns>
-        public static ITag ReadFile(Stream stream) {            
+        public static ITag ReadFile(Stream stream) {
             return Read(stream);
         }
     }

@@ -23,7 +23,7 @@ namespace DaanV2.NBT {
                     stream.WriteByte((Byte)tag.GetInformation(NBTTagInformation.ListSubtype));
                     stream.WriteInt32((Int32)tag.GetInformation(NBTTagInformation.ListSize));
 
-                    return;                
+                    return;
                 case NBTTagType.Byte:
                 case NBTTagType.ByteArray:
                 case NBTTagType.Compound:
@@ -118,7 +118,7 @@ namespace DaanV2.NBT {
                     return;
                 case NBTTagType.End:
                 case NBTTagType.Unknown:
-                default:                
+                default:
                     return;
             }
         }
