@@ -24,8 +24,8 @@ namespace DaanV2.NBT {
         public NBTTagShort() : base() { }
 
         /// <summary>Creates a new instance of <see cref="NBTTagShort"/></summary>
-        /// <param name="Name"></param>
-        /// <param name="Value"></param>
+        /// <param name="Name">The name of the tag</param>
+        /// <param name="Value">The value of the tag</param>
         public NBTTagShort(String Name, Int16 Value) : base(Name, Value) { }
 
         ///DOLATER <summary>Add Description</summary>

@@ -19,7 +19,7 @@ using System.Runtime.Serialization;
 namespace DaanV2.NBT {
     public partial class NBTTagList : ITagCollection {
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
+        /// <param name="Name">The name of the tag</param>
         /// <returns></returns>
         [IgnoreDataMember]
         public new ITag this[String Name] {

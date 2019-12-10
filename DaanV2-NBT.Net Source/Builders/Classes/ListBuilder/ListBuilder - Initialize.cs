@@ -25,7 +25,7 @@ namespace DaanV2.NBT.Builders {
 	[Serializable, DataContract]
     public partial class ListBuilder {
         /// <summary>Creates a new instance of <see cref="ListBuilder"/></summary>
-        /// <param name="Name"></param>
+        /// <param name="Name">The name of the tag</param>
         /// <param name="SubType"></param>
         /// <param name="Capacity"></param>
         public ListBuilder(String Name, NBTTagType SubType, Int32 Capacity = 10) {

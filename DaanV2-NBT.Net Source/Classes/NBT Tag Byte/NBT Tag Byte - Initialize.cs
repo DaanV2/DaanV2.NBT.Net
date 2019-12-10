@@ -24,13 +24,13 @@ namespace DaanV2.NBT {
         public NBTTagByte() : base() { }
 
         /// <summary>Creates a new instance of <see cref="NBTTagByte"/></summary>
-        /// <param name="Name"></param>
-        /// <param name="Value"></param>
+        /// <param name="Name">The name of the tag</param>
+        /// <param name="Value">The value of the tag</param>
         public NBTTagByte(String Name, Byte Value) : base(Name, Value) { }
 
         /// <summary>Creates a new instance of <see cref="NBTTagByte"/></summary>
-        /// <param name="Name"></param>
-        /// <param name="Value"></param>
+        /// <param name="Name">The name of the tag</param>
+        /// <param name="Value">The value of the tag</param>
         public NBTTagByte(String Name, Boolean Value) : base(Name, (Byte)(Value ? 1 : 0)) { }
 
 

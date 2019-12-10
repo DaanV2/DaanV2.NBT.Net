@@ -28,7 +28,7 @@ namespace DaanV2.NBT {
         public List<ITag> Tags { get => this._Tags; set => this._Tags = value; }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
+        /// <param name="Name">The name of the tag</param>
         /// <returns></returns>
         [IgnoreDataMember]
         public ITag this[String Name] {
@@ -114,7 +114,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
+        /// <param name="Name">The name of the tag</param>
         public virtual void Remove(String Name) {
             Int32 Max = this._Tags.Count;
 

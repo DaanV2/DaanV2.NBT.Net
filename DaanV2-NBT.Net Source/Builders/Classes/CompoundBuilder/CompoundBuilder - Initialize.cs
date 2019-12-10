@@ -25,7 +25,7 @@ namespace DaanV2.NBT.Builders {
 	[Serializable, DataContract]
     public partial class CompoundBuilder {
         /// <summary>Creates a new instance of <see cref="CompoundBuilder"/></summary>
-        /// <param name="Name"></param>
+        /// <param name="Name">The name of the tag</param>
         /// <param name="Capacity"></param>
         public CompoundBuilder(String Name, Int32 Capacity = 10) {
             this._Tag = new NBTTagCompound(Name, Capacity);

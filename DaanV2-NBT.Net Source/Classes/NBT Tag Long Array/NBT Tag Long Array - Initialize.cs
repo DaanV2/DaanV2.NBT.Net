@@ -24,8 +24,8 @@ namespace DaanV2.NBT {
         public NBTTagLongArray() : base() { }
 
         /// <summary>Creates a new instance of <see cref="NBTTagLongArray"/></summary>
-        /// <param name="Name"></param>
-        /// <param name="Value"></param>
+        /// <param name="Name">The name of the tag</param>
+        /// <param name="Value">The value of the tag</param>
         public NBTTagLongArray(String Name, Int64[] Value) : base(Name, Value) { }
 
         ///DOLATER <summary>Add Description</summary>

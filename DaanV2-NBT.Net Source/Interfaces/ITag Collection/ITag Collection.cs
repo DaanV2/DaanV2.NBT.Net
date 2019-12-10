@@ -22,7 +22,7 @@ namespace DaanV2.NBT {
         Int32 Count { get; }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
+        /// <param name="Name">The name of the tag</param>
         /// <returns></returns>
         ITag this[String Name] { get; set; }
 
@@ -40,7 +40,7 @@ namespace DaanV2.NBT {
         void Remove(Int32 Index);
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
+        /// <param name="Name">The name of the tag</param>
         void Remove(String Name);
 
         ///DOLATER <summary>Add Description</summary>
