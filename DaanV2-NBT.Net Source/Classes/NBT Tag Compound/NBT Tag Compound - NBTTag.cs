@@ -19,6 +19,9 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
     public partial class NBTTagCompound : NBTTag {
+        /// <summary>
+        /// 
+        /// </summary>
         private const NBTTagType _Type = NBTTagType.Compound;
 
         ///DOLATER <summary>Add Description</summary>
@@ -44,6 +47,15 @@ namespace DaanV2.NBT {
             if (O is List<ITag> Temp) {
                 this._Tags = Temp;
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public override T ConvertValue<T>() {
+            throw new NotImplementedException("Cannot cast value of NBTTagCompound");
         }
     }
 }

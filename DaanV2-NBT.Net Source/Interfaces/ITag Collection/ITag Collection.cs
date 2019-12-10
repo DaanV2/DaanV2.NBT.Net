@@ -45,5 +45,17 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         void Clear();
+
+        ///DOLATER <summary>Add Description</summary>
+        ITag GetSubTag(String Name);
+
+        ///DOLATER <summary>Add Description</summary>
+        ITag GetSubTag(Int32 Index);
+
+        ///DOLATER <summary>Add Description</summary>
+        T GetSubValue<T>(String Name);
+
+        ///DOLATER <summary>Add Description</summary>
+        T GetSubValue<T>(Int32 Index);
     }
 }

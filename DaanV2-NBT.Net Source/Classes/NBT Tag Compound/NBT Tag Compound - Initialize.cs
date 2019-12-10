@@ -29,7 +29,7 @@ namespace DaanV2.NBT {
 
         /// <summary>Creates a new instance of <see cref="NBTTagCompound"/></summary>
         /// <param name="Capacity">The capacity to set the collection to</param>
-        public NBTTagCompound(String Name, Int32 Capacity) : base(Capacity) {
+        public NBTTagCompound(String Name, Int32 Capacity = 10) : base(Capacity) {
             this._Name = Name;
         }
     }

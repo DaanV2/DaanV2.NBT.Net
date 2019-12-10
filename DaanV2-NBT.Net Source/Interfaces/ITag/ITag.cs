@@ -49,5 +49,9 @@ namespace DaanV2.NBT {
         /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
         /// <returns></returns>
         Object GetInformation(NBTTagInformation InfoType);
+
+        /// <summary></summary>
+        /// <returns></returns>
+        ITag Clone();
     }
 }

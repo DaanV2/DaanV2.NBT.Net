@@ -14,6 +14,7 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList {
@@ -47,6 +48,16 @@ namespace DaanV2.NBT {
         /// <returns></returns>
         public static Boolean operator !=(NBTTagList A, Object B) {
             return !A.Equals(B);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name=""></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static implicit operator List<ITag>(NBTTagList A) {
+            return A._Tags;
         }
     }
 }

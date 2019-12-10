@@ -14,23 +14,25 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Runtime.Serialization;
+using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    /// <summary>The base class that handles generic values of an <see cref="NBTTag"/></summary>
-    [Serializable, DataContract]
-    public abstract partial class NBTTagValue<TypeValue> {
-        /// <summary>Creates a new instance of <see cref="NBTTagValue"/></summary>
-        public NBTTagValue() : base(0) {
-            this._Value = default;
-        }
+    public static partial class NBTCasting {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Value"></param>
+        /// <param name="To"></param>
+        /// <returns></returns>
+        public static List<T> ConvertList<T>(ITag Tag) {
+            Int32 Count = Tag.Count;
+            List<T> Out = new List<T>(Count);
 
-        /// <summary>Creates a new instance of <see cref="NBTTagValue"/></summary>
-        /// <param name="Name">The name of the tag</param>
-        /// <param name="Value">The value of the tag</param>
-        public NBTTagValue(String Name, TypeValue Value) : base(0) {
-            this.Name = Name;
-            this._Value = Value;
+            for (Int32 I = 0; I < Count; I++) {
+                Out.Add(Tag.GetValue<T>());
+            }
+
+            return Out;
         }
     }
 }

@@ -36,6 +36,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte\NBT Tag Byte - Overrides.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte\NBT Tag Byte - Operator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Compound\NBT Tag Compound - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Compound\NBT Tag Compound - IEnumerable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Compound\NBT Tag Compound - NBTTag.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Compound\NBT Tag Compound - Operator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Compound\NBT Tag Compound - Overrides.cs" />
@@ -75,12 +76,22 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enumerators\NBT Tag Type\NBT Tag Type.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITag Collection\ITag Collection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITag\ITag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Compound Reader\NBT Tag Compound Reader - ITagReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Reader\NBT Tag List Reader - ITagReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Base Type Reader\NBT Tag Base Type Reader - ITagReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Base Type Writer\NBT Tag Base Type Writer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Compound Writer\NBT Tag Compound Writer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Writer\NBT Tag List Writer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interfaces\ITagReader\ITagReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interfaces\ITagWriter\ITagWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\ArrayExtension\ArrayExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Compression.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Decompression.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Detect.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - Int32.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - Float.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - Double.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - List.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - Short.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - Long.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - Int32Array.cs" />
@@ -88,14 +99,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - LongArray.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - ByteArray.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Variables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Properties.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - ReadFile.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - ReadString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Read File.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Read String.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Tags.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Create - List.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Create.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - Variables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - Tags.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - WriteFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - WriteString.cs" />
@@ -105,5 +120,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - GzipStream.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - Read.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - Writer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Utillity\Utillity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Compound Reader\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Reader\" />
   </ItemGroup>
 </Project>

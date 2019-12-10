@@ -14,9 +14,20 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Collections.Generic;
 
 namespace DaanV2.NBT.Builders {
     public partial class CompoundBuilder {
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tag"></param>
+        public void Add(ITag tag) {
+            this._Tag.Add(tag);
+        }
+
+        #region Base Types
         /// <summary>Adds a new sub <see cref="NBTTag"/> to the collection</summary>
         /// <param name="Name">The name of the tag to add to the collection</param>
         /// <param name="Value">The value of the tag to add to the collection</param>
@@ -93,6 +104,67 @@ namespace DaanV2.NBT.Builders {
         public void Add(String Name, String Value) {
             this._Tag.Add(NBTTagFactory.Create(NBTTagType.String, Name, Value));
         }
+        #endregion
+
+        #region Lists
+
+        /// <summary>Adds a new sub <see cref="NBTTag"/> to the collection</summary>
+        /// <param name="Name">The name of the tag to add to the collection</param>
+        /// <param name="Value">The value of the tag to add to the collection</param>
+        public void Add(String Name, List<Byte> Value) {
+            this._Tag.Add(NBTTagFactory.Create(Name, Value));
+        }
+
+        /// <summary>Adds a new sub <see cref="NBTTag"/> to the collection</summary>
+        /// <param name="Name">The name of the tag to add to the collection</param>
+        /// <param name="Value">The value of the tag to add to the collection</param>
+        public void Add(String Name, List<Boolean> Value) {
+            this._Tag.Add(NBTTagFactory.Create(Name, Value));
+        }
+
+        /// <summary>Adds a new sub <see cref="NBTTag"/> to the collection</summary>
+        /// <param name="Name">The name of the tag to add to the collection</param>
+        /// <param name="Value">The value of the tag to add to the collection</param>
+        public void Add(String Name, List<Double> Value) {
+            this._Tag.Add(NBTTagFactory.Create(Name, Value));
+        }
+
+        /// <summary>Adds a new sub <see cref="NBTTag"/> to the collection</summary>
+        /// <param name="Name">The name of the tag to add to the collection</param>
+        /// <param name="Value">The value of the tag to add to the collection</param>
+        public void Add(String Name, List<Single> Value) {
+            this._Tag.Add(NBTTagFactory.Create(Name, Value));
+        }
+
+        /// <summary>Adds a new sub <see cref="NBTTag"/> to the collection</summary>
+        /// <param name="Name">The name of the tag to add to the collection</param>
+        /// <param name="Value">The value of the tag to add to the collection</param>
+        public void Add(String Name, List<Int32> Value) {
+            this._Tag.Add(NBTTagFactory.Create(Name, Value));
+        }
+
+        /// <summary>Adds a new sub <see cref="NBTTag"/> to the collection</summary>
+        /// <param name="Name">The name of the tag to add to the collection</param>
+        /// <param name="Value">The value of the tag to add to the collection</param>
+        public void Add(String Name, List<Int64> Value) {
+            this._Tag.Add(NBTTagFactory.Create(Name, Value));
+        }
+
+        /// <summary>Adds a new sub <see cref="NBTTag"/> to the collection</summary>
+        /// <param name="Name">The name of the tag to add to the collection</param>
+        /// <param name="Value">The value of the tag to add to the collection</param>
+        public void Add(String Name, List<Int16> Value) {
+            this._Tag.Add(NBTTagFactory.Create(Name, Value));
+        }
+
+        /// <summary>Adds a new sub <see cref="NBTTag"/> to the collection</summary>
+        /// <param name="Name">The name of the tag to add to the collection</param>
+        /// <param name="Value">The value of the tag to add to the collection</param>
+        public void Add(String Name, List<String> Value) {
+            this._Tag.Add(NBTTagFactory.Create(Name, Value));
+        }
+
+        #endregion
 
         /// <summary>Adds a new sub <see cref="NBTTagCompound"/> to the collection</summary>
         /// <param name="Name">The name of the tag to add to the collection</param>

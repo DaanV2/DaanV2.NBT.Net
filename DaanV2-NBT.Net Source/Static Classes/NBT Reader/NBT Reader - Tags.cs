@@ -31,6 +31,9 @@ namespace DaanV2.NBT {
             NBTTagType Type = (NBTTagType)FirstByte;
             ITag Receiver = NBTTagFactory.Create(Type);
 
+            if (Type == NBTTagType.End || Type == NBTTagType.Unknown)
+                return Receiver;
+
             ITagReader Reader;
             NBTReader._Readers.TryGetValue(Type, out Reader);
 

@@ -14,10 +14,12 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagList : ITagCollection {
+    public partial class NBTTagList : ITagCollection, IEnumerable<ITag>, IEnumerable {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name">The name of the tag</param>
         /// <returns></returns>
@@ -88,6 +90,22 @@ namespace DaanV2.NBT {
             }
 
             this._Tags.Add(tag);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerator GetEnumerator() {
+            return this._Tags.GetEnumerator();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        IEnumerator<ITag> IEnumerable<ITag>.GetEnumerator() {
+            return this._Tags.GetEnumerator();
         }
     }
 }

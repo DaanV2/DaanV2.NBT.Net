@@ -47,5 +47,12 @@ namespace DaanV2.NBT {
                 throw new ArgumentException($"{nameof(O)} must be of type {nameof(List<ITag>)}");
             }
         }
+
+        /// <summary></summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public override T ConvertValue<T>() {
+            return NBTCasting.ConvertTo<T>(this._Tags);
+        }
     }
 }

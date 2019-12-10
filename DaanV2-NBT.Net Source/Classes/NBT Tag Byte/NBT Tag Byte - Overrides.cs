@@ -48,5 +48,15 @@ namespace DaanV2.NBT {
             hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode(this._Name);
             return hashCode;
         }
+
+        /// <summary>Clones this tag into a new one</summary>
+        /// <returns>Clones this tag into a new one</returns>
+        public override ITag Clone() {
+            return new NBTTagByte() {
+                Name = (String)this.Name.Clone(),
+                Tags = this.Tags.Clone(),
+                Value = this.Value
+            };
+        }
     }
 }

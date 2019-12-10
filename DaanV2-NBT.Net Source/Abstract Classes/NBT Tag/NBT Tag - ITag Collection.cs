@@ -56,7 +56,7 @@ namespace DaanV2.NBT {
                 this._Tags.Add(value);
             }
         }
-
+        
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Index"></param>
         /// <returns></returns>
@@ -123,6 +123,58 @@ namespace DaanV2.NBT {
                     this._Tags.RemoveAt(I--);
                 }
             }
+        }
+
+        /// <summary></summary>
+        /// <param name="Name"></param>
+        /// <returns></returns>
+        public ITag GetSubTag(String Name) {
+            Int32 Max = this._Tags.Count;
+
+            for (Int32 I = 0; I < Max; I++) {
+                if (this._Tags[I].Name == Name) {
+                    return this._Tags[I];
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Index"></param>
+        /// <returns></returns>
+        public ITag GetSubTag(Int32 Index) {
+            return this._Tags[Index];
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Name"></param>
+        /// <returns></returns>
+        public T GetSubValue<T>(String Name) {
+            Int32 Max = this._Tags.Count;
+
+            for (Int32 I = 0; I < Max; I++) {
+                if (this._Tags[I].Name == Name) {
+                    return this._Tags[I].ConvertValue<T>();
+                }
+            }
+
+            return default;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Index"></param>
+        /// <returns></returns>
+        public T GetSubValue<T>(Int32 Index) {
+            return this._Tags[Index].ConvertValue<T>();
         }
     }
 }

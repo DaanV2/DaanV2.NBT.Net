@@ -81,11 +81,13 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary></summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public abstract T ConvertValue<T>();
+
+        /// <summary></summary>
+        /// <returns></returns>
+        public abstract ITag Clone();
     }
 }

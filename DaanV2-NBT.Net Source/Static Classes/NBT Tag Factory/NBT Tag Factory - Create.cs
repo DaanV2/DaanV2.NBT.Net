@@ -30,9 +30,7 @@ namespace DaanV2.NBT {
         /// <param name="type"></param>
         /// <returns></returns>
         public static ITag Create(NBTTagType type, String Name, Object Value) {
-            ITag Tag = NBTTagFactory.Types.ContainsKey(type) ?
-                (ITag)Activator.CreateInstance(Types[type]) :
-                null;
+            ITag Tag = NBTTagFactory.Create(type);
 
             if (Tag == null) {
                 return Tag;
@@ -47,6 +45,156 @@ namespace DaanV2.NBT {
             }
 
             return Tag;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static ITag Create(String Name, Boolean Value) {
+            ITag Out = NBTTagFactory.Create(NBTTagType.Byte);
+
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.Value, (Byte)(Value ? 1 : 0));
+
+            return Out;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static ITag Create(String Name, Byte Value) {
+            ITag Out = NBTTagFactory.Create(NBTTagType.Byte);
+
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.Value, Value);
+
+            return Out;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static ITag Create(String Name, Double Value) {
+            ITag Out = NBTTagFactory.Create(NBTTagType.Double);
+
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.Value, Value);
+
+            return Out;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static ITag Create(String Name, Single Value) {
+            ITag Out = NBTTagFactory.Create(NBTTagType.Float);
+
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.Value, Value);
+
+            return Out;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static ITag Create(String Name, Int32 Value) {
+            ITag Out = NBTTagFactory.Create(NBTTagType.Int);
+
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.Value, Value);
+
+            return Out;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static ITag Create(String Name, Int32[] Value) {
+            ITag Out = NBTTagFactory.Create(NBTTagType.IntArray);
+
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.Value, Value);
+
+            return Out;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static ITag Create(String Name, Int64 Value) {
+            ITag Out = NBTTagFactory.Create(NBTTagType.Long);
+
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.Value, Value);
+
+            return Out;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static ITag Create(String Name, Int64[] Value) {
+            ITag Out = NBTTagFactory.Create(NBTTagType.LongArray);
+
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.Value, Value);
+
+            return Out;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static ITag Create(String Name, Int16 Value) {
+            ITag Out = NBTTagFactory.Create(NBTTagType.Short);
+
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.Value, Value);
+
+            return Out;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public static ITag Create(String Name, String Value) {
+            ITag Out = NBTTagFactory.Create(NBTTagType.String);
+
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.Value, Value);
+
+            return Out;
         }
     }
 }

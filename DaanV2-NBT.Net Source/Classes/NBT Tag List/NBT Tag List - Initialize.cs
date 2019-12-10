@@ -30,13 +30,13 @@ namespace DaanV2.NBT {
 
         /// <summary>Creates a new instance of <see cref="NBTTagList"/></summary>
         /// <param name="Capacity">The capacity to set the collection to</param>
-        public NBTTagList(NBTTagType SubType, Int32 Capacity) : base(Capacity) {
+        public NBTTagList(NBTTagType SubType, Int32 Capacity = 10) : base(Capacity) {
             this._SubType = SubType;
         }
 
         /// <summary>Creates a new instance of <see cref="NBTTagList"/></summary>
         /// <param name="Capacity">The capacity to set the collection to</param>
-        public NBTTagList(String Name, NBTTagType SubType, Int32 Capacity) : base(Capacity) {
+        public NBTTagList(String Name, NBTTagType SubType, Int32 Capacity = 10) : base(Capacity) {
             this._Name = Name;
             this._SubType = SubType;
         }

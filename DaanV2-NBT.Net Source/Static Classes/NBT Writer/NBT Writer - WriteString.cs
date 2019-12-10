@@ -23,8 +23,9 @@ namespace DaanV2.NBT {
         /// <param name="Reader"></param>
         /// <returns></returns>
         public static void WriteString(Stream Writer, String Text) {
-            Writer.WriteInt16((Int16)Text.Length);
-            Writer.WriteBytes(Encoding.UTF8.GetBytes(Text));
+            Byte[] Bytes = Encoding.UTF8.GetBytes(Text);
+            Writer.WriteInt16((Int16)Bytes.Length);
+            Writer.WriteBytes(Bytes);
         }
     }
 }
