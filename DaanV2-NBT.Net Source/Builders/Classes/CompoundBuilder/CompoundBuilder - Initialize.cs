@@ -14,23 +14,27 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for class: NBTTagCompound</summary>
+namespace DaanV2.NBT.Builders {
+    ///DOLATER <summary> add description for class: CompoundBuilder</summary>
 	[Serializable, DataContract]
-    public partial class NBTTagCompound {
-        /// <summary>Creates a new instance of <see cref="NBTTagCompound"/></summary>
-        public NBTTagCompound() : base(10) { }
+    public partial class CompoundBuilder {
+        /// <summary>Creates a new instance of <see cref="CompoundBuilder"/></summary>
+        /// <param name="Name"></param>
+        /// <param name="Capacity"></param>
+        public CompoundBuilder(String Name, Int32 Capacity = 10) {
+            this._Tag = new NBTTagCompound(Name, Capacity);
+        }
 
-        /// <summary>Creates a new instance of <see cref="NBTTagCompound"/></summary>
-        /// <param name="Capacity">The capacity to set the collection to</param>
-        public NBTTagCompound(Int32 Capacity) : base(Capacity) { }
-
-        /// <summary>Creates a new instance of <see cref="NBTTagCompound"/></summary>
-        /// <param name="Capacity">The capacity to set the collection to</param>
-        public NBTTagCompound(String Name, Int32 Capacity) : base(Capacity) {
-            this._Name = Name;
+        /// <summary>Creates a new instance of <see cref="CompoundBuilder"/></summary>
+        /// <param name="Base"></param>
+        public CompoundBuilder(NBTTagCompound Base) {
+            this._Tag = Base;
         }
     }
 }

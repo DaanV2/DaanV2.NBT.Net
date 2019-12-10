@@ -41,7 +41,7 @@ namespace DaanV2.NBT {
         void SetInformation(NBTTagInformation InfoType, Object Info);
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="InfoType"></param>
+        /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
         /// <returns></returns>
         Object GetInformation(NBTTagInformation InfoType);
     }

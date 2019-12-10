@@ -28,6 +28,12 @@ namespace DaanV2.NBT {
         /// <param name="Value"></param>
         public NBTTagByte(String Name, Byte Value) : base(Name, Value) { }
 
+        /// <summary>Creates a new instance of <see cref="NBTTagByte"/></summary>
+        /// <param name="Name"></param>
+        /// <param name="Value"></param>
+        public NBTTagByte(String Name, Boolean Value) : base(Name, (Byte)(Value ? 1 : 0)) { }
+
+
         ///DOLATER <summary>Add Description</summary>
         private static readonly NBTTagType _Type = NBTTagType.Byte;
 

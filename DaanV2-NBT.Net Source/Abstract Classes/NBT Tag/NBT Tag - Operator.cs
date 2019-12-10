@@ -18,32 +18,32 @@ using System;
 namespace DaanV2.NBT {
     public abstract partial class NBTTag {
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first object to compare</param>
+        /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator ==(NBTTag A, NBTTag B) {
             return A._Name.Equals(B._Name) && A._Tags.Equals(B._Tags);
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first object to compare</param>
+        /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator !=(NBTTag A, NBTTag B) {
             return !A._Name.Equals(B._Name) && A._Tags.Equals(B._Tags);
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first object to compare</param>
+        /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator ==(NBTTag A, Object B) {
             return A.Equals(B);
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first object to compare</param>
+        /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator !=(NBTTag A, Object B) {
             return !A.Equals(B);

@@ -21,6 +21,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - Operator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - Overrides.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\CompoundBuilder\CompoundBuilder - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\CompoundBuilder\CompoundBuilder - Add.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\CompoundBuilder\CompoundBuilder - Result.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\CompoundBuilder\CompoundBuilder - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\ListBuilder\ListBuilder - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\ListBuilder\ListBuilder - Add.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\ListBuilder\ListBuilder - Result.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\ListBuilder\ListBuilder - Variables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte Array\NBT Tag Byte Array - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte Array\NBT Tag Byte Array - Overrides.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte Array\NBT Tag Byte Array - Operator.cs" />

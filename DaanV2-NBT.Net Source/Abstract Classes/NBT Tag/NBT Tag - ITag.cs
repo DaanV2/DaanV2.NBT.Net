@@ -61,7 +61,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="InfoType"></param>
+        /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
         /// <returns></returns>
         public virtual Object GetInformation(NBTTagInformation InfoType) {
             switch (InfoType) {

@@ -20,7 +20,7 @@ namespace DaanV2.NBT {
     public partial class NBTTagByte {
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="other"></param>
+        /// <param name="Obj"></param>
         /// <returns></returns>
         public override Boolean Equals(Object Obj) {
             if (Obj is NBTTagByte Tag) {

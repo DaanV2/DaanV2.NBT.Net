@@ -82,6 +82,27 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
+        /// <param name=""></param>
+        public virtual void Add(ITag[] tags) {
+            Int32 MaxTag = tags.Length;
+            ITag tag;
+
+            for (Int32 J = 0; J < MaxTag; J++) {
+                tag = tags[J];
+
+                Int32 Max = this._Tags.Count;
+                for (Int32 I = 0; I < Max; I++) {
+                    if (this._Tags[I].Name == tag.Name) {
+                        this._Tags[I] = tag;
+                        continue;
+                    }
+                }
+
+                this._Tags.Add(tag);
+            }
+        }
+
+        ///DOLATER <summary>Add Description</summary>
         public virtual void Clear() {
             this._Tags.Clear();
         }
