@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for class: ArrayExtension</summary>
+    /// <summary>The static class that extends upon existing array/collections</summary>
     public static partial class ArrayExtension {
         public static List<ITag> Clone(this List<ITag> Values) {
             Int32 Count = Values.Count;

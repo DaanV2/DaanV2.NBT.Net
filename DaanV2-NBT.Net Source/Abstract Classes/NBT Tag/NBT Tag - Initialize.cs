@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for abstract class: NBTTag</summary>
+    /// <summary>An abstract classes that forms the basis of any NBT Tag</summary>
     [Serializable, DataContract]
     public abstract partial class NBTTag {
         /// <summary>Creates a new instance of <see cref="NBTTag"/></summary>
