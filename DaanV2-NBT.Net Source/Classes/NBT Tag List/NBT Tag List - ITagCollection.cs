@@ -83,17 +83,13 @@ namespace DaanV2.NBT {
             this._Tags.Add(tag);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public IEnumerator GetEnumerator() {
             return this._Tags.GetEnumerator();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         IEnumerator<ITag> IEnumerable<ITag>.GetEnumerator() {
             return this._Tags.GetEnumerator();

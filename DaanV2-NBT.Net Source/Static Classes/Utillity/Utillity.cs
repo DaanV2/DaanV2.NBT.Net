@@ -20,9 +20,7 @@ using System.Reflection;
 namespace DaanV2.NBT {
     ///DOLATER <summary> add description for class: Utillity</summary>
     public static partial class Utillity {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public static List<T> GetInterfaces<T>() {
             List<T> Out = new List<T>(10);

@@ -18,9 +18,7 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public static partial class NBTTagFactory {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name="SubType"></param>
         /// <returns></returns>
@@ -31,9 +29,7 @@ namespace DaanV2.NBT {
             return (Out, TagType);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="List"></param>
         /// <param name="SubType"></param>
@@ -49,9 +45,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -68,9 +62,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -80,9 +72,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -92,9 +82,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -104,9 +92,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -116,9 +102,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -128,9 +112,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -140,9 +122,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>

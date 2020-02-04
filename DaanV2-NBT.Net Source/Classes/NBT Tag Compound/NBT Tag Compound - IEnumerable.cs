@@ -18,17 +18,13 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public partial class NBTTagCompound : IEnumerable<ITag> {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public IEnumerator<ITag> GetEnumerator() {
             return this._Tags.GetEnumerator();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator() {
             return this._Tags.GetEnumerator();

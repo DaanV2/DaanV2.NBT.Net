@@ -107,9 +107,7 @@ namespace DaanV2.NBT {
             return hashCode;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         public override ITag Clone() {
             NBTTagList Out = new NBTTagList(this.SubType, this._Tags.Count) {

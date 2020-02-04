@@ -19,9 +19,7 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
     public partial class NBTTagCompound : NBTTag {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         private const NBTTagType _Type = NBTTagType.Compound;
 
         ///DOLATER <summary>Add Description</summary>
@@ -49,9 +47,7 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public override T ConvertValue<T>() {

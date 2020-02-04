@@ -47,9 +47,7 @@ namespace DaanV2.NBT {
             return Tag;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -62,9 +60,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -77,9 +73,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -92,9 +86,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -107,9 +99,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -122,9 +112,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -137,9 +125,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -152,9 +138,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -167,9 +151,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>
@@ -182,9 +164,7 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
         /// <returns></returns>

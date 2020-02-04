@@ -19,9 +19,7 @@ using System.Collections.Generic;
 namespace DaanV2.NBT.Builders {
     public partial class CompoundBuilder {
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name="tag"></param>
         public void Add(ITag tag) {
             this._Tag.Add(tag);

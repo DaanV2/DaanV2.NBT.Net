@@ -50,9 +50,7 @@ namespace DaanV2.NBT {
             return !A.Equals(B);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <param name=""></param>
         /// <param name=""></param>
         /// <returns></returns>

@@ -50,7 +50,7 @@ namespace DaanV2.NBT {
         /// <returns></returns>
         Object GetInformation(NBTTagInformation InfoType);
 
-        /// <summary></summary>
+        ///DOLATER <summary>Add Description</summary>
         /// <returns></returns>
         ITag Clone();
     }
