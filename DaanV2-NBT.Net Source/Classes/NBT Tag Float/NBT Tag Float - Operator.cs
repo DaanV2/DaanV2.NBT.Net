@@ -17,34 +17,34 @@ using System;
 
 namespace DaanV2.NBT {
     public partial class NBTTagFloat {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Compare two objects to one another to see if they are equal</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        /// <returns>Compare two objects to one another to see if they are equal</returns>
         public static Boolean operator ==(NBTTagFloat A, NBTTagFloat B) {
             return A._Value.Equals(B._Value) && A._Name.Equals(B._Name);
         }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Compare two objects to one another to see if they are not equal</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        /// <returns>Compare two objects to one another to see if they are not equal</returns>
         public static Boolean operator !=(NBTTagFloat A, NBTTagFloat B) {
             return !(A._Value.Equals(B._Value) || A._Name.Equals(B._Name));
         }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Compare two objects to one another to see if they are equal</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        /// <returns>Compare two objects to one another to see if they are equal</returns>
         public static Boolean operator ==(NBTTagFloat A, Object B) {
             return A.Equals(B);
         }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Compare two objects to one another to see if they are not equal</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        /// <returns>Compare two objects to one another to see if they are not equal</returns>
         public static Boolean operator !=(NBTTagFloat A, Object B) {
             return !A.Equals(B);
         }

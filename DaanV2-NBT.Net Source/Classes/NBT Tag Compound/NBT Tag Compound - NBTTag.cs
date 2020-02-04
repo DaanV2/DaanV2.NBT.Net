@@ -41,8 +41,8 @@ namespace DaanV2.NBT {
             return this._Tags is T Out ? Out : (default);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="O"></param>
+        /// <summary>Sets the value of this <see cref="NBTTag" /></summary>
+        /// <param name="O">The object to store</param>
         public override void SetValue(Object O) {
             if (O is List<ITag> Temp) {
                 this._Tags = Temp;
