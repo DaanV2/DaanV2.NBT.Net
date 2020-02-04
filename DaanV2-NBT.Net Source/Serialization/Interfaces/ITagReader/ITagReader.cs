@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace DaanV2.NBT.Serialization {
     ///DOLATER <summary> add description for interface: ITagReader</summary>

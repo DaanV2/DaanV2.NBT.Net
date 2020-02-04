@@ -56,7 +56,7 @@ namespace DaanV2.NBT {
                 this._Tags.Add(value);
             }
         }
-        
+
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Index"></param>
         /// <returns></returns>

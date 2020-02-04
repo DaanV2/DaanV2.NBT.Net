@@ -7,7 +7,7 @@ namespace DaanV2.NBT.Serialization {
     /// </summary>
     public partial class NBTTagListReader : ITagReader {
         /// <summary>Gets the type for which this object can read</summary>
-        static private readonly NBTTagType[] _ForType = new NBTTagType[] { NBTTagType.List };
+        private static readonly NBTTagType[] _ForType = new NBTTagType[] { NBTTagType.List };
 
         /// <summary>Gets the type for which this object can read</summary>
         public NBTTagType[] ForType => _ForType;

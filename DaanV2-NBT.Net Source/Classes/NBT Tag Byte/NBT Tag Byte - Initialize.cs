@@ -32,7 +32,7 @@ namespace DaanV2.NBT {
         /// <param name="Name">The name of the tag</param>
         /// <param name="Value">The value of the tag</param>
         public NBTTagByte(String Name, Boolean Value) : base(Name, (Byte)(Value ? 1 : 0)) { }
-        
+
         ///DOLATER <summary>Add Description</summary>
         private static readonly NBTTagType _Type = NBTTagType.Byte;
 

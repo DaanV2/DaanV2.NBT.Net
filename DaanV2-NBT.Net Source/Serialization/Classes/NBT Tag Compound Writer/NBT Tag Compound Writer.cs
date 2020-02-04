@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DaanV2.NBT.Serialization {
     ///DOLATER <summary> add description for class: NBTTagCompoundWriter</summary>
     public partial class NBTTagCompoundWriter : ITagWriter {
         /// <summary>Gets the type for which this object can write</summary>
-        static private readonly NBTTagType[] _ForType = new NBTTagType[] { NBTTagType.Compound };
+        private static readonly NBTTagType[] _ForType = new NBTTagType[] { NBTTagType.Compound };
 
         /// <summary>Writes the nbt's header to the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to write to the <see cref="Stream"/></param>

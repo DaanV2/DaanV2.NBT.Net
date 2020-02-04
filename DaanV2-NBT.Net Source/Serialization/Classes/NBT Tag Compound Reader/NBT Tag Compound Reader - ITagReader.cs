@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace DaanV2.NBT.Serialization {
     /// <summary>
@@ -11,7 +6,7 @@ namespace DaanV2.NBT.Serialization {
     /// </summary>
     public partial class NBTTagCompoundReader : ITagReader {
         /// <summary>Gets the type for which this object can read</summary>
-        static private readonly NBTTagType[] _ForType = new NBTTagType[] { NBTTagType.Compound };
+        private static readonly NBTTagType[] _ForType = new NBTTagType[] { NBTTagType.Compound };
 
         /// <summary>Gets the type for which this object can read</summary>
         public NBTTagType[] ForType => _ForType;
