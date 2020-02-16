@@ -17,7 +17,6 @@ using System;
 using System.IO;
 
 namespace DaanV2.NBT {
-
     public static partial class StreamExtension {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
@@ -70,6 +69,48 @@ namespace DaanV2.NBT {
             }
 
             return BitConverter.ToInt64(Buffer, 0);
+        }
+
+        ///DOLATER <summary>Add Description</summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public static UInt16 ReadUInt16(this Stream stream) {
+            Byte[] Buffer = new Byte[2];
+            stream.Read(Buffer, 0, 2);
+
+            if (BitConverter.IsLittleEndian) {
+                Array.Reverse(Buffer);
+            }
+
+            return BitConverter.ToUInt16(Buffer, 0);
+        }
+
+        ///DOLATER <summary>Add Description</summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public static UInt32 ReadUInt32(this Stream stream) {
+            Byte[] Buffer = new Byte[4];
+            stream.Read(Buffer, 0, 4);
+
+            if (BitConverter.IsLittleEndian) {
+                Array.Reverse(Buffer);
+            }
+
+            return BitConverter.ToUInt32(Buffer, 0);
+        }
+
+        ///DOLATER <summary>Add Description</summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public static UInt64 ReadUInt64(this Stream stream) {
+            Byte[] Buffer = new Byte[8];
+            stream.Read(Buffer, 0, 8);
+
+            if (BitConverter.IsLittleEndian) {
+                Array.Reverse(Buffer);
+            }
+
+            return BitConverter.ToUInt64(Buffer, 0);
         }
 
         ///DOLATER <summary>Add Description</summary>
