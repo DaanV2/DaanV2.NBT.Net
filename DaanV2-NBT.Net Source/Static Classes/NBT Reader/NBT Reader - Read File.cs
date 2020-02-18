@@ -15,15 +15,16 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
+using DaanV2.Binary;
 
 namespace DaanV2.NBT {
     public static partial class NBTReader {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
         /// <returns></returns>
-        public static ITag ReadFile(String Filepath, NBTCompression Compression = NBTCompression.Auto) {
+        public static ITag ReadFile(String Filepath, Endianness endianness, NBTCompression Compression = NBTCompression.Auto) {
             Stream Stream = CompressionStream.GetDecompressionStream(new FileStream(Filepath, FileMode.Open, FileAccess.ReadWrite), Compression);
-            ITag Out = ReadFile(Stream);
+            ITag Out = ReadFile(Stream, endianness);
             Stream.Close();
 
             return Out;
@@ -32,8 +33,8 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
         /// <returns></returns>
-        public static ITag ReadFile(Stream stream) {
-            return Read(stream);
+        public static ITag ReadFile(Stream stream, Endianness endianness) {
+            return Read(stream, endianness);
         }
     }
 }

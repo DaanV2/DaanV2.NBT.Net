@@ -15,6 +15,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
+using DaanV2.Binary;
 using DaanV2.NBT.Serialization;
 
 namespace DaanV2.NBT {
@@ -22,7 +23,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
         /// <returns></returns>
-        public static ITag Read(Stream stream) {
+        public static ITag Read(Stream stream, Endianness endianness) {
             Int32 FirstByte = stream.ReadByte();
             if (FirstByte == -1) {
                 return default;
@@ -42,8 +43,8 @@ namespace DaanV2.NBT {
                 throw new Exception($"No ITagWriter found for: {Type}");
             }
 
-            Reader.ReadHeader(Receiver, stream);
-            Reader.ReadContent(Receiver, stream);
+            Reader.ReadHeader(Receiver, stream, endianness);
+            Reader.ReadContent(Receiver, stream, endianness);
 
             return Receiver;
         }
@@ -52,7 +53,7 @@ namespace DaanV2.NBT {
         /// <param name="Reader"></param>
         /// <param name="Type"></param>
         /// <returns></returns>
-        public static void ReadHeader(NBTTagType Type, Stream stream, ITag Receiver) {
+        public static void ReadHeader(NBTTagType Type, Stream stream, ITag Receiver, Endianness endianness) {
             ITagReader Reader;
             NBTReader._Readers.TryGetValue(Type, out Reader);
 
@@ -60,13 +61,13 @@ namespace DaanV2.NBT {
                 throw new Exception($"No ITagWriter found for: {Type}");
             }
 
-            Reader.ReadHeader(Receiver, stream);
+            Reader.ReadHeader(Receiver, stream, endianness);
         }
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Type"></param>
         /// <param name="Tag"></param>
-        public static void ReadContent(NBTTagType Type, Stream stream, ITag Receiver) {
+        public static void ReadContent(NBTTagType Type, Stream stream, ITag Receiver, Endianness endianness) {
             ITagReader Reader;
             NBTReader._Readers.TryGetValue(Type, out Reader);
 
@@ -74,7 +75,7 @@ namespace DaanV2.NBT {
                 throw new Exception($"No ITagWriter found for: {Type}");
             }
 
-            Reader.ReadContent(Receiver, stream);
+            Reader.ReadContent(Receiver, stream, endianness);
         }
     }
 }

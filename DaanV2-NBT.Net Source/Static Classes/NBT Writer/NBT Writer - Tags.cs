@@ -15,6 +15,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
+using DaanV2.Binary;
 using DaanV2.NBT.Serialization;
 
 namespace DaanV2.NBT {
@@ -22,7 +23,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name=""></param>
         /// <param name="stream"></param>
-        public static void Write(ITag tag, Stream stream) {
+        public static void Write(ITag tag, Stream stream, Endianness endianness) {
             ITagWriter Writer;
             NBTWriter._Writers.TryGetValue(tag.Type, out Writer);
 
@@ -30,14 +31,14 @@ namespace DaanV2.NBT {
                 throw new Exception($"No ITagWriter found for: {tag.Type}");
             }
 
-            Writer.WriteHeader(tag, stream);
-            Writer.WriteContent(tag, stream);
+            Writer.WriteHeader(tag, stream, endianness);
+            Writer.WriteContent(tag, stream, endianness);
         }
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="tag"></param>
         /// <param name="stream"></param>
-        public static void WriteHeader(ITag tag, Stream stream) {
+        public static void WriteHeader(ITag tag, Stream stream, Endianness endianness) {
             ITagWriter Writer;
             NBTWriter._Writers.TryGetValue(tag.Type, out Writer);
 
@@ -45,13 +46,13 @@ namespace DaanV2.NBT {
                 throw new Exception($"No ITagWriter found for: {tag.Type}");
             }
 
-            Writer.WriteHeader(tag, stream);
+            Writer.WriteHeader(tag, stream, endianness);
         }
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="tag"></param>
         /// <param name="stream"></param>
-        public static void WriteContent(ITag tag, Stream stream) {
+        public static void WriteContent(ITag tag, Stream stream, Endianness endianness) {
             ITagWriter Writer;
             NBTWriter._Writers.TryGetValue(tag.Type, out Writer);
 
@@ -59,7 +60,7 @@ namespace DaanV2.NBT {
                 throw new Exception($"No ITagWriter found for: {tag.Type}");
             }
 
-            Writer.WriteContent(tag, stream);
+            Writer.WriteContent(tag, stream, endianness);
         }
     }
 }

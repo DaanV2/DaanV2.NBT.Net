@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization {
     ///DOLATER <summary> add description for class: NBTTagBaseTypeWriter</summary>
@@ -22,33 +23,33 @@ namespace DaanV2.NBT.Serialization {
         /// <summary>Writes the nbt's header to the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
         /// <param name="Writer">The <see cref="Stream"/> to write to</param>
-        public void WriteHeader(ITag tag, Stream Writer) {
+        public void WriteHeader(ITag tag, Stream Writer, Endianness endianness) {
             Writer.WriteByte((Byte)tag.Type);
-            NBTWriter.WriteString(Writer, tag.Name);
+            NBTWriter.WriteString(Writer, tag.Name, endianness);
         }
 
         /// <summary>Writes the nbt's content to the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
         /// <param name="Writer">The <see cref="Stream"/> to write to</param>
-        public void WriteContent(ITag tag, Stream Writer) {
+        public void WriteContent(ITag tag, Stream Writer, Endianness endianness) {
             switch (tag.Type) {
                 //Arrays
                 case NBTTagType.ByteArray:
                     Byte[] Bytes = tag.GetValue<Byte[]>();
-                    Writer.WriteInt32(Bytes.Length);
+                    Writer.WriteInt32(Bytes.Length, endianness);
                     Writer.WriteBytes(Bytes);
 
                     return;
                 case NBTTagType.IntArray:
                     Int32[] Ints = tag.GetValue<Int32[]>();
-                    Writer.WriteInt32(Ints.Length);
-                    Writer.WriteInt32Array(Ints);
+                    Writer.WriteInt32(Ints.Length, endianness);
+                    Writer.WriteInt32Array(Ints, endianness);
 
                     return;
                 case NBTTagType.LongArray:
                     Int64[] Longs = tag.GetValue<Int64[]>();
-                    Writer.WriteInt32(Longs.Length);
-                    Writer.WriteInt64Array(Longs);
+                    Writer.WriteInt32(Longs.Length, endianness);
+                    Writer.WriteInt64Array(Longs, endianness);
 
                     return;
 
@@ -58,27 +59,27 @@ namespace DaanV2.NBT.Serialization {
                     return;
 
                 case NBTTagType.Short:
-                    Writer.WriteInt16(tag.GetValue<Int16>());
+                    Writer.WriteInt16(tag.GetValue<Int16>(), endianness);
                     return;
 
                 case NBTTagType.Int:
-                    Writer.WriteInt32(tag.GetValue<Int32>());
+                    Writer.WriteInt32(tag.GetValue<Int32>(), endianness);
                     return;
 
                 case NBTTagType.Long:
-                    Writer.WriteInt64(tag.GetValue<Int64>());
+                    Writer.WriteInt64(tag.GetValue<Int64>(), endianness);
                     return;
 
                 case NBTTagType.Double:
-                    Writer.WriteDouble(tag.GetValue<Double>());
+                    Writer.WriteDouble(tag.GetValue<Double>(), endianness);
                     return;
 
                 case NBTTagType.Float:
-                    Writer.WriteFloat(tag.GetValue<Single>());
+                    Writer.WriteFloat(tag.GetValue<Single>(), endianness);
                     return;
 
                 case NBTTagType.String:
-                    NBTWriter.WriteString(Writer, tag.GetValue<String>());
+                    NBTWriter.WriteString(Writer, tag.GetValue<String>(), endianness);
 
                     return;
                 case NBTTagType.End:

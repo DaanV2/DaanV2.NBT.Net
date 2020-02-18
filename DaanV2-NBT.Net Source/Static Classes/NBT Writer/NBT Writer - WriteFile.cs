@@ -15,6 +15,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
+using DaanV2.Binary;
 
 namespace DaanV2.NBT {
     public static partial class NBTWriter {
@@ -22,9 +23,9 @@ namespace DaanV2.NBT {
         /// <param name="Filepath"></param>
         /// <param name="Object"></param>
         /// <param name="compression"></param>
-        public static Stream WriteFile(String Filepath, ITag Tag, NBTCompression compression) {
+        public static Stream WriteFile(String Filepath, ITag Tag, NBTCompression compression, Endianness endianness) {
             FileStream Writer = new FileStream(Filepath, FileMode.Create);
-            Stream stream = WriteFile(Writer, Tag, compression);
+            Stream stream = WriteFile(Writer, Tag, compression, endianness);
             stream.Flush();
             stream.Close();
             return stream;
@@ -34,10 +35,10 @@ namespace DaanV2.NBT {
         /// <param name="Filepath"></param>
         /// <param name="Object"></param>
         /// <param name="compression"></param>
-        public static Stream WriteFile(Stream stream, ITag Tag, NBTCompression compression) {
+        public static Stream WriteFile(Stream stream, ITag Tag, NBTCompression compression, Endianness endianness) {
             stream = CompressionStream.GetCompressionStream(stream, compression);
 
-            Write(Tag, stream);
+            Write(Tag, stream, endianness);
             return stream;
         }
     }

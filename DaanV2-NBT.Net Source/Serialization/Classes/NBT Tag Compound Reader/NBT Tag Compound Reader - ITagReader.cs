@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization {
     /// <summary>
@@ -13,21 +14,21 @@ namespace DaanV2.NBT.Serialization {
 
         /// <summary>Reads the nbt's content from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
-        /// <param name="Writer">The <see cref="Stream"/> to read from</param>
-        public void ReadContent(ITag tag, Stream Reader) {
-            ITag SubTag = NBTReader.Read(Reader);
+        /// <param name="Reader">The <see cref="Stream"/> to read from</param>
+        public void ReadContent(ITag tag, Stream Reader, Endianness endianness) {
+            ITag SubTag = NBTReader.Read(Reader, endianness);
 
             while (SubTag != null) {
                 tag.Add(SubTag);
-                SubTag = NBTReader.Read(Reader);
+                SubTag = NBTReader.Read(Reader, endianness);
             }
         }
 
         /// <summary>Reads the nbt's header from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
-        /// <param name="Writer">The <see cref="Stream"/> to read from</param>
-        public void ReadHeader(ITag tag, Stream Reader) {
-            tag.Name = NBTReader.ReadString(Reader);
+        /// <param name="Reader">The <see cref="Stream"/> to read from</param>
+        public void ReadHeader(ITag tag, Stream Reader, Endianness endianness) {
+            tag.Name = NBTReader.ReadString(Reader, endianness);
         }
     }
 }

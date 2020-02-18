@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using DaanV2.Binary;
+using DaanV2.IO;
 
 namespace DaanV2.NBT.Serialization {
     ///DOLATER <summary> add description for class: NBTTagBaseTypeReader</summary>
@@ -25,24 +27,24 @@ namespace DaanV2.NBT.Serialization {
         /// <summary>Reads the nbt's content from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
         /// <param name="Writer">The <see cref="Stream"/> to read from</param>
-        public void ReadContent(ITag tag, Stream Reader) {
+        public void ReadContent(ITag tag, Stream Reader, Endianness endianness) {
             Int32 Length;
 
             switch (tag.Type) {
                 //Arrays
                 case NBTTagType.ByteArray:
-                    Length = Reader.ReadInt32();
-                    tag.SetValue(Reader.ReadByteArray(Length));
+                    Length = Reader.ReadInt32(endianness);
+                    tag.SetValue(Reader.ReadBytes(Length));
                     return;
 
                 case NBTTagType.IntArray:
-                    Length = Reader.ReadInt32();
-                    tag.SetValue(Reader.ReadInt32Array(Length));
+                    Length = Reader.ReadInt32(endianness);
+                    tag.SetValue(Reader.ReadInt32Array(Length, endianness));
                     return;
 
                 case NBTTagType.LongArray:
-                    Length = Reader.ReadInt32();
-                    tag.SetValue(Reader.ReadInt64Array(Length));
+                    Length = Reader.ReadInt32(endianness);
+                    tag.SetValue(Reader.ReadInt64Array(Length, endianness));
                     return;
 
                 //Values
@@ -51,27 +53,27 @@ namespace DaanV2.NBT.Serialization {
                     return;
 
                 case NBTTagType.Short:
-                    tag.SetValue(Reader.ReadInt16());
+                    tag.SetValue(Reader.ReadInt16(endianness));
                     return;
 
                 case NBTTagType.Int:
-                    tag.SetValue(Reader.ReadInt32());
+                    tag.SetValue(Reader.ReadInt32(endianness));
                     return;
 
                 case NBTTagType.Long:
-                    tag.SetValue(Reader.ReadInt64());
+                    tag.SetValue(Reader.ReadInt64(endianness));
                     return;
 
                 case NBTTagType.Double:
-                    tag.SetValue(Reader.ReadDouble());
+                    tag.SetValue(Reader.ReadDouble(endianness));
                     return;
 
                 case NBTTagType.Float:
-                    tag.SetValue(Reader.ReadFloat());
+                    tag.SetValue(Reader.ReadFloat(endianness));
                     return;
 
                 case NBTTagType.String:
-                    tag.SetValue(NBTReader.ReadString(Reader));
+                    tag.SetValue(NBTReader.ReadString(Reader, endianness));
                     return;
                 case NBTTagType.Unknown:
                 case NBTTagType.End:
@@ -82,9 +84,9 @@ namespace DaanV2.NBT.Serialization {
 
         /// <summary>Reads the nbt's header from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
-        /// <param name="Writer">The <see cref="Stream"/> to read from</param>
-        public void ReadHeader(ITag tag, Stream Reader) {
-            tag.Name = NBTReader.ReadString(Reader);
+        /// <param name="Reader">The <see cref="Stream"/> to read from</param>
+        public void ReadHeader(ITag tag, Stream Reader, Endianness endianness) {
+            tag.Name = NBTReader.ReadString(Reader, endianness);
         }
     }
 }

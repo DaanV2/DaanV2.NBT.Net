@@ -16,15 +16,16 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
 using System.Text;
+using DaanV2.Binary;
 
 namespace DaanV2.NBT {
     public static partial class NBTWriter {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
         /// <returns></returns>
-        public static void WriteString(Stream Writer, String Text) {
+        public static void WriteString(Stream Writer, String Text, Endianness endianness) {
             Byte[] Bytes = Encoding.UTF8.GetBytes(Text);
-            Writer.WriteInt16((Int16)Bytes.Length);
+            Writer.WriteInt16((Int16)Bytes.Length, endianness);
             Writer.WriteBytes(Bytes);
         }
     }

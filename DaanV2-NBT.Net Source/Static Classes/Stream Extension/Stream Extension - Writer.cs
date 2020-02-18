@@ -15,6 +15,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
+using DaanV2.Binary;
 
 namespace DaanV2.NBT {
 
@@ -29,99 +30,80 @@ namespace DaanV2.NBT {
         /// <summary>Writes an <see cref="Int16"/> into the <see cref="Stream"/></summary>
         /// <param name="stream">The <see cref="Stream"/> to write to</param>
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
-        public static void WriteInt16(this Stream stream, Int16 Value) {
-            Byte[] Buffer = BitConverter.GetBytes(Value);
-
-            if (BitConverter.IsLittleEndian) {
-                Array.Reverse(Buffer);
-            }
-
+        public static void WriteInt16(this Stream stream, Int16 Value, Endianness endianness) {
+            Byte[] Buffer = DaanV2.Binary.BitConverter.Endian.ToBytes(Value, endianness);
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
         /// <summary>Writes an <see cref="Int32"/> into the <see cref="Stream"/></summary>
         /// <param name="stream">The <see cref="Stream"/> to write to</param>
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
-        public static void WriteInt32(this Stream stream, Int32 Value) {
-            Byte[] Buffer = BitConverter.GetBytes(Value);
-
-            if (BitConverter.IsLittleEndian) {
-                Array.Reverse(Buffer);
-            }
-
+        public static void WriteInt32(this Stream stream, Int32 Value, Endianness endianness) {
+            Byte[] Buffer = DaanV2.Binary.BitConverter.Endian.ToBytes(Value, endianness);
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
         /// <summary>Writes an <see cref="Int64"/> into the <see cref="Stream"/></summary>
         /// <param name="stream">The <see cref="Stream"/> to write to</param>
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
-        public static void WriteInt64(this Stream stream, Int64 Value) {
-            Byte[] Buffer = BitConverter.GetBytes(Value);
-
-            if (BitConverter.IsLittleEndian) {
-                Array.Reverse(Buffer);
-            }
-
+        public static void WriteInt64(this Stream stream, Int64 Value, Endianness endianness) {
+            Byte[] Buffer = DaanV2.Binary.BitConverter.Endian.ToBytes(Value, endianness);
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
         /// <summary>Writes an <see cref="Single"/> into the <see cref="Stream"/></summary>
         /// <param name="stream">The <see cref="Stream"/> to write to</param>
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
-        public static void WriteFloat(this Stream stream, Single Value) {
-            Byte[] Buffer = BitConverter.GetBytes(Value);
-
-            if (BitConverter.IsLittleEndian) {
-                Array.Reverse(Buffer);
-            }
-
+        public static void WriteFloat(this Stream stream, Single Value, Endianness endianness) {
+            Byte[] Buffer = DaanV2.Binary.BitConverter.Endian.ToBytes((Int32)Value, endianness);
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
         /// <summary>Writes an <see cref="Double"/> into the <see cref="Stream"/></summary>
         /// <param name="stream">The <see cref="Stream"/> to write to</param>
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
-        public static void WriteDouble(this Stream stream, Double Value) {
-            Byte[] Buffer = BitConverter.GetBytes(Value);
-
-            if (BitConverter.IsLittleEndian) {
-                Array.Reverse(Buffer);
-            }
-
+        public static void WriteDouble(this Stream stream, Double Value, Endianness endianness) {
+            Byte[] Buffer = DaanV2.Binary.BitConverter.Endian.ToBytes((Int64)Value, endianness);
             stream.Write(Buffer, 0, Buffer.Length);
         }
 
         /// <summary>Writes an array of <see cref="Int32"/> into the <see cref="Stream"/></summary>
         /// <param name="stream">The <see cref="Stream"/> to write to</param>
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
-        public static void WriteInt32Array(this Stream stream, Int32[] Value) {
+        public static void WriteInt32Array(this Stream stream, Int32[] Value, Endianness endianness) {
             Byte[] Buffer;
 
-            for (Int32 I = 0; I < Value.Length; I++) {
-                Buffer = BitConverter.GetBytes(Value[I]);
-
-                if (BitConverter.IsLittleEndian) {
-                    Array.Reverse(Buffer);
+            if (endianness == Endianness.BigEndian) {
+                for (Int32 I = 0; I < Value.Length; I++) {
+                    Buffer = Binary.BitConverter.BigEndian.ToBytes(Value[I]);
+                    stream.Write(Buffer, 0, Buffer.Length);
                 }
-
-                stream.Write(Buffer, 0, Buffer.Length);
+            }
+            else {
+                for (Int32 I = 0; I < Value.Length; I++) {
+                    Buffer = Binary.BitConverter.LittleEndian.ToBytes(Value[I]);
+                    stream.Write(Buffer, 0, Buffer.Length);
+                }
             }
         }
 
         /// <summary>Writes an array of <see cref="Int64"/> into the <see cref="Stream"/></summary>
         /// <param name="stream">The <see cref="Stream"/> to write to</param>
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
-        public static void WriteInt64Array(this Stream stream, Int64[] Value) {
+        public static void WriteInt64Array(this Stream stream, Int64[] Value, Endianness endianness) {
             Byte[] Buffer;
 
-            for (Int32 I = 0; I < Value.Length; I++) {
-                Buffer = BitConverter.GetBytes(Value[I]);
-
-                if (BitConverter.IsLittleEndian) {
-                    Array.Reverse(Buffer);
+            if (endianness == Endianness.BigEndian) {
+                for (Int32 I = 0; I < Value.Length; I++) {
+                    Buffer = Binary.BitConverter.BigEndian.ToBytes(Value[I]);
+                    stream.Write(Buffer, 0, Buffer.Length);
                 }
-
-                stream.Write(Buffer, 0, Buffer.Length);
+            }
+            else {
+                for (Int32 I = 0; I < Value.Length; I++) {
+                    Buffer = Binary.BitConverter.LittleEndian.ToBytes(Value[I]);
+                    stream.Write(Buffer, 0, Buffer.Length);
+                }
             }
         }
     }

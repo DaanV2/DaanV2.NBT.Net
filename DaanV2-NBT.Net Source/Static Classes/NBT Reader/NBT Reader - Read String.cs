@@ -16,14 +16,18 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
 using System.Text;
+using DaanV2.Binary;
 
 namespace DaanV2.NBT {
     public static partial class NBTReader {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
         /// <returns></returns>
-        public static String ReadString(Stream Reader) {
-            Int32 Length = Reader.ReadInt16();
+        public static String ReadString(Stream Reader, Endianness endianness) {
+            Byte[] Data = new Byte[4];
+
+            Reader.Read(Data, 0, Data.Length);
+            Int32 Length = Binary.BitConverter.Endian.ToInt32(Data, endianness);
             return Encoding.UTF8.GetString(Reader.ReadBytes(Length));
         }
     }
