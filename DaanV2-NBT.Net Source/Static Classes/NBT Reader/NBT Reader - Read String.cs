@@ -24,10 +24,10 @@ namespace DaanV2.NBT {
         /// <param name="Reader"></param>
         /// <returns></returns>
         public static String ReadString(Stream Reader, Endianness endianness) {
-            Byte[] Data = new Byte[4];
+            Byte[] Data = new Byte[2];
 
             Reader.Read(Data, 0, Data.Length);
-            Int32 Length = Binary.BitConverter.Endian.ToInt32(Data, endianness);
+            Int32 Length = Binary.BitConverter.Endian.ToInt16(Data, endianness);
             return Encoding.UTF8.GetString(Reader.ReadBytes(Length));
         }
     }
