@@ -23,6 +23,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two <see cref="NBTTagValue{TypeValue}"/> to see if they are equal</returns>
         public static Boolean operator ==(NBTTagValue<TypeValue> A, NBTTagValue<TypeValue> B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return true;
+            }
+            else if (NA || NB) {
+                return false;
+            }
+
             return A._Value.Equals(B._Value) && A._Name.Equals(B._Name);
         }
 
@@ -31,6 +41,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two <see cref="NBTTagValue{TypeValue}"/> to see if they are not equal</returns>
         public static Boolean operator !=(NBTTagValue<TypeValue> A, NBTTagValue<TypeValue> B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return false;
+            }
+            else if (NA || NB) {
+                return true;
+            }
+
             return !(A._Value.Equals(B._Value) || A._Name.Equals(B._Name));
         }
 
@@ -39,6 +59,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> equals a given object</returns>
         public static Boolean operator ==(NBTTagValue<TypeValue> A, Object B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return true;
+            }
+            else if (NA || NB) {
+                return false;
+            }
+
             return A.Equals(B);
         }
 
@@ -47,6 +77,52 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> not equals a given object</returns>
         public static Boolean operator !=(NBTTagValue<TypeValue> A, Object B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return false;
+            }
+            else if (NA || NB) {
+                return true;
+            }
+
+            return !A.Equals(B);
+        }
+
+        /// <summary>Compare one <see cref="NBTTagValue{TypeValue}"/> equals a given object</summary>
+        /// <param name="A">The first object to compare to</param>
+        /// <param name="B">The second object to compare</param>
+        /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> equals a given object</returns>
+        public static Boolean operator ==(NBTTagValue<TypeValue> A, TypeValue B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return true;
+            }
+            else if (NA || NB) {
+                return false;
+            }
+
+            return A.Equals(B);
+        }
+
+        /// <summary>Compare one <see cref="NBTTagValue{TypeValue}"/> not equals a given object</summary>
+        /// <param name="A">The first object to compare to</param>
+        /// <param name="B">The second object to compare</param>
+        /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> not equals a given object</returns>
+        public static Boolean operator !=(NBTTagValue<TypeValue> A, TypeValue B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return false;
+            }
+            else if (NA || NB) {
+                return true;
+            }
+
             return !A.Equals(B);
         }
     }

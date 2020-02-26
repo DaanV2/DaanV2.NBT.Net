@@ -22,6 +22,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two objects to one another to see if they are equal</returns>
         public static Boolean operator ==(NBTTagFloat A, NBTTagFloat B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return true;
+            }
+            else if (NA || NB) {
+                return false;
+            }
+
             return A._Value.Equals(B._Value) && A._Name.Equals(B._Name);
         }
 
@@ -30,6 +40,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two objects to one another to see if they are not equal</returns>
         public static Boolean operator !=(NBTTagFloat A, NBTTagFloat B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return false;
+            }
+            else if (NA || NB) {
+                return true;
+            }
+
             return !(A._Value.Equals(B._Value) || A._Name.Equals(B._Name));
         }
 
@@ -38,6 +58,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two objects to one another to see if they are equal</returns>
         public static Boolean operator ==(NBTTagFloat A, Object B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return true;
+            }
+            else if (NA || NB) {
+                return false;
+            }
+
             return A.Equals(B);
         }
 
@@ -46,6 +76,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two objects to one another to see if they are not equal</returns>
         public static Boolean operator !=(NBTTagFloat A, Object B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return false;
+            }
+            else if (NA || NB) {
+                return true;
+            }
+
             return !A.Equals(B);
         }
     }

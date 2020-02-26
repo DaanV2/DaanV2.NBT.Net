@@ -11,7 +11,7 @@ namespace DaanV2.NBT.Serialization.Serialization {
         /// <summary>Writes the nbt's header to the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
         /// <param name="Writer">The <see cref="Stream"/> to write to</param>
-        internal void WriteHeader(ITag tag, Stream Writer, Endianness endianness) {
+        public void WriteHeader(ITag tag, Stream Writer, Endianness endianness) {
             Writer.WriteByte((Byte)tag.Type);
             NBTWriter.WriteString(Writer, tag.Name, endianness);
         }
@@ -19,7 +19,7 @@ namespace DaanV2.NBT.Serialization.Serialization {
         /// <summary>Writes the nbt's content to the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
         /// <param name="Writer">The <see cref="Stream"/> to write to</param>
-        internal void WriteContent(ITag tag, Stream Writer, Endianness endianness) {
+        public void WriteContent(ITag tag, Stream Writer, Endianness endianness) {
             for (Int32 I = 0; I < tag.Count; I++) {
                 NBTWriter.Write(tag[I], Writer, endianness);
             }
@@ -27,6 +27,6 @@ namespace DaanV2.NBT.Serialization.Serialization {
         }
 
         /// <summary>Gets the type for which this object can write</summary>
-        internal NBTTagType[] ForType => _ForType;
+        public NBTTagType[] ForType => _ForType;
     }
 }

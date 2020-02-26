@@ -22,6 +22,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator ==(NBTTag A, NBTTag B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return true;
+            }
+            else if (NA || NB) {
+                return false;
+            }
+
             return A._Name.Equals(B._Name) && A._Tags.Equals(B._Tags);
         }
 
@@ -30,6 +40,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator !=(NBTTag A, NBTTag B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return false;
+            }
+            else if (NA || NB) {
+                return true;
+            }
+
             return !A._Name.Equals(B._Name) && A._Tags.Equals(B._Tags);
         }
 
@@ -38,6 +58,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator ==(NBTTag A, Object B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return true;
+            }
+            else if (NA || NB) {
+                return false;
+            }
+
             return A.Equals(B);
         }
 
@@ -46,6 +76,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator !=(NBTTag A, Object B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return false;
+            }
+            else if (NA || NB) {
+                return true;
+            }
+
             return !A.Equals(B);
         }
     }

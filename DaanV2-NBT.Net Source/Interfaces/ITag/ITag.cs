@@ -33,7 +33,7 @@ namespace DaanV2.NBT {
         /// <returns></returns>
         T GetValue<T>();
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Casts the value of this <see cref="ITag"/> to the specifed type</summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         T ConvertValue<T>();

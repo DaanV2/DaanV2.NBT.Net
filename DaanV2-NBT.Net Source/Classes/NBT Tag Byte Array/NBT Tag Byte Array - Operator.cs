@@ -14,19 +14,6 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-/* Unmerged change from project 'EP-API-NBTTag-Data.Net Core'
-Before:
-using System.Runtime.Serialization;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-After:
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Runtime.Serialization;
-*/
-
 
 namespace DaanV2.NBT {
     public partial class NBTTagByteArray : IEquatable<NBTTagByteArray> {
@@ -35,6 +22,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator ==(NBTTagByteArray A, NBTTagByteArray B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return true;
+            }
+            else if (NA || NB) {
+                return false;
+            }
+
             return A._Value.Equals(B._Value) && A._Name.Equals(B._Name);
         }
 
@@ -43,6 +40,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator !=(NBTTagByteArray A, NBTTagByteArray B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return false;
+            }
+            else if (NA || NB) {
+                return true;
+            }
+
             return !(A._Value.Equals(B._Value) || A._Name.Equals(B._Name));
         }
 
@@ -51,6 +58,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator ==(NBTTagByteArray A, Object B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return true;
+            }
+            else if (NA || NB) {
+                return false;
+            }
+
             return A.Equals(B);
         }
 
@@ -59,6 +76,16 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns></returns>
         public static Boolean operator !=(NBTTagByteArray A, Object B) {
+            Boolean NA = A is null;
+            Boolean NB = B is null;
+
+            if (NA && NB) {
+                return false;
+            }
+            else if (NA || NB) {
+                return true;
+            }
+
             return !A.Equals(B);
         }
     }

@@ -26,15 +26,15 @@ namespace DaanV2.NBT {
         [IgnoreDataMember]
         public override NBTTagType Type => _Type;
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Returns the value of this Nbttag</summary>
         /// <returns></returns>
         public override Object GetValue() {
             return this._Tags;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <summary>Safetly returns the value of this object, if object is not suspected type then the default value for that type is returned</summary>
+        /// <typeparam name="T">The type to return</typeparam>
+        /// <returns>Safetly returns the value of this object, if object is not suspected type then the default value for that type is returned</returns>
         public override T GetValue<T>() {
             return this._Tags is T Out ? Out : (default);
         }
