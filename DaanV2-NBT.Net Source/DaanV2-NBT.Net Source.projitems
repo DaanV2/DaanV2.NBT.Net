@@ -21,14 +21,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - Operator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - Overrides.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\NBT Tag\NBT Tag - Variables.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\CompoundBuilder\CompoundBuilder - Initialize.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\CompoundBuilder\CompoundBuilder - Add.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\CompoundBuilder\CompoundBuilder - Result.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\CompoundBuilder\CompoundBuilder - Variables.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\ListBuilder\ListBuilder - Initialize.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\ListBuilder\ListBuilder - Add.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\ListBuilder\ListBuilder - Result.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\ListBuilder\ListBuilder - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\Compound Builder\Compound Builder - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\Compound Builder\Compound Builder - Add.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\Compound Builder\Compound Builder - Result.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\Compound Builder\Compound Builder - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\List Builder\ListBuilder - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\List Builder\ListBuilder - Add.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\List Builder\ListBuilder - Result.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\List Builder\ListBuilder - Variables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte Array\NBT Tag Byte Array - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte Array\NBT Tag Byte Array - Overrides.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag Byte Array\NBT Tag Byte Array - Operator.cs" />
@@ -84,7 +84,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Writer\NBT Tag List Writer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interfaces\ITagReader\ITagReader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interfaces\ITagWriter\ITagWriter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\ArrayExtension\ArrayExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Array Extension\Array Extension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Compression.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Decompression.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Detect.cs" />
@@ -98,22 +98,22 @@
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - String.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - LongArray.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - ByteArray.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Initialize.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Variables.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Properties.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Read File.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Read String.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Reader\NBT Reader - Tags.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Reader\NBT Reader - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Reader\NBT Reader - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Reader\NBT Reader - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Reader\NBT Reader - Read File.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Reader\NBT Reader - Read String.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Reader\NBT Reader - Tags.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Create - List.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Create.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Tag Factory\NBT Tag Factory - Properties.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - Initialize.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - Properties.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - Variables.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - Tags.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - WriteFile.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Writer\NBT Writer - WriteString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Writer\NBT Writer - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Writer\NBT Writer - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Writer\NBT Writer - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Writer\NBT Writer - Tags.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Writer\NBT Writer - WriteFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\NBT Writer\NBT Writer - WriteString.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - Byte.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - ConvertTo.cs" />
@@ -125,5 +125,6 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Compound Reader\" />
     <Folder Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Reader\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\" />
   </ItemGroup>
 </Project>
