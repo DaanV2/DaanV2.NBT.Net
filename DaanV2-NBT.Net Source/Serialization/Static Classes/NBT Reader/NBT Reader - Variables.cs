@@ -13,12 +13,13 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
+
 using System.Collections.Generic;
 using DaanV2.NBT.Serialization;
 
-namespace DaanV2.NBT {
-    public static partial class NBTWriter {
-        /// <summary>The dictionary of writers</summary>
-        private static Dictionary<NBTTagType, ITagWriter> _Writers;
+namespace DaanV2.NBT.Serialization {
+    public static partial class NBTReader {
+        /// <summary>The dictionary of readers</summary>
+        private static Dictionary<NBTTagType, ITagReader> _Readers;
     }
 }

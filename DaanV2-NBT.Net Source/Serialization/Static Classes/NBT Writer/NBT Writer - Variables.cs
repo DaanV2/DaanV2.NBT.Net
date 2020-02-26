@@ -13,20 +13,12 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
-using System;
-using System.IO;
-using System.Text;
-using DaanV2.Binary;
+using System.Collections.Generic;
+using DaanV2.NBT.Serialization;
 
-namespace DaanV2.NBT {
+namespace DaanV2.NBT.Serialization {
     public static partial class NBTWriter {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Reader"></param>
-        /// <returns></returns>
-        public static void WriteString(Stream Writer, String Text, Endianness endianness) {
-            Byte[] Bytes = Encoding.UTF8.GetBytes(Text);
-            Writer.WriteInt16((Int16)Bytes.Length, endianness);
-            Writer.WriteBytes(Bytes);
-        }
+        /// <summary>The dictionary of writers</summary>
+        private static Dictionary<NBTTagType, ITagWriter> _Writers;
     }
 }

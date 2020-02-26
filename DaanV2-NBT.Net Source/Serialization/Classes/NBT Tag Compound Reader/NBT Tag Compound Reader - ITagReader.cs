@@ -1,21 +1,21 @@
 ﻿using System.IO;
 using DaanV2.Binary;
 
-namespace DaanV2.NBT.Serialization {
+namespace DaanV2.NBT.Serialization.Serialization {
     /// <summary>
     /// 
     /// </summary>
-    public partial class NBTTagCompoundReader : ITagReader {
+    internal partial class NBTTagCompoundReader : ITagReader {
         /// <summary>Gets the type for which this object can read</summary>
         private static readonly NBTTagType[] _ForType = new NBTTagType[] { NBTTagType.Compound };
 
         /// <summary>Gets the type for which this object can read</summary>
-        public NBTTagType[] ForType => _ForType;
+        internal NBTTagType[] ForType => _ForType;
 
         /// <summary>Reads the nbt's content from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
         /// <param name="Reader">The <see cref="Stream"/> to read from</param>
-        public void ReadContent(ITag tag, Stream Reader, Endianness endianness) {
+        internal void ReadContent(ITag tag, Stream Reader, Endianness endianness) {
             ITag SubTag = NBTReader.Read(Reader, endianness);
 
             while (SubTag != null) {
@@ -27,7 +27,7 @@ namespace DaanV2.NBT.Serialization {
         /// <summary>Reads the nbt's header from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
         /// <param name="Reader">The <see cref="Stream"/> to read from</param>
-        public void ReadHeader(ITag tag, Stream Reader, Endianness endianness) {
+        internal void ReadHeader(ITag tag, Stream Reader, Endianness endianness) {
             tag.Name = NBTReader.ReadString(Reader, endianness);
         }
     }

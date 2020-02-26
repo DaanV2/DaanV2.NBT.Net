@@ -14,24 +14,19 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Generic;
-using DaanV2.NBT.Serialization;
+using System.IO;
+using System.Text;
+using DaanV2.Binary;
 
-namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for class: NBTWriter</summary>
+namespace DaanV2.NBT.Serialization {
     public static partial class NBTWriter {
-        /// <summary>Creates a new instance of <see cref="NBTWriter"/></summary>
-        static NBTWriter() {
-            NBTWriter.Writers = new Dictionary<NBTTagType, ITagWriter>();
-
-            List<ITagWriter> Writers = Utillity.GetInterfaces<ITagWriter>();
-            Int32 Length = Writers.Count;
-
-            for (Int32 I = 0; I < Length; I++) {
-                for (Int32 J = 0; J < Writers[I].ForType.Length; J++) {
-                    NBTWriter.Writers[Writers[I].ForType[J]] = Writers[I];
-                }
-            }
+        ///DOLATER <summary>Add Description</summary>
+        /// <param name="Reader"></param>
+        /// <returns></returns>
+        public static void WriteString(Stream Writer, String Text, Endianness endianness) {
+            Byte[] Bytes = Encoding.UTF8.GetBytes(Text);
+            Writer.WriteInt16((Int16)Bytes.Length, endianness);
+            Writer.WriteBytes(Bytes);
         }
     }
 }

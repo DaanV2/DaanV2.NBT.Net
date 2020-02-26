@@ -17,24 +17,29 @@ using System;
 using System.IO;
 using DaanV2.Binary;
 
-namespace DaanV2.NBT {
-    public static partial class NBTReader {
+namespace DaanV2.NBT.Serialization {
+    public static partial class NBTWriter {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
-        /// <returns></returns>
-        public static ITag ReadFile(String Filepath, Endianness endianness, NBTCompression Compression = NBTCompression.Auto) {
-            Stream Stream = CompressionStream.GetDecompressionStream(new FileStream(Filepath, FileMode.Open, FileAccess.ReadWrite), Compression);
-            ITag Out = ReadFile(Stream, endianness);
-            Stream.Close();
-
-            return Out;
+        /// <param name="Object"></param>
+        /// <param name="compression"></param>
+        public static Stream WriteFile(String Filepath, ITag Tag, NBTCompression compression, Endianness endianness) {
+            FileStream Writer = new FileStream(Filepath, FileMode.Create);
+            Stream stream = WriteFile(Writer, Tag, compression, endianness);
+            stream.Flush();
+            stream.Close();
+            return stream;
         }
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
-        /// <returns></returns>
-        public static ITag ReadFile(Stream stream, Endianness endianness) {
-            return Read(stream, endianness);
+        /// <param name="Object"></param>
+        /// <param name="compression"></param>
+        public static Stream WriteFile(Stream stream, ITag Tag, NBTCompression compression, Endianness endianness) {
+            stream = CompressionStream.GetCompressionStream(stream, compression);
+
+            Write(Tag, stream, endianness);
+            return stream;
         }
     }
 }

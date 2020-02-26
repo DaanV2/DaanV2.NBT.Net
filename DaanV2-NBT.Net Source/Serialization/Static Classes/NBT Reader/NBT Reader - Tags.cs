@@ -18,7 +18,7 @@ using System.IO;
 using DaanV2.Binary;
 using DaanV2.NBT.Serialization;
 
-namespace DaanV2.NBT {
+namespace DaanV2.NBT.Serialization {
     public static partial class NBTReader {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>

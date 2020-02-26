@@ -13,22 +13,13 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
-using System;
-using System.IO;
-using System.Text;
-using DaanV2.Binary;
 
-namespace DaanV2.NBT {
+using System.Collections.Generic;
+using DaanV2.NBT.Serialization;
+
+namespace DaanV2.NBT.Serialization {
     public static partial class NBTReader {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Reader"></param>
-        /// <returns></returns>
-        public static String ReadString(Stream Reader, Endianness endianness) {
-            Byte[] Data = new Byte[2];
-
-            Reader.Read(Data, 0, Data.Length);
-            Int32 Length = Binary.BitConverter.Endian.ToInt16(Data, endianness);
-            return Encoding.UTF8.GetString(Reader.ReadBytes(Length));
-        }
+        /// <summary>The dictionary of readers</summary>
+        public static Dictionary<NBTTagType, ITagReader> Readers { get => _Readers; set => _Readers = value; }
     }
 }
