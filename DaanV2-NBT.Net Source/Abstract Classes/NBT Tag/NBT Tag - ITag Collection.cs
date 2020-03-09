@@ -29,7 +29,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name">The name of the tag</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         [IgnoreDataMember]
         public ITag this[String Name] {
             get {
@@ -59,7 +59,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Index"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         [IgnoreDataMember]
         public ITag this[Int32 Index] {
             get => this._Tags[Index];
@@ -127,7 +127,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public ITag GetSubTag(String Name) {
             Int32 Max = this._Tags.Count;
 
@@ -142,7 +142,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Index"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public ITag GetSubTag(Int32 Index) {
             return this._Tags[Index];
         }
@@ -150,7 +150,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="Name"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public T GetSubValue<T>(String Name) {
             Int32 Max = this._Tags.Count;
 
@@ -166,7 +166,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="Index"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public T GetSubValue<T>(Int32 Index) {
             return this._Tags[Index].ConvertValue<T>();
         }

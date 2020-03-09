@@ -22,7 +22,7 @@ namespace DaanV2.NBT {
     public partial class NBTTagList : ITagCollection, IEnumerable<ITag>, IEnumerable {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name">The name of the tag</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         [IgnoreDataMember]
         public new ITag this[String Name] {
             get {
@@ -56,7 +56,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Index"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         [IgnoreDataMember]
         public new ITag this[Int32 Index] {
             get => this._Tags[Index];
@@ -84,13 +84,13 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public IEnumerator GetEnumerator() {
             return this._Tags.GetEnumerator();
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         IEnumerator<ITag> IEnumerable<ITag>.GetEnumerator() {
             return this._Tags.GetEnumerator();
         }

@@ -20,7 +20,7 @@ namespace DaanV2.NBT {
     public partial class NBTTagCompound {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="obj">The object to compare to</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Boolean Equals(Object Obj) {
             if (Obj is NBTTagCompound Tag) {
                 return this.Equals(Tag);
@@ -31,7 +31,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="other"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public Boolean Equals(NBTTagCompound other) {
             return other != null &&
                    base.Equals(other) &&
@@ -40,7 +40,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
             hashCode = (hashCode * -1521134295) + EqualityComparer<List<ITag>>.Default.GetHashCode(this._Tags);

@@ -166,7 +166,7 @@ namespace DaanV2.NBT.Builders {
 
         /// <summary>Adds a new sub <see cref="NBTTagCompound"/> to the collection</summary>
         /// <param name="Name">The name of the tag to add to the collection</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public CompoundBuilder AddSubCompound(String Name, Int32 Capacity = 10) {
             CompoundBuilder builder = new CompoundBuilder(Name, Capacity);
             this._Tag.Add(builder._Tag);
@@ -177,7 +177,7 @@ namespace DaanV2.NBT.Builders {
         /// <param name="Name">The name of the tag to add to the collection</param>
         /// <param name="SubType">The subtype of the tags inside the list</param>
         /// <param name="Capacity">The capacity to start the list with</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public ListBuilder AddSubList(String Name, NBTTagType SubType, Int32 Capacity = 10) {
             NBTTagList Tag = new NBTTagList(Name, SubType, Capacity);
             ListBuilder Builder = new ListBuilder(Tag);

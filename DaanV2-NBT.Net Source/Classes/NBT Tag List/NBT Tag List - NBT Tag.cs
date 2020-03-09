@@ -25,14 +25,14 @@ namespace DaanV2.NBT {
         public override NBTTagType Type => _Type;
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Object GetValue() {
             return this.Tags;
         }
 
         ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override T GetValue<T>() {
             return this.Tags is T val ? val : default;
         }
@@ -50,7 +50,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override T ConvertValue<T>() {
             return NBTCasting.ConvertTo<T>(this._Tags);
         }

@@ -21,7 +21,7 @@ namespace DaanV2.NBT.Serialization {
     public static partial class NBTReader {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag ReadFile(String Filepath, Endianness endianness, NBTCompression Compression = NBTCompression.Auto) {
             Stream Stream = CompressionStream.GetDecompressionStream(new FileStream(Filepath, FileMode.Open, FileAccess.ReadWrite), Compression);
             ITag Out = ReadFile(Stream, endianness);
@@ -32,7 +32,7 @@ namespace DaanV2.NBT.Serialization {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Filepath"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag ReadFile(Stream stream, Endianness endianness) {
             return Read(stream, endianness);
         }

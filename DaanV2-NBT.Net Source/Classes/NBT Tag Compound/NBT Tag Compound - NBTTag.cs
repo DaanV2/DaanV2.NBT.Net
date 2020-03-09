@@ -27,7 +27,7 @@ namespace DaanV2.NBT {
         public override NBTTagType Type => _Type;
 
         /// <summary>Returns the value of this Nbttag</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Object GetValue() {
             return this._Tags;
         }
@@ -49,7 +49,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override T ConvertValue<T>() {
             throw new NotImplementedException("Cannot cast value of NBTTagCompound");
         }

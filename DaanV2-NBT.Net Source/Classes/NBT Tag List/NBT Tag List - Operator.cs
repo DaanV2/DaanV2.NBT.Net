@@ -21,7 +21,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Boolean operator ==(NBTTagList A, NBTTagList B) {
             Boolean NA = A is null;
             Boolean NB = B is null;
@@ -39,7 +39,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Boolean operator !=(NBTTagList A, NBTTagList B) {
             Boolean NA = A is null;
             Boolean NB = B is null;
@@ -57,7 +57,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Boolean operator ==(NBTTagList A, Object B) {
             Boolean NA = A is null;
             Boolean NB = B is null;
@@ -75,7 +75,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Boolean operator !=(NBTTagList A, Object B) {
             Boolean NA = A is null;
             Boolean NB = B is null;
@@ -93,7 +93,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name=""></param>
         /// <param name=""></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static implicit operator List<ITag>(NBTTagList A) {
             return A._Tags;
         }

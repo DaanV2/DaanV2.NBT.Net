@@ -25,17 +25,17 @@ namespace DaanV2.NBT {
         NBTTagType Type { get; }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         Object GetValue();
 
         ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         T GetValue<T>();
 
         /// <summary>Casts the value of this <see cref="ITag"/> to the specifed type</summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         T ConvertValue<T>();
 
         ///DOLATER <summary>Add Description</summary>
@@ -47,11 +47,11 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         Object GetInformation(NBTTagInformation InfoType);
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         ITag Clone();
     }
 }

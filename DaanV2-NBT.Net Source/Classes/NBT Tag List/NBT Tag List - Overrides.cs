@@ -54,7 +54,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Object GetInformation(NBTTagInformation InfoType) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -77,7 +77,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="other"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Boolean Equals(Object Obj) {
             if (Obj is NBTTagList Tag) {
                 return this.Equals(Tag);
@@ -88,7 +88,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="other"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public Boolean Equals(NBTTagList other) {
             return other != null &&
                    base.Equals(other) &&
@@ -98,7 +98,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
             hashCode = (hashCode * -1521134295) + EqualityComparer<NBTTagType>.Default.GetHashCode(this._SubType);
@@ -108,7 +108,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override ITag Clone() {
             NBTTagList Out = new NBTTagList(this.SubType, this._Tags.Count) {
                 Name = this.Name

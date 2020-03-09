@@ -19,14 +19,14 @@ using System.Collections.Generic;
 namespace DaanV2.NBT {
     public abstract partial class NBTTag {
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override String ToString() {
             return $"'{this.Name}': {this.Type}";
         }
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="obj">The object to compare to</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Boolean Equals(Object obj) {
 
             if (obj is NBTTag Tag) {
@@ -50,7 +50,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="other"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public Boolean Equals(NBTTag other) {
             return other != null &&
                    base.Equals(other) &&
@@ -60,7 +60,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="other"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public Boolean Equals(ITag other) {
             if (other != null && base.Equals(other) && EqualityComparer<String>.Default.Equals(this._Name, other.Name)) {
 
@@ -77,7 +77,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
             hashCode = (hashCode * -1521134295) + EqualityComparer<List<ITag>>.Default.GetHashCode(this._Tags);

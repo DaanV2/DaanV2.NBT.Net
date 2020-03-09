@@ -20,7 +20,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Boolean operator ==(NBTTagLong A, NBTTagLong B) {
             return A._Value.Equals(B._Value) && A._Name.Equals(B._Name);
         }
@@ -28,7 +28,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Boolean operator !=(NBTTagLong A, NBTTagLong B) {
             return !(A._Value.Equals(B._Value) || A._Name.Equals(B._Name));
         }
@@ -36,7 +36,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Boolean operator ==(NBTTagLong A, Object B) {
             return A.Equals(B);
         }
@@ -44,7 +44,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Boolean operator !=(NBTTagLong A, Object B) {
             return !A.Equals(B);
         }

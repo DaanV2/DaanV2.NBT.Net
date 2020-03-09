@@ -31,12 +31,12 @@ namespace DaanV2.NBT {
         public abstract NBTTagType Type { get; }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public abstract Object GetValue();
 
         ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public abstract T GetValue<T>();
 
         ///DOLATER <summary>Add Description</summary>
@@ -62,7 +62,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public virtual Object GetInformation(NBTTagInformation InfoType) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -83,11 +83,11 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public abstract T ConvertValue<T>();
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public abstract ITag Clone();
     }
 }

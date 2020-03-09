@@ -23,12 +23,12 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name">The name of the tag</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         ITag this[String Name] { get; set; }
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="IIndex"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         ITag this[Int32 Index] { get; set; }
 
         ///DOLATER <summary>Add Description</summary>

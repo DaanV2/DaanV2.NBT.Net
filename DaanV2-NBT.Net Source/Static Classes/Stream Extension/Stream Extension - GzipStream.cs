@@ -21,7 +21,7 @@ namespace DaanV2.NBT {
     public static partial class StreamExtension {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Int32 ReadByte(this GZipStream stream) {
             if (stream.Length < stream.Position) {
                 return -1;

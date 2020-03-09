@@ -22,7 +22,7 @@ namespace DaanV2.NBT.Serialization {
     public static partial class NBTWriter {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static void WriteString(Stream Writer, String Text, Endianness endianness) {
             Byte[] Bytes = Encoding.UTF8.GetBytes(Text);
             Writer.WriteInt16((Int16)Bytes.Length, endianness);

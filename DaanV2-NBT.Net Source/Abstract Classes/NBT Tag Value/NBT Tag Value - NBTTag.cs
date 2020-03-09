@@ -18,7 +18,7 @@ using System;
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> : NBTTag {
         /// <summary>Returns the value of this <see cref="NBTTagValue{TypeValue}"/> as an <see cref="Object"/></summary>
-        /// <returns>Returns a <see cref="Object"/> that represents the value of this <see cref="NBTTagValue{TypeValue}"/></returns>
+        ///DOLATER <returns>Fill in return</returns>
         public override Object GetValue() {
             return this._Value;
         }
@@ -38,7 +38,7 @@ namespace DaanV2.NBT {
 
         /// <summary>Casts the value of this <see cref="NBTTagValue{T}"/> to the specifed type, routes through <see cref="NBTCasting"/></summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override T ConvertValue<T>() {
             return NBTCasting.ConvertTo<T>(this._Value);
         }

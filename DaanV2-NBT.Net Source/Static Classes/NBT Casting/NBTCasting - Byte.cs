@@ -19,7 +19,7 @@ namespace DaanV2.NBT {
     public static partial class NBTCasting {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Value"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         private static Object Convert(Byte Value, Type To) {
             if (To == typeof(Boolean)) {
                 return Value > 0;

@@ -21,7 +21,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name="SubType"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         private static (ITag List, Type SubType) CreateList(String Name, NBTTagType SubType) {
             ITag Out = NBTTagFactory.Create(NBTTagType.List);
             Type TagType = NBTTagFactory.Types.ContainsKey(NBTTagType.Byte) ? Types[NBTTagType.Byte] : null;
@@ -48,7 +48,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag Create(String Name, List<Boolean> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Byte);
             Int32 Count = Value.Count;
@@ -65,7 +65,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag Create(String Name, List<Byte> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Byte);
             NBTTagFactory.Transfer(Out, TagType, Value);
@@ -75,7 +75,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag Create(String Name, List<Double> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Double);
             NBTTagFactory.Transfer(Out, TagType, Value);
@@ -85,7 +85,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag Create(String Name, List<Single> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Float);
             NBTTagFactory.Transfer(Out, TagType, Value);
@@ -95,7 +95,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag Create(String Name, List<Int32> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Int);
             NBTTagFactory.Transfer(Out, TagType, Value);
@@ -105,7 +105,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag Create(String Name, List<Int64> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Long);
             NBTTagFactory.Transfer(Out, TagType, Value);
@@ -115,7 +115,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag Create(String Name, List<Int16> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Short);
             NBTTagFactory.Transfer(Out, TagType, Value);
@@ -125,7 +125,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Name"></param>
         /// <param name=""></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag Create(String Name, List<String> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.String);
             NBTTagFactory.Transfer(Out, TagType, Value);

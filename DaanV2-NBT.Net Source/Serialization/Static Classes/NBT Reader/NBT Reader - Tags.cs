@@ -22,7 +22,7 @@ namespace DaanV2.NBT.Serialization {
     public static partial class NBTReader {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static ITag Read(Stream stream, Endianness endianness) {
             Int32 FirstByte = stream.ReadByte();
             if (FirstByte == -1) {
@@ -52,7 +52,7 @@ namespace DaanV2.NBT.Serialization {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
         /// <param name="Type"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static void ReadHeader(NBTTagType Type, Stream stream, ITag Receiver, Endianness endianness) {
             ITagReader Reader;
             NBTReader._Readers.TryGetValue(Type, out Reader);

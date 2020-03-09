@@ -19,14 +19,14 @@ using System.Collections.Generic;
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<TypeValue>> {
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override String ToString() {
             return $"'{this.Name}': {this.Type}: {this._Value}";
         }
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="obj">The object to compare to</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Boolean Equals(Object obj) {
             if (obj is NBTTagValue<TypeValue> TValue) {
                 return this.Equals(TValue);
@@ -59,7 +59,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Object GetInformation(NBTTagInformation InfoType) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -82,7 +82,7 @@ namespace DaanV2.NBT {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="other"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public Boolean Equals(NBTTagValue<TypeValue> other) {
             return other != null && base.Equals(other) &&
                    EqualityComparer<TypeValue>.Default.Equals(this._Value, other._Value) &&
@@ -90,7 +90,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
             hashCode = (hashCode * -1521134295) + EqualityComparer<TypeValue>.Default.GetHashCode(this._Value);

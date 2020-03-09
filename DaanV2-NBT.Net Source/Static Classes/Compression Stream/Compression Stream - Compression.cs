@@ -23,7 +23,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Compression"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Stream GetCompressionStream(Stream stream, NBTCompression Compression = NBTCompression.Auto) {
 
             switch (Compression) {
@@ -42,7 +42,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Compression"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Stream GetCompressionStream(String Filepath, NBTCompression Compression) {
             return GetCompressionStream(new FileStream(Filepath, FileMode.Open, FileAccess.Read), Compression);
         }

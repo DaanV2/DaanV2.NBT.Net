@@ -22,7 +22,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Compression"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Stream GetDecompressionStream(Stream stream, NBTCompression Compression = NBTCompression.Auto) {
             if (Compression == NBTCompression.Auto) {
                 Compression = DetectCompression(stream);
@@ -44,7 +44,7 @@ namespace DaanV2.NBT {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="stream"></param>
         /// <param name="Compression"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static Stream GetDecompressionStream(String Filepath, NBTCompression Compression) {
             return GetDecompressionStream(new FileStream(Filepath, FileMode.Open, FileAccess.Read), Compression);
         }

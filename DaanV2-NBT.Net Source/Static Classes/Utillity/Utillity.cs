@@ -21,7 +21,7 @@ namespace DaanV2.NBT {
     ///DOLATER <summary> add description for class: Utillity</summary>
     public static partial class Utillity {
         ///DOLATER <summary>Add Description</summary>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static List<T> GetInterfaces<T>() {
             List<T> Out = new List<T>(10);
             Type Find = typeof(T);

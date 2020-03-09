@@ -22,7 +22,7 @@ namespace DaanV2.NBT.Serialization {
     public static partial class NBTReader {
         ///DOLATER <summary>Add Description</summary>
         /// <param name="Reader"></param>
-        /// <returns></returns>
+        ///DOLATER <returns>Fill return</returns>
         public static String ReadString(Stream Reader, Endianness endianness) {
             Byte[] Data = new Byte[2];
 
