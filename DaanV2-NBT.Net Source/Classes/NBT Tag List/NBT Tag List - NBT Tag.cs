@@ -31,7 +31,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         ///DOLATER <returns>Fill return</returns>
         public override T GetValue<T>() {
             return this.Tags is T val ? val : default;
@@ -49,7 +49,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         ///DOLATER <returns>Fill return</returns>
         public override T ConvertValue<T>() {
             return NBTCasting.ConvertTo<T>(this._Tags);

@@ -29,12 +29,12 @@ namespace DaanV2.NBT {
         Object GetValue();
 
         ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         ///DOLATER <returns>Fill return</returns>
         T GetValue<T>();
 
         /// <summary>Casts the value of this <see cref="ITag"/> to the specifed type</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         ///DOLATER <returns>Fill return</returns>
         T ConvertValue<T>();
 

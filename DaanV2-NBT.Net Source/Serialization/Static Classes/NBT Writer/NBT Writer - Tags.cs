@@ -22,7 +22,7 @@ namespace DaanV2.NBT.Serialization {
     public static partial class NBTWriter {
         ///DOLATER <summary>Add Description</summary>
         /// <param name=""></param>
-        /// <param name="stream"></param>
+        ///DOLATER <param name="stream">FILL IN</param>
         public static void Write(ITag tag, Stream stream, Endianness endianness) {
             ITagWriter Writer;
             NBTWriter._Writers.TryGetValue(tag.Type, out Writer);
@@ -37,7 +37,7 @@ namespace DaanV2.NBT.Serialization {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="tag"></param>
-        /// <param name="stream"></param>
+        ///DOLATER <param name="stream">FILL IN</param>
         public static void WriteHeader(ITag tag, Stream stream, Endianness endianness) {
             ITagWriter Writer;
             NBTWriter._Writers.TryGetValue(tag.Type, out Writer);
@@ -51,7 +51,7 @@ namespace DaanV2.NBT.Serialization {
 
         ///DOLATER <summary>Add Description</summary>
         /// <param name="tag"></param>
-        /// <param name="stream"></param>
+        ///DOLATER <param name="stream">FILL IN</param>
         public static void WriteContent(ITag tag, Stream stream, Endianness endianness) {
             ITagWriter Writer;
             NBTWriter._Writers.TryGetValue(tag.Type, out Writer);

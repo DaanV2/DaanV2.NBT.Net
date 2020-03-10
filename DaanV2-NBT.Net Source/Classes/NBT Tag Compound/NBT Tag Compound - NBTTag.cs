@@ -48,7 +48,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         ///DOLATER <returns>Fill return</returns>
         public override T ConvertValue<T>() {
             throw new NotImplementedException("Cannot cast value of NBTTagCompound");

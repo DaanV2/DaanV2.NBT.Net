@@ -37,7 +37,7 @@ namespace DaanV2.NBT {
         }
 
         /// <summary>Casts the value of this <see cref="NBTTagValue{T}"/> to the specifed type, routes through <see cref="NBTCasting"/></summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         ///DOLATER <returns>Fill return</returns>
         public override T ConvertValue<T>() {
             return NBTCasting.ConvertTo<T>(this._Value);

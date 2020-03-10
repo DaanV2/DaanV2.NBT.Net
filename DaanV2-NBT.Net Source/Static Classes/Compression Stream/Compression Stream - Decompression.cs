@@ -20,7 +20,7 @@ using System.IO.Compression;
 namespace DaanV2.NBT {
     public static partial class CompressionStream {
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="stream"></param>
+        ///DOLATER <param name="stream">FILL IN</param>
         /// <param name="Compression"></param>
         ///DOLATER <returns>Fill return</returns>
         public static Stream GetDecompressionStream(Stream stream, NBTCompression Compression = NBTCompression.Auto) {
@@ -42,7 +42,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="stream"></param>
+        ///DOLATER <param name="stream">FILL IN</param>
         /// <param name="Compression"></param>
         ///DOLATER <returns>Fill return</returns>
         public static Stream GetDecompressionStream(String Filepath, NBTCompression Compression) {

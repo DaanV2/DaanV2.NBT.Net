@@ -18,7 +18,7 @@ using System;
 namespace DaanV2.NBT {
     public static partial class NBTCasting {
         ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         /// <param name="Value"></param>
         ///DOLATER <returns>Fill return</returns>
         public static T ConvertTo<T>(Object Value) {

@@ -19,7 +19,7 @@ using System.IO;
 namespace DaanV2.NBT {
     public static partial class CompressionStream {
         ///DOLATER <summary>Add Description</summary>
-        /// <param name="stream"></param>
+        ///DOLATER <param name="stream">FILL IN</param>
         public static NBTCompression DetectCompression(Stream stream) {
             if (!stream.CanSeek) {
                 throw new ArgumentException($"{nameof(stream)} must be able to seek");

@@ -148,7 +148,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         /// <param name="Name"></param>
         ///DOLATER <returns>Fill return</returns>
         public T GetSubValue<T>(String Name) {
@@ -164,7 +164,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         /// <param name="Index"></param>
         ///DOLATER <returns>Fill return</returns>
         public T GetSubValue<T>(Int32 Index) {

@@ -30,7 +30,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         /// <param name="List"></param>
         /// <param name="SubType"></param>
         /// <param name="SubType"></param>

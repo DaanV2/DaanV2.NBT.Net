@@ -35,7 +35,7 @@ namespace DaanV2.NBT {
         public abstract Object GetValue();
 
         ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         ///DOLATER <returns>Fill return</returns>
         public abstract T GetValue<T>();
 
@@ -82,7 +82,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="T"></typeparam>
+        ///DOLATER <typeparam name="T">Add Type description</typeparam>
         ///DOLATER <returns>Fill return</returns>
         public abstract T ConvertValue<T>();
 
