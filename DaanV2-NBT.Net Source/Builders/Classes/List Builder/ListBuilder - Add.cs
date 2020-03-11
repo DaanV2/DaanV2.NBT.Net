@@ -82,5 +82,11 @@ namespace DaanV2.NBT.Builders {
         public void Add(String Value) {
             this._Tag.Add(NBTTagFactory.Create(NBTTagType.String, String.Empty, Value));
         }
+
+        /// <summary>Add a tag to the list</summary>
+        /// <param name="Tag">The tag to add</param>
+        public void Add(ITag Tag) {
+            this._Tag.Add(Tag);
+        }
     }
 }
