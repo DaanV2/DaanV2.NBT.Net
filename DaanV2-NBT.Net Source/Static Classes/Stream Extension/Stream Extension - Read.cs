@@ -19,10 +19,10 @@ using DaanV2.Binary;
 
 namespace DaanV2.NBT {
     public static partial class StreamExtension {
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
-        /// <param name="Length"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Reads the amount of specified bytes from stream and stores them in an array</summary>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="Length">The amount of bytes to read from</param>
+        /// <returns>Reads the amount of specified bytes from stream and stores them in an array</returns>
         public static Byte[] ReadBytes(this Stream stream, Int32 Length) {
             Byte[] Buffer = new Byte[Length];
             stream.Read(Buffer, 0, Length);
@@ -31,7 +31,8 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="endianness">The endianness of the data</param>
         ///DOLATER <returns>Fill return</returns>
         public static Int16 ReadInt16(this Stream stream, Endianness endianness) {
             Byte[] Data = new Byte[sizeof(Int16)];
@@ -40,16 +41,18 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="endianness">The endianness of the data</param>
         ///DOLATER <returns>Fill return</returns>
         public static Int32 ReadInt32(this Stream stream, Endianness endianness) {
             Byte[] Data = new Byte[sizeof(Int32)];
             stream.Read(Data, 0, Data.Length);
-            return Binary.BitConverter.Endian.ToInt16(Data, endianness);
+            return Binary.BitConverter.Endian.ToInt32(Data, endianness);
         }
 
         ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="endianness">The endianness of the data</param>
         ///DOLATER <returns>Fill return</returns>
         public static Int64 ReadInt64(this Stream stream, Endianness endianness) {
             Byte[] Data = new Byte[sizeof(Int64)];
@@ -58,7 +61,8 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="endianness">The endianness of the data</param>
         ///DOLATER <returns>Fill return</returns>
         public static UInt16 ReadUInt16(this Stream stream, Endianness endianness) {
             Byte[] Data = new Byte[sizeof(UInt16)];
@@ -67,7 +71,8 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="endianness">The endianness of the data</param>
         ///DOLATER <returns>Fill return</returns>
         public static UInt32 ReadUInt32(this Stream stream, Endianness endianness) {
             Byte[] Data = new Byte[sizeof(UInt32)];
@@ -76,7 +81,8 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="endianness">The endianness of the data</param>
         ///DOLATER <returns>Fill return</returns>
         public static UInt64 ReadUInt64(this Stream stream, Endianness endianness) {
             Byte[] Data = new Byte[sizeof(UInt64)];
@@ -85,7 +91,7 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
+        /// <param name="stream">The stream to read from</param>
         ///DOLATER <returns>Fill return</returns>
         public static Single ReadFloat(this Stream stream, Endianness endianness) {
             Byte[] Data = new Byte[sizeof(Single)];
@@ -95,7 +101,8 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="endianness">The endianness of the data</param>
         ///DOLATER <returns>Fill return</returns>
         public static Double ReadDouble(this Stream stream, Endianness endianness) {
             Byte[] Data = new Byte[sizeof(Double)];
@@ -105,8 +112,9 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
-        /// <param name="Length"></param>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="endianness">The endianness of the data</param>
+        /// <param name="Length">The amount to read</param>
         ///DOLATER <returns>Fill return</returns>
         public static Int32[] ReadInt32Array(this Stream stream, Int32 Length, Endianness endianness) {
             Byte[] Buffer = new Byte[Length * sizeof(Int32)];
@@ -131,8 +139,9 @@ namespace DaanV2.NBT {
         }
 
         ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <param name="stream">FILL IN</param>
-        /// <param name="Length"></param>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="endianness">The endianness of the data</param>
+        /// <param name="Length">The amount to read</param>
         ///DOLATER <returns>Fill return</returns>
         public static Int64[] ReadInt64Array(this Stream stream, Int32 Length, Endianness endianness) {
             Byte[] Buffer = new Byte[Length * sizeof(Int64)];
