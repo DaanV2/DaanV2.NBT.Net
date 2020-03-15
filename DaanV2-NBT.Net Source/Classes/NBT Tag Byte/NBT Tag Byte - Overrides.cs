@@ -40,12 +40,12 @@ namespace DaanV2.NBT {
                    EqualityComparer<String>.Default.Equals(this._Name, other._Name);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
-        public override Int32 GetHashCode() {
+        /// <summary>Returns the hashcode of this instance</summary>
+        /// <returns>Returns the hashcode of this instance</returns>
+        public override Int32 GetHashCode()()() {
             Int32 hashCode = 1513385649;
-            hashCode = (hashCode * -1521134295) + EqualityComparer<Byte>.Default.GetHashCode(this._Value);
-            hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode(this._Name);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<Byte>.Default.GetHashCode()(this._Value);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode()(this._Name);
             return hashCode;
         }
 
