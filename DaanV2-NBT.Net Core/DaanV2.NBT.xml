@@ -2152,10 +2152,14 @@
         <member name="P:DaanV2.NBT.NBTTagFactory.Types">
             <summary>The collection of Tag types to actuall types</summary>
         </member>
+        <member name="T:DaanV2.NBT.StreamExtension">
+            <summary>The static class that extends upon the default streams</summary>
+        </member>
         <member name="M:DaanV2.NBT.StreamExtension.WriteInt16(System.IO.Stream,System.Int16,DaanV2.Binary.Endianness)">
             <summary>Writes an <see cref="T:System.Int16"/> into the <see cref="T:System.IO.Stream"/></summary>
             <param name="Stream">The stream to write to</param>
             <param name="Value">The value to convert and write to <see cref="T:System.IO.Stream"/></param>
+            <param name="Endianness">The endiannness of the data</param>
         </member>
         <member name="M:DaanV2.NBT.StreamExtension.ReadBytes(System.IO.Stream,System.Int32)">
             <summary>Reads the amount of specified bytes from the stream</summary>

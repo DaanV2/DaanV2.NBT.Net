@@ -9,7 +9,10 @@
     <Import_RootNamespace>DaanV2.NBT.Test</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Builders\Classes\CompoundBuilderTest\CompoundBuilderTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\ConversionTest\ConversionTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\ConversionTest\ConversionTest - Byte.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBTTagFactoryTest\NBTTagFactoryTest - Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\NBTTagFactoryTest\NBTTagFactoryTest.cs" />
   </ItemGroup>
 </Project>

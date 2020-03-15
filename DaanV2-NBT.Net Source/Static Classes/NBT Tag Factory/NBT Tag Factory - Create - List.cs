@@ -26,7 +26,7 @@ namespace DaanV2.NBT {
             ITag Out = NBTTagFactory.Create(NBTTagType.List);
             Out.Name = Name;
             Out.SetInformation(NBTTagInformation.ListSubtype, SubType);
-            Type TagType = NBTTagFactory.Types.ContainsKey(NBTTagType.Byte) ? Types[NBTTagType.Byte] : null;
+            Type TagType = NBTTagFactory.Types.ContainsKey(SubType) ? Types[SubType] : null;
 
             return (Out, TagType);
         }
