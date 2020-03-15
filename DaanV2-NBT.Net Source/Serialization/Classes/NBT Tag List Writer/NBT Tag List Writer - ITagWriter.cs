@@ -1,0 +1,48 @@
+﻿using System;
+using System.IO;
+
+namespace DaanV2.NBT.Serialization.Serialization {
+    /// <summary>The class that write an nbt tag list into the stream</summary>
+    internal partial class NBTTagListWriter : ITagWriter {
+        /// <summary>Gets the type for which this object can write</summary>
+        private static readonly NBTTagType[] _ForType = new NBTTagType[] { NBTTagType.List };
+
+        /// <summary>Writes the nbt's header to the <see cref="Stream"/></summary>
+        /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
+        /// <param name="Context">The context to write to</param>
+        public void WriteHeader(ITag tag, SerializationContext Context) {
+            Context.Stream.WriteByte((Byte)tag.Type);
+
+            NBTWriter.WriteString(Context, tag.Name);
+
+            Context.Stream.WriteByte((Byte)tag.GetInformation(NBTTagInformation.ListSubtype));
+            Context.WriteInt32((Int32)tag.GetInformation(NBTTagInformation.ListSize));
+        }
+
+        /// <summary>Writes the nbt's content to the <see cref="Stream"/></summary>
+        /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
+        /// <param name="Context">The context to write to</param>
+        public void WriteContent(ITag tag, SerializationContext Context) {
+            Object O = tag.GetInformation(NBTTagInformation.ListSubtype);
+
+            if (O == null) {
+                throw new Exception("Cannot read list sub type");
+            }
+
+            NBTTagType SubTagType = (NBTTagType)O;
+            ITagWriter Writer = NBTWriter.GetWriter(SubTagType);
+
+            if (Writer == null)
+                throw new Exception($"Cannot find writer for {SubTagType}");
+
+            Int32 Count = tag.Count;
+
+            for (Int32 I = 0; I < Count; I++) {
+                Writer.WriteContent(tag[I], Context);
+            }
+        }
+
+        /// <summary>Gets the type for which this object can write</summary>
+        public NBTTagType[] ForType => _ForType;
+    }
+}

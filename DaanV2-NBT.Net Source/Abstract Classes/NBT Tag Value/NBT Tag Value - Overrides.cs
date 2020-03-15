@@ -18,24 +18,8 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<TypeValue>> {
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
-        public override String ToString() {
-            return $"'{this.Name}': {this.Type}: {this._Value}";
-        }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="obj">The object to compare to</param>
-        ///DOLATER <returns>Fill return</returns>
-        public override Boolean Equals(Object obj) {
-            if (obj is NBTTagValue<TypeValue> TValue) {
-                return this.Equals(TValue);
-            }
-
-            return base.Equals(obj);
-        }
-
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Sets the specified information of the tag</summary>
         public override void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -57,9 +41,9 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Returns the specified information of this instance</summary>
+        /// <param name="InfoType">The info type to retrieve from this instance</param>
+        /// <returns>Returns the specified information of this instance</returns>
         public override Object GetInformation(NBTTagInformation InfoType) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -80,17 +64,34 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="other"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Returns a string representation of this tag</summary>
+        /// <returns>Returns a string representation of this tag</returns>
+        public override String ToString() {
+            return $"'{this.Name}': {this.Type}: {this._Value}";
+        }
+
+        /// <summary>Compare this instance with the given instance if they are the same</summary>
+        /// <param name="obj">The object to compare to</param>
+        /// <returns>Compare this instance with the given instance if they are the same</returns>
+        public override Boolean Equals(Object obj) {
+            if (obj is NBTTagValue<TypeValue> TValue) {
+                return this.Equals(TValue);
+            }
+
+            return base.Equals(obj);
+        }
+
+        /// <summary>Compare this instance with the given instance if they are the same</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <returns>Compare this instance with the given instance if they are the same</returns>
         public Boolean Equals(NBTTagValue<TypeValue> other) {
             return other != null && base.Equals(other) &&
                    EqualityComparer<TypeValue>.Default.Equals(this._Value, other._Value) &&
                    EqualityComparer<String>.Default.Equals(this._Name, other._Name);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Returns the hashcode for this object</summary>
+        /// <returns>Returns the hashcode for this object</returns>
         public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
             hashCode = (hashCode * -1521134295) + EqualityComparer<TypeValue>.Default.GetHashCode(this._Value);

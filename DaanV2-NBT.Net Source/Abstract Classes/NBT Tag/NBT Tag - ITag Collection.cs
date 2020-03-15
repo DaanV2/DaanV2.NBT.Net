@@ -19,17 +19,17 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTag : ITagCollection {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets the amount of sub tag this tag has</summary>
         [IgnoreDataMember]
         public Int32 Count => this._Tags.Count;
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets or sets the subtag of this tag</summary>
         [DataMember]
         public List<ITag> Tags { get => this._Tags; set => this._Tags = value; }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets or sets the subtag with the given name</summary>
         /// <param name="Name">The name of the tag</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Gets or sets the subtag with the given name</returns>
         [IgnoreDataMember]
         public ITag this[String Name] {
             get {
@@ -57,17 +57,17 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Index"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Gets or sets the subtag with the given index</summary>
+        /// <param name="Index">The index of </param>
+        /// <returns>Gets or sets the subtag with the given index</returns>
         [IgnoreDataMember]
         public ITag this[Int32 Index] {
             get => this._Tags[Index];
             set => this._Tags[Index] = value;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name=""></param>
+        /// <summary>Adds the given tag to the internal list</summary>
+        /// <param name="tag">The tag to add</param>
         public virtual void Add(ITag tag) {
             Int32 Max = this._Tags.Count;
 
@@ -81,8 +81,8 @@ namespace DaanV2.NBT {
             this._Tags.Add(tag);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name=""></param>
+        /// <summary>Adds the given tags to the internal list</summary>
+        /// <param name="tags">The tags to add</param>
         public virtual void Add(ITag[] tags) {
             Int32 MaxTag = tags.Length;
             ITag tag;
@@ -102,18 +102,18 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>clears the internal list</summary>
         public virtual void Clear() {
             this._Tags.Clear();
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Index"></param>
+        /// <summary>Removes the tag at the specified index</summary>
+        /// <param name="Index">The index of the element</param>
         public virtual void Remove(Int32 Index) {
             this._Tags.RemoveAt(Index);
         }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Removes the tag with the specified name</summary>
         /// <param name="Name">The name of the tag</param>
         public virtual void Remove(String Name) {
             Int32 Max = this._Tags.Count;
@@ -125,9 +125,9 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Retrieves the tag with the given name</summary>
+        /// <param name="Name">The name to find</param>
+        /// <returns>Retrieves the tag with the given name</returns>
         public ITag GetSubTag(String Name) {
             Int32 Max = this._Tags.Count;
 
@@ -140,17 +140,17 @@ namespace DaanV2.NBT {
             return null;
         }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Retrieves the tag with the given index</summary>
         /// <param name="Index"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Retrieves the tag with the given index</returns>
         public ITag GetSubTag(Int32 Index) {
             return this._Tags[Index];
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <typeparam name="T">Add Type description</typeparam>
-        /// <param name="Name"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Retrieves the tag's value with the given name</summary>
+        /// <typeparam name="T">The type to return</typeparam>
+        /// <param name="Name">The name to find</param>
+        /// <returns>Retrieves the tag's value with the given name</returns>
         public T GetSubValue<T>(String Name) {
             Int32 Max = this._Tags.Count;
 
@@ -163,10 +163,10 @@ namespace DaanV2.NBT {
             return default;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <typeparam name="T">Add Type description</typeparam>
-        /// <param name="Index"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Retrieves the tag's value with the given index</summary>
+        /// <typeparam name="T">The type to return</typeparam>
+        /// <param name="Index">The index to look at</param>
+        /// <returns>Retrieves the tag's value with the given index</returns>
         public T GetSubValue<T>(Int32 Index) {
             return this._Tags[Index].ConvertValue<T>();
         }

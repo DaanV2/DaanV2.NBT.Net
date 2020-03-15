@@ -3,7 +3,7 @@ using System.IO;
 using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization.Serialization {
-    ///DOLATER <summary> add description for class: NBTTagBaseTypeWriter</summary>
+    /// <summary>The type writer for all basic types</summary>
     internal partial class NBTTagBaseTypeWriter : ITagWriter {
         /// <summary>Gets the type for which this object can write</summary>
         private static readonly NBTTagType[] _ForType = new NBTTagType[] {
@@ -20,66 +20,67 @@ namespace DaanV2.NBT.Serialization.Serialization {
             NBTTagType.End
         };
 
+        /// <summary>Gets the type for which this object can write</summary>
+        public NBTTagType[] ForType => _ForType;
+
+
         /// <summary>Writes the nbt's header to the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
-        /// <param name="Writer">The <see cref="Stream"/> to write to</param>
-        public void WriteHeader(ITag tag, Stream Writer, Endianness endianness) {
-            Writer.WriteByte((Byte)tag.Type);
-            NBTWriter.WriteString(Writer, tag.Name, endianness);
+        /// <param name="Context">The context that provides a buffer, the stream and endianness of the NBT</param>
+        public void WriteHeader(ITag tag, SerializationContext Context) {
+            Context.Stream.WriteByte((Byte)tag.Type);
+            NBTWriter.WriteString(Context, tag.Name);
         }
 
         /// <summary>Writes the nbt's content to the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
-        /// <param name="Writer">The <see cref="Stream"/> to write to</param>
-        public void WriteContent(ITag tag, Stream Writer, Endianness endianness) {
+        /// <param name="Context">The context that provides a buffer, the stream and endianness of the NBT</param>
+        public void WriteContent(ITag tag, SerializationContext Context) {
             switch (tag.Type) {
                 //Arrays
                 case NBTTagType.ByteArray:
                     Byte[] Bytes = tag.GetValue<Byte[]>();
-                    Writer.WriteInt32(Bytes.Length, endianness);
-                    Writer.WriteBytes(Bytes);
+                    Context.WriteBytes(Bytes);
 
                     return;
                 case NBTTagType.IntArray:
                     Int32[] Ints = tag.GetValue<Int32[]>();
-                    Writer.WriteInt32(Ints.Length, endianness);
-                    Writer.WriteInt32Array(Ints, endianness);
+                    Context.WriteInt32Array(Ints);
 
                     return;
                 case NBTTagType.LongArray:
                     Int64[] Longs = tag.GetValue<Int64[]>();
-                    Writer.WriteInt32(Longs.Length, endianness);
-                    Writer.WriteInt64Array(Longs, endianness);
+                    Context.WriteInt64Array(Longs);
 
                     return;
 
                 //Values
                 case NBTTagType.Byte:
-                    Writer.WriteByte(tag.GetValue<Byte>());
+                    Context.Stream.WriteByte(tag.GetValue<Byte>());
                     return;
 
                 case NBTTagType.Short:
-                    Writer.WriteInt16(tag.GetValue<Int16>(), endianness);
+                    Context.WriteInt16(tag.GetValue<Int16>());
                     return;
 
                 case NBTTagType.Int:
-                    Writer.WriteInt32(tag.GetValue<Int32>(), endianness);
+                    Context.WriteInt32(tag.GetValue<Int32>());
                     return;
 
                 case NBTTagType.Long:
-                    Writer.WriteInt64(tag.GetValue<Int64>(), endianness);
+                    Context.WriteInt64(tag.GetValue<Int64>());
                     return;
 
                 case NBTTagType.Double:
-                    Writer.WriteDouble(tag.GetValue<Double>(), endianness);
+                    Context.WriteDouble(tag.GetValue<Double>());
                     return;
 
                 case NBTTagType.Float:
-                    Writer.WriteFloat(tag.GetValue<Single>(), endianness);
+                    Context.WriteFloat(tag.GetValue<Single>());
                     return;
 
                 case NBTTagType.String:
-                    NBTWriter.WriteString(Writer, tag.GetValue<String>(), endianness);
+                    NBTWriter.WriteString(Context.Stream, tag.GetValue<String>(), Context.Endianness);
 
                     return;
                 case NBTTagType.End:
@@ -88,8 +89,5 @@ namespace DaanV2.NBT.Serialization.Serialization {
                     return;
             }
         }
-
-        /// <summary>Gets the type for which this object can write</summary>
-        public NBTTagType[] ForType => _ForType;
     }
 }

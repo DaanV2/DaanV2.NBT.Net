@@ -79,11 +79,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Compound Reader\NBT Tag Compound Reader - ITagReader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Reader\NBT Tag List Reader - ITagReader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Base Type Reader\NBT Tag Base Type Reader - ITagReader.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Base Type Writer\NBT Tag Base Type Writer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Compound Writer\NBT Tag Compound Writer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Writer\NBT Tag List Writer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interfaces\ITagReader\ITagReader.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interfaces\ITagWriter\ITagWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Base Type Writer\NBT Tag Base Type Writer - ITagWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Compound Writer\NBT Tag Compound Writer - ITagWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Writer\NBT Tag List Writer - ITagWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Serialization Context\Serialization Context - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Serialization Context\Serialization Context - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Serialization Context\Serialization Context - IDisposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Serialization Context\Serialization Context - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interfaces\ITag Reader\ITagReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interfaces\ITag Writer\ITagWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\Serialization Context Extension\Serialization Context Extension - Const.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\Serialization Context Extension\Serialization Context Extension - Write.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\Serialization Context Extension\Serialization Context Extension - Read.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Array Extension\Array Extension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Compression.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Decompression.cs" />
@@ -118,6 +125,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - Byte.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - ConvertTo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - GzipStream.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - Const.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - Read.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - Writer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Utillity\Utillity.cs" />
@@ -125,6 +133,5 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Compound Reader\" />
     <Folder Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Reader\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\" />
   </ItemGroup>
 </Project>

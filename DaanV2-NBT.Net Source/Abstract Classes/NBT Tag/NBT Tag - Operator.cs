@@ -17,10 +17,10 @@ using System;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTag {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator ==(NBTTag A, NBTTag B) {
             Boolean NA = A is null;
             Boolean NB = B is null;

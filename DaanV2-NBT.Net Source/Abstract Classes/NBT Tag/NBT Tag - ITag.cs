@@ -19,31 +19,31 @@ using System.Runtime.Serialization;
 namespace DaanV2.NBT {
     public abstract partial class NBTTag : ITag {
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets or sets the name of this tag</summary>
         [DataMember]
         public String Name {
             get => this._Name;
             set => this._Name = value;
         }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets the type of this tag</summary>
         [IgnoreDataMember]
         public abstract NBTTagType Type { get; }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Gets the value of this tag</summary>
+        /// <returns>Gets the value of this tag</returns>
         public abstract Object GetValue();
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <typeparam name="T">Add Type description</typeparam>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Gets the value of this tag</summary>
+        /// <typeparam name="T">The type of the value to be returned</typeparam>
+        /// <returns>Gets the value of this tag</returns>
         public abstract T GetValue<T>();
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="O"></param>
+        /// <summary>Sets the value of this tag with the given value</summary>
+        /// <param name="O">The value to set</param>
         public abstract void SetValue(Object O);
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Sets the specified information of this tag with the given value</summary>
         public virtual void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -60,9 +60,9 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Retrieves the specified information</summary>
+        /// <param name="InfoType">The info type to retrieve from this <see cref="ITag"/></param>
+        /// <returns>Retrieves the specified information</returns>
         public virtual Object GetInformation(NBTTagInformation InfoType) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -81,13 +81,13 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <typeparam name="T">Add Type description</typeparam>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <typeparam name="T">The type to convert to</typeparam>
+        /// <returns>Converts the value of this tag to the specified type</returns>
         public abstract T ConvertValue<T>();
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates a copy of this instance</summary>
+        /// <returns>Creates a copy of this instance</returns>
         public abstract ITag Clone();
     }
 }

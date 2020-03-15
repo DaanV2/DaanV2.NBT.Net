@@ -6,13 +6,13 @@ namespace DaanV2.NBT.Serialization {
     public interface ITagReader {
         /// <summary>Reads the nbt's header from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
-        /// <param name="Writer">The <see cref="Stream"/> to read from</param>
-        void ReadHeader(ITag tag, Stream Reader, Endianness endianness);
+        /// <param name="Context">The context that provides a buffer, the stream and endianness of the NBT</param>
+        void ReadHeader(ITag tag, SerializationContext Context);
 
         /// <summary>Reads the nbt's content from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
-        /// <param name="Writer">The <see cref="Stream"/> to read from</param>
-        void ReadContent(ITag tag, Stream Reader, Endianness endianness);
+        /// <param name="Context">The context that provides a buffer, the stream and endianness of the NBT</param>
+        void ReadContent(ITag tag, SerializationContext Context);
 
         /// <summary>Gets the type for which this object can read</summary>
         NBTTagType[] ForType { get; }

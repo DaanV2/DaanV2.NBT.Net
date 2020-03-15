@@ -14,16 +14,13 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.IO;
-using DaanV2.Binary;
-using DaanV2.NBT.Serialization;
 
 namespace DaanV2.NBT.Serialization {
     public static partial class NBTWriter {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name=""></param>
-        ///DOLATER <param name="stream">FILL IN</param>
-        public static void Write(ITag tag, Stream stream, Endianness endianness) {
+        /// <summary>Writes the given tag into a stream</summary>
+        /// <param name="tag">The tag to write</param>
+        /// <param name="Context">The context to write to</param>
+        public static void Write(ITag tag, SerializationContext Context) {
             ITagWriter Writer;
             NBTWriter._Writers.TryGetValue(tag.Type, out Writer);
 
@@ -31,14 +28,14 @@ namespace DaanV2.NBT.Serialization {
                 throw new Exception($"No ITagWriter found for: {tag.Type}");
             }
 
-            Writer.WriteHeader(tag, stream, endianness);
-            Writer.WriteContent(tag, stream, endianness);
+            Writer.WriteHeader(tag, Context);
+            Writer.WriteContent(tag, Context);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="tag"></param>
-        ///DOLATER <param name="stream">FILL IN</param>
-        public static void WriteHeader(ITag tag, Stream stream, Endianness endianness) {
+        /// <summary>Writes the given tag's header into a stream</summary>
+        /// <param name="tag">The tag to write</param>
+        /// <param name="Context">The context to write to</param>
+        public static void WriteHeader(ITag tag, SerializationContext Context) {
             ITagWriter Writer;
             NBTWriter._Writers.TryGetValue(tag.Type, out Writer);
 
@@ -46,13 +43,13 @@ namespace DaanV2.NBT.Serialization {
                 throw new Exception($"No ITagWriter found for: {tag.Type}");
             }
 
-            Writer.WriteHeader(tag, stream, endianness);
+            Writer.WriteHeader(tag, Context);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="tag"></param>
-        ///DOLATER <param name="stream">FILL IN</param>
-        public static void WriteContent(ITag tag, Stream stream, Endianness endianness) {
+        /// <summary>Writes the given tag's content into a stream</summary>
+        /// <param name="tag">The tag to write</param>
+        /// <param name="Context">The context to write to</param>
+        public static void WriteContent(ITag tag, SerializationContext Context) {
             ITagWriter Writer;
             NBTWriter._Writers.TryGetValue(tag.Type, out Writer);
 
@@ -60,7 +57,7 @@ namespace DaanV2.NBT.Serialization {
                 throw new Exception($"No ITagWriter found for: {tag.Type}");
             }
 
-            Writer.WriteContent(tag, stream, endianness);
+            Writer.WriteContent(tag, Context);
         }
     }
 }

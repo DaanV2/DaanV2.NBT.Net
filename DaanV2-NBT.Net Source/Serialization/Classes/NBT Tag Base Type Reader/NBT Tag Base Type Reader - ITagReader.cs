@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using DaanV2.Binary;
-using DaanV2.IO;
 
 namespace DaanV2.NBT.Serialization.Serialization {
     ///DOLATER <summary> add description for class: NBTTagBaseTypeReader</summary>
@@ -26,54 +25,55 @@ namespace DaanV2.NBT.Serialization.Serialization {
 
         /// <summary>Reads the nbt's content from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
-        /// <param name="Writer">The <see cref="Stream"/> to read from</param>
-        public void ReadContent(ITag tag, Stream Reader, Endianness endianness) {
+        /// <param name="Context">The context that provides a buffer, the stream and endianness of the NBT</param>
+        public void ReadContent(ITag tag, SerializationContext Context) {
+            Stream Reader = Context.Stream;
             Int32 Length;
 
             switch (tag.Type) {
                 //Arrays
                 case NBTTagType.ByteArray:
-                    Length = Reader.ReadInt32(endianness);
-                    tag.SetValue(Reader.ReadBytes(Length));
+                    Length = Context.ReadInt32();
+                    tag.SetValue(Context.ReadBytes(Length));
                     return;
 
                 case NBTTagType.IntArray:
-                    Length = Reader.ReadInt32(endianness);
-                    tag.SetValue(Reader.ReadInt32Array(Length, endianness));
+                    Length = Context.ReadInt32();
+                    tag.SetValue(Context.ReadInt32Array(Length));
                     return;
 
                 case NBTTagType.LongArray:
-                    Length = Reader.ReadInt32(endianness);
-                    tag.SetValue(Reader.ReadInt64Array(Length, endianness));
+                    Length = Context.ReadInt32();
+                    tag.SetValue(Context.ReadInt64Array(Length));
                     return;
 
                 //Values
                 case NBTTagType.Byte:
-                    tag.SetValue((Byte)Reader.ReadByte());
+                    tag.SetValue((Byte)Context.Stream.ReadByte());
                     return;
 
                 case NBTTagType.Short:
-                    tag.SetValue(Reader.ReadInt16(endianness));
+                    tag.SetValue(Context.ReadInt16());
                     return;
 
                 case NBTTagType.Int:
-                    tag.SetValue(Reader.ReadInt32(endianness));
+                    tag.SetValue(Context.ReadInt32());
                     return;
 
                 case NBTTagType.Long:
-                    tag.SetValue(Reader.ReadInt64(endianness));
+                    tag.SetValue(Context.ReadInt64());
                     return;
 
                 case NBTTagType.Double:
-                    tag.SetValue(Reader.ReadDouble(endianness));
+                    tag.SetValue(Context.ReadDouble());
                     return;
 
                 case NBTTagType.Float:
-                    tag.SetValue(Reader.ReadFloat(endianness));
+                    tag.SetValue(Context.ReadFloat());
                     return;
 
                 case NBTTagType.String:
-                    tag.SetValue(NBTReader.ReadString(Reader, endianness));
+                    tag.SetValue(NBTReader.ReadString(Reader, Context.Endianness));
                     return;
                 case NBTTagType.Unknown:
                 case NBTTagType.End:
@@ -84,9 +84,9 @@ namespace DaanV2.NBT.Serialization.Serialization {
 
         /// <summary>Reads the nbt's header from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
-        /// <param name="Reader">The <see cref="Stream"/> to read from</param>
-        public void ReadHeader(ITag tag, Stream Reader, Endianness endianness) {
-            tag.Name = NBTReader.ReadString(Reader, endianness);
+        /// <param name="Context">The context that provides a buffer, the stream and endianness of the NBT</param>
+        public void ReadHeader(ITag tag, SerializationContext Context) {
+            tag.Name = NBTReader.ReadString(Context);
         }
     }
 }

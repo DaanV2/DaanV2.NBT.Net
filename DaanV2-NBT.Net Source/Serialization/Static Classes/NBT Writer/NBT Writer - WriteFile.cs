@@ -19,27 +19,45 @@ using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization {
     public static partial class NBTWriter {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Filepath"></param>
-        /// <param name="Object"></param>
-        /// <param name="compression"></param>
-        public static Stream WriteFile(String Filepath, ITag Tag, NBTCompression compression, Endianness endianness) {
+        /// <summary>Writes the given nbtstructure into a file</summary>
+        /// <param name="Filepath">The filepath to write to</param>
+        /// <param name="Tag">The tag to write</param>
+        /// <param name="compression">The compression type to be used</param>
+        /// <param name="endianness">The endianness of the nbt structure</param>
+        /// <returns>Writes the given nbtstructure into a file</returns>
+        public static void WriteFile(String Filepath, ITag Tag, NBTCompression compression, Endianness endianness) {
             FileStream Writer = new FileStream(Filepath, FileMode.Create);
-            Stream stream = WriteFile(Writer, Tag, compression, endianness);
+
+            Stream stream = CompressionStream.GetCompressionStream(Writer, compression);
+            Write(Tag, new SerializationContext(endianness, stream));
+
             stream.Flush();
             stream.Close();
-            return stream;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Filepath"></param>
-        /// <param name="Object"></param>
-        /// <param name="compression"></param>
-        public static Stream WriteFile(Stream stream, ITag Tag, NBTCompression compression, Endianness endianness) {
+        /// <summary>Writes the given nbtstructure into a file</summary>
+        /// <param name="stream">The stream to write to</param>
+        /// <param name="Tag">The tag to write</param>
+        /// <param name="compression">The compression type to be used</param>
+        /// <param name="endianness">The endianness of the nbt structure</param>
+        /// <returns>Writes the given nbtstructure into a file</returns>
+        public static void WriteFile(Stream stream, ITag Tag, NBTCompression compression, Endianness endianness) {
             stream = CompressionStream.GetCompressionStream(stream, compression);
 
-            Write(Tag, stream, endianness);
-            return stream;
+            Write(Tag, new SerializationContext(endianness, stream));
+        }
+
+        /// <summary>Writes the given nbtstructure into a file</summary>
+        /// <param name="Filepath">The filepath to write to</param>
+        /// <param name="Tag">The tag to write</param>
+        /// <param name="endianness">The endianness of the nbt structure</param>
+        /// <returns>Writes the given nbtstructure into a file</returns>
+        public static void WriteFile(String Filepath, ITag Tag, Endianness endianness = Endianness.LittleEndian) {
+            FileStream Writer = new FileStream(Filepath, FileMode.Create);
+            Write(Tag, new SerializationContext(endianness, Writer));
+
+            Writer.Flush();
+            Writer.Close();
         }
     }
 }

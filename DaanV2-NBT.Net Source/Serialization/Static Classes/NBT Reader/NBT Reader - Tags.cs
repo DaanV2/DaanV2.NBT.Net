@@ -15,16 +15,25 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using DaanV2.Binary;
-using DaanV2.NBT.Serialization;
 
 namespace DaanV2.NBT.Serialization {
     public static partial class NBTReader {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Reader"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Reads the NBTTag from the given stream</summary>
+        /// <param name="stream">The stream to read from</param>
+        /// <param name="endianness">the endianness of the NBT structure</param>
+        /// <returns>Reads the NBTTag from the given stream</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ITag Read(Stream stream, Endianness endianness) {
-            Int32 FirstByte = stream.ReadByte();
+            return Read(new SerializationContext(endianness, stream));
+        }
+
+        /// <summary>Reads the NBTTag from the given stream</summary>
+        /// <param name="Context">The context to read from</param>
+        /// <returns>Reads the NBTTag from the given stream</returns>
+        public static ITag Read(SerializationContext Context) {
+            Int32 FirstByte = Context.Stream.ReadByte();
             if (FirstByte == -1) {
                 return default;
             }
@@ -43,17 +52,17 @@ namespace DaanV2.NBT.Serialization {
                 throw new Exception($"No ITagWriter found for: {Type}");
             }
 
-            Reader.ReadHeader(Receiver, stream, endianness);
-            Reader.ReadContent(Receiver, stream, endianness);
+            Reader.ReadHeader(Receiver, Context);
+            Reader.ReadContent(Receiver, Context);
 
             return Receiver;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Reader"></param>
-        /// <param name="Type"></param>
-        ///DOLATER <returns>Fill return</returns>
-        public static void ReadHeader(NBTTagType Type, Stream stream, ITag Receiver, Endianness endianness) {
+        /// <summary>Reads the header of the given tag</summary>
+        /// <param name="Type">The type to read</param>
+        /// <param name="Context">The context needed to read from</param>
+        /// <param name="Receiver">The receing tag</param>
+        public static void ReadHeader(NBTTagType Type, SerializationContext Context, ITag Receiver) {
             ITagReader Reader;
             NBTReader._Readers.TryGetValue(Type, out Reader);
 
@@ -61,13 +70,14 @@ namespace DaanV2.NBT.Serialization {
                 throw new Exception($"No ITagWriter found for: {Type}");
             }
 
-            Reader.ReadHeader(Receiver, stream, endianness);
+            Reader.ReadHeader(Receiver, Context);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Type"></param>
-        /// <param name="Tag"></param>
-        public static void ReadContent(NBTTagType Type, Stream stream, ITag Receiver, Endianness endianness) {
+        /// <summary>Reads the content of the given tag</summary>
+        /// <param name="Type">The type to read</param>
+        /// <param name="Context">The context needed to read from</param>
+        /// <param name="Receiver">The receing tag</param>
+        public static void ReadContent(NBTTagType Type, SerializationContext Context, ITag Receiver) {
             ITagReader Reader;
             NBTReader._Readers.TryGetValue(Type, out Reader);
 
@@ -75,7 +85,7 @@ namespace DaanV2.NBT.Serialization {
                 throw new Exception($"No ITagWriter found for: {Type}");
             }
 
-            Reader.ReadContent(Receiver, stream, endianness);
+            Reader.ReadContent(Receiver, Context);
         }
     }
 }
