@@ -18,9 +18,9 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public partial class NBTTagLongArray {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="other"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Compare this instance to the given object</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <returns>Compare this instance to the given object</returns>
         public override Boolean Equals(Object Obj) {
             if (Obj is NBTTagLongArray Tag) {
                 return this.Equals(Tag);
@@ -29,9 +29,9 @@ namespace DaanV2.NBT {
             return base.Equals(Obj);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="other"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Compare this instance to the given object</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <returns>Compare this instance to the given object</returns>
         public Boolean Equals(NBTTagLongArray other) {
             return other != null &&
                    base.Equals(other) &&

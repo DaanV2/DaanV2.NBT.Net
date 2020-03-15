@@ -30,9 +30,9 @@ namespace DaanV2.NBT {
             return base.Equals(Obj);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="other"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Compare this instance to the given object</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <returns>Compare this instance to the given object</returns>
         public Boolean Equals(NBTTagByte other) {
             return other != null &&
                    base.Equals(other) &&

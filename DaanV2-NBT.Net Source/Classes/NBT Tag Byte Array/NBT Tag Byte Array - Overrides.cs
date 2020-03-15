@@ -18,20 +18,20 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public partial class NBTTagByteArray : IEquatable<NBTTagByteArray> {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="other"></param>
-        ///DOLATER <returns>Fill return</returns>
-        public override Boolean Equals(Object Obj) {
-            if (Obj is NBTTagByteArray Tag) {
+        /// <summary>Compare this instance to the given object</summary>
+        /// <param name="obj">The object to compare to</param>
+        /// <returns>Compare this instance to the given object</returns>
+        public override Boolean Equals(Object obj) {
+            if (obj is NBTTagByteArray Tag) {
                 return this.Equals(Tag);
             }
 
-            return base.Equals(Obj);
+            return base.Equals(obj);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="other"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Compare this instance to the given object</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <returns>Compare this instance to the given object</returns>
         public Boolean Equals(NBTTagByteArray other) {
             return other != null &&
                    base.Equals(other) &&
