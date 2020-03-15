@@ -16,7 +16,6 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using DaanV2.NBT.Serialization;
 
 namespace DaanV2.NBT.Serialization {
     public static partial class NBTReader {

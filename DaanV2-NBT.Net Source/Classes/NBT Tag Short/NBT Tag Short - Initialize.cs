@@ -32,6 +32,6 @@ namespace DaanV2.NBT {
         private const NBTTagType _Type = NBTTagType.Short;
 
         /// <summary>Returns the tag type of this instance</summary>
-        public override NBTTagType Type=> _Type;
+        public override NBTTagType Type => _Type;
     }
 }

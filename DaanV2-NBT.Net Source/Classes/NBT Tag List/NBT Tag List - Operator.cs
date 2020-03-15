@@ -23,8 +23,8 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator ==(NBTTagList A, NBTTagList B) {
-            Boolean NA = A is null;
-            Boolean NB = B is null;
+            Boolean NA = ((Object)A)==null;
+            Boolean NB = ((Object)B)==null;
 
             if (NA && NB) {
                 return true;
@@ -41,8 +41,8 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator !=(NBTTagList A, NBTTagList B) {
-            Boolean NA = A is null;
-            Boolean NB = B is null;
+            Boolean NA = ((Object)A)==null;
+            Boolean NB = ((Object)B)==null;
 
             if (NA && NB) {
                 return false;
@@ -59,8 +59,8 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator ==(NBTTagList A, Object B) {
-            Boolean NA = A is null;
-            Boolean NB = B is null;
+            Boolean NA = ((Object)A)==null;
+            Boolean NB = ((Object)B)==null;
 
             if (NA && NB) {
                 return true;
@@ -77,8 +77,8 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator !=(NBTTagList A, Object B) {
-            Boolean NA = A is null;
-            Boolean NB = B is null;
+            Boolean NA = ((Object)A)==null;
+            Boolean NB = ((Object)B)==null;
 
             if (NA && NB) {
                 return false;

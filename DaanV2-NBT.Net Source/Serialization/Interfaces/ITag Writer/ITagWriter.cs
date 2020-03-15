@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization {
     /// <summary>The interface responsible for forming the contract on how Tag writer should behave</summary>

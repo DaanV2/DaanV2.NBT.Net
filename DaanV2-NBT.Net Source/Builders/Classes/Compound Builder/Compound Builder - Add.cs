@@ -19,8 +19,7 @@ using DaanV2.Builders;
 
 namespace DaanV2.NBT.Builders {
     public partial class CompoundBuilder :
-        IBuilderAdd<ITag>
-        {
+        IBuilderAdd<ITag> {
 
         /// <summary>Adds the given tag to the internal list</summary>
         /// <param name="tag">The tag to add</param>

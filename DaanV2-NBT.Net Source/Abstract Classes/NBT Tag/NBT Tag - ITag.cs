@@ -37,7 +37,7 @@ namespace DaanV2.NBT {
         /// <summary>Converts the value of this tag to the specified type</summary>
         /// <typeparam name="T">The type to convert to</typeparam>
         /// <returns>Converts the value of this tag to the specified type</returns>
-        public abstract T GetValue<T>();    
+        public abstract T GetValue<T>();
 
         /// <summary>Sets the value of this tag with the given value</summary>
         /// <param name="O">The value to set</param>

@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization {
     /// <summary>The interface responsible for determing on how to </summary>

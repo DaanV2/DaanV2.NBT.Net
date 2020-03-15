@@ -16,7 +16,6 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
 using System;
 using System.Collections.Generic;
-using DaanV2.NBT.Serialization;
 
 namespace DaanV2.NBT.Serialization {
     /// <summary>The class that deserializers the given stream into Tags</summary>

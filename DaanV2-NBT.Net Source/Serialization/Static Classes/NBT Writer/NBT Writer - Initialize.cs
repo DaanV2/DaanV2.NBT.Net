@@ -15,7 +15,6 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Collections.Generic;
-using DaanV2.NBT.Serialization;
 
 namespace DaanV2.NBT.Serialization {
     /// <summary>The static class that serializes the given tags</summary>

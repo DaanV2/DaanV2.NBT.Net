@@ -22,7 +22,7 @@ namespace DaanV2.NBT {
     public enum NBTTagType : Byte {
         /// <summary>Marks that the nbt tag is the last in a series of tags</summary>
         End = 0,
-        ///<summary>Marks that the nbt tag stores a <see cref="Byte"/> of information</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="System.Byte"/> of information</summary>
         Byte = 1,
         ///<summary>Marks that the nbt tag stores an <see cref="Int16"/> of information</summary>
         Short = 2,
@@ -32,11 +32,11 @@ namespace DaanV2.NBT {
         Long = 4,
         ///<summary>Marks that the nbt tag stores a <see cref="Single"/> of information</summary>
         Float = 5,
-        ///<summary>Marks that the nbt tag stores a <see cref="Double"/> of information</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="System.Double"/> of information</summary>
         Double = 6,
-        ///<summary>Marks that the nbt tag stores a <see cref="Byte[]"/> of information</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="System.Byte[]"/> of information</summary>
         ByteArray = 7,
-        ///<summary>Marks that the nbt tag stores a <see cref="String"/> of information</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="System.String"/> of information</summary>
         String = 8,
         ///<summary>Marks that the nbt tag stores a List of unnamed tags</summary>
         List = 9,

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization.Serialization {
     /// <summary>A class that can read base types from the stream</summary>

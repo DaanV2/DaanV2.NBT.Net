@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization.Serialization {
     /// <summary>The nbt tag compound reader</summary>

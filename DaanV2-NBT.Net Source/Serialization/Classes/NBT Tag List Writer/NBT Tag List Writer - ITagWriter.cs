@@ -32,8 +32,9 @@ namespace DaanV2.NBT.Serialization.Serialization {
             NBTTagType SubTagType = (NBTTagType)O;
             ITagWriter Writer = NBTWriter.GetWriter(SubTagType);
 
-            if (Writer == null)
+            if (Writer == null) {
                 throw new Exception($"Cannot find writer for {SubTagType}");
+            }
 
             Int32 Count = tag.Count;
 

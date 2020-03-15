@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaanV2-NBT.Net - Standard2.1", "DaanV2-NBT.Net - Standard2.1\DaanV2-NBT.Net - Standard2.1.csproj", "{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		DaanV2-NBT.Net Source\DaanV2-NBT.Net Source.projitems*{8c661557-152d-412e-bf39-241f072b6d84}*SharedItemsImports = 4
@@ -54,6 +56,18 @@ Global
 		{8C661557-152D-412E-BF39-241F072B6D84}.Release|x64.Build.0 = Release|x64
 		{8C661557-152D-412E-BF39-241F072B6D84}.Release|x86.ActiveCfg = Release|x86
 		{8C661557-152D-412E-BF39-241F072B6D84}.Release|x86.Build.0 = Release|x86
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Debug|x64.ActiveCfg = Debug|x64
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Debug|x64.Build.0 = Debug|x64
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Debug|x86.ActiveCfg = Debug|x86
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Debug|x86.Build.0 = Debug|x86
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Release|x64.ActiveCfg = Release|x64
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Release|x64.Build.0 = Release|x64
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Release|x86.ActiveCfg = Release|x86
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +76,7 @@ Global
 		{F600936B-A6C7-4F31-8907-A2D4944FEEB7} = {193B3F7C-7EE1-48CC-A72E-971B074045D4}
 		{2D05CB2E-E65A-4EF8-97D1-DF4FB6F33EEE} = {193B3F7C-7EE1-48CC-A72E-971B074045D4}
 		{8C661557-152D-412E-BF39-241F072B6D84} = {193B3F7C-7EE1-48CC-A72E-971B074045D4}
+		{7110A5E2-C94E-4744-BC0C-29A468BE4ACE} = {193B3F7C-7EE1-48CC-A72E-971B074045D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69C88882-8CC1-49CE-9D41-966C8B20810A}

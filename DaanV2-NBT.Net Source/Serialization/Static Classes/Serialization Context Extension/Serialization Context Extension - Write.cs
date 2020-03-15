@@ -1,7 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.CompilerServices;
 using DaanV2.Binary;
-using System.IO;
 using BitConverter = DaanV2.Binary.BitConverter;
 
 namespace DaanV2.NBT.Serialization {

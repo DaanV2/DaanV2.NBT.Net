@@ -23,8 +23,9 @@ namespace DaanV2.NBT.Serialization.Serialization {
             NBTTagType SubTagType = (NBTTagType)O;
             ITagReader Reader = NBTReader.GetReader(SubTagType);
 
-            if (Reader == null)
+            if (Reader == null) {
                 throw new Exception($"No reader for type: {SubTagType}");
+            }
 
             for (Int32 I = 0; I < tag.Count; I++) {
                 SubTag = NBTTagFactory.Create(SubTagType);

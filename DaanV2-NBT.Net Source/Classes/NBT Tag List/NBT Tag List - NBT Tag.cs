@@ -22,7 +22,7 @@ namespace DaanV2.NBT {
         private const NBTTagType _Type = NBTTagType.List;
 
         /// <summary>Returns the tag type of this instance</summary>
-        public override NBTTagType Type=> _Type;
+        public override NBTTagType Type => _Type;
 
         /// <summary>Returns the value of this instance</summary>
         /// <returns>Returns the value of this instance</returns>

@@ -48,7 +48,7 @@ namespace DaanV2.NBT {
                     }
                 }
             }
-            catch(Exception ex) {
+            catch (Exception ex) {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }

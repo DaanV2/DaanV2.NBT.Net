@@ -23,8 +23,8 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two <see cref="NBTTagValue{TypeValue}"/> to see if they are equal</returns>
         public static Boolean operator ==(NBTTagValue<TypeValue> A, NBTTagValue<TypeValue> B) {
-            Boolean NA = A is null;
-            Boolean NB = B is null;
+            Boolean NA = ((Object)A)==null;
+            Boolean NB = ((Object)B)==null;
 
             if (NA && NB) {
                 return true;
@@ -41,8 +41,8 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two <see cref="NBTTagValue{TypeValue}"/> to see if they are not equal</returns>
         public static Boolean operator !=(NBTTagValue<TypeValue> A, NBTTagValue<TypeValue> B) {
-            Boolean NA = A is null;
-            Boolean NB = B is null;
+            Boolean NA = ((Object)A)==null;
+            Boolean NB = ((Object)B)==null;
 
             if (NA && NB) {
                 return false;
@@ -59,8 +59,8 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> equals a given object</returns>
         public static Boolean operator ==(NBTTagValue<TypeValue> A, Object B) {
-            Boolean NA = A is null;
-            Boolean NB = B is null;
+            Boolean NA = ((Object)A)==null;
+            Boolean NB = ((Object)B)==null;
 
             if (NA && NB) {
                 return true;
@@ -77,8 +77,8 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> not equals a given object</returns>
         public static Boolean operator !=(NBTTagValue<TypeValue> A, Object B) {
-            Boolean NA = A is null;
-            Boolean NB = B is null;
+            Boolean NA = ((Object)A)==null;
+            Boolean NB = ((Object)B)==null;
 
             if (NA && NB) {
                 return false;
@@ -95,8 +95,8 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> equals a given object</returns>
         public static Boolean operator ==(NBTTagValue<TypeValue> A, TypeValue B) {
-            Boolean NA = A is null;
-            Boolean NB = B is null;
+            Boolean NA = ((Object)A)==null;
+            Boolean NB = ((Object)B)==null;
 
             if (NA && NB) {
                 return true;
@@ -113,8 +113,8 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> not equals a given object</returns>
         public static Boolean operator !=(NBTTagValue<TypeValue> A, TypeValue B) {
-            Boolean NA = A is null;
-            Boolean NB = B is null;
+            Boolean NA = ((Object)A)==null;
+            Boolean NB = ((Object)B)==null;
 
             if (NA && NB) {
                 return false;

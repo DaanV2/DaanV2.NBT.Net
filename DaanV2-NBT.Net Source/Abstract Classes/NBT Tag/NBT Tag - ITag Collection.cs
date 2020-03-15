@@ -146,7 +146,7 @@ namespace DaanV2.NBT {
         public ITag GetSubTag(Int32 Index) {
             if (Index >= this._Tags.Count || Index < 0) {
                 return null;
-            } 
+            }
 
             return this._Tags[Index];
         }

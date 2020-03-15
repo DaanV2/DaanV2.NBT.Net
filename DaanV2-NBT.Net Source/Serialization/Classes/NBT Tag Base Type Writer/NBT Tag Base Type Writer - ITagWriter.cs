@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization.Serialization {
     /// <summary>The type writer for all basic types</summary>
