@@ -12,30 +12,36 @@
     <DebugSymbols>false</DebugSymbols>
     <DocumentationFile>DaanV2.NBT.xml</DocumentationFile>
     <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <DocumentationFile>DaanV2.NBT.xml</DocumentationFile>
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <DocumentationFile>DaanV2.NBT.xml</DocumentationFile>
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>DaanV2.NBT.xml</DocumentationFile>
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DocumentationFile>DaanV2.NBT.xml</DocumentationFile>
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <DocumentationFile>DaanV2.NBT.xml</DocumentationFile>
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
