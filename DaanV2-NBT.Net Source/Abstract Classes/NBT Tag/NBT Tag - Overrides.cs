@@ -18,15 +18,15 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTag {
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Returns a string representation of this instance</summary>
+        /// <returns>Returns a string representation of this instance</returns>
         public override String ToString() {
             return $"'{this.Name}': {this.Type}";
         }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Compare this instance to the given object</summary>
         /// <param name="obj">The object to compare to</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Compare this instance to the given object</returns>
         public override Boolean Equals(Object obj) {
 
             if (obj is NBTTag Tag) {
@@ -48,9 +48,9 @@ namespace DaanV2.NBT {
             return base.Equals(obj);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="other"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Compare this instance to the given object</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <returns>Compare this instance to the given object</returns>
         public Boolean Equals(NBTTag other) {
             return other != null &&
                    base.Equals(other) &&
@@ -58,9 +58,9 @@ namespace DaanV2.NBT {
                    EqualityComparer<String>.Default.Equals(this._Name, other._Name);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="other"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Compare this instance to the given object</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <returns>Compare this instance to the given object</returns>
         public Boolean Equals(ITag other) {
             if (other != null && base.Equals(other) && EqualityComparer<String>.Default.Equals(this._Name, other.Name)) {
 
@@ -76,8 +76,8 @@ namespace DaanV2.NBT {
             return false;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Returns this instance hashcode</summary>
+        /// <returns>Returns this instance hashcode</returns>
         public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
             hashCode = (hashCode * -1521134295) + EqualityComparer<List<ITag>>.Default.GetHashCode(this._Tags);

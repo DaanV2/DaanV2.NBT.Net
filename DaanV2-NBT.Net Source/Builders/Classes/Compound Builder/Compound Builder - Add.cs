@@ -19,8 +19,8 @@ using System.Collections.Generic;
 namespace DaanV2.NBT.Builders {
     public partial class CompoundBuilder {
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="tag"></param>
+        /// <summary>Adds the given tag to the internal list</summary>
+        /// <param name="tag">The tag to add</param>
         public void Add(ITag tag) {
             this._Tag.Add(tag);
         }
@@ -166,7 +166,7 @@ namespace DaanV2.NBT.Builders {
 
         /// <summary>Adds a new sub <see cref="NBTTagCompound"/> to the collection</summary>
         /// <param name="Name">The name of the tag to add to the collection</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Adds a new sub <see cref="NBTTagCompound"/> to the collection</returns>
         public CompoundBuilder AddSubCompound(String Name, Int32 Capacity = 10) {
             CompoundBuilder builder = new CompoundBuilder(Name, Capacity);
             this._Tag.Add(builder._Tag);
@@ -177,7 +177,7 @@ namespace DaanV2.NBT.Builders {
         /// <param name="Name">The name of the tag to add to the collection</param>
         /// <param name="SubType">The subtype of the tags inside the list</param>
         /// <param name="Capacity">The capacity to start the list with</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Adds a new sub <see cref="NBTTagList"/> to the collection</returns>
         public ListBuilder AddSubList(String Name, NBTTagType SubType, Int32 Capacity = 10) {
             NBTTagList Tag = new NBTTagList(Name, SubType, Capacity);
             ListBuilder Builder = new ListBuilder(Tag);

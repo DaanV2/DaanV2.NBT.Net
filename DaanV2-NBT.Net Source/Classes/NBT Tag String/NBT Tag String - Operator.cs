@@ -17,34 +17,34 @@ using System;
 
 namespace DaanV2.NBT {
     public partial class NBTTagString {
-        ///DOLATER <summary>Add Description</summary>
+                /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator ==(NBTTagString A, NBTTagString B) {
             return A._Value.Equals(B._Value) && A._Name.Equals(B._Name);
         }
 
-        ///DOLATER <summary>Add Description</summary>
+                /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator !=(NBTTagString A, NBTTagString B) {
             return !(A._Value.Equals(B._Value) || A._Name.Equals(B._Name));
         }
 
-        ///DOLATER <summary>Add Description</summary>
+                /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator ==(NBTTagString A, Object B) {
             return A.Equals(B);
         }
 
-        ///DOLATER <summary>Add Description</summary>
+                /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator !=(NBTTagString A, Object B) {
             return !A.Equals(B);
         }

@@ -17,10 +17,10 @@ using System;
 
 namespace DaanV2.NBT {
     public partial class NBTTagInt {
-        ///DOLATER <summary>Add Description</summary>
+                /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator ==(NBTTagInt A, NBTTagInt B) {
             Boolean NA = A is null;
             Boolean NB = B is null;
@@ -35,10 +35,10 @@ namespace DaanV2.NBT {
             return A._Value.Equals(B._Value) && A._Name.Equals(B._Name);
         }
 
-        ///DOLATER <summary>Add Description</summary>
+                /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator !=(NBTTagInt A, NBTTagInt B) {
             Boolean NA = A is null;
             Boolean NB = B is null;
@@ -53,10 +53,10 @@ namespace DaanV2.NBT {
             return !(A._Value.Equals(B._Value) || A._Name.Equals(B._Name));
         }
 
-        ///DOLATER <summary>Add Description</summary>
+                /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator ==(NBTTagInt A, Object B) {
             Boolean NA = A is null;
             Boolean NB = B is null;
@@ -71,10 +71,10 @@ namespace DaanV2.NBT {
             return A.Equals(B);
         }
 
-        ///DOLATER <summary>Add Description</summary>
+                /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator !=(NBTTagInt A, Object B) {
             Boolean NA = A is null;
             Boolean NB = B is null;
