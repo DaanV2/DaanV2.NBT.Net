@@ -14,30 +14,21 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.
-/* Unmerged change from project 'EP-API-NBTTag-Data.Net Core'
-Before:
 using System.Runtime.Serialization;
-using System.Linq;
-After:
-using System.Linq;
-using System.Runtime.Serialization;
-*/
-Runtime.Serialization;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for enumerator: NBTTagInformation</summary>
+    /// <summary>The enumerator that helps with specifing which </summary>
 	[Serializable, DataContract]
     public enum NBTTagInformation {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Marks that the process should target the value of the tag</summary>
         Value,
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Marks that the process should target the name of the tag</summary>
         Name,
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Marks that the process should target the subtags of the tag</summary>
         Tag,
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Marks that the process should target the size of the list of the tag</summary>
         ListSize,
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Marks that the process should target the sub types of the list of the tag</summary>
         ListSubtype
     }
 }

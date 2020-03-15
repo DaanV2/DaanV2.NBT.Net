@@ -125,9 +125,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - Byte.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\NBT Casting\NBTCasting - ConvertTo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - GzipStream.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - Const.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - Read.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Stream Extension\Stream Extension - Writer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Utillity\Utillity.cs" />
   </ItemGroup>
   <ItemGroup>

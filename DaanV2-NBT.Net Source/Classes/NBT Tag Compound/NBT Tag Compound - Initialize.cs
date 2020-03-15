@@ -17,7 +17,7 @@ using System;
 using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for class: NBTTagCompound</summary>
+    /// <summary>The class that stores the information for: Compound</summary>
 	[Serializable, DataContract]
     public partial class NBTTagCompound {
         /// <summary>Creates a new instance of <see cref="NBTTagCompound"/></summary>

@@ -18,22 +18,24 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public static partial class NBTTagFactory {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
-        /// <param name="SubType"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates the specified list as a tag</summary>
+        /// <param name="Name">The name of the list</param>
+        /// <param name="SubType">The subtype to fill</param>
+        /// <returns>Creates the specified list as a tag</returns>
         private static (ITag List, Type SubType) CreateList(String Name, NBTTagType SubType) {
             ITag Out = NBTTagFactory.Create(NBTTagType.List);
+            Out.Name = Name;
+            Out.SetInformation(NBTTagInformation.ListSubtype, SubType);
             Type TagType = NBTTagFactory.Types.ContainsKey(NBTTagType.Byte) ? Types[NBTTagType.Byte] : null;
 
             return (Out, TagType);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <typeparam name="T">Add Type description</typeparam>
-        /// <param name="List"></param>
-        /// <param name="SubType"></param>
-        /// <param name="SubType"></param>
+        /// <summary>Transfers a list of items into a tag as sub tag intems</summary>
+        /// <typeparam name="T">The type of items to transfer</typeparam>
+        /// <param name="List">The tag to receive the new sub tags</param>
+        /// <param name="SubType">The sub tag type, must implement <see cref="ITag"/></param>
+        /// <param name="Source">The source of items to transfer</param>
         private static void Transfer<T>(ITag List, Type SubType, List<T> Source) {
             Int32 Count = Source.Count;
             ITag SubTag;
@@ -45,10 +47,10 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
-        /// <param name=""></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <param name="Name">The name of the Tag</param>
+        /// <param name="Value">The value of the receiving tag</param>
+        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, List<Boolean> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Byte);
             Int32 Count = Value.Count;
@@ -62,70 +64,70 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
-        /// <param name=""></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <param name="Name">The name of the Tag</param>
+        /// <param name="Value">The value of the receiving tag</param>
+        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, List<Byte> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Byte);
             NBTTagFactory.Transfer(Out, TagType, Value);
             return Out;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
-        /// <param name=""></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <param name="Name">The name of the Tag</param>
+        /// <param name="Value">The value of the receiving tag</param>
+        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, List<Double> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Double);
             NBTTagFactory.Transfer(Out, TagType, Value);
             return Out;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
-        /// <param name=""></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <param name="Name">The name of the Tag</param>
+        /// <param name="Value">The value of the receiving tag</param>
+        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, List<Single> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Float);
             NBTTagFactory.Transfer(Out, TagType, Value);
             return Out;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
-        /// <param name=""></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <param name="Name">The name of the Tag</param>
+        /// <param name="Value">The value of the receiving tag</param>
+        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, List<Int32> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Int);
             NBTTagFactory.Transfer(Out, TagType, Value);
             return Out;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
-        /// <param name=""></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <param name="Name">The name of the Tag</param>
+        /// <param name="Value">The value of the receiving tag</param>
+        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, List<Int64> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Long);
             NBTTagFactory.Transfer(Out, TagType, Value);
             return Out;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
-        /// <param name=""></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <param name="Name">The name of the Tag</param>
+        /// <param name="Value">The value of the receiving tag</param>
+        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, List<Int16> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Short);
             NBTTagFactory.Transfer(Out, TagType, Value);
             return Out;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name"></param>
-        /// <param name=""></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <param name="Name">The name of the Tag</param>
+        /// <param name="Value">The value of the receiving tag</param>
+        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, List<String> Value) {
             (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.String);
             NBTTagFactory.Transfer(Out, TagType, Value);

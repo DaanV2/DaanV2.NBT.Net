@@ -20,6 +20,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
+    <DocumentationFile>DaanV2.NBT.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

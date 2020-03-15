@@ -17,7 +17,7 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets or sets the value of this Tag</summary>
         [DataMember]
         public TypeValue Value { get => this._Value; set => this._Value = value; }
     }

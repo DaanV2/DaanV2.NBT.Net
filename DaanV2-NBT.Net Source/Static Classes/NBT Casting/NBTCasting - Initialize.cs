@@ -15,7 +15,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for class: NBTCasting</summary>
+    /// <summary>The class that provide support converting between values</summary>
     public static partial class NBTCasting {
         /// <summary>Creates a new instance of <see cref="NBTCasting"/></summary>
         static NBTCasting() {

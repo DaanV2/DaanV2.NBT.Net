@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using DaanV2.NBT.Serialization;
 
 namespace DaanV2.NBT.Serialization {
-    ///DOLATER <summary> add description for class: NBTReader</summary>
+    /// <summary>The class that deserializers the given stream into Tags</summary>
     public static partial class NBTReader {
         /// <summary>Creates a new instance of <see cref="NBTReader"/></summary>
         static NBTReader() {

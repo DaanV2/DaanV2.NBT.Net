@@ -18,33 +18,39 @@ using System.Collections.Generic;
 using System.Reflection;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for class: Utillity</summary>
+    /// <summary>The static class that provides utillity to the rest of the api</summary>
     public static partial class Utillity {
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Returns a list of object that all implement a specified type</summary>
+        /// <returns>Returns a list of object that all implement a specified type</returns>
         public static List<T> GetInterfaces<T>() {
             List<T> Out = new List<T>(10);
             Type Find = typeof(T);
-            Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            Int32 AsmLength = Assemblies.Length;
-            Type[] Types;
-            Type Current;
-            Int32 TypesLength;
-            Assembly Asm;
+            try {
+                Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
+                Int32 AsmLength = Assemblies.Length;
+                Type[] Types;
+                Type Current;
+                Int32 TypesLength;
+                Assembly Asm;
 
-            for (Int32 I = 0; I < AsmLength; I++) {
-                Asm = Assemblies[I];
+                for (Int32 I = 0; I < AsmLength; I++) {
+                    Asm = Assemblies[I];
 
-                Types = Asm.GetTypes();
-                TypesLength = Types.Length;
+                    Types = Asm.GetTypes();
+                    TypesLength = Types.Length;
 
-                for (Int32 J = 0; J < TypesLength; J++) {
-                    Current = Types[J];
+                    for (Int32 J = 0; J < TypesLength; J++) {
+                        Current = Types[J];
 
-                    if (Current.GetInterface(Find.Name) != null) {
-                        Out.Add((T)Activator.CreateInstance(Current));
+                        if (Current.GetInterface(Find.Name) != null) {
+                            Out.Add((T)Activator.CreateInstance(Current));
+                        }
                     }
                 }
+            }
+            catch(Exception ex) {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
             }
 
             return Out;

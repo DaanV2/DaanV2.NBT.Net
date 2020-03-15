@@ -34,16 +34,18 @@ namespace DaanV2.NBT {
         /// <returns>Gets the value of this tag</returns>
         public abstract Object GetValue();
 
-        /// <summary>Gets the value of this tag</summary>
-        /// <typeparam name="T">The type of the value to be returned</typeparam>
-        /// <returns>Gets the value of this tag</returns>
-        public abstract T GetValue<T>();
+        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <typeparam name="T">The type to convert to</typeparam>
+        /// <returns>Converts the value of this tag to the specified type</returns>
+        public abstract T GetValue<T>();    
 
         /// <summary>Sets the value of this tag with the given value</summary>
         /// <param name="O">The value to set</param>
         public abstract void SetValue(Object O);
 
         /// <summary>Sets the specified information of this tag with the given value</summary>
+        /// <param name="InfoType">The into type to store the information in</param>
+        /// <param name="Info">The information to store</param>
         public virtual void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
                 case NBTTagInformation.Name:

@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaanV2.NBT.Net", "DaanV2.NB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{193B3F7C-7EE1-48CC-A72E-971B074045D4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66E6986E-A3F3-46F9-B6E1-6CC4A586F0B1}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		DaanV2-NBT.Net Source\DaanV2-NBT.Net Source.projitems*{8c661557-152d-412e-bf39-241f072b6d84}*SharedItemsImports = 4

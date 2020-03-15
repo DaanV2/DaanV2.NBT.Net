@@ -17,10 +17,10 @@ using System;
 
 namespace DaanV2.NBT {
     public static partial class NBTCasting {
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <typeparam name="T">Add Type description</typeparam>
-        /// <param name="Value"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
         public static T ConvertTo<T>(Object Value) {
             if (Value == null) {
                 return default;

@@ -5,7 +5,6 @@ using System.IO;
 using BitConverter = DaanV2.Binary.BitConverter;
 
 namespace DaanV2.NBT.Serialization {
-    ///DOLATER <summary>add description for class: SerializationContextExtension</summary>
     public static partial class SerializationContextExtension {
         /// <summary>Writes an array of <see cref="Byte"/> into the <see cref="Stream"/></summary>
         /// <param name="Context">The Context that holds the stream, buffer, and endianness</param>

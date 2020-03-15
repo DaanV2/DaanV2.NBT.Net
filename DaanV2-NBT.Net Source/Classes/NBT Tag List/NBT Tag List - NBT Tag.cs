@@ -18,27 +18,27 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList : NBTTag {
-        ///DOLATER <summary>Add Description</summary>
-        private static readonly NBTTagType _Type = NBTTagType.List;
+        /// <summary>Returns the tag type of this instance</summary>
+        private const NBTTagType _Type = NBTTagType.List;
 
-        ///DOLATER <summary>Add Description</summary>
-        public override NBTTagType Type => _Type;
+        /// <summary>Returns the tag type of this instance</summary>
+        public override NBTTagType Type=> _Type;
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Returns the value of this instance</summary>
+        /// <returns>Returns the value of this instance</returns>
         public override Object GetValue() {
             return this.Tags;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <typeparam name="T">Add Type description</typeparam>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <typeparam name="T">The type to convert to</typeparam>
+        /// <returns>Converts the value of this tag to the specified type</returns>
         public override T GetValue<T>() {
             return this.Tags is T val ? val : default;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="O"></param>
+        /// <summary>Sets the value of this instance</summary>
+        /// <param name="O">The value to set</param>
         public override void SetValue(Object O) {
             if (O is List<ITag> T) {
                 this.Tags = T;
@@ -48,9 +48,9 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <typeparam name="T">Add Type description</typeparam>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <typeparam name="T">The type to convert to</typeparam>
+        /// <returns>Converts the value of this tag to the specified type</returns>
         public override T ConvertValue<T>() {
             return NBTCasting.ConvertTo<T>(this._Tags);
         }

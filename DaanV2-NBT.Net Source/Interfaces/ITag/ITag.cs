@@ -16,42 +16,44 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for interface: ITag</summary>
+    /// <summary>The class that is responsible for forming the contract on how Nbt Tag should behave</summary>
     public interface ITag : ITagCollection {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets or sets the name of this tag</summary>
         String Name { get; set; }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets the type of this tag</summary>
         NBTTagType Type { get; }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Gets the value of this tag</summary>
+        /// <returns>Gets the value of this tag</returns>
         Object GetValue();
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <typeparam name="T">Add Type description</typeparam>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <typeparam name="T">The type to convert to</typeparam>
+        /// <returns>Converts the value of this tag to the specified type</returns>
         T GetValue<T>();
 
-        /// <summary>Casts the value of this <see cref="ITag"/> to the specifed type</summary>
-        ///DOLATER <typeparam name="T">Add Type description</typeparam>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <typeparam name="T">The type to convert to</typeparam>
+        /// <returns>Converts the value of this tag to the specified type</returns>
         T ConvertValue<T>();
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="O"></param>
+        /// <summary>Sets the value of this tag with the given value</summary>
+        /// <param name="O">The value to set</param>
         void SetValue(Object O);
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Sets the specified information of this tag with the given value</summary>
+        /// <param name="InfoType">The into type to store the information in</param>
+        /// <param name="Info">The information to store</param>
         void SetInformation(NBTTagInformation InfoType, Object Info);
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Retrieves the specified information</summary>
+        /// <param name="InfoType">The info type to retrieve from this <see cref="ITag"/></param>
+        /// <returns>Retrieves the specified information</returns>
         Object GetInformation(NBTTagInformation InfoType);
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Creates a copy of this instance</summary>
+        /// <returns>Creates a copy of this instance</returns>
         ITag Clone();
     }
 }

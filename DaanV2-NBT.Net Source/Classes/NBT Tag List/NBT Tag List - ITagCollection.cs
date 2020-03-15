@@ -20,9 +20,9 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList : ITagCollection, IEnumerable<ITag>, IEnumerable {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets or sets the subtag with the given name</summary>
         /// <param name="Name">The name of the tag</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Gets or sets the subtag with the given name</returns>
         [IgnoreDataMember]
         public new ITag this[String Name] {
             get {
@@ -54,9 +54,9 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Index"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Gets or sets the subtag with the given index</summary>
+        /// <param name="Index">The index of </param>
+        /// <returns>Gets or sets the subtag with the given index</returns>
         [IgnoreDataMember]
         public new ITag this[Int32 Index] {
             get => this._Tags[Index];
@@ -73,8 +73,8 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name=""></param>
+        /// <summary>Add the given tag to the internal list</summary>
+        /// <param name="Tag">The tag to add</param>
         public override void Add(ITag tag) {
             if (tag.Type != this.SubType) {
                 throw new ArgumentException($"value type must be same as the lists subtype");
@@ -83,14 +83,14 @@ namespace DaanV2.NBT {
             this._Tags.Add(tag);
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Returns an enumerator that iteraters through <see cref="NBTTagList"/></summary>
+        /// <returns>Returns an enumerator that iteraters through <see cref="NBTTagList"/></returns>
         public IEnumerator GetEnumerator() {
             return this._Tags.GetEnumerator();
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Returns an enumerator that iteraters through <see cref="NBTTagList"/></summary>
+        /// <returns>Returns an enumerator that iteraters through <see cref="NBTTagList"/></returns>
         IEnumerator<ITag> IEnumerable<ITag>.GetEnumerator() {
             return this._Tags.GetEnumerator();
         }

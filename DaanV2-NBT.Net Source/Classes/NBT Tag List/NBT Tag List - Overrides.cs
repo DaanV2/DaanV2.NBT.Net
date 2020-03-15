@@ -18,7 +18,9 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Sets the specified information of this tag with the given value</summary>
+        /// <param name="InfoType">The into type to store the information in</param>
+        /// <param name="Info">The information to store</param>
         public override void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -52,10 +54,10 @@ namespace DaanV2.NBT {
             }
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="InfoType">The info type to retrieve from this <see="ITag"> </param>
-        ///DOLATER <returns>Fill return</returns>
-        public override Object GetInformation(NBTTagInformation InfoType) {
+        /// <summary>Retrieves the specified information</summary>
+        /// <param name="InfoType">The info type to retrieve from this <see cref="ITag"/></param>
+        /// <returns>Retrieves the specified information</returns>
+        public virtual Object GetInformation(NBTTagInformation InfoType) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
                     return this._Name;
@@ -99,7 +101,7 @@ namespace DaanV2.NBT {
 
         /// <summary>Returns the hashcode of this instance</summary>
         /// <returns>Returns the hashcode of this instance</returns>
-        public override Int32 GetHashCode()()() {
+        public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
             hashCode = (hashCode * -1521134295) + EqualityComparer<NBTTagType>.Default.GetHashCode(this._SubType);
             hashCode = (hashCode * -1521134295) + EqualityComparer<List<ITag>>.Default.GetHashCode(this._Tags);
@@ -107,8 +109,8 @@ namespace DaanV2.NBT {
             return hashCode;
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Create a clone of this instance</summary>
+        /// <returns>Create a clone of this instance</returns>
         public override ITag Clone() {
             NBTTagList Out = new NBTTagList(this.SubType, this._Tags.Count) {
                 Name = this.Name

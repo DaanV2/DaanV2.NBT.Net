@@ -19,9 +19,9 @@ using System.Collections.Generic;
 namespace DaanV2.NBT {
     public partial class NBTTagByte {
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="obj">The object to compare to</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Compares this instance to the given object</summary>
+        /// <param name="Obj">The object to compare to</param>
+        /// <returns>Compares this instance to the given object</returns>
         public override Boolean Equals(Object Obj) {
             if (Obj is NBTTagByte Tag) {
                 return this.Equals(Tag);
@@ -42,7 +42,7 @@ namespace DaanV2.NBT {
 
         /// <summary>Returns the hashcode of this instance</summary>
         /// <returns>Returns the hashcode of this instance</returns>
-        public override Int32 GetHashCode()()() {
+        public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
             hashCode = (hashCode * -1521134295) + EqualityComparer<Byte>.Default.GetHashCode(this._Value);
             hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode(this._Name);

@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace DaanV2.NBT.Serialization {
-    ///DOLATER <summary>add description for class: SerializationContextExtension</summary>
+    /// <summary>The class that extends upon the <see cref="SerializationContext"/></summary>
     public static partial class SerializationContextExtension {
         /// <summary>Returns the amount of bytes a <see cref="Byte"/> uses</summary>
         public const Int32 ByteSize = sizeof(Byte);

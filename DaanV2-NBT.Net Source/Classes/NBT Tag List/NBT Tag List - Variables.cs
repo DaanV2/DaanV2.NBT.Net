@@ -16,7 +16,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
 namespace DaanV2.NBT {
     public partial class NBTTagList {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>The field that stores the sub type</summary>
         private NBTTagType _SubType;
     }
 }

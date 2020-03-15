@@ -17,7 +17,7 @@ using System;
 using System.Runtime.Serialization;
 
 namespace DaanV2.NBT.Builders {
-    ///DOLATER <summary> add description for class: ListBuilder</summary>
+    /// <summary> add description for class: ListBuilder</summary>
 	[Serializable, DataContract]
     public partial class ListBuilder {
         /// <summary>Creates a new instance of <see cref="ListBuilder"/></summary>

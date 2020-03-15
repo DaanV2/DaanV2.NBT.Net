@@ -2,7 +2,7 @@
 using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization {
-    ///DOLATER <summary> add description for interface: ITagReader</summary>
+    /// <summary>The interface responsible for determing on how to </summary>
     public interface ITagReader {
         /// <summary>Reads the nbt's header from the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to read from the <see cref="Stream"/></param>

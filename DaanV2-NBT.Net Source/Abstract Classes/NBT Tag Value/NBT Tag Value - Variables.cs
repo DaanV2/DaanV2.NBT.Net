@@ -16,7 +16,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> {
-        ///DOLATER <summary>Add Description</summary>
-        internal TypeValue _Value;
+        /// <summary>The field that stores the value</summary>
+        protected TypeValue _Value;
     }
 }

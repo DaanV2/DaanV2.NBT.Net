@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using DaanV2.NBT.Serialization;
 
 namespace DaanV2.NBT.Serialization {
-    ///DOLATER <summary> add description for class: NBTWriter</summary>
+    /// <summary>The static class that serializes the given tags</summary>
     public static partial class NBTWriter {
         /// <summary>Creates a new instance of <see cref="NBTWriter"/></summary>
         static NBTWriter() {

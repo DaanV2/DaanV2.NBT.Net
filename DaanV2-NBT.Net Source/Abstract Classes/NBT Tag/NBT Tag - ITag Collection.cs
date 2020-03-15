@@ -66,7 +66,7 @@ namespace DaanV2.NBT {
             set => this._Tags[Index] = value;
         }
 
-        /// <summary>Adds the given tag to the internal list</summary>
+        /// <summary>Adds the specified tag to this instance</summary>
         /// <param name="tag">The tag to add</param>
         public virtual void Add(ITag tag) {
             Int32 Max = this._Tags.Count;
@@ -144,6 +144,10 @@ namespace DaanV2.NBT {
         /// <param name="Index"></param>
         /// <returns>Retrieves the tag with the given index</returns>
         public ITag GetSubTag(Int32 Index) {
+            if (Index >= this._Tags.Count || Index < 0) {
+                return null;
+            } 
+
             return this._Tags[Index];
         }
 

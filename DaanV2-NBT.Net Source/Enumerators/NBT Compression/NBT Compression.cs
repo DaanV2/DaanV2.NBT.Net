@@ -14,28 +14,19 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.
-/* Unmerged change from project 'EP-API-NBTTag-Data.Net Core'
-Before:
 using System.Runtime.Serialization;
-using System.Linq;
-After:
-using System.Linq;
-using System.Runtime.Serialization;
-*/
-Runtime.Serialization;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for enumerator: NBTCompression</summary>
+    /// <summary>The type of compressions this NBT library uses</summary>
 	[Serializable, DataContract]
     public enum NBTCompression {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Marks that no compression should be used</summary>
         None = 0,
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Marks that the (de)serializers should detect which compression has been used</summary>
         Auto,
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Marks that the (de)serializers should use a GZIP stream</summary>
         Gzip,
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Marks that the (de)serializers should use a Zlib stream</summary>
         Zlib
     }
 }

@@ -17,7 +17,7 @@ using System;
 using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for class: NBTTagInt</summary>
+    /// <summary>The class that stores the information for: Int</summary>
 	[Serializable, DataContract]
     public partial class NBTTagInt : NBTTagValue<Int32> {
         /// <summary>Creates a new instance of <see cref="NBTTagInt"/></summary>
@@ -28,10 +28,10 @@ namespace DaanV2.NBT {
         /// <param name="Value">The value of the tag</param>
         public NBTTagInt(String Name, Int32 Value) : base(Name, Value) { }
 
-        ///DOLATER <summary>Add Description</summary>
-        private static readonly NBTTagType _Type = NBTTagType.Int;
+        /// <summary>Returns the tag type of this instance</summary>
+        private const NBTTagType _Type = NBTTagType.Int;
 
-        ///DOLATER <summary>Add Description</summary>
-        public override NBTTagType Type => _Type;
+        /// <summary>Returns the tag type of this instance</summary>
+        public override NBTTagType Type=> _Type;
     }
 }

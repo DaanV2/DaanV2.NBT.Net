@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for class: NBTTagFactory</summary>
+    /// <summary>The class that stores the information for: Factory</summary>
     public static partial class NBTTagFactory {
         /// <summary>Creates a new instance of <see cref="NBTTagFactory"/></summary>
         static NBTTagFactory() {

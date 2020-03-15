@@ -78,7 +78,7 @@ namespace DaanV2.NBT {
 
         /// <summary>Returns this instance hashcode</summary>
         /// <returns>Returns this instance hashcode</returns>
-        public override Int32 GetHashCode()() {
+        public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
             hashCode = (hashCode * -1521134295) + EqualityComparer<List<ITag>>.Default.GetHashCode(this._Tags);
             hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode(this._Name);

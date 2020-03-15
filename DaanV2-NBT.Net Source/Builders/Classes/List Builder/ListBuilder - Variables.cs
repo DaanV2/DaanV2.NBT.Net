@@ -16,7 +16,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
 namespace DaanV2.NBT.Builders {
     public partial class ListBuilder {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>The field that stores the sub tag</summary>
         private NBTTagList _Tag;
     }
 }

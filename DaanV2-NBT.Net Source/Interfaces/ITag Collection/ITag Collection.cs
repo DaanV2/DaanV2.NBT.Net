@@ -16,46 +16,46 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for interface: ITagCollection</summary>
+    /// <summary>The interface responsible for forming the contract on how Tag collection should behave</summary>
     public interface ITagCollection {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Returns the amount of sub tags this instance has</summary>
         Int32 Count { get; }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Returns the tag with the specified name</summary>
         /// <param name="Name">The name of the tag</param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <returns>Returns the tag with the specified name</returns>
         ITag this[String Name] { get; set; }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="IIndex"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Returns the tag at the specified index</summary>
+        /// <param name="Index">The index to look at</param>
+        /// <returns>Returns the tag at the specified index</returns>
         ITag this[Int32 Index] { get; set; }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="tag"></param>
+        /// <summary>Adds the given tag to this instance</summary>
+        /// <param name="tag">The tag to add</param>
         void Add(ITag tag);
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Index"></param>
+        /// <summary>Removes the tag at the specified index</summary>
+        /// <param name="Index">The index of the tag to remove</param>
         void Remove(Int32 Index);
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Name">The name of the tag</param>
+        /// <summary>Removes the tag with the specified name</summary>
+        /// <param name="Name">The name of the tag to remove</param>
         void Remove(String Name);
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Removes all the tag inside this instance</summary>
         void Clear();
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Retrieves the subtag with the specified name, this is done safetly, if nothing is found then null is returned</summary>
         ITag GetSubTag(String Name);
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Retrieves the subtag at the specified index, this is done safetly, if nothing is found then null is returned</summary>
         ITag GetSubTag(Int32 Index);
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Retrieves the value of specified subtag, this is done safetly, if nothing is found or can be converted then null is returned</summary>
         T GetSubValue<T>(String Name);
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Retrieves the value of specified subtag, this is done safetly, if nothing is found or can be converted then null is returned</summary>
         T GetSubValue<T>(Int32 Index);
     }
 }

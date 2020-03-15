@@ -18,9 +18,10 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public static partial class NBTCasting {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Value"></param>
-        ///DOLATER <returns>Fill return</returns>
+        /// <summary>Converts the given value into the specified type</summary>
+        /// <param name="Value">The value to convert</param>
+        /// <param name="To">The type to convert to</param>
+        ///<returns>Converts the given value into the specified type</returns>
         private static Object Convert(Double Value, Type To) {
             if (To == typeof(List<Double>)) {
                 return new List<Double> { Value };

@@ -16,7 +16,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
 namespace DaanV2.NBT {
     public partial class NBTTagList : NBTTag {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets or sets the sub type of this tag</summary>
         public NBTTagType SubType { get => this._SubType; set => this._SubType = value; }
     }
 }

@@ -3,7 +3,7 @@ using System.IO;
 using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization.Serialization {
-    ///DOLATER <summary> add description for class: NBTTagBaseTypeReader</summary>
+    /// <summary>A class that can read base types from the stream</summary>
     internal partial class NBTTagBaseTypeReader : ITagReader {
         /// <summary>Gets the type for which this object can read</summary>
         private static readonly NBTTagType[] _ForType = new NBTTagType[] {

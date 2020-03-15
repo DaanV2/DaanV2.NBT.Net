@@ -14,48 +14,39 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.
-/* Unmerged change from project 'EP-API-NBTTag-Data.Net Core'
-Before:
 using System.Runtime.Serialization;
-using System.Linq;
-After:
-using System.Linq;
-using System.Runtime.Serialization;
-*/
-Runtime.Serialization;
 
 namespace DaanV2.NBT {
-    ///DOLATER <summary> add description for enumerator: TagType</summary>
+    /// <summary>The enumerator that stores all the possible subtypes for nbt tags</summary>
 	[Serializable, DataContract]
     public enum NBTTagType : Byte {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Marks that the nbt tag is the last in a series of tags</summary>
         End = 0,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="Byte"/> of information</summary>
         Byte = 1,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores an <see cref="Int16"/> of information</summary>
         Short = 2,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores an <see cref="Int32"/> of information</summary>
         Int = 3,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores an <see cref="Int64"/> of information</summary>
         Long = 4,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="Single"/> of information</summary>
         Float = 5,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="Double"/> of information</summary>
         Double = 6,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="Byte[]"/> of information</summary>
         ByteArray = 7,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="String"/> of information</summary>
         String = 8,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores a List of unnamed tags</summary>
         List = 9,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores a composite tag of named subtags</summary>
         Compound = 10,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="Int32[]"/> of information</summary>
         IntArray = 11,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>Marks that the nbt tag stores a <see cref="Int64[]"/> of information</summary>
         LongArray = 12,
-        ///DOLATER <summary>Add Description</summary>
+        ///<summary>No idea what the tag should be</summary>
         Unknown = 255
     }
 }
