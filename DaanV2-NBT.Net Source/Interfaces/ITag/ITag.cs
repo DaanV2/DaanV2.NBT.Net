@@ -18,31 +18,31 @@ using System;
 namespace DaanV2.NBT {
     /// <summary>The class that is responsible for forming the contract on how Nbt Tag should behave</summary>
     public interface ITag : ITagCollection {
-        /// <summary>Gets or sets the name of this tag</summary>
+        /// <summary>Gets or sets the name of this <see cref="Itag"/></summary>
         String Name { get; set; }
 
-        /// <summary>Gets the type of this tag</summary>
+        /// <summary>Gets the type of this <see cref="Itag"/></summary>
         NBTTagType Type { get; }
 
-        /// <summary>Gets the value of this tag</summary>
-        /// <returns>Gets the value of this tag</returns>
+        /// <summary>Gets the value of this <see cref="Itag"/></summary>
+        /// <returns>Gets the value of this <see cref="Itag"/></returns>
         Object GetValue();
 
-        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <summary>Converts the value of this <see cref="Itag"/> to the specified type</summary>
         /// <typeparam name="T">The type to convert to</typeparam>
-        /// <returns>Converts the value of this tag to the specified type</returns>
+        /// <returns>Converts the value of this <see cref="Itag"/> to the specified type</returns>
         T GetValue<T>();
 
-        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <summary>Converts the value of this <see cref="Itag"/> to the specified type</summary>
         /// <typeparam name="T">The type to convert to</typeparam>
-        /// <returns>Converts the value of this tag to the specified type</returns>
+        /// <returns>Converts the value of this <see cref="Itag"/> to the specified type</returns>
         T ConvertValue<T>();
 
-        /// <summary>Sets the value of this tag with the given value</summary>
+        /// <summary>Sets the value of this <see cref="Itag"/> with the given value</summary>
         /// <param name="O">The value to set</param>
         void SetValue(Object O);
 
-        /// <summary>Sets the specified information of this tag with the given value</summary>
+        /// <summary>Sets the specified information of this <see cref="Itag"/> with the given value</summary>
         /// <param name="InfoType">The into type to store the information in</param>
         /// <param name="Info">The information to store</param>
         void SetInformation(NBTTagInformation InfoType, Object Info);
@@ -52,8 +52,8 @@ namespace DaanV2.NBT {
         /// <returns>Retrieves the specified information</returns>
         Object GetInformation(NBTTagInformation InfoType);
 
-        /// <summary>Creates a copy of this instance</summary>
-        /// <returns>Creates a copy of this instance</returns>
+        /// <summary>Creates a copy of this <see cref="Itag"/></summary>
+        /// <returns>Creates a copy of this <see cref="Itag"/></returns>
         ITag Clone();
     }
 }

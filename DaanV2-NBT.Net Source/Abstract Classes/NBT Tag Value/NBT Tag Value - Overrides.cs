@@ -41,9 +41,9 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>Returns the specified information of this instance</summary>
-        /// <param name="InfoType">The info type to retrieve from this instance</param>
-        /// <returns>Returns the specified information of this instance</returns>
+        /// <summary>Returns the specified information of this <see cref="Itag"/></summary>
+        /// <param name="InfoType">The info type to retrieve from this <see cref="Itag"/></param>
+        /// <returns>Returns the specified information of this <see cref="Itag"/></returns>
         public override Object GetInformation(NBTTagInformation InfoType) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -64,15 +64,15 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>Returns a string representation of this tag</summary>
-        /// <returns>Returns a string representation of this tag</returns>
+        /// <summary>Returns a string representation of this <see cref="Itag"/></summary>
+        /// <returns>Returns a string representation of this <see cref="Itag"/></returns>
         public override String ToString() {
             return $"'{this.Name}': {this.Type}: {this._Value}";
         }
 
-        /// <summary>Compare this instance with the given instance if they are the same</summary>
+        /// <summary>Compare this <see cref="Itag"/> with the given instance if they are the same</summary>
         /// <param name="obj">The object to compare to</param>
-        /// <returns>Compare this instance with the given instance if they are the same</returns>
+        /// <returns>Compare this <see cref="Itag"/> with the given instance if they are the same</returns>
         public override Boolean Equals(Object obj) {
             if (obj is NBTTagValue<TypeValue> TValue) {
                 return this.Equals(TValue);
@@ -81,9 +81,9 @@ namespace DaanV2.NBT {
             return base.Equals(obj);
         }
 
-        /// <summary>Compare this instance with the given instance if they are the same</summary>
+        /// <summary>Compare this <see cref="Itag"/> with the given instance if they are the same</summary>
         /// <param name="other">The object to compare to</param>
-        /// <returns>Compare this instance with the given instance if they are the same</returns>
+        /// <returns>Compare this <see cref="Itag"/> with the given instance if they are the same</returns>
         public Boolean Equals(NBTTagValue<TypeValue> other) {
             return other != null && base.Equals(other) &&
                    EqualityComparer<TypeValue>.Default.Equals(this._Value, other._Value) &&

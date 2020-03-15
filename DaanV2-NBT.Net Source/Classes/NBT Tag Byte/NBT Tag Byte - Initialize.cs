@@ -33,7 +33,7 @@ namespace DaanV2.NBT {
         /// <param name="Value">The value of the tag</param>
         public NBTTagByte(String Name, Boolean Value) : base(Name, (Byte)(Value ? 1 : 0)) { }
 
-        /// <summary>Returns the tag type of this instance</summary>
+        /// <summary>Returns the tag type of this <see cref="Itag"/></summary>
         private const NBTTagType _Type = NBTTagType.Byte;
 
         /// <summary>Returns the tag's type</summary>

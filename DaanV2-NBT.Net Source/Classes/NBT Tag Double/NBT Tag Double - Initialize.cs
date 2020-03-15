@@ -28,10 +28,10 @@ namespace DaanV2.NBT {
         /// <param name="Value">The value of the tag</param>
         public NBTTagDouble(String Name, Double Value) : base(Name, Value) { }
 
-        /// <summary>Returns the tag type of this instance</summary>
+        /// <summary>Returns the tag type of this <see cref="Itag"/></summary>
         private const NBTTagType _Type = NBTTagType.Double;
 
-        /// <summary>Returns the tag type of this instance</summary>
+        /// <summary>Returns the tag type of this <see cref="Itag"/></summary>
         public override NBTTagType Type => _Type;
     }
 }

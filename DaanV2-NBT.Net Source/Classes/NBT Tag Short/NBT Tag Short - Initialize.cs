@@ -28,10 +28,10 @@ namespace DaanV2.NBT {
         /// <param name="Value">The value of the tag</param>
         public NBTTagShort(String Name, Int16 Value) : base(Name, Value) { }
 
-        /// <summary>Returns the tag type of this instance</summary>
+        /// <summary>Returns the tag type of this <see cref="Itag"/></summary>
         private const NBTTagType _Type = NBTTagType.Short;
 
-        /// <summary>Returns the tag type of this instance</summary>
+        /// <summary>Returns the tag type of this <see cref="Itag"/></summary>
         public override NBTTagType Type => _Type;
     }
 }

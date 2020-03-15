@@ -15,6 +15,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO.Compression;
+using System.Runtime.CompilerServices;
 
 namespace DaanV2.NBT {
 
@@ -22,6 +23,7 @@ namespace DaanV2.NBT {
         /// <summary>Reads a byte from the given Gzip stream</summary>
         /// <param name="stream">The stream to read from</param>
         /// <returns>Reads a byte from the given Gzip stream</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int32 ReadByte(this GZipStream stream) {
             if (stream.Length < stream.Position) {
                 return -1;

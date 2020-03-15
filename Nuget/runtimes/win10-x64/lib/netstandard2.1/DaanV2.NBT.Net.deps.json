@@ -1,0 +1,74 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "DaanV2.NBT.Net/1.0.0": {
+        "dependencies": {
+          "DaanV2.Essentials.Net": "1.1.1",
+          "System.Buffers": "4.5.0",
+          "zlib.net-mutliplatform": "1.0.4"
+        },
+        "runtime": {
+          "DaanV2.NBT.Net.dll": {}
+        }
+      },
+      "DaanV2.Essentials.Net/1.1.1": {
+        "runtime": {
+          "lib/netstandard2.1/DaanV2.Essentials.Net.dll": {
+            "assemblyVersion": "1.1.1.0",
+            "fileVersion": "1.1.1.0"
+          }
+        }
+      },
+      "System.Buffers/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "zlib.net-mutliplatform/1.0.4": {
+        "runtime": {
+          "lib/netstandard2.0/zlib.net.dll": {
+            "assemblyVersion": "1.0.3.0",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DaanV2.NBT.Net/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DaanV2.Essentials.Net/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8lNoW1ZNW1OcPjCzzZE0G6TeLC3cbDFhe0DGzc6SywsvzUFM1E0vAnvisl18UdWgM1nrpWynyxsal7nDT90F4Q==",
+      "path": "daanv2.essentials.net/1.1.1",
+      "hashPath": "daanv2.essentials.net.1.1.1.nupkg.sha512"
+    },
+    "System.Buffers/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
+      "path": "system.buffers/4.5.0",
+      "hashPath": "system.buffers.4.5.0.nupkg.sha512"
+    },
+    "zlib.net-mutliplatform/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W3EXyU7iMNrIohe7bJiAxYvup/5/2FqWwWAbu7lclZIkkKUKtyjKegqVRvV1Lv+wNyEaG5XIqteUQ18CyxbLig==",
+      "path": "zlib.net-mutliplatform/1.0.4",
+      "hashPath": "zlib.net-mutliplatform.1.0.4.nupkg.sha512"
+    }
+  }
+}

@@ -19,31 +19,31 @@ using System.Runtime.Serialization;
 namespace DaanV2.NBT {
     public abstract partial class NBTTag : ITag {
 
-        /// <summary>Gets or sets the name of this tag</summary>
+        /// <summary>Gets or sets the name of this <see cref="Itag"/></summary>
         [DataMember]
         public String Name {
             get => this._Name;
             set => this._Name = value;
         }
 
-        /// <summary>Gets the type of this tag</summary>
+        /// <summary>Gets the type of this <see cref="Itag"/></summary>
         [IgnoreDataMember]
         public abstract NBTTagType Type { get; }
 
-        /// <summary>Gets the value of this tag</summary>
-        /// <returns>Gets the value of this tag</returns>
+        /// <summary>Gets the value of this <see cref="Itag"/></summary>
+        /// <returns>Gets the value of this <see cref="Itag"/></returns>
         public abstract Object GetValue();
 
-        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <summary>Converts the value of this <see cref="Itag"/> to the specified type</summary>
         /// <typeparam name="T">The type to convert to</typeparam>
-        /// <returns>Converts the value of this tag to the specified type</returns>
+        /// <returns>Converts the value of this <see cref="Itag"/> to the specified type</returns>
         public abstract T GetValue<T>();
 
-        /// <summary>Sets the value of this tag with the given value</summary>
+        /// <summary>Sets the value of this <see cref="Itag"/> with the given value</summary>
         /// <param name="O">The value to set</param>
         public abstract void SetValue(Object O);
 
-        /// <summary>Sets the specified information of this tag with the given value</summary>
+        /// <summary>Sets the specified information of this <see cref="Itag"/> with the given value</summary>
         /// <param name="InfoType">The into type to store the information in</param>
         /// <param name="Info">The information to store</param>
         public virtual void SetInformation(NBTTagInformation InfoType, Object Info) {
@@ -83,13 +83,13 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <summary>Converts the value of this <see cref="Itag"/> to the specified type</summary>
         /// <typeparam name="T">The type to convert to</typeparam>
-        /// <returns>Converts the value of this tag to the specified type</returns>
+        /// <returns>Converts the value of this <see cref="Itag"/> to the specified type</returns>
         public abstract T ConvertValue<T>();
 
-        /// <summary>Creates a copy of this instance</summary>
-        /// <returns>Creates a copy of this instance</returns>
+        /// <summary>Creates a copy of this <see cref="Itag"/></summary>
+        /// <returns>Creates a copy of this <see cref="Itag"/></returns>
         public abstract ITag Clone();
     }
 }

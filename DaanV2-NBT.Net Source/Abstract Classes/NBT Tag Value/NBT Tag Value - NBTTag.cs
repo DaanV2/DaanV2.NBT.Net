@@ -23,7 +23,7 @@ namespace DaanV2.NBT {
             return this._Value;
         }
 
-        /// <summary>Returns the value of this <see cref="NBTTagValue{TypeValue}"/> as an <see cref="T"/>, returns null if castings values</summary>
+        /// <summary>Returns the value of this <see cref="NBTTagValue{TypeValue}"/> as an object of T, returns null if castings values</summary>
         /// <typeparam name="T">The generic type to return</typeparam>
         /// <returns>Returns a <see cref="T"/> that represents the value of this <see cref="NBTTagValue{TypeValue}"/>, returns null if castings values</returns>
         public override T GetValue<T>() {

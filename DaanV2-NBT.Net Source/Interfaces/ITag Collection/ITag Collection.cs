@@ -18,7 +18,7 @@ using System;
 namespace DaanV2.NBT {
     /// <summary>The interface responsible for forming the contract on how Tag collection should behave</summary>
     public interface ITagCollection {
-        /// <summary>Returns the amount of sub tags this instance has</summary>
+        /// <summary>Returns the amount of sub tags this <see cref="Itag"/> has</summary>
         Int32 Count { get; }
 
         /// <summary>Returns the tag with the specified name</summary>
@@ -31,7 +31,7 @@ namespace DaanV2.NBT {
         /// <returns>Returns the tag at the specified index</returns>
         ITag this[Int32 Index] { get; set; }
 
-        /// <summary>Adds the given tag to this instance</summary>
+        /// <summary>Adds the given tag to this <see cref="Itag"/></summary>
         /// <param name="tag">The tag to add</param>
         void Add(ITag tag);
 
@@ -43,7 +43,7 @@ namespace DaanV2.NBT {
         /// <param name="Name">The name of the tag to remove</param>
         void Remove(String Name);
 
-        /// <summary>Removes all the tag inside this instance</summary>
+        /// <summary>Removes all the tag inside this <see cref="Itag"/></summary>
         void Clear();
 
         /// <summary>Retrieves the subtag with the specified name, this is done safetly, if nothing is found then null is returned</summary>

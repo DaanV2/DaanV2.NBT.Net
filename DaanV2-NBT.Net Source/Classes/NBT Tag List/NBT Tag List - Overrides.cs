@@ -18,7 +18,7 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public partial class NBTTagList {
-        /// <summary>Sets the specified information of this tag with the given value</summary>
+        /// <summary>Sets the specified information of this <see cref="Itag"/> with the given value</summary>
         /// <param name="InfoType">The into type to store the information in</param>
         /// <param name="Info">The information to store</param>
         public override void SetInformation(NBTTagInformation InfoType, Object Info) {
@@ -57,7 +57,7 @@ namespace DaanV2.NBT {
         /// <summary>Retrieves the specified information</summary>
         /// <param name="InfoType">The info type to retrieve from this <see cref="ITag"/></param>
         /// <returns>Retrieves the specified information</returns>
-        public virtual Object GetInformation(NBTTagInformation InfoType) {
+        public override Object GetInformation(NBTTagInformation InfoType) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
                     return this._Name;
@@ -77,9 +77,9 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>Compare this instance to the given object</summary>
+        /// <summary>Compare this <see cref="Itag"/> to the given object</summary>
         /// <param name="other">The object to compare to</param>
-        /// <returns>Compare this instance to the given object</returns>
+        /// <returns>Compare this <see cref="Itag"/> to the given object</returns>
         public override Boolean Equals(Object Obj) {
             if (Obj is NBTTagList Tag) {
                 return this.Equals(Tag);
@@ -88,9 +88,9 @@ namespace DaanV2.NBT {
             return base.Equals(Obj);
         }
 
-        /// <summary>Compare this instance to the given object</summary>
+        /// <summary>Compare this <see cref="Itag"/> to the given object</summary>
         /// <param name="other">The object to compare to</param>
-        /// <returns>Compare this instance to the given object</returns>
+        /// <returns>Compare this <see cref="Itag"/> to the given object</returns>
         public Boolean Equals(NBTTagList other) {
             return other != null &&
                    base.Equals(other) &&
@@ -99,8 +99,8 @@ namespace DaanV2.NBT {
                    EqualityComparer<String>.Default.Equals(this._Name, other._Name);
         }
 
-        /// <summary>Returns the hashcode of this instance</summary>
-        /// <returns>Returns the hashcode of this instance</returns>
+        /// <summary>Returns the hashcode of this <see cref="Itag"/></summary>
+        /// <returns>Returns the hashcode of this <see cref="Itag"/></returns>
         public override Int32 GetHashCode() {
             Int32 hashCode = 1513385649;
             hashCode = (hashCode * -1521134295) + EqualityComparer<NBTTagType>.Default.GetHashCode(this._SubType);
@@ -109,8 +109,8 @@ namespace DaanV2.NBT {
             return hashCode;
         }
 
-        /// <summary>Create a clone of this instance</summary>
-        /// <returns>Create a clone of this instance</returns>
+        /// <summary>Create a clone of this <see cref="Itag"/></summary>
+        /// <returns>Create a clone of this <see cref="Itag"/></returns>
         public override ITag Clone() {
             NBTTagList Out = new NBTTagList(this.SubType, this._Tags.Count) {
                 Name = this.Name

@@ -21,7 +21,7 @@ namespace DaanV2.NBT {
         /// <summary>Any possible sub <see cref="ITag"/> this <see cref="NBTTag"/> can have</summary>
         protected List<ITag> _Tags;
 
-        /// <summary>The name of this tag</summary>
+        /// <summary>The name of this <see cref="Itag"/></summary>
         protected String _Name;
     }
 }

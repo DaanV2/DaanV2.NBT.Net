@@ -19,7 +19,7 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
     public partial class NBTTagCompound : NBTTag {
-        /// <summary>The constant type used for this tag</summary>
+        /// <summary>The constant type used for this <see cref="Itag"/></summary>
         private const NBTTagType _Type = NBTTagType.Compound;
 
         /// <summary>Returns the tag's type</summary>
@@ -47,9 +47,9 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>Converts the value of this tag to the specified type</summary>
+        /// <summary>Converts the value of this <see cref="Itag"/> to the specified type</summary>
         /// <typeparam name="T">The type to convert to</typeparam>
-        /// <returns>Converts the value of this tag to the specified type</returns>
+        /// <returns>Converts the value of this <see cref="Itag"/> to the specified type</returns>
         public override T ConvertValue<T>() {
             throw new NotImplementedException("Cannot cast value of NBTTagCompound");
         }

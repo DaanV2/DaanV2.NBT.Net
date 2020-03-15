@@ -18,6 +18,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
 using DaanV2.Binary;
+using DaanV2;
 
 namespace DaanV2.NBT.Serialization {
     public static partial class NBTReader {
