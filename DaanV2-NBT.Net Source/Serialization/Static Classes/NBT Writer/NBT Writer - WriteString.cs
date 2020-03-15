@@ -34,6 +34,7 @@ namespace DaanV2.NBT.Serialization {
 
         /// <summary>Writes a string into the stream</summary>
         /// <param name="Context">The context to write to</param>
+        /// <param name="Text">The text to write away</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void WriteString(SerializationContext Context, String Text) {
             Byte[] Bytes = Encoding.UTF8.GetBytes(Text);

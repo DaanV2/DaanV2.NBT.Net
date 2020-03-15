@@ -25,7 +25,7 @@ namespace DaanV2.NBT {
 
         /// <summary>Returns the value of this <see cref="NBTTagValue{TypeValue}"/> as an object of T, returns null if castings values</summary>
         /// <typeparam name="T">The generic type to return</typeparam>
-        /// <returns>Returns a <see cref="T"/> that represents the value of this <see cref="NBTTagValue{TypeValue}"/>, returns null if castings values</returns>
+        /// <returns>Returns the value of this <see cref="NBTTagValue{TypeValue}"/> as an object of T, returns null if castings values</returns>
         public override T GetValue<T>() {
             return this._Value is T val ? val : (default);
         }

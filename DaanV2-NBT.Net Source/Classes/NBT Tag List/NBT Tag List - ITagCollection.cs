@@ -74,7 +74,7 @@ namespace DaanV2.NBT {
         }
 
         /// <summary>Add the given tag to the internal list</summary>
-        /// <param name="Tag">The tag to add</param>
+        /// <param name="tag">The tag to add</param>
         public override void Add(ITag tag) {
             if (tag.Type != this.SubType) {
                 throw new ArgumentException($"value type must be same as the lists subtype");

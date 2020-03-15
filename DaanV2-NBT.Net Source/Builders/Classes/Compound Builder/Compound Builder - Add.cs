@@ -176,6 +176,7 @@ namespace DaanV2.NBT.Builders {
 
         /// <summary>Adds a new sub <see cref="NBTTagCompound"/> to the collection</summary>
         /// <param name="Name">The name of the tag to add to the collection</param>
+        /// <param name="Capacity">The amount of suspected sub items</param>
         /// <returns>Adds a new sub <see cref="NBTTagCompound"/> to the collection</returns>
         public CompoundBuilder AddSubCompound(String Name, Int32 Capacity = 10) {
             CompoundBuilder builder = new CompoundBuilder(Name, Capacity);

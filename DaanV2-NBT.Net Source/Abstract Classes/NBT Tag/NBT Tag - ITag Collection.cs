@@ -19,11 +19,11 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTag : ITagCollection {
-        /// <summary>Gets the amount of sub tag this <see cref="Itag"/> has</summary>
+        /// <summary>Gets the amount of sub tag this this <see cref="ITag"/> has</summary>
         [IgnoreDataMember]
         public Int32 Count => this._Tags.Count;
 
-        /// <summary>Gets or sets the subtag of this <see cref="Itag"/></summary>
+        /// <summary>Gets or sets the subtag of this this <see cref="ITag"/></summary>
         [DataMember]
         public List<ITag> Tags { get => this._Tags; set => this._Tags = value; }
 
@@ -66,7 +66,7 @@ namespace DaanV2.NBT {
             set => this._Tags[Index] = value;
         }
 
-        /// <summary>Adds the specified tag to this <see cref="Itag"/></summary>
+        /// <summary>Adds the specified tag to this this <see cref="ITag"/></summary>
         /// <param name="tag">The tag to add</param>
         public virtual void Add(ITag tag) {
             Int32 Max = this._Tags.Count;

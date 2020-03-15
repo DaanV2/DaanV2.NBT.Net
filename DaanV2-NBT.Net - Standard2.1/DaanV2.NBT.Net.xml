@@ -20,7 +20,7 @@
             <returns>Returns the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> as an <see cref="T:System.Object"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagValue`1.GetValue``1">
-            <summary>Returns the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> as an <see cref="!:T"/>, returns null if castings values</summary>
+            <summary>Returns the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> as an object of T, returns null if castings values</summary>
             <typeparam name="T">The generic type to return</typeparam>
             <returns>Returns a <see cref="!:T"/> that represents the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/>, returns null if castings values</returns>
         </member>
@@ -73,30 +73,30 @@
             <summary>Sets the specified information of the tag</summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagValue`1.GetInformation(DaanV2.NBT.NBTTagInformation)">
-            <summary>Returns the specified information of this instance</summary>
-            <param name="InfoType">The info type to retrieve from this instance</param>
-            <returns>Returns the specified information of this instance</returns>
+            <summary>Returns the specified information of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <param name="InfoType">The info type to retrieve from this this <see cref="T:DaanV2.NBT.ITag"/></param>
+            <returns>Returns the specified information of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagValue`1.ToString">
-            <summary>Returns a string representation of this tag</summary>
-            <returns>Returns a string representation of this tag</returns>
+            <summary>Returns a string representation of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns a string representation of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagValue`1.Equals(System.Object)">
-            <summary>Compare this instance with the given instance if they are the same</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> with the given instance if they are the same</summary>
             <param name="obj">The object to compare to</param>
-            <returns>Compare this instance with the given instance if they are the same</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> with the given instance if they are the same</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagValue`1.Equals(DaanV2.NBT.NBTTagValue{`0})">
-            <summary>Compare this instance with the given instance if they are the same</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> with the given instance if they are the same</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance with the given instance if they are the same</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> with the given instance if they are the same</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagValue`1.GetHashCode">
             <summary>Returns the hashcode for this object</summary>
             <returns>Returns the hashcode for this object</returns>
         </member>
         <member name="P:DaanV2.NBT.NBTTagValue`1.Value">
-            <summary>Gets or sets the value of this Tag</summary>
+            <summary>Gets or sets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="F:DaanV2.NBT.NBTTagValue`1._Value">
             <summary>The field that stores the value</summary>
@@ -112,10 +112,10 @@
             <param name="Capacity">The suspected amount of capacity to add</param>
         </member>
         <member name="P:DaanV2.NBT.NBTTag.Count">
-            <summary>Gets the amount of sub tag this tag has</summary>
+            <summary>Gets the amount of sub tag this this <see cref="T:DaanV2.NBT.ITag"/> has</summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTag.Tags">
-            <summary>Gets or sets the subtag of this tag</summary>
+            <summary>Gets or sets the subtag of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTag.Item(System.String)">
             <summary>Gets or sets the subtag with the given name</summary>
@@ -128,7 +128,7 @@
             <returns>Gets or sets the subtag with the given index</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.Add(DaanV2.NBT.ITag)">
-            <summary>Adds the specified tag to this instance</summary>
+            <summary>Adds the specified tag to this this <see cref="T:DaanV2.NBT.ITag"/></summary>
             <param name="tag">The tag to add</param>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.Add(DaanV2.NBT.ITag[])">
@@ -169,42 +169,42 @@
             <returns>Retrieves the tag's value with the given index</returns>
         </member>
         <member name="P:DaanV2.NBT.NBTTag.Name">
-            <summary>Gets or sets the name of this tag</summary>
+            <summary>Gets or sets the name of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTag.Type">
-            <summary>Gets the type of this tag</summary>
+            <summary>Gets the type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.GetValue">
-            <summary>Gets the value of this tag</summary>
-            <returns>Gets the value of this tag</returns>
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.GetValue``1">
-            <summary>Converts the value of this tag to the specified type</summary>
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
             <typeparam name="T">The type to convert to</typeparam>
-            <returns>Converts the value of this tag to the specified type</returns>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.SetValue(System.Object)">
-            <summary>Sets the value of this tag with the given value</summary>
+            <summary>Sets the value of this this <see cref="T:DaanV2.NBT.ITag"/> with the given value</summary>
             <param name="O">The value to set</param>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.SetInformation(DaanV2.NBT.NBTTagInformation,System.Object)">
-            <summary>Sets the specified information of this tag with the given value</summary>
+            <summary>Sets the specified information of this this <see cref="T:DaanV2.NBT.ITag"/> with the given value</summary>
             <param name="InfoType">The into type to store the information in</param>
             <param name="Info">The information to store</param>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.GetInformation(DaanV2.NBT.NBTTagInformation)">
             <summary>Retrieves the specified information</summary>
-            <param name="InfoType">The info type to retrieve from this <see cref="T:DaanV2.NBT.ITag"/></param>
+            <param name="InfoType">The info type to retrieve from this this <see cref="T:DaanV2.NBT.ITag"/></param>
             <returns>Retrieves the specified information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.ConvertValue``1">
-            <summary>Converts the value of this tag to the specified type</summary>
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
             <typeparam name="T">The type to convert to</typeparam>
-            <returns>Converts the value of this tag to the specified type</returns>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.Clone">
-            <summary>Creates a copy of this instance</summary>
-            <returns>Creates a copy of this instance</returns>
+            <summary>Creates a copy of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Creates a copy of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.op_Equality(DaanV2.NBT.NBTTag,DaanV2.NBT.NBTTag)">
             <summary>Compare the two given tag with each other</summary>
@@ -231,33 +231,33 @@
             <returns>Compare the two given tag with each other</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.ToString">
-            <summary>Returns a string representation of this instance</summary>
-            <returns>Returns a string representation of this instance</returns>
+            <summary>Returns a string representation of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns a string representation of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.Equals(System.Object)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="obj">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.Equals(DaanV2.NBT.NBTTag)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.Equals(DaanV2.NBT.ITag)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTag.GetHashCode">
-            <summary>Returns this instance hashcode</summary>
-            <returns>Returns this instance hashcode</returns>
+            <summary>Returns this this <see cref="T:DaanV2.NBT.ITag"/> hashcode</summary>
+            <returns>Returns this this <see cref="T:DaanV2.NBT.ITag"/> hashcode</returns>
         </member>
         <member name="F:DaanV2.NBT.NBTTag._Tags">
-            <summary>Any possible sub <see cref="T:DaanV2.NBT.ITag"/> this <see cref="T:DaanV2.NBT.NBTTag"/> can have</summary>
+            <summary>Any possible sub this <see cref="T:DaanV2.NBT.ITag"/> this <see cref="T:DaanV2.NBT.NBTTag"/> can have</summary>
         </member>
         <member name="F:DaanV2.NBT.NBTTag._Name">
-            <summary>The name of this tag</summary>
+            <summary>The name of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="T:DaanV2.NBT.Builders.CompoundBuilder">
             <summary>The class that helps with building a nbt tag compound</summary>
@@ -377,6 +377,7 @@
         <member name="M:DaanV2.NBT.Builders.CompoundBuilder.AddSubCompound(System.String,System.Int32)">
             <summary>Adds a new sub <see cref="T:DaanV2.NBT.NBTTagCompound"/> to the collection</summary>
             <param name="Name">The name of the tag to add to the collection</param>
+            <param name="Capacity">The amount of suspected sub items</param>
             <returns>Adds a new sub <see cref="T:DaanV2.NBT.NBTTagCompound"/> to the collection</returns>
         </member>
         <member name="M:DaanV2.NBT.Builders.CompoundBuilder.AddSubList(System.String,DaanV2.NBT.NBTTagType,System.Int32)">
@@ -473,28 +474,28 @@
             <param name="Value">The value of the tag</param>
         </member>
         <member name="F:DaanV2.NBT.NBTTagByteArray._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagByteArray.Type">
             <summary>Returns the tag's type</summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByteArray.Equals(System.Object)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="obj">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByteArray.Equals(DaanV2.NBT.NBTTagByteArray)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByteArray.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByteArray.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByteArray.op_Equality(DaanV2.NBT.NBTTagByteArray,DaanV2.NBT.NBTTagByteArray)">
             <summary>Compare the two given tag with each other</summary>
@@ -537,28 +538,28 @@
             <param name="Value">The value of the tag</param>
         </member>
         <member name="F:DaanV2.NBT.NBTTagByte._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagByte.Type">
             <summary>Returns the tag's type</summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByte.Equals(System.Object)">
-            <summary>Compares this instance to the given object</summary>
+            <summary>Compares this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="Obj">The object to compare to</param>
-            <returns>Compares this instance to the given object</returns>
+            <returns>Compares this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByte.Equals(DaanV2.NBT.NBTTagByte)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByte.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByte.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByte.op_Equality(DaanV2.NBT.NBTTagByte,DaanV2.NBT.NBTTagByte)">
             <summary>Compare the two given tag with each other</summary>
@@ -597,6 +598,7 @@
         <member name="M:DaanV2.NBT.NBTTagCompound.#ctor(System.String,System.Int32)">
             <summary>Creates a new instance of <see cref="T:DaanV2.NBT.NBTTagCompound"/></summary>
             <param name="Capacity">The capacity to set the collection to</param>
+            <param name="Name">The name of this new <see cref="T:DaanV2.NBT.NBTTagCompound"/></param>
         </member>
         <member name="M:DaanV2.NBT.NBTTagCompound.GetEnumerator">
             <summary>Returns an enumerator that iterates through <see cref="T:DaanV2.NBT.NBTTagCompound"/></summary>
@@ -607,7 +609,7 @@
             <returns>Returns an enumerator that iterates through <see cref="T:DaanV2.NBT.NBTTagCompound"/></returns>
         </member>
         <member name="F:DaanV2.NBT.NBTTagCompound._Type">
-            <summary>The constant type used for this tag</summary>
+            <summary>The constant type used for this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagCompound.Type">
             <summary>Returns the tag's type</summary>
@@ -626,9 +628,9 @@
             <param name="O">The object to store</param>
         </member>
         <member name="M:DaanV2.NBT.NBTTagCompound.ConvertValue``1">
-            <summary>Converts the value of this tag to the specified type</summary>
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
             <typeparam name="T">The type to convert to</typeparam>
-            <returns>Converts the value of this tag to the specified type</returns>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagCompound.op_Equality(DaanV2.NBT.NBTTagCompound,DaanV2.NBT.NBTTagCompound)">
             <summary>Compare the two given tag with each other</summary>
@@ -655,57 +657,57 @@
             <returns>Compare the two given tag with each other</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagCompound.Equals(System.Object)">
-            <summary>Compares this instance to the given object</summary>
-            <param name="obj">The object to compare to</param>
-            <returns>Compares this instance to the given object</returns>
+            <summary>Compares this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
+            <param name="Obj">The object to compare to</param>
+            <returns>Compares this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagCompound.Equals(DaanV2.NBT.NBTTagCompound)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagCompound.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagCompound.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="T:DaanV2.NBT.NBTTagDouble">
             <summary>The class that stores the information for: Double</summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagDouble.#ctor">
-            <summary>Creates a new instance of <see cref="!:NBTTagValue"/></summary>
+            <summary>Creates a new instance of <see cref="T:DaanV2.NBT.NBTTagDouble"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagDouble.#ctor(System.String,System.Double)">
-            <summary>Creates a new instance of <see cref="!:NBTTagValue"/></summary>
+            <summary>Creates a new instance of <see cref="T:DaanV2.NBT.NBTTagDouble"/></summary>
             <param name="Name">The name of the tag</param>
             <param name="Value">The value of the tag</param>
         </member>
         <member name="F:DaanV2.NBT.NBTTagDouble._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagDouble.Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagDouble.Equals(System.Object)">
-            <summary>Compare this instance to the given object</summary>
-            <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
+            <param name="Obj">The object to compare to</param>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagDouble.Equals(DaanV2.NBT.NBTTagDouble)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagDouble.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagDouble.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagDouble.op_Equality(DaanV2.NBT.NBTTagDouble,DaanV2.NBT.NBTTagDouble)">
             <summary>Compare the two given tag with each other</summary>
@@ -743,28 +745,28 @@
             <param name="Value">The value of the tag</param>
         </member>
         <member name="F:DaanV2.NBT.NBTTagFloat._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagFloat.Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFloat.Equals(System.Object)">
-            <summary>Compare this instance to the given object</summary>
-            <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
+            <param name="Obj">The object to compare to</param>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFloat.Equals(DaanV2.NBT.NBTTagFloat)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFloat.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFloat.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFloat.op_Equality(DaanV2.NBT.NBTTagFloat,DaanV2.NBT.NBTTagFloat)">
             <summary>Compare two objects to one another to see if they are equal</summary>
@@ -802,28 +804,28 @@
             <param name="Value">The value of the tag</param>
         </member>
         <member name="F:DaanV2.NBT.NBTTagIntArray._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagIntArray.Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagIntArray.Equals(System.Object)">
-            <summary>Compare this instance to the given object</summary>
-            <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
+            <param name="Obj">The object to compare to</param>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagIntArray.Equals(DaanV2.NBT.NBTTagIntArray)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagIntArray.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagIntArray.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagIntArray.op_Equality(DaanV2.NBT.NBTTagIntArray,DaanV2.NBT.NBTTagIntArray)">
             <summary>Compare the two given tag with each other</summary>
@@ -861,28 +863,28 @@
             <param name="Value">The value of the tag</param>
         </member>
         <member name="F:DaanV2.NBT.NBTTagInt._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagInt.Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagInt.Equals(System.Object)">
-            <summary>Compare this instance to the given object</summary>
-            <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
+            <param name="Obj">The object to compare to</param>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagInt.Equals(DaanV2.NBT.NBTTagInt)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagInt.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagInt.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagInt.op_Equality(DaanV2.NBT.NBTTagInt,DaanV2.NBT.NBTTagInt)">
             <summary>Compare the two given tag with each other</summary>
@@ -920,10 +922,13 @@
         <member name="M:DaanV2.NBT.NBTTagList.#ctor(DaanV2.NBT.NBTTagType,System.Int32)">
             <summary>Creates a new instance of <see cref="T:DaanV2.NBT.NBTTagList"/></summary>
             <param name="Capacity">The capacity to set the collection to</param>
+            <param name="SubType">The type of all the sub <see cref="T:DaanV2.NBT.ITag"/></param>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.#ctor(System.String,DaanV2.NBT.NBTTagType,System.Int32)">
             <summary>Creates a new instance of <see cref="T:DaanV2.NBT.NBTTagList"/></summary>
             <param name="Capacity">The capacity to set the collection to</param>
+            <param name="SubType">The type of all the sub <see cref="T:DaanV2.NBT.ITag"/></param>
+            <param name="Name">The name of this <see cref="T:DaanV2.NBT.NBTTagList"/></param>
         </member>
         <member name="P:DaanV2.NBT.NBTTagList.Item(System.String)">
             <summary>Gets or sets the subtag with the given name</summary>
@@ -937,7 +942,7 @@
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.Add(DaanV2.NBT.ITag)">
             <summary>Add the given tag to the internal list</summary>
-            <param name="Tag">The tag to add</param>
+            <param name="tag">The tag to add</param>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.GetEnumerator">
             <summary>Returns an enumerator that iteraters through <see cref="T:DaanV2.NBT.NBTTagList"/></summary>
@@ -948,28 +953,28 @@
             <returns>Returns an enumerator that iteraters through <see cref="T:DaanV2.NBT.NBTTagList"/></returns>
         </member>
         <member name="F:DaanV2.NBT.NBTTagList._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagList.Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.GetValue">
-            <summary>Returns the value of this instance</summary>
-            <returns>Returns the value of this instance</returns>
+            <summary>Returns the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.GetValue``1">
-            <summary>Converts the value of this tag to the specified type</summary>
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
             <typeparam name="T">The type to convert to</typeparam>
-            <returns>Converts the value of this tag to the specified type</returns>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.SetValue(System.Object)">
-            <summary>Sets the value of this instance</summary>
+            <summary>Sets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
             <param name="O">The value to set</param>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.ConvertValue``1">
-            <summary>Converts the value of this tag to the specified type</summary>
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
             <typeparam name="T">The type to convert to</typeparam>
-            <returns>Converts the value of this tag to the specified type</returns>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.op_Equality(DaanV2.NBT.NBTTagList,DaanV2.NBT.NBTTagList)">
             <summary>Compare the two given tag with each other</summary>
@@ -1001,35 +1006,35 @@
             <returns>Converts the given <see cref="T:DaanV2.NBT.NBTTagList"/> to a list of tags</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.SetInformation(DaanV2.NBT.NBTTagInformation,System.Object)">
-            <summary>Sets the specified information of this tag with the given value</summary>
+            <summary>Sets the specified information of this this <see cref="T:DaanV2.NBT.ITag"/> with the given value</summary>
             <param name="InfoType">The into type to store the information in</param>
             <param name="Info">The information to store</param>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.GetInformation(DaanV2.NBT.NBTTagInformation)">
             <summary>Retrieves the specified information</summary>
-            <param name="InfoType">The info type to retrieve from this <see cref="T:DaanV2.NBT.ITag"/></param>
+            <param name="InfoType">The info type to retrieve from this this <see cref="T:DaanV2.NBT.ITag"/></param>
             <returns>Retrieves the specified information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.Equals(System.Object)">
-            <summary>Compare this instance to the given object</summary>
-            <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
+            <param name="Obj">The object to compare to</param>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.Equals(DaanV2.NBT.NBTTagList)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagList.Clone">
-            <summary>Create a clone of this instance</summary>
-            <returns>Create a clone of this instance</returns>
+            <summary>Create a clone of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Create a clone of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="P:DaanV2.NBT.NBTTagList.SubType">
-            <summary>Gets or sets the sub type of this tag</summary>
+            <summary>Gets or sets the sub type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="F:DaanV2.NBT.NBTTagList._SubType">
             <summary>The field that stores the sub type</summary>
@@ -1046,28 +1051,28 @@
             <param name="Value">The value of the tag</param>
         </member>
         <member name="F:DaanV2.NBT.NBTTagLongArray._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagLongArray.Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLongArray.Equals(System.Object)">
-            <summary>Compare this instance to the given object</summary>
-            <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
+            <param name="Obj">The object to compare to</param>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLongArray.Equals(DaanV2.NBT.NBTTagLongArray)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLongArray.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLongArray.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLongArray.op_Equality(DaanV2.NBT.NBTTagLongArray,DaanV2.NBT.NBTTagLongArray)">
             <summary>Compare the two given tag with each other</summary>
@@ -1105,28 +1110,28 @@
             <param name="Value">The value of the tag</param>
         </member>
         <member name="F:DaanV2.NBT.NBTTagLong._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagLong.Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLong.Equals(System.Object)">
-            <summary>Compares this instance to the given object</summary>
-            <param name="obj">The object to compare to</param>
-            <returns>Compares this instance to the given object</returns>
+            <summary>Compares this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
+            <param name="Obj">The object to compare to</param>
+            <returns>Compares this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLong.Equals(DaanV2.NBT.NBTTagLong)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLong.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLong.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLong.op_Equality(DaanV2.NBT.NBTTagLong,DaanV2.NBT.NBTTagLong)">
             <summary>Compare the two given tag with each other</summary>
@@ -1164,28 +1169,28 @@
             <param name="Value">The value of the tag</param>
         </member>
         <member name="F:DaanV2.NBT.NBTTagShort._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagShort.Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagShort.Equals(System.Object)">
-            <summary>Compare this instance to the given object</summary>
-            <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
+            <param name="Obj">The object to compare to</param>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagShort.Equals(DaanV2.NBT.NBTTagShort)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagShort.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagShort.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagShort.op_Equality(DaanV2.NBT.NBTTagShort,DaanV2.NBT.NBTTagShort)">
             <summary>Compare the two given tag with each other</summary>
@@ -1223,28 +1228,28 @@
             <param name="Value">The value of the tag</param>
         </member>
         <member name="F:DaanV2.NBT.NBTTagString._Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.NBTTagString.Type">
-            <summary>Returns the tag type of this instance</summary>
+            <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.NBTTagString.Equals(System.Object)">
-            <summary>Compare this instance to the given object</summary>
-            <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
+            <param name="Obj">The object to compare to</param>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagString.Equals(DaanV2.NBT.NBTTagString)">
-            <summary>Compare this instance to the given object</summary>
+            <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="other">The object to compare to</param>
-            <returns>Compare this instance to the given object</returns>
+            <returns>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagString.GetHashCode">
-            <summary>Returns the hashcode of this instance</summary>
-            <returns>Returns the hashcode of this instance</returns>
+            <summary>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Returns the hashcode of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagString.Clone">
-            <summary>Clones this tag into a new one</summary>
-            <returns>Clones this tag into a new one</returns>
+            <summary>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</summary>
+            <returns>Clones this this <see cref="T:DaanV2.NBT.ITag"/> into a new one</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagString.op_Equality(DaanV2.NBT.NBTTagString,DaanV2.NBT.NBTTagString)">
             <summary>Compare the two given tag with each other</summary>
@@ -1352,7 +1357,7 @@
             <summary>The interface responsible for forming the contract on how Tag collection should behave</summary>
         </member>
         <member name="P:DaanV2.NBT.ITagCollection.Count">
-            <summary>Returns the amount of sub tags this instance has</summary>
+            <summary>Returns the amount of sub tags this this <see cref="T:DaanV2.NBT.ITag"/> has</summary>
         </member>
         <member name="P:DaanV2.NBT.ITagCollection.Item(System.String)">
             <summary>Returns the tag with the specified name</summary>
@@ -1365,7 +1370,7 @@
             <returns>Returns the tag at the specified index</returns>
         </member>
         <member name="M:DaanV2.NBT.ITagCollection.Add(DaanV2.NBT.ITag)">
-            <summary>Adds the given tag to this instance</summary>
+            <summary>Adds the given tag to this this <see cref="T:DaanV2.NBT.ITag"/></summary>
             <param name="tag">The tag to add</param>
         </member>
         <member name="M:DaanV2.NBT.ITagCollection.Remove(System.Int32)">
@@ -1377,7 +1382,7 @@
             <param name="Name">The name of the tag to remove</param>
         </member>
         <member name="M:DaanV2.NBT.ITagCollection.Clear">
-            <summary>Removes all the tag inside this instance</summary>
+            <summary>Removes all the tag inside this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.ITagCollection.GetSubTag(System.String)">
             <summary>Retrieves the subtag with the specified name, this is done safetly, if nothing is found then null is returned</summary>
@@ -1395,42 +1400,42 @@
             <summary>The class that is responsible for forming the contract on how Nbt Tag should behave</summary>
         </member>
         <member name="P:DaanV2.NBT.ITag.Name">
-            <summary>Gets or sets the name of this tag</summary>
+            <summary>Gets or sets the name of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="P:DaanV2.NBT.ITag.Type">
-            <summary>Gets the type of this tag</summary>
+            <summary>Gets the type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
         <member name="M:DaanV2.NBT.ITag.GetValue">
-            <summary>Gets the value of this tag</summary>
-            <returns>Gets the value of this tag</returns>
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="M:DaanV2.NBT.ITag.GetValue``1">
-            <summary>Converts the value of this tag to the specified type</summary>
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
             <typeparam name="T">The type to convert to</typeparam>
-            <returns>Converts the value of this tag to the specified type</returns>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
         </member>
         <member name="M:DaanV2.NBT.ITag.ConvertValue``1">
-            <summary>Converts the value of this tag to the specified type</summary>
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
             <typeparam name="T">The type to convert to</typeparam>
-            <returns>Converts the value of this tag to the specified type</returns>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
         </member>
         <member name="M:DaanV2.NBT.ITag.SetValue(System.Object)">
-            <summary>Sets the value of this tag with the given value</summary>
+            <summary>Sets the value of this this <see cref="T:DaanV2.NBT.ITag"/> with the given value</summary>
             <param name="O">The value to set</param>
         </member>
         <member name="M:DaanV2.NBT.ITag.SetInformation(DaanV2.NBT.NBTTagInformation,System.Object)">
-            <summary>Sets the specified information of this tag with the given value</summary>
+            <summary>Sets the specified information of this this <see cref="T:DaanV2.NBT.ITag"/> with the given value</summary>
             <param name="InfoType">The into type to store the information in</param>
             <param name="Info">The information to store</param>
         </member>
         <member name="M:DaanV2.NBT.ITag.GetInformation(DaanV2.NBT.NBTTagInformation)">
             <summary>Retrieves the specified information</summary>
-            <param name="InfoType">The info type to retrieve from this <see cref="T:DaanV2.NBT.ITag"/></param>
+            <param name="InfoType">The info type to retrieve from this this <see cref="T:DaanV2.NBT.ITag"/></param>
             <returns>Retrieves the specified information</returns>
         </member>
         <member name="M:DaanV2.NBT.ITag.Clone">
-            <summary>Creates a copy of this instance</summary>
-            <returns>Creates a copy of this instance</returns>
+            <summary>Creates a copy of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Creates a copy of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
         </member>
         <member name="T:DaanV2.NBT.Serialization.Serialization.NBTTagCompoundReader">
             <summary>The nbt tag compound reader</summary>
@@ -1883,6 +1888,7 @@
         <member name="M:DaanV2.NBT.Serialization.NBTWriter.WriteString(DaanV2.NBT.Serialization.SerializationContext,System.String)">
             <summary>Writes a string into the stream</summary>
             <param name="Context">The context to write to</param>
+            <param name="Text">The text to write away</param>
         </member>
         <member name="T:DaanV2.NBT.ArrayExtension">
             <summary>The static class that extends upon existing array/collections</summary>
@@ -2017,56 +2023,56 @@
             <summary>Transfers a list of items into a tag as sub tag intems</summary>
             <typeparam name="T">The type of items to transfer</typeparam>
             <param name="List">The tag to receive the new sub tags</param>
-            <param name="SubType">The sub tag type, must implement <see cref="T:DaanV2.NBT.ITag"/></param>
+            <param name="SubType">The sub tag type, must implement this <see cref="T:DaanV2.NBT.ITag"/></param>
             <param name="Source">The source of items to transfer</param>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Collections.Generic.List{System.Boolean})">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Collections.Generic.List{System.Byte})">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Collections.Generic.List{System.Double})">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Collections.Generic.List{System.Single})">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Collections.Generic.List{System.Int32})">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Collections.Generic.List{System.Int64})">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Collections.Generic.List{System.Int16})">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Collections.Generic.List{System.String})">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(DaanV2.NBT.NBTTagType)">
             <summary>Creates a tag with the specified tag type</summary>
@@ -2081,64 +2087,64 @@
             <returns>Creates a tag with the specified tag type</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Boolean)">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Byte)">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Double)">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Single)">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Int32)">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Int32[])">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Int64)">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Int64[])">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.Int16)">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.Create(System.String,System.String)">
-            <summary>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
+            <summary>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</summary>
             <param name="Name">The name of the Tag</param>
             <param name="Value">The value of the receiving tag</param>
-            <returns>Creates an <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
+            <returns>Creates an this <see cref="T:DaanV2.NBT.ITag"/> that suits the given information</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFactory.#cctor">
             <summary>Creates a new instance of <see cref="T:DaanV2.NBT.NBTTagFactory"/></summary>

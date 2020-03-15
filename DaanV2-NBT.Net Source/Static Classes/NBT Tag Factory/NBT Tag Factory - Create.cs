@@ -48,10 +48,10 @@ namespace DaanV2.NBT {
             return Tag;
         }
 
-        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <summary>Creates an this <see cref="ITag"/> that suits the given information</summary>
         /// <param name="Name">The name of the Tag</param>
         /// <param name="Value">The value of the receiving tag</param>
-        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
+        /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, Boolean Value) {
             ITag Out = NBTTagFactory.Create(NBTTagType.Byte);
 
@@ -61,10 +61,10 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <summary>Creates an this <see cref="ITag"/> that suits the given information</summary>
         /// <param name="Name">The name of the Tag</param>
         /// <param name="Value">The value of the receiving tag</param>
-        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
+        /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, Byte Value) {
             ITag Out = NBTTagFactory.Create(NBTTagType.Byte);
 
@@ -74,10 +74,10 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <summary>Creates an this <see cref="ITag"/> that suits the given information</summary>
         /// <param name="Name">The name of the Tag</param>
         /// <param name="Value">The value of the receiving tag</param>
-        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
+        /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, Double Value) {
             ITag Out = NBTTagFactory.Create(NBTTagType.Double);
 
@@ -87,10 +87,10 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <summary>Creates an this <see cref="ITag"/> that suits the given information</summary>
         /// <param name="Name">The name of the Tag</param>
         /// <param name="Value">The value of the receiving tag</param>
-        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
+        /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, Single Value) {
             ITag Out = NBTTagFactory.Create(NBTTagType.Float);
 
@@ -100,10 +100,10 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <summary>Creates an this <see cref="ITag"/> that suits the given information</summary>
         /// <param name="Name">The name of the Tag</param>
         /// <param name="Value">The value of the receiving tag</param>
-        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
+        /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, Int32 Value) {
             ITag Out = NBTTagFactory.Create(NBTTagType.Int);
 
@@ -113,10 +113,10 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <summary>Creates an this <see cref="ITag"/> that suits the given information</summary>
         /// <param name="Name">The name of the Tag</param>
         /// <param name="Value">The value of the receiving tag</param>
-        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
+        /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, Int32[] Value) {
             ITag Out = NBTTagFactory.Create(NBTTagType.IntArray);
 
@@ -126,10 +126,10 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <summary>Creates an this <see cref="ITag"/> that suits the given information</summary>
         /// <param name="Name">The name of the Tag</param>
         /// <param name="Value">The value of the receiving tag</param>
-        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
+        /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, Int64 Value) {
             ITag Out = NBTTagFactory.Create(NBTTagType.Long);
 
@@ -139,10 +139,10 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <summary>Creates an this <see cref="ITag"/> that suits the given information</summary>
         /// <param name="Name">The name of the Tag</param>
         /// <param name="Value">The value of the receiving tag</param>
-        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
+        /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, Int64[] Value) {
             ITag Out = NBTTagFactory.Create(NBTTagType.LongArray);
 
@@ -152,10 +152,10 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <summary>Creates an this <see cref="ITag"/> that suits the given information</summary>
         /// <param name="Name">The name of the Tag</param>
         /// <param name="Value">The value of the receiving tag</param>
-        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
+        /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, Int16 Value) {
             ITag Out = NBTTagFactory.Create(NBTTagType.Short);
 
@@ -165,10 +165,10 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>Creates an <see cref="ITag"/> that suits the given information</summary>
+        /// <summary>Creates an this <see cref="ITag"/> that suits the given information</summary>
         /// <param name="Name">The name of the Tag</param>
         /// <param name="Value">The value of the receiving tag</param>
-        /// <returns>Creates an <see cref="ITag"/> that suits the given information</returns>
+        /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
         public static ITag Create(String Name, String Value) {
             ITag Out = NBTTagFactory.Create(NBTTagType.String);
 

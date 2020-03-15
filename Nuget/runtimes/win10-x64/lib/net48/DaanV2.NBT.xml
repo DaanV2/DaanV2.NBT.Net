@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>DaanV2-NBT.Net</name>
+        <name>DaanV2.NBT.Net</name>
     </assembly>
     <members>
         <member name="T:DaanV2.NBT.NBTTagValue`1">

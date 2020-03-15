@@ -28,7 +28,7 @@ namespace DaanV2.NBT {
         /// <param name="Value">The value of the tag</param>
         public NBTTagByteArray(String Name, Byte[] Value) : base(Name, Value) { }
 
-        /// <summary>Returns the tag type of this <see cref="Itag"/></summary>
+        /// <summary>Returns the tag type of this this <see cref="ITag"/></summary>
         private const NBTTagType _Type = NBTTagType.ByteArray;
 
         /// <summary>Returns the tag's type</summary>
