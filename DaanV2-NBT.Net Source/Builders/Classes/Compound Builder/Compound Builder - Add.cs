@@ -18,21 +18,12 @@ using System.Collections.Generic;
 using DaanV2.Builders;
 
 namespace DaanV2.NBT.Builders {
-    public partial class CompoundBuilder :
-        IBuilderAdd<ITag> {
+    public partial class CompoundBuilder {
 
         /// <summary>Adds the given tag to the internal list</summary>
         /// <param name="tag">The tag to add</param>
         public void Add(ITag tag) {
             this._Tag.Add(tag);
-        }
-
-        /// <summary>Adds the given tags to the internal list</summary>
-        /// <param name="values">The tags to add</param>
-        public void Add(IEnumerable<ITag> values) {
-            foreach (ITag Item in values) {
-                this._Tag.Add(Item);
-            }
         }
 
         #region Base Types
