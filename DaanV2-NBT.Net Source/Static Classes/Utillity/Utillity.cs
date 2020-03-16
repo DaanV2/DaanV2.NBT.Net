@@ -25,17 +25,16 @@ namespace DaanV2.NBT {
         public static List<T> GetInterfaces<T>() {
             List<T> Out = new List<T>(10);
             Type Find = typeof(T);
-            try {
-                Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
-                Int32 AsmLength = Assemblies.Length;
-                Type[] Types;
-                Type Current;
-                Int32 TypesLength;
-                Assembly Asm;
+            Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            Int32 AsmLength = Assemblies.Length;
+            Type[] Types;
+            Type Current;
+            Int32 TypesLength;
+            Assembly Asm;
 
-                for (Int32 I = 0; I < AsmLength; I++) {
-                    Asm = Assemblies[I];
-
+            for (Int32 I = 0; I < AsmLength; I++) {
+                Asm = Assemblies[I];
+                try {
                     Types = Asm.GetTypes();
                     TypesLength = Types.Length;
 
@@ -47,11 +46,12 @@ namespace DaanV2.NBT {
                         }
                     }
                 }
+                catch (Exception ex) {
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(ex.StackTrace);
+                }
             }
-            catch (Exception ex) {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-            }
+
 
             return Out;
         }
