@@ -103,11 +103,16 @@ namespace DaanV2.NBT.Serialization {
             return Binary.BitConverter.Endian.ToInt64(Context.Buffer, Context.Endianness);
         }
 
+
+#pragma warning disable CS1584 // XML comment has syntactically incorrect cref attribute 'Int32[]'
+#pragma warning disable CS1584 // XML comment has syntactically incorrect cref attribute 'Int32[]'
         /// <summary>Reads an <see cref="Int32[]"/> from the given information</summary>
         /// <param name="Context">The context to use to read</param>
         /// <param name="Length">The amount to read</param>
         /// <returns>Reads an <see cref="Int32[]"/> from the given information</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute 'Int32[]'
+#pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute 'Int32[]'
         public static Int32[] ReadInt32Array(this SerializationContext Context, Int32 Length) {
             Endianness endianness = Context.Endianness;
             Byte[] Buffer = Context.Buffer;
@@ -129,11 +134,16 @@ namespace DaanV2.NBT.Serialization {
             return Out;
         }
 
+
+#pragma warning disable CS1584 // XML comment has syntactically incorrect cref attribute 'Int64[]'
+#pragma warning disable CS1584 // XML comment has syntactically incorrect cref attribute 'Int64[]'
         /// <summary>Reads an <see cref="Int64[]"/> from the given information</summary>
         /// <param name="Context">The context to use to read</param>
         /// <param name="Length">The amount to read</param>
         /// <returns>Reads an <see cref="Int64[]"/> from the given information</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute 'Int64[]'
+#pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute 'Int64[]'
         public static Int64[] ReadInt64Array(this SerializationContext Context, Int32 Length) {
             Endianness endianness = Context.Endianness;
             Byte[] Buffer = Context.Buffer;

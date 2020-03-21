@@ -92,6 +92,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\Serialization Context Extension\Serialization Context Extension - Write.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Static Classes\Serialization Context Extension\Serialization Context Extension - Read.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Array Extension\Array Extension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Compression.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Decompression.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Compression Stream\Compression Stream - Detect.cs" />

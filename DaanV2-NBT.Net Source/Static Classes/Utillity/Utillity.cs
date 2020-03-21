@@ -22,26 +22,22 @@ namespace DaanV2.NBT {
     public static partial class Utillity {
         /// <summary>Returns a list of object that all implement a specified type</summary>
         /// <returns>Returns a list of object that all implement a specified type</returns>
-        public static List<T> GetInterfaces<T>() {
-            List<T> Out = new List<T>(10);
-            Type Find = typeof(T);
+        public static List<T> GetInterfaces<T>(Int32 Capacity = 50) {
+            List<T> Out = new List<T>(Capacity);
+            String Name = typeof(T).Name;
             Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
             Int32 AsmLength = Assemblies.Length;
-            Type[] Types;
-            Type Current;
-            Int32 TypesLength;
-            Assembly Asm;
 
             for (Int32 I = 0; I < AsmLength; I++) {
-                Asm = Assemblies[I];
+                Assembly Asm = Assemblies[I];
                 try {
-                    Types = Asm.GetTypes();
-                    TypesLength = Types.Length;
+                    Type[] Types = Asm.GetTypes();
+                    Int32 TypesLength = Types.Length;
 
                     for (Int32 J = 0; J < TypesLength; J++) {
-                        Current = Types[J];
+                        Type Current = Types[J];
 
-                        if (Current.GetInterface(Find.Name) != null) {
+                        if (Current.GetInterface(Name) != null) {
                             Out.Add((T)Activator.CreateInstance(Current));
                         }
                     }

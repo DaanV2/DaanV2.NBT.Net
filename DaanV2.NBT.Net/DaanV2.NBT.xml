@@ -275,10 +275,6 @@
             <summary>Adds the given tag to the internal list</summary>
             <param name="tag">The tag to add</param>
         </member>
-        <member name="M:DaanV2.NBT.Builders.CompoundBuilder.Add(System.Collections.Generic.IEnumerable{DaanV2.NBT.ITag})">
-            <summary>Adds the given tags to the internal list</summary>
-            <param name="values">The tags to add</param>
-        </member>
         <member name="M:DaanV2.NBT.Builders.CompoundBuilder.Add(System.String,System.Byte)">
             <summary>Adds a new sub <see cref="T:DaanV2.NBT.NBTTag"/> to the collection</summary>
             <param name="Name">The name of the tag to add to the collection</param>
@@ -1903,6 +1899,12 @@
             <param name="Values">The values of sub tags to convert</param>
             <returns>Extends the clone mechanics of all the tags to collections</returns>
         </member>
+        <member name="T:DaanV2.NBT.CompressionStream">
+            <summary>The static class that provides support for compressions streams</summary>
+        </member>
+        <member name="M:DaanV2.NBT.CompressionStream.#cctor">
+            <summary>Creates a new instance of <see cref="T:DaanV2.NBT.CompressionStream"/></summary>
+        </member>
         <member name="M:DaanV2.NBT.CompressionStream.GetCompressionStream(System.IO.Stream,DaanV2.NBT.NBTCompression)">
             <summary>Checks the given compression tag and creates a compression stream around the given stream</summary>
             <param name="stream">The stream to wrap around</param>
@@ -2180,7 +2182,7 @@
         <member name="T:DaanV2.NBT.Utillity">
             <summary>The static class that provides utillity to the rest of the api</summary>
         </member>
-        <member name="M:DaanV2.NBT.Utillity.GetInterfaces``1">
+        <member name="M:DaanV2.NBT.Utillity.GetInterfaces``1(System.Int32)">
             <summary>Returns a list of object that all implement a specified type</summary>
             <returns>Returns a list of object that all implement a specified type</returns>
         </member>
