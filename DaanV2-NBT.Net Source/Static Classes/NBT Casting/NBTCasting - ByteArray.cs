@@ -21,7 +21,7 @@ namespace DaanV2.NBT {
         /// <summary>Converts the given value into the specified type</summary>
         /// <param name="Value">The value to convert</param>
         /// <param name="To">The type to convert to</param>
-        ///<returns>Converts the given value into the specified type</returns>
+        /// <returns>Converts the given value into the specified type</returns>
         private static Object Convert(Byte[] Value, Type To) {
             if (To == typeof(List<Byte>)) {
                 return new List<Byte>(Value);
