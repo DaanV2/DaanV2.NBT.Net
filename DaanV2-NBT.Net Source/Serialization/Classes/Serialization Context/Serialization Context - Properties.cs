@@ -19,19 +19,13 @@ using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization {
     public partial class SerializationContext {
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public Endianness Endianness { get; private set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public Byte[] Buffer { get; private set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public Stream Stream { get; private set; }
     }
 }

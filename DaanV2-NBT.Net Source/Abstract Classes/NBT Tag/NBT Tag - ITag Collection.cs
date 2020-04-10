@@ -141,7 +141,7 @@ namespace DaanV2.NBT {
         }
 
         /// <summary>Retrieves the tag with the given index</summary>
-        /// <param name="Index"></param>
+        /// <param name="Index">The index of the tag to retrieve</param>
         /// <returns>Retrieves the tag with the given index</returns>
         public ITag GetSubTag(Int32 Index) {
             if (Index >= this._Tags.Count || Index < 0) {
