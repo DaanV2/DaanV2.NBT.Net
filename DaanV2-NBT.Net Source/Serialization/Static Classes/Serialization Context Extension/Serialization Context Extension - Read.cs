@@ -90,8 +90,13 @@ namespace DaanV2.NBT.Serialization {
         /// <returns>Reads an <see cref="Single"/> from the given information</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Single ReadFloat(this SerializationContext Context) {
-            Context.Stream.Read(Context.Buffer, 0, SerializationContextExtension.SingleSize);
-            return Binary.BitConverter.Endian.ToInt32(Context.Buffer, Context.Endianness);
+            Byte[] Bytes = Context.ReadBytes(SerializationContextExtension.SingleSize);
+
+            if (System.BitConverter.IsLittleEndian != (Context.Endianness == Endianness.LittleEndian)) {
+                Array.Reverse(Bytes);
+            }
+
+            return System.BitConverter.ToSingle(Bytes, 0);
         }
 
         /// <summary>Reads an <see cref="Double"/> from the given information</summary>
@@ -99,8 +104,13 @@ namespace DaanV2.NBT.Serialization {
         /// <returns>Reads an <see cref="Double"/> from the given information</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Double ReadDouble(this SerializationContext Context) {
-            Context.Stream.Read(Context.Buffer, 0, SerializationContextExtension.DoubleSize);
-            return Binary.BitConverter.Endian.ToInt64(Context.Buffer, Context.Endianness);
+            Byte[] Bytes = Context.ReadBytes(SerializationContextExtension.DoubleSize);
+
+            if (System.BitConverter.IsLittleEndian != (Context.Endianness == Endianness.LittleEndian)) {
+                Array.Reverse(Bytes);
+            }
+
+            return System.BitConverter.ToDouble(Bytes, 0);
         }
 
 

@@ -61,8 +61,13 @@ namespace DaanV2.NBT.Serialization {
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void WriteFloat(this SerializationContext Context, Single Value) {
-            Int32 Length = BitConverter.Endian.OntoBytes(Context.Buffer, (Int32)Value, Context.Endianness);
-            Context.Stream.Write(Context.Buffer, 0, Length);
+            Byte[] Bytes = System.BitConverter.GetBytes(Value);
+
+            if (System.BitConverter.IsLittleEndian != (Context.Endianness == Endianness.LittleEndian)) {
+                Array.Reverse(Bytes);
+            }
+
+            Context.Stream.Write(Bytes, 0, Bytes.Length);
         }
 
         /// <summary>Writes an <see cref="Double"/> into the <see cref="Stream"/></summary>
@@ -70,8 +75,13 @@ namespace DaanV2.NBT.Serialization {
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void WriteDouble(this SerializationContext Context, Double Value) {
-            Int32 Length = BitConverter.Endian.OntoBytes(Context.Buffer, (Int64)Value, Context.Endianness);
-            Context.Stream.Write(Context.Buffer, 0, Length);
+            Byte[] Bytes = System.BitConverter.GetBytes(Value);
+
+            if (System.BitConverter.IsLittleEndian != (Context.Endianness == Endianness.LittleEndian)) {
+                Array.Reverse(Bytes);
+            }
+
+            Context.Stream.Write(Bytes, 0, Bytes.Length);
         }
 
         /// <summary>Writes an array of <see cref="Int32"/> into the <see cref="Stream"/></summary>
