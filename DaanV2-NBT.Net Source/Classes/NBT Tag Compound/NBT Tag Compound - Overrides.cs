@@ -56,5 +56,13 @@ namespace DaanV2.NBT {
                 Tags = this.Tags.Clone()
             };
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override String ToString() {
+            return $"\"{this.Name}\": {{{String.Join(", ", this._Tags)}}}]";
+        }
     }
 }

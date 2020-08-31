@@ -18,7 +18,6 @@ using System.Collections.Generic;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<TypeValue>> {
-
         /// <summary>Sets the specified information of the tag</summary>
         public override void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
@@ -62,12 +61,6 @@ namespace DaanV2.NBT {
                 default:
                     return null;
             }
-        }
-
-        /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
-        /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
-        public override String ToString() {
-            return $"'{this.Name}': {this.Type}: {this._Value}";
         }
 
         /// <summary>Compare this this <see cref="ITag"/> with the given instance if they are the same</summary>

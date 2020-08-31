@@ -57,5 +57,13 @@ namespace DaanV2.NBT {
                 Value = this.Value
             };
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override String ToString() {
+            return $"\"{this.Name}\": [{String.Join(", ", this._Value)}]";
+        }
     }
 }

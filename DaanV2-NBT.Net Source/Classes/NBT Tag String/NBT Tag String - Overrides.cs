@@ -57,5 +57,9 @@ namespace DaanV2.NBT {
                 Value = (String)this.Value.Clone()
             };
         }
+
+        public override String ToString() {
+            return $"\"{this.Name}\": \"{this._Value}\"";
+        }
     }
 }
