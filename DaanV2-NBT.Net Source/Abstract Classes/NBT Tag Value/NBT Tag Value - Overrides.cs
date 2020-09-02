@@ -78,9 +78,9 @@ namespace DaanV2.NBT {
         /// <param name="other">The object to compare to</param>
         /// <returns>Compare this this <see cref="ITag"/> with the given instance if they are the same</returns>
         public Boolean Equals(NBTTagValue<TypeValue> other) {
-            return other != null && base.Equals(other) &&
-                   EqualityComparer<TypeValue>.Default.Equals(this._Value, other._Value) &&
-                   EqualityComparer<String>.Default.Equals(this._Name, other._Name);
+            return other != null &&
+                   EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
+                   EqualityComparer<TypeValue>.Default.Equals(this._Value, other._Value);
         }
 
         /// <summary>Returns the hashcode for this object</summary>

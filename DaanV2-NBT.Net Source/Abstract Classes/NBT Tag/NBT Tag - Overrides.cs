@@ -76,9 +76,8 @@ namespace DaanV2.NBT {
         /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
         public Boolean Equals(NBTTag other) {
             return other != null &&
-                   base.Equals(other) &&
-                   EqualityComparer<List<ITag>>.Default.Equals(this._Tags, other._Tags) &&
-                   EqualityComparer<String>.Default.Equals(this._Name, other._Name);
+                EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
+                EqualityComparer<List<ITag>>.Default.Equals(this._Tags, other._Tags);
         }
 
         /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>

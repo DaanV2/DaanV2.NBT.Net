@@ -34,7 +34,6 @@ namespace DaanV2.NBT {
         /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
         public Boolean Equals(NBTTagLongArray other) {
             return other != null &&
-                   base.Equals(other) &&
                    EqualityComparer<Int64[]>.Default.Equals(this._Value, other._Value) &&
                    EqualityComparer<String>.Default.Equals(this._Name, other._Name);
         }
