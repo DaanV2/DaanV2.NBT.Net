@@ -57,10 +57,8 @@ namespace DaanV2.NBT {
             };
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
+        /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
         public override String ToString() {
             return $"\"{this.Name}\": {this._Value}";
         }

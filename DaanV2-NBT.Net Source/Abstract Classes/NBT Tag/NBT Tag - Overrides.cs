@@ -51,21 +51,11 @@ namespace DaanV2.NBT {
         /// <param name="obj">The object to compare to</param>
         /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
         public override Boolean Equals(Object obj) {
-
             if (obj is NBTTag Tag) {
                 return this.Equals(Tag);
             }
             else if (obj is ITag Interface) {
-                if (this._Name.Equals(Interface.Name) && this._Tags.Count == Interface.Count) {
-
-                    for (Int32 I = 0; I < this._Tags.Count; I++) {
-                        if (!this._Tags[I].Equals(Interface[I])) {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                }
+                return this.Equals(Interface);
             }
 
             return base.Equals(obj);
@@ -77,21 +67,17 @@ namespace DaanV2.NBT {
         public Boolean Equals(NBTTag other) {
             return other != null &&
                 EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
-                EqualityComparer<List<ITag>>.Default.Equals(this._Tags, other._Tags);
+                Comparison.Comparer.Equals<ITag>(this._Tags, other._Tags);
         }
 
         /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
         /// <param name="other">The object to compare to</param>
         /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
         public Boolean Equals(ITag other) {
-            if (other != null && base.Equals(other) && EqualityComparer<String>.Default.Equals(this._Name, other.Name)) {
-
-                for (Int32 I = 0; I < this._Tags.Count; I++) {
-                    if (!this._Tags[I].Equals(other[I])) {
-                        return false;
-                    }
-                }
-
+            if (other != null && 
+                EqualityComparer<String>.Default.Equals(this._Name, other.Name) &&
+                Comparison.Comparer.Equals<ITag>(this._Tags, other)) {
+                
                 return true;
             }
 

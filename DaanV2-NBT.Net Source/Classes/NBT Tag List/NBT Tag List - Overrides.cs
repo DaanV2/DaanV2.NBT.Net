@@ -93,9 +93,9 @@ namespace DaanV2.NBT {
         /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
         public Boolean Equals(NBTTagList other) {
             return other != null &&
+                   EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
                    EqualityComparer<NBTTagType>.Default.Equals(this._SubType, other._SubType) &&
-                   EqualityComparer<List<ITag>>.Default.Equals(this._Tags, other._Tags) &&
-                   EqualityComparer<String>.Default.Equals(this._Name, other._Name);
+                   Comparison.Comparer.Equals<ITag>(this._Tags, other._Tags);
         }
 
         /// <summary>Returns the hashcode of this this <see cref="ITag"/></summary>
@@ -123,10 +123,8 @@ namespace DaanV2.NBT {
             return Out;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
+        /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
         public override String ToString() {
             return $"\"{this.Name}\": [{String.Join(", ", this._Tags)}]";
         }

@@ -26,14 +26,10 @@ namespace DaanV2.NBT {
             Boolean NA = ((Object)A) == null;
             Boolean NB = ((Object)B) == null;
 
-            if (NA && NB) {
-                return true;
-            }
-            else if (NA || NB) {
-                return false;
-            }
+            if (NA && NB) { return true; }
+            if (NA || NB) { return false; }
 
-            return A._Tags.Equals(B._Tags) && A._Name.Equals(B._Name);
+            return A.Equals(B);
         }
 
         /// <summary>Compare the two given tag with each other</summary>
@@ -41,17 +37,7 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator !=(NBTTagList A, NBTTagList B) {
-            Boolean NA = ((Object)A) == null;
-            Boolean NB = ((Object)B) == null;
-
-            if (NA && NB) {
-                return false;
-            }
-            else if (NA || NB) {
-                return true;
-            }
-
-            return !(A._Tags.Equals(B._Tags) || A._Name.Equals(B._Name));
+            return !(A == B);
         }
 
         /// <summary>Compare the two given tag with each other</summary>
@@ -60,14 +46,10 @@ namespace DaanV2.NBT {
         /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator ==(NBTTagList A, Object B) {
             Boolean NA = ((Object)A) == null;
-            Boolean NB = B == null;
+            Boolean NB = ((Object)B) == null;
 
-            if (NA && NB) {
-                return true;
-            }
-            else if (NA || NB) {
-                return false;
-            }
+            if (NA && NB) { return true; }
+            if (NA || NB) { return false; }
 
             return A.Equals(B);
         }
@@ -77,17 +59,7 @@ namespace DaanV2.NBT {
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
         public static Boolean operator !=(NBTTagList A, Object B) {
-            Boolean NA = ((Object)A) == null;
-            Boolean NB = B == null;
-
-            if (NA && NB) {
-                return false;
-            }
-            else if (NA || NB) {
-                return true;
-            }
-
-            return !A.Equals(B);
+            return !(A == B);
         }
 
         /// <summary>Converts the given <see cref="NBTTagList"/> to a list of tags</summary>

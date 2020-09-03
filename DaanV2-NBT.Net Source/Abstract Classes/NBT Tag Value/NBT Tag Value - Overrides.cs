@@ -91,5 +91,34 @@ namespace DaanV2.NBT {
             hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode(this._Name);
             return hashCode;
         }
+
+        /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
+        /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
+        public override String ToString() {
+            switch (this.Type) {
+                case NBTTagType.Compound:
+                    return $"\"{this.Name}\": {{{String.Join(", ", this._Tags)}}}";
+
+                case NBTTagType.List:
+                case NBTTagType.IntArray:
+                case NBTTagType.LongArray:
+                case NBTTagType.ByteArray:
+                    return $"\"{this.Name}\": [{String.Join(", ", this._Tags)}]";
+
+                default:
+                case NBTTagType.Unknown:
+                case NBTTagType.End:
+                case NBTTagType.Byte:
+                case NBTTagType.Short:
+                case NBTTagType.Int:
+                case NBTTagType.Long:
+                case NBTTagType.Float:
+                case NBTTagType.Double:
+                    return $"\"{this.Name}\": {this.GetValue()}";
+
+                case NBTTagType.String:
+                    return $"\"{this.Name}\": \"{this.GetValue()}\"";
+            }
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace DaanV2.NBT {
         public Boolean Equals(NBTTagCompound other) {
             return other != null &&
                 EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
-                EqualityComparer<List<ITag>>.Default.Equals(this._Tags, other._Tags);
+                Comparison.Comparer.Equals<ITag>(this._Tags, other._Tags);
         }
 
         /// <summary>Returns the hashcode of this this <see cref="ITag"/></summary>
@@ -56,10 +56,8 @@ namespace DaanV2.NBT {
             };
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+        /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
+        /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
         public override String ToString() {
             return $"\"{this.Name}\": {{{String.Join(", ", this._Tags)}}}]";
         }
