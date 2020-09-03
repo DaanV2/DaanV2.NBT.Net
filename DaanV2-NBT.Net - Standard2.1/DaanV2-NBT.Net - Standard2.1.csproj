@@ -10,16 +10,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>DaanV2.NBT.xml</DocumentationFile>
     <OutputPath>bin\Release\</OutputPath>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <DocumentationFile>DaanV2.NBT.xml</DocumentationFile>
     <OutputPath>bin\x86\Release\</OutputPath>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DocumentationFile>DaanV2.NBT.xml</DocumentationFile>
     <OutputPath>bin\x64\Release\</OutputPath>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -44,8 +50,8 @@
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="DaanV2.Essentials.Net" Version="1.1.1" />
-    <PackageReference Include="System.Buffers" Version="4.5.0" />
+    <PackageReference Include="DaanV2.Essentials.Net" Version="1.1.2" />
+    <PackageReference Include="System.Buffers" Version="4.5.1" />
     <PackageReference Include="zlib.net-mutliplatform" Version="1.0.4" />
   </ItemGroup>
 

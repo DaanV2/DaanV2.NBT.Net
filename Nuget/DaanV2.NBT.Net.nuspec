@@ -3,7 +3,7 @@
     <metadata>
         <!-- Required elements-->
         <id>DaanV2.NBT.Net</id>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <description>A NBT library for reading and writing nbt files/data, with Gzip and Zlib Compression, supports for Litte and Big endian structures</description>
         <authors>Daan Verstraten</authors>
 
@@ -19,17 +19,17 @@
             <group targetFramework=".NETCoreApp3.1">
                 <dependency id="zlib.net-mutliplatform" version="1.0.4" exclude="Build,Analyzers" />
                 <dependency id="DaanV2.Essentials.Net" version="1.1.1" exclude="Build,Analyzers" />
-                <dependency id="System.Buffers" version="4.5.0" exclude="Build,Analyzers" />
+                <dependency id="System.Buffers" version="4.5.1" exclude="Build,Analyzers" />
             </group>
             <group targetFramework=".NETFramework4.8">
                 <dependency id="zlib.net-mutliplatform" version="1.0.4" exclude="Build,Analyzers" />
                 <dependency id="DaanV2.Essentials.Net" version="1.1.1" exclude="Build,Analyzers" />
-                <dependency id="System.Buffers" version="4.5.0" exclude="Build,Analyzers" />
+                <dependency id="System.Buffers" version="4.5.1" exclude="Build,Analyzers" />
             </group>
 			<group targetFramework=".NETStandard2.1">
                 <dependency id="zlib.net-mutliplatform" version="1.0.4" exclude="Build,Analyzers" />
                 <dependency id="DaanV2.Essentials.Net" version="1.1.1" exclude="Build,Analyzers" />
-                <dependency id="System.Buffers" version="4.5.0" exclude="Build,Analyzers" />
+                <dependency id="System.Buffers" version="4.5.1" exclude="Build,Analyzers" />
             </group>
         </dependencies>
 
