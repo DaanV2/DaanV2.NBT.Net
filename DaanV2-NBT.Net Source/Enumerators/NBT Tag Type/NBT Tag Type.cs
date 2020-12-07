@@ -34,27 +34,18 @@ namespace DaanV2.NBT {
         Float = 5,
         ///<summary>Marks that the nbt tag stores a <see cref="System.Double"/> of information</summary>
         Double = 6,
-
-#pragma warning disable CS1584 // XML comment has syntactically incorrect cref attribute 'System.Byte[]'
         ///<summary>Marks that the nbt tag stores a <see cref="System.Byte[]"/> of information</summary>
         ByteArray = 7,
-#pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute 'System.Byte[]'
         ///<summary>Marks that the nbt tag stores a <see cref="System.String"/> of information</summary>
         String = 8,
         ///<summary>Marks that the nbt tag stores a List of unnamed tags</summary>
         List = 9,
         ///<summary>Marks that the nbt tag stores a composite tag of named subtags</summary>
         Compound = 10,
-
-#pragma warning disable CS1584 // XML comment has syntactically incorrect cref attribute 'Int32[]'
         ///<summary>Marks that the nbt tag stores a <see cref="Int32[]"/> of information</summary>
         IntArray = 11,
-#pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute 'Int32[]'
-
-#pragma warning disable CS1584 // XML comment has syntactically incorrect cref attribute 'Int64[]'
         ///<summary>Marks that the nbt tag stores a <see cref="Int64[]"/> of information</summary>
         LongArray = 12,
-#pragma warning restore CS1584 // XML comment has syntactically incorrect cref attribute 'Int64[]'
         ///<summary>No idea what the tag should be</summary>
         Unknown = 255
     }
