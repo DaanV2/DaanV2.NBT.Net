@@ -17,7 +17,6 @@ using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
-using DaanV2;
 using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization {

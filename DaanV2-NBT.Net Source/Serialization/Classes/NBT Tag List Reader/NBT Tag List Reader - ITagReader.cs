@@ -35,7 +35,7 @@ namespace DaanV2.NBT.Serialization.Serialization {
                 throw new Exception("List returned no subtype");
             }
 
-            NBTTagType SubTagType = (NBTTagType)O;
+            var SubTagType = (NBTTagType)O;
             ITagReader Reader = NBTReader.GetReader(SubTagType);
 
             if (Reader == null) {

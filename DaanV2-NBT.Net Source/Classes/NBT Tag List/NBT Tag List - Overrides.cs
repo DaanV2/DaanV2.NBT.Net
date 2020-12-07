@@ -111,7 +111,7 @@ namespace DaanV2.NBT {
         /// <summary>Create a clone of this this <see cref="ITag"/></summary>
         /// <returns>Create a clone of this this <see cref="ITag"/></returns>
         public override ITag Clone() {
-            NBTTagList Out = new NBTTagList(this.SubType, this._Tags.Count) {
+            var Out = new NBTTagList(this.SubType, this._Tags.Count) {
                 Name = this.Name
             };
             Int32 Count = this._Tags.Count;

@@ -24,7 +24,7 @@ namespace DaanV2.NBT {
         /// <returns>Extends the clone mechanics of all the tags to collections</returns>
         public static List<ITag> Clone(this List<ITag> Values) {
             Int32 Count = Values.Count;
-            List<ITag> Out = new List<ITag>(Count);
+            var Out = new List<ITag>(Count);
 
             for (Int32 I = 0; I < Count; I++) {
                 Out.Add(Values[I].Clone());
@@ -38,7 +38,7 @@ namespace DaanV2.NBT {
         /// <returns>Extends the clone mechanics of all the tags to collections</returns>
         public static List<ITag> Clone(this ITagCollection Values) {
             Int32 Count = Values.Count;
-            List<ITag> Out = new List<ITag>(Count);
+            var Out = new List<ITag>(Count);
 
             for (Int32 I = 0; I < Count; I++) {
                 Out.Add(Values[I].Clone());
