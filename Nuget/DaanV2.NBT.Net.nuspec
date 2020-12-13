@@ -50,7 +50,6 @@
         <file src="lib\netcoreapp3.1\*.*" target="lib\netcoreapp3.1\" exclude="*.tmp;*.pdb" />
         <file src="lib\netcore50\*.*" target="lib\netcore50\" exclude="*.tmp;*.pdb"/>
 
-        <file src="lib\netstandard2.0\*.*" target="lib\netstandard2.0\" exclude="*.tmp;*.pdb" />
         <file src="lib\netstandard2.1\*.*" target="lib\netstandard2.1\" exclude="*.tmp;*.pdb" />
     </files>
 </package>
