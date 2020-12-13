@@ -44,7 +44,7 @@ namespace DaanV2.NBT.Serialization.Serialization {
                 throw new Exception("Cannot read list sub type");
             }
 
-            NBTTagType SubTagType = (NBTTagType)O;
+            var SubTagType = (NBTTagType)O;
             ITagWriter Writer = NBTWriter.GetWriter(SubTagType);
 
             if (Writer == null) {

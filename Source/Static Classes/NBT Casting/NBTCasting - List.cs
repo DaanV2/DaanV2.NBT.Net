@@ -24,7 +24,7 @@ namespace DaanV2.NBT {
         /// <returns>Converts the given tag into a list</returns>
         public static List<T> ConvertList<T>(ITag Tag) {
             Int32 Count = Tag.Count;
-            List<T> Out = new List<T>(Count);
+            var Out = new List<T>(Count);
 
             for (Int32 I = 0; I < Count; I++) {
                 Out.Add(Tag.GetValue<T>());

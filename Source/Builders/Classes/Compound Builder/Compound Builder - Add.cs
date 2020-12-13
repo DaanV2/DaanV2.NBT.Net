@@ -169,7 +169,7 @@ namespace DaanV2.NBT.Builders {
         /// <param name="Capacity">The amount of suspected sub items</param>
         /// <returns>Adds a new sub <see cref="NBTTagCompound"/> to the collection</returns>
         public CompoundBuilder AddSubCompound(String Name, Int32 Capacity = 10) {
-            CompoundBuilder builder = new CompoundBuilder(Name, Capacity);
+            var builder = new CompoundBuilder(Name, Capacity);
             this._Tag.Add(builder._Tag);
             return builder;
         }
@@ -180,8 +180,8 @@ namespace DaanV2.NBT.Builders {
         /// <param name="Capacity">The capacity to start the list with</param>
         /// <returns>Adds a new sub <see cref="NBTTagList"/> to the collection</returns>
         public ListBuilder AddSubList(String Name, NBTTagType SubType, Int32 Capacity = 10) {
-            NBTTagList Tag = new NBTTagList(Name, SubType, Capacity);
-            ListBuilder Builder = new ListBuilder(Tag);
+            var Tag = new NBTTagList(Name, SubType, Capacity);
+            var Builder = new ListBuilder(Tag);
             this._Tag.Add(Tag);
             return Builder;
         }

@@ -23,7 +23,7 @@ namespace DaanV2.NBT {
         /// <summary>Returns a list of object that all implement a specified type</summary>
         /// <returns>Returns a list of object that all implement a specified type</returns>
         public static List<T> GetInterfaces<T>(Int32 Capacity = 50) {
-            List<T> Out = new List<T>(Capacity);
+            var Out = new List<T>(Capacity);
             String Name = typeof(T).Name;
             Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
             Int32 AsmLength = Assemblies.Length;

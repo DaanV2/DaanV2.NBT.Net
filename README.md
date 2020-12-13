@@ -1,5 +1,6 @@
 # DaanV2-NBT.Net
 A NBT library for reading and writing nbt files/data
+[Nuget package](https://www.nuget.org/packages/DaanV2.UUID.Net/)
 
 # Usage
 
