@@ -1628,13 +1628,13 @@
             <summary>Deconstructs the current <see cref="T:DaanV2.NBT.Serialization.SerializationContext"/></summary>
         </member>
         <member name="P:DaanV2.NBT.Serialization.SerializationContext.Endianness">
-            DOLATER <summary>Add Description</summary>
+            <summary>Gets or sets the Endianness for this instance</summary>
         </member>
         <member name="P:DaanV2.NBT.Serialization.SerializationContext.Buffer">
-            DOLATER <summary>Add Description</summary>
+            <summary>Gets or sets the Buffer for this instance</summary>
         </member>
         <member name="P:DaanV2.NBT.Serialization.SerializationContext.Stream">
-            DOLATER <summary>Add Description</summary>
+            <summary>Gets or sets the Stream for this instance</summary>
         </member>
         <member name="M:DaanV2.NBT.Serialization.SerializationContext.Dispose">
             DOLATER <summary>Add Description</summary>

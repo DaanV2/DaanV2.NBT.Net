@@ -43,14 +43,14 @@
     <OutputPath>bin\x86\Debug\</OutputPath>
   </PropertyGroup>
 
-  <Import Project="..\DaanV2-NBT.Net Source\DaanV2-NBT.Net Source.projitems" Label="Shared" />
+  <Import Project="..\..\Source\DaanV2-NBT.Net Source.projitems" Label="Shared" />
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="set Framework=netstandard2.1&#xD;&#xA;if '$(ConfigurationName)' == 'Release' (&#xD;&#xA;    if '$(PlatformName)' == 'AnyCPU' (&#xD;&#xA;        mkdir &quot;$(SolutionDir)Nuget\lib\%25Framework%25\&quot;&#xD;&#xA;        copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Nuget\lib\%25Framework%25\&quot;&#xD;&#xA;    ) ELSE (&#xD;&#xA;        mkdir &quot;$(SolutionDir)Nuget\runtimes\win10-$(PlatformName)\lib\%25Framework%25\&quot;&#xD;&#xA;        copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Nuget\runtimes\win10-$(PlatformName)\lib\%25Framework%25\&quot;&#xD;&#xA;     )&#xD;&#xA;)" />
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="DaanV2.Essentials.Net" Version="1.1.2" />
+    <PackageReference Include="DaanV2.Essentials.Net" Version="1.1.4" />
     <PackageReference Include="System.Buffers" Version="4.5.1" />
     <PackageReference Include="zlib.net-mutliplatform" Version="1.0.4" />
   </ItemGroup>

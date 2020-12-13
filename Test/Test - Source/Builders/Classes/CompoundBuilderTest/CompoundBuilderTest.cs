@@ -8,7 +8,7 @@ namespace DaanV2.NBT.Test.Builders {
     public partial class CompoundBuilderTest {
         [TestMethod]
         public void TestBuild() {
-            CompoundBuilder Builder = new CompoundBuilder("Root", 100);
+            var Builder = new CompoundBuilder("Root", 100);
             Builder.Add("Hello", 1);
             Builder.Add("Hello", 256);
             Builder.Add("Me.Hello", new List<String>() { "me.Name", "me.Temp" });
