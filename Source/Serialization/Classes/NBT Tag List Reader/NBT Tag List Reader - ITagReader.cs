@@ -42,11 +42,22 @@ namespace DaanV2.NBT.Serialization.Serialization {
                 throw new Exception($"No reader for type: {SubTagType}");
             }
 
-            for (Int32 I = 0; I < tag.Count; I++) {
-                SubTag = NBTTagFactory.Create(SubTagType);
-                tag[I] = SubTag;
-                Reader.ReadContent(SubTag, Context);
+            if (SubTagType == NBTTagType.List) {
+                for (Int32 I = 0; I < tag.Count; I++) {
+                    SubTag = new NBTTagList(SubTagType);
+                    SubTag.SetInformation(NBTTagInformation.ListSubtype, (NBTTagType)Context.Stream.ReadByte());
+                    SubTag.SetInformation(NBTTagInformation.ListSize, Context.ReadInt32());
+                    Reader.ReadContent(SubTag, Context);
+                    tag[I] = SubTag;
+                }
             }
+            else {
+                for (Int32 I = 0; I < tag.Count; I++) {
+                    SubTag = NBTTagFactory.Create(SubTagType);
+                    tag[I] = SubTag;
+                    Reader.ReadContent(SubTag, Context);
+                }
+            }            
         }
 
         /// <summary>Reads the nbt's header from the <see cref="Stream"/></summary>
