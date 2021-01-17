@@ -24,7 +24,7 @@ namespace DaanV2.NBT {
         public NBTTagList() : this(NBTTagType.Unknown) { }
 
         /// <summary>Creates a new instance of <see cref="NBTTagList"/></summary>
-        public NBTTagList(NBTTagType SubType) : base(100) {
+        public NBTTagList(NBTTagType SubType) : base(10) {
             this._SubType = SubType;
         }
 

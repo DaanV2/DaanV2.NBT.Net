@@ -21,29 +21,57 @@ namespace DaanV2.NBT {
         /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
         /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
         public override String ToString() {
-            switch (this.Type) {
-                case NBTTagType.Compound:
-                    return $"\"{this.Name}\": {{{String.Join(", ", this._Tags)}}}";
+            if (String.IsNullOrEmpty(this.Name)) {
+                switch (this.Type) {
+                    case NBTTagType.Compound:
+                        return $"\"\": {{{String.Join(", ", this._Tags)}}}";
 
-                case NBTTagType.List:
-                case NBTTagType.IntArray:
-                case NBTTagType.LongArray:
-                case NBTTagType.ByteArray:
-                    return $"\"{this.Name}\": [{String.Join(", ", this._Tags)}]";
+                    case NBTTagType.List:
+                    case NBTTagType.IntArray:
+                    case NBTTagType.LongArray:
+                    case NBTTagType.ByteArray:
+                        return $"[{String.Join(", ", this._Tags)}]";
 
-                default:
-                case NBTTagType.Unknown:
-                case NBTTagType.End:
-                case NBTTagType.Byte:
-                case NBTTagType.Short:
-                case NBTTagType.Int:
-                case NBTTagType.Long:
-                case NBTTagType.Float:
-                case NBTTagType.Double:
-                    return $"\"{this.Name}\": {this.GetValue()}";
+                    default:
+                    case NBTTagType.Unknown:
+                    case NBTTagType.End:
+                    case NBTTagType.Byte:
+                    case NBTTagType.Short:
+                    case NBTTagType.Int:
+                    case NBTTagType.Long:
+                    case NBTTagType.Float:
+                    case NBTTagType.Double:
+                        return $"{this.GetValue()}";
 
-                case NBTTagType.String:
-                    return $"\"{this.Name}\": \"{this.GetValue()}\"";
+                    case NBTTagType.String:
+                        return $"\"{this.GetValue()}\"";
+                }
+            }
+            else {
+                switch (this.Type) {
+                    case NBTTagType.Compound:
+                        return $"\"{this.Name}\": {{{String.Join(", ", this._Tags)}}}";
+
+                    case NBTTagType.List:
+                    case NBTTagType.IntArray:
+                    case NBTTagType.LongArray:
+                    case NBTTagType.ByteArray:
+                        return $"\"{this.Name}\": [{String.Join(", ", this._Tags)}]";
+
+                    default:
+                    case NBTTagType.Unknown:
+                    case NBTTagType.End:
+                    case NBTTagType.Byte:
+                    case NBTTagType.Short:
+                    case NBTTagType.Int:
+                    case NBTTagType.Long:
+                    case NBTTagType.Float:
+                    case NBTTagType.Double:
+                        return $"\"{this.Name}\": {this.GetValue()}";
+
+                    case NBTTagType.String:
+                        return $"\"{this.Name}\": \"{this.GetValue()}\"";
+                }
             }
         }
 

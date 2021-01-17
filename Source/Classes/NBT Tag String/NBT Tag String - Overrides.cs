@@ -60,7 +60,12 @@ namespace DaanV2.NBT {
         /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
         /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
         public override String ToString() {
-            return $"\"{this.Name}\": \"{this._Value}\"";
+            if (String.IsNullOrEmpty(this.Name)) {
+                return $"{this._Value}";
+            }
+            else {
+                return $"\"{this.Name}\": \"{this._Value}\"";
+            }
         }
     }
 }
