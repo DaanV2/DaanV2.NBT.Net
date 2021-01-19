@@ -15,6 +15,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace DaanV2.NBT {
     public static partial class NBTCasting {
@@ -22,6 +23,7 @@ namespace DaanV2.NBT {
         /// <typeparam name="T">The type to convert the items to</typeparam>
         /// <param name="Tag">The tag to convert to a list</param>
         /// <returns>Converts the given tag into a list</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static List<T> ConvertList<T>(ITag Tag) {
             Int32 Count = Tag.Count;
             var Out = new List<T>(Count);

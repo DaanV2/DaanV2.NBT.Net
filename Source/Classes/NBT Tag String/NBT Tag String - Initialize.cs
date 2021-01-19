@@ -19,7 +19,7 @@ using System.Runtime.Serialization;
 namespace DaanV2.NBT {
     /// <summary>The class that stores the information for: String</summary>
 	[Serializable, DataContract]
-    public partial class NBTTagString : NBTTagValue<String> {
+    public sealed partial class NBTTagString : NBTTagValue<String> {
         /// <summary>Creates a new instance of <see cref="NBTTagString"/></summary>
         public NBTTagString() : base() { }
 

@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagList : ITagCollection, IEnumerable<ITag>, IEnumerable {
+    public sealed partial class NBTTagList : ITagCollection, IEnumerable<ITag>, IEnumerable {
         /// <summary>Gets or sets the subtag with the given name</summary>
         /// <param name="Name">The name of the tag</param>
         /// <returns>Gets or sets the subtag with the given name</returns>

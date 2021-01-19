@@ -16,7 +16,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagFloat {
+    public sealed partial class NBTTagFloat {
         /// <summary>Compare two objects to one another to see if they are equal</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>

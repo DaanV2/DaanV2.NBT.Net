@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagList {
+    public sealed partial class NBTTagList {
         /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>

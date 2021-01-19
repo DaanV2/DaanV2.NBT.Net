@@ -19,7 +19,7 @@ using System.Runtime.Serialization;
 namespace DaanV2.NBT {
     /// <summary>The class that stores the information for: LongArray</summary>
 	[Serializable, DataContract]
-    public partial class NBTTagLongArray : NBTTagValue<Int64[]> {
+    public sealed partial class NBTTagLongArray : NBTTagValue<Int64[]> {
         /// <summary>Creates a new instance of <see cref="NBTTagLongArray"/></summary>
         public NBTTagLongArray() : base() { }
 

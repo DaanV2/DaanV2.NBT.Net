@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagCompound : NBTTag {
+    public sealed partial class NBTTagCompound : NBTTag {
         /// <summary>The constant type used for this this <see cref="ITag"/></summary>
         private const NBTTagType _Type = NBTTagType.Compound;
 

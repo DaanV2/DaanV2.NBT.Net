@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagInt {
+    public sealed partial class NBTTagInt {
         /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
         /// <param name="Obj">The object to compare to</param>
         /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>

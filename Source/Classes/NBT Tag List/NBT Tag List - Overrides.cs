@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagList {
+    public sealed partial class NBTTagList {
         /// <summary>Sets the specified information of this this <see cref="ITag"/> with the given value</summary>
         /// <param name="InfoType">The into type to store the information in</param>
         /// <param name="Info">The information to store</param>

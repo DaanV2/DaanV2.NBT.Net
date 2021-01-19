@@ -16,7 +16,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagByte {
+    public sealed partial class NBTTagByte {
         /// <summary>Compare the two given tag with each other</summary>
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>

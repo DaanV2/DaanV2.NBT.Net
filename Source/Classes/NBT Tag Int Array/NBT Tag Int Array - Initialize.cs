@@ -19,7 +19,7 @@ using System.Runtime.Serialization;
 namespace DaanV2.NBT {
     /// <summary>The class that stores the information for: IntArray</summary>
 	[Serializable, DataContract]
-    public partial class NBTTagIntArray : NBTTagValue<Int32[]> {
+    public sealed partial class NBTTagIntArray : NBTTagValue<Int32[]> {
         /// <summary>Creates a new instance of <see cref="NBTTagIntArray"/></summary>
         public NBTTagIntArray() : base() { }
 

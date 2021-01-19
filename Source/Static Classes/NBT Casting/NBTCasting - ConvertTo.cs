@@ -14,6 +14,7 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Runtime.CompilerServices;
 
 namespace DaanV2.NBT {
     public static partial class NBTCasting {
@@ -21,6 +22,7 @@ namespace DaanV2.NBT {
         /// <typeparam name="T">The type to conver to</typeparam>
         /// <param name="Value">The object to convert</param>
         /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T ConvertTo<T>(Object Value) {
             if (Value == null) {
                 return default;
@@ -64,6 +66,105 @@ namespace DaanV2.NBT {
             }
 
             return (T)Value;
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(Byte Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(Byte[] Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(Int16 Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(Int16[] Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(Int32 Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(Int32[] Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(Int64 Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(Int64[] Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(Single Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(Double Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
+        }
+
+        /// <summary>Converts the given object into the specified type</summary>
+        /// <typeparam name="T">The type to conver to</typeparam>
+        /// <param name="Value">The object to convert</param>
+        /// <returns>Converts the given object into the specified type</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T ConvertTo<T>(String Value) {
+            return (T)NBTCasting.Convert(Value, typeof(T));
         }
     }
 }

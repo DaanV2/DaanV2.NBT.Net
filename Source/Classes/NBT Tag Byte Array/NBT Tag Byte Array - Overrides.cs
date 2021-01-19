@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagByteArray : IEquatable<NBTTagByteArray> {
+    public sealed partial class NBTTagByteArray : IEquatable<NBTTagByteArray> {
         /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
         /// <param name="obj">The object to compare to</param>
         /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>

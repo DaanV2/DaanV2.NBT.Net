@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagList : NBTTag {
+    public sealed partial class NBTTagList : NBTTag {
         /// <summary>Returns the tag type of this this <see cref="ITag"/></summary>
         private const NBTTagType _Type = NBTTagType.List;
 

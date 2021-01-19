@@ -15,7 +15,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
 namespace DaanV2.NBT {
-    public partial class NBTTagList {
+    public sealed partial class NBTTagList {
         /// <summary>The field that stores the sub type</summary>
         private NBTTagType _SubType;
     }

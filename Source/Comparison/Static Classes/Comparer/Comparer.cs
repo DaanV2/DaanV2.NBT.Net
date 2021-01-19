@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace DaanV2.NBT.Comparison {
     ///DOLATER <summary>add description for class: Comparer</summary>
@@ -9,6 +10,7 @@ namespace DaanV2.NBT.Comparison {
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean Equals<T>(List<T> A, List<T> B)
             where T : ITag {
 
@@ -37,8 +39,9 @@ namespace DaanV2.NBT.Comparison {
         /// <param name="A"></param>
         /// <param name="B"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean Equals<T>(List<T> A, ITag B)
-    where T : ITag {
+            where T : ITag {
 
             Int32 Value = 0;
             if (A != null) { Value++; }

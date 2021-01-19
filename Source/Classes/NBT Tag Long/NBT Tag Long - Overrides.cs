@@ -17,7 +17,7 @@ using System;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagLong {
+    public sealed partial class NBTTagLong {
 
         /// <summary>Compares this this <see cref="ITag"/> to the given object</summary>
         /// <param name="Obj">The object to compare to</param>

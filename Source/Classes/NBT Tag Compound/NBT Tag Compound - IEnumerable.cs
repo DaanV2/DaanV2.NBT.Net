@@ -17,7 +17,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public partial class NBTTagCompound : IEnumerable<ITag> {
+    public sealed partial class NBTTagCompound : IEnumerable<ITag> {
         /// <summary>Returns an enumerator that iterates through <see cref="NBTTagCompound"/></summary>
         /// <returns>Returns an enumerator that iterates through <see cref="NBTTagCompound"/></returns>
         public IEnumerator<ITag> GetEnumerator() {

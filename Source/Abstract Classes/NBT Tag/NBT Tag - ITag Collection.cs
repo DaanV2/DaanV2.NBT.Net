@@ -172,7 +172,7 @@ namespace DaanV2.NBT {
         /// <param name="Index">The index to look at</param>
         /// <returns>Retrieves the tag's value with the given index</returns>
         public T GetSubValue<T>(Int32 Index) {
-            return this._Tags[Index].ConvertValue<T>();
+            return this._Tags[Index].GetValue<T>();
         }
     }
 }
