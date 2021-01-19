@@ -7,17 +7,18 @@
   </a>
 </p>
 
-An NBT library for reading and writing NBT files/data
-[Nuget package](https://www.nuget.org/packages/DaanV2.UUID.Net/)
+An NBT library for reading and writing NBT files/data [Nuget package](https://www.nuget.org/packages/DaanV2.UUID.Net/)
 
 # Usage
 
-## Read the file into a nbt structure
+## Read a file
+
 ```cs
     Itag Compound = NBTReader.ReadFile("Path to file", Endianness.LittleEndian, NBTCompression.Auto);
 ```
 
 ## Writes to a file
+
 ```cs
     ITag Tag;
 
@@ -38,12 +39,13 @@ An NBT library for reading and writing NBT files/data
     ITag = Builder.GetResult();
 ```
 
-
 # Installation
+
 Check that the NuGet packages have been downloaded.
 
 # Dependencies:
 
 ## Solved with NuGet
+
 - [Zlib](https://github.com/cinderblocks/zlib.net)
 - [DaanV2.Essentials.Net](https://github.com/DaanV2/DaanV2.Essentials.Net)
