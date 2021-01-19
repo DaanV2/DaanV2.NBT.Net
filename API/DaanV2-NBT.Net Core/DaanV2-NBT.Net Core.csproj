@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>DaanV2.NBT</RootNamespace>
-    <AssemblyName>DaanV2-NBT.Net</AssemblyName>
+    <AssemblyName>DaanV2.NBT.Net</AssemblyName>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
