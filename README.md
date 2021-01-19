@@ -1,5 +1,13 @@
 # DaanV2-NBT.Net
-A NBT library for reading and writing nbt files/data
+
+<p align="center">
+  <a href="https://www.nuget.org/packages/DaanV2.UUID.Net/">
+    <img alt="Nuget" src="https://img.shields.io/nuget/v/DaanV2.UUID.Net?style=for-the-badge">
+    <img alt="Nuget" src="https://img.shields.io/nuget/dt/DaanV2.UUID.Net?style=for-the-badge">
+  </a>
+</p>
+
+An NBT library for reading and writing NBT files/data
 [Nuget package](https://www.nuget.org/packages/DaanV2.UUID.Net/)
 
 # Usage
@@ -9,14 +17,14 @@ A NBT library for reading and writing nbt files/data
     Itag Compound = NBTReader.ReadFile("Path to file", Endianness.LittleEndian, NBTCompression.Auto);
 ```
 
-## Writes the nbt tag into a file
+## Writes to a file
 ```cs
     ITag Tag;
 
-    //Writes the tag to the specified file using GZIP compression and little endian methods
+    //Writes the tag to the specified file using GZIP compression and little-endian methods
     NBTWriter.WriteFile("Path to file", Tag, NBTCompression.Gzip, Endianness.LittleEndian);
 
-    //Writes the tag to the specified file using no compression and little endian methods
+    //Writes the tag to the specified file using no compression and little-endian methods
     NBTWriter.WriteFile("Path to file", Tag, Endianness.LittleEndian);
 ```
 
@@ -32,7 +40,7 @@ A NBT library for reading and writing nbt files/data
 
 
 # Installation
-Check that the nuget packages have been downloaded.
+Check that the NuGet packages have been downloaded.
 
 # Dependencies:
 

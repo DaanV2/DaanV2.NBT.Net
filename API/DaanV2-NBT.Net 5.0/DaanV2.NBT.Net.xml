@@ -475,6 +475,20 @@
         <member name="P:DaanV2.NBT.NBTTagByteArray.Type">
             <summary>Returns the tag's type</summary>
         </member>
+        <member name="M:DaanV2.NBT.NBTTagByteArray.GetValue">
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagByteArray.GetValue``1">
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
+            <typeparam name="T">The type to convert to</typeparam>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagByteArray.ConvertValue``1">
+            <summary>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></summary>
+            <typeparam name="T">Add Type description</typeparam>
+            <returns>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></returns>
+        </member>
         <member name="M:DaanV2.NBT.NBTTagByteArray.Equals(System.Object)">
             <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="obj">The object to compare to</param>
@@ -542,6 +556,20 @@
         </member>
         <member name="P:DaanV2.NBT.NBTTagByte.Type">
             <summary>Returns the tag's type</summary>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagByte.GetValue">
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagByte.GetValue``1">
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
+            <typeparam name="T">The type to convert to</typeparam>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagByte.ConvertValue``1">
+            <summary>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></summary>
+            <typeparam name="T">Add Type description</typeparam>
+            <returns>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagByte.Equals(System.Object)">
             <summary>Compares this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
@@ -699,6 +727,20 @@
         <member name="P:DaanV2.NBT.NBTTagDouble.Type">
             <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
+        <member name="M:DaanV2.NBT.NBTTagDouble.GetValue">
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagDouble.GetValue``1">
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
+            <typeparam name="T">The type to convert to</typeparam>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagDouble.ConvertValue``1">
+            <summary>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></summary>
+            <typeparam name="T">Add Type description</typeparam>
+            <returns>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></returns>
+        </member>
         <member name="M:DaanV2.NBT.NBTTagDouble.Equals(System.Object)">
             <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="Obj">The object to compare to</param>
@@ -761,6 +803,20 @@
         </member>
         <member name="P:DaanV2.NBT.NBTTagFloat.Type">
             <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagFloat.GetValue">
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagFloat.GetValue``1">
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
+            <typeparam name="T">The type to convert to</typeparam>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagFloat.ConvertValue``1">
+            <summary>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></summary>
+            <typeparam name="T">Add Type description</typeparam>
+            <returns>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagFloat.Equals(System.Object)">
             <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
@@ -825,6 +881,20 @@
         <member name="P:DaanV2.NBT.NBTTagIntArray.Type">
             <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
+        <member name="M:DaanV2.NBT.NBTTagIntArray.GetValue">
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagIntArray.GetValue``1">
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
+            <typeparam name="T">The type to convert to</typeparam>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagIntArray.ConvertValue``1">
+            <summary>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></summary>
+            <typeparam name="T">Add Type description</typeparam>
+            <returns>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></returns>
+        </member>
         <member name="M:DaanV2.NBT.NBTTagIntArray.Equals(System.Object)">
             <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="Obj">The object to compare to</param>
@@ -873,6 +943,20 @@
         </member>
         <member name="T:DaanV2.NBT.NBTTagInt">
             <summary>The class that stores the information for: Int</summary>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagInt.GetValue">
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagInt.GetValue``1">
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
+            <typeparam name="T">The type to convert to</typeparam>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagInt.ConvertValue``1">
+            <summary>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></summary>
+            <typeparam name="T">Add Type description</typeparam>
+            <returns>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagInt.#ctor">
             <summary>Creates a new instance of <see cref="T:DaanV2.NBT.NBTTagInt"/></summary>
@@ -1084,6 +1168,20 @@
         <member name="P:DaanV2.NBT.NBTTagLongArray.Type">
             <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
+        <member name="M:DaanV2.NBT.NBTTagLongArray.GetValue">
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagLongArray.GetValue``1">
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
+            <typeparam name="T">The type to convert to</typeparam>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagLongArray.ConvertValue``1">
+            <summary>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></summary>
+            <typeparam name="T">Add Type description</typeparam>
+            <returns>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></returns>
+        </member>
         <member name="M:DaanV2.NBT.NBTTagLongArray.Equals(System.Object)">
             <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="Obj">The object to compare to</param>
@@ -1146,6 +1244,20 @@
         </member>
         <member name="P:DaanV2.NBT.NBTTagLong.Type">
             <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagLong.GetValue">
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagLong.GetValue``1">
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
+            <typeparam name="T">The type to convert to</typeparam>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagLong.ConvertValue``1">
+            <summary>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></summary>
+            <typeparam name="T">Add Type description</typeparam>
+            <returns>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagLong.Equals(System.Object)">
             <summary>Compares this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
@@ -1210,6 +1322,20 @@
         <member name="P:DaanV2.NBT.NBTTagShort.Type">
             <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
         </member>
+        <member name="M:DaanV2.NBT.NBTTagShort.GetValue">
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagShort.GetValue``1">
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
+            <typeparam name="T">The type to convert to</typeparam>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagShort.ConvertValue``1">
+            <summary>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></summary>
+            <typeparam name="T">Add Type description</typeparam>
+            <returns>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></returns>
+        </member>
         <member name="M:DaanV2.NBT.NBTTagShort.Equals(System.Object)">
             <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
             <param name="Obj">The object to compare to</param>
@@ -1272,6 +1398,20 @@
         </member>
         <member name="P:DaanV2.NBT.NBTTagString.Type">
             <summary>Returns the tag type of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagString.GetValue">
+            <summary>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></summary>
+            <returns>Gets the value of this this <see cref="T:DaanV2.NBT.ITag"/></returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagString.GetValue``1">
+            <summary>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</summary>
+            <typeparam name="T">The type to convert to</typeparam>
+            <returns>Converts the value of this this <see cref="T:DaanV2.NBT.ITag"/> to the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTTagString.ConvertValue``1">
+            <summary>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></summary>
+            <typeparam name="T">Add Type description</typeparam>
+            <returns>Casts the value of this <see cref="T:DaanV2.NBT.NBTTagValue`1"/> to the specifed type, routes through <see cref="T:DaanV2.NBT.NBTCasting"/></returns>
         </member>
         <member name="M:DaanV2.NBT.NBTTagString.Equals(System.Object)">
             <summary>Compare this this <see cref="T:DaanV2.NBT.ITag"/> to the given object</summary>
@@ -2013,6 +2153,12 @@
             <param name="Tag">The tag to convert to a list</param>
             <returns>Converts the given tag into a list</returns>
         </member>
+        <member name="M:DaanV2.NBT.NBTCasting.Convert(System.Int16[],System.Type)">
+            <summary>Converts the given byte to the specified type</summary>
+            <param name="Value">The value to convert</param>
+            <param name="To">The type to convert to</param>
+            <returns>Converts the given byte to the specified type</returns>
+        </member>
         <member name="M:DaanV2.NBT.NBTCasting.Convert(System.Int16,System.Type)">
             <summary>Converts the given byte to the specified type</summary>
             <param name="Value">The value to convert</param>
@@ -2059,6 +2205,72 @@
             <returns>Converts the given byte to the specified type</returns>
         </member>
         <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Object)">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Byte)">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Byte[])">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Int16)">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Int16[])">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Int32)">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Int32[])">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Int64)">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Int64[])">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Single)">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.Double)">
+            <summary>Converts the given object into the specified type</summary>
+            <typeparam name="T">The type to conver to</typeparam>
+            <param name="Value">The object to convert</param>
+            <returns>Converts the given object into the specified type</returns>
+        </member>
+        <member name="M:DaanV2.NBT.NBTCasting.ConvertTo``1(System.String)">
             <summary>Converts the given object into the specified type</summary>
             <typeparam name="T">The type to conver to</typeparam>
             <param name="Value">The object to convert</param>
