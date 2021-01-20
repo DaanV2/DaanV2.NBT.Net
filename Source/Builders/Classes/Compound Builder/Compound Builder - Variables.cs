@@ -17,6 +17,6 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 namespace DaanV2.NBT.Builders {
     public partial class CompoundBuilder {
         /// <summary>The field that stores the base tag</summary>
-        private NBTTagCompound _Tag;
+        internal NBTTagCompound _Tag;
     }
 }

@@ -17,6 +17,6 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 namespace DaanV2.NBT.Builders {
     public partial class ListBuilder {
         /// <summary>The field that stores the sub tag</summary>
-        private NBTTagList _Tag;
+        internal NBTTagList _Tag;
     }
 }

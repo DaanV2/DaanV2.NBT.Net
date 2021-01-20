@@ -29,7 +29,7 @@ namespace DaanV2.NBT {
             var Out = new List<T>(Count);
 
             for (Int32 I = 0; I < Count; I++) {
-                Out.Add(Tag.GetValue<T>());
+                Out.Add(Tag.GetSubValue<T>(I));
             }
 
             return Out;

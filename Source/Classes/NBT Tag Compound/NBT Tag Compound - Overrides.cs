@@ -33,9 +33,11 @@ namespace DaanV2.NBT {
         /// <param name="other">The object to compare to</param>
         /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
         public Boolean Equals(NBTTagCompound other) {
-            return other != null &&
-                EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
-                Comparison.Comparer.Equals<ITag>(this._Tags, other._Tags);
+            if (other != null) {
+                return Comparison.Comparer.Equals(this, other);
+            }
+
+            return false;
         }
 
         /// <summary>Returns the hashcode of this this <see cref="ITag"/></summary>
