@@ -102,10 +102,10 @@ namespace DaanV2.NBT {
         /// <param name="other">The object to compare to</param>
         /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
         public Boolean Equals(ITag other) {
-            if (other != null && 
+            if (other != null &&
                 EqualityComparer<String>.Default.Equals(this._Name, other.Name) &&
                 Comparison.Comparer.Equals(this._Tags, other)) {
-                
+
                 return true;
             }
 

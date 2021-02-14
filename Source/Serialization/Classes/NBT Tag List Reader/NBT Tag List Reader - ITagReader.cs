@@ -57,7 +57,7 @@ namespace DaanV2.NBT.Serialization.Serialization {
                     tag[I] = SubTag;
                     Reader.ReadContent(SubTag, Context);
                 }
-            }            
+            }
         }
 
         /// <summary>Reads the nbt's header from the <see cref="Stream"/></summary>

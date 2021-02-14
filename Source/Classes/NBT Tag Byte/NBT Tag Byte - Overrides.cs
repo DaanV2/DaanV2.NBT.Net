@@ -66,7 +66,7 @@ namespace DaanV2.NBT {
             }
             else {
                 return $"\"{this.Name}\": {this._Value}";
-            }            
+            }
         }
     }
 }
