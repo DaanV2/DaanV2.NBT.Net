@@ -31,16 +31,7 @@ namespace DaanV2.NBT {
             for (Int32 I = 0; I < AsmLength; I++) {
                 Assembly Asm = Assemblies[I];
                 try {
-                    Type[] Types = Asm.GetTypes();
-                    Int32 TypesLength = Types.Length;
-
-                    for (Int32 J = 0; J < TypesLength; J++) {
-                        Type Current = Types[J];
-
-                        if (Current.GetInterface(Name) != null) {
-                            Out.Add((T)Activator.CreateInstance(Current));
-                        }
-                    }
+                    InternalTypes<T>(Name, Asm, Out);
                 }
                 catch (Exception ex) {
                     Console.WriteLine(ex.Message);
@@ -50,6 +41,26 @@ namespace DaanV2.NBT {
 
 
             return Out;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="Name"></param>
+        /// <param name="Asm"></param>
+        /// <param name="Out"></param>
+        internal static void InternalTypes<T>(String Name, Assembly Asm, List<T> Out) {
+            Type[] Types = Asm.GetTypes();
+            Int32 TypesLength = Types.Length;
+
+            for (Int32 J = 0; J < TypesLength; J++) {
+                Type Current = Types[J];
+
+                if (Current.GetInterface(Name) != null) {
+                    Out.Add((T)Activator.CreateInstance(Current));
+                }
+            }
         }
     }
 }
