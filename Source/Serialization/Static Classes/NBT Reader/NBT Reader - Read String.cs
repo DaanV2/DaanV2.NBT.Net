@@ -31,6 +31,9 @@ namespace DaanV2.NBT.Serialization {
 
             Reader.Read(Data, 0, Data.Length);
             Int32 Length = Binary.BitConverter.Endian.ToInt16(Data, endianness);
+
+            if (Length == 0) { return String.Empty; }
+
             return Encoding.UTF8.GetString(Reader.ReadBytes(Length));
         }
 
@@ -40,6 +43,9 @@ namespace DaanV2.NBT.Serialization {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static String ReadString(SerializationContext Context) {
             Int32 Length = Context.ReadInt16();
+
+            if (Length == 0) { return String.Empty; }
+
             return Encoding.UTF8.GetString(Context.ReadBytes(Length));
         }
     }

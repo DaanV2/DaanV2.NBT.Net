@@ -14,6 +14,7 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Runtime.CompilerServices;
 
 namespace DaanV2.NBT {
     public sealed partial class NBTTagFloat {
@@ -21,6 +22,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two objects to one another to see if they are equal</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagFloat A, NBTTagFloat B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = ((Object)B) == null;
@@ -35,6 +37,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two objects to one another to see if they are not equal</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagFloat A, NBTTagFloat B) {
             return !(A == B);
         }
@@ -43,6 +46,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two objects to one another to see if they are equal</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagFloat A, Object B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = ((Object)B) == null;
@@ -57,6 +61,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two objects to one another to see if they are not equal</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagFloat A, Object B) {
             return !(A == B);
         }

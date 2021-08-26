@@ -15,6 +15,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace DaanV2.NBT {
     public sealed partial class NBTTagList {
@@ -22,6 +23,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagList A, NBTTagList B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = ((Object)B) == null;
@@ -36,6 +38,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagList A, NBTTagList B) {
             return !(A == B);
         }
@@ -44,6 +47,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagList A, Object B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = ((Object)B) == null;
@@ -58,6 +62,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagList A, Object B) {
             return !(A == B);
         }

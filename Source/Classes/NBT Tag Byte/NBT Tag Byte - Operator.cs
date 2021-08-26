@@ -14,6 +14,7 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Runtime.CompilerServices;
 
 namespace DaanV2.NBT {
     public sealed partial class NBTTagByte {
@@ -21,6 +22,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagByte A, NBTTagByte B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = ((Object)B) == null;
@@ -39,6 +41,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagByte A, NBTTagByte B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = ((Object)B) == null;
@@ -57,6 +60,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagByte A, Object B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = B == null;
@@ -75,6 +79,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare the two given tag with each other</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagByte A, Object B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = B == null;

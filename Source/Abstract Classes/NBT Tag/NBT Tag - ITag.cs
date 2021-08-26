@@ -51,9 +51,11 @@ namespace DaanV2.NBT {
                 case NBTTagInformation.Name:
                     this._Name = (String)Info;
                     break;
+
                 case NBTTagInformation.Tag:
                     this._Tags.Add((ITag)Info);
                     break;
+                    
                 case NBTTagInformation.ListSize:
                 case NBTTagInformation.ListSubtype:
                 case NBTTagInformation.Value:

@@ -14,9 +14,19 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.IO;
+using DaanV2.Binary;
 
 namespace DaanV2.NBT.Serialization {
     public static partial class NBTWriter {
+        /// <summary>Writes the given tag into a stream</summary>
+        /// <param name="tag">The tag to write</param>
+        /// <param name="Context">The context to write to</param>
+        public static void Write(ITag tag, Stream stream, Endianness endianness = Endianness.LittleEndian) {
+            var Context = new SerializationContext(endianness, stream);
+            Write(tag, Context);
+        }
+
         /// <summary>Writes the given tag into a stream</summary>
         /// <param name="tag">The tag to write</param>
         /// <param name="Context">The context to write to</param>

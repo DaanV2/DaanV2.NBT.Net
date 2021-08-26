@@ -14,6 +14,7 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Runtime.CompilerServices;
 
 namespace DaanV2.NBT {
     public abstract partial class NBTTagValue<TypeValue> {
@@ -22,6 +23,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare to</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two <see cref="NBTTagValue{TypeValue}"/> to see if they are equal</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagValue<TypeValue> A, NBTTagValue<TypeValue> B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = ((Object)B) == null;
@@ -36,6 +38,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare to</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare two <see cref="NBTTagValue{TypeValue}"/> to see if they are not equal</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagValue<TypeValue> A, NBTTagValue<TypeValue> B) {
             return !(A == B);
         }
@@ -44,6 +47,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare to</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> equals a given object</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagValue<TypeValue> A, Object B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = ((Object)B) == null;
@@ -58,6 +62,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare to</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> not equals a given object</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagValue<TypeValue> A, Object B) {
             return !(A == B);
         }
@@ -66,6 +71,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare to</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> equals a given object</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagValue<TypeValue> A, TypeValue B) {
             Boolean NA = ((Object)A) == null;
             Boolean NB = ((Object)B) == null;
@@ -80,6 +86,7 @@ namespace DaanV2.NBT {
         /// <param name="A">The first object to compare to</param>
         /// <param name="B">The second object to compare</param>
         /// <returns>Compare one <see cref="NBTTagValue{TypeValue}"/> not equals a given object</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagValue<TypeValue> A, TypeValue B) {
             return !(A == B);
         }
