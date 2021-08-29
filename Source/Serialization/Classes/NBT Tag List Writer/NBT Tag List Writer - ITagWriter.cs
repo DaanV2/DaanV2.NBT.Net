@@ -40,7 +40,7 @@ namespace DaanV2.NBT.Serialization.Serialization {
         /// <summary>Writes the nbt's header to the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
         /// <param name="Context">The context to write to</param>
-        public void WriteHeader(NBTTagList tag, SerializationContext Context) {
+        public static void WriteHeader(NBTTagList tag, SerializationContext Context) {
             Context.Stream.WriteByte((Byte)tag.Type);
 
             NBTWriter.WriteString(Context, tag.Name);
@@ -85,7 +85,7 @@ namespace DaanV2.NBT.Serialization.Serialization {
         /// <summary>Writes the nbt's content to the <see cref="Stream"/></summary>
         /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
         /// <param name="Context">The context to write to</param>
-        public void WriteContent(NBTTagList tag, SerializationContext Context) {
+        public static void WriteContent(NBTTagList tag, SerializationContext Context) {
             NBTTagType SubTagType = tag.SubType;
             ITagWriter Writer = NBTWriter.GetWriter(SubTagType);
 
