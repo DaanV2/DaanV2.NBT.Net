@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;NETCORE;NET5</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <DocumentationFile>DaanV2.NBT.Net.xml</DocumentationFile>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>

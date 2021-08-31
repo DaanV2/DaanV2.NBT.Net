@@ -27,6 +27,7 @@ namespace DaanV2.NBT.Converter {
         /// 
         /// </summary>
         /// <param name="Tags"></param>
+        /// <param name="Name"></param>
         /// <returns></returns>
         public static NBTTagList ToNBT(this List<ITag> Tags, String Name) {
             Int32 Count = Tags.Count;
@@ -58,7 +59,9 @@ namespace DaanV2.NBT.Converter {
         /// <summary>
         /// 
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="Tags"></param>
+        /// <param name="Name"></param>
         /// <returns></returns>
         public static NBTTagList ToNBT<T>(this List<T> Tags, String Name) where T : ITag {
             Int32 Count = Tags.Count;
@@ -91,6 +94,7 @@ namespace DaanV2.NBT.Converter {
         /// 
         /// </summary>
         /// <param name="Tags"></param>
+        /// <param name="Name"></param>
         /// <returns></returns>
         public static NBTTagList ToNBT(this ITag[] Tags, String Name) {
             Int32 Count = Tags.Length;
@@ -122,7 +126,9 @@ namespace DaanV2.NBT.Converter {
         /// <summary>
         /// 
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="Tags"></param>
+        /// <param name="Name"></param>
         /// <returns></returns>
         public static NBTTagList ToNBT<T>(this ITag[] Tags, String Name) where T : ITag {
             Int32 Count = Tags.Length;

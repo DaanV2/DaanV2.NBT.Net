@@ -24,7 +24,7 @@ namespace DaanV2.NBT {
         /// <typeparam name="T">The type to return</typeparam>
         /// <returns>Safetly returns the value of this object, if object is not suspected type then the default value for that type is returned</returns>
         public override T GetValue<T>() {
-            return this._Tags is T Out ? Out : (default);
+            return this._Tags is T Out ? Out : default;
         }
 
         /// <summary>Sets the value of this <see cref="NBTTag" /></summary>
