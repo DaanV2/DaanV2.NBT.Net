@@ -64,14 +64,7 @@ namespace DaanV2.NBT {
         /// <summary>Returns this this <see cref="ITag"/> hashcode</summary>
         /// <returns>Returns this this <see cref="ITag"/> hashcode</returns>
         public override Int32 GetHashCode() {
-#if NETCORE
             return HashCode.Combine(this._Tags, this._Name);
-#else
-            Int32 hashCode = 1513385649;
-            hashCode = (hashCode * -1521134295) + EqualityComparer<List<ITag>>.Default.GetHashCode(this._Tags);
-            hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode(this._Name);
-            return hashCode;
-#endif
         }
     }
 }
