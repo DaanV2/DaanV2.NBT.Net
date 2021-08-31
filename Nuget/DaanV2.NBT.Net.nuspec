@@ -3,7 +3,7 @@
     <metadata>
         <!-- Required elements-->
         <id>DaanV2.NBT.Net</id>
-        <version>1.3.0</version>
+        <version>1.4.0</version>
         <description>A NBT library for reading and writing nbt files/data, with Gzip and Zlib Compression, supports for Litte and Big endian structures</description>
         <authors>Daan Verstraten</authors>
 
@@ -15,41 +15,35 @@
         <tags>NBT</tags>
         <repository type="git" url="https://github.com/DaanV2/DaanV2.NBT.Net.git" />
 		<icon>images\icon.png</icon>
+        <readme>docs\README.md</readme>
+
         <dependencies>
-            <group targetFramework=".NETCoreApp3.1">
-                <dependency id="zlib.net-mutliplatform" version="1.0.4" exclude="Build,Analyzers" />
-                <dependency id="DaanV2.Essentials.Net" version="1.1.7" exclude="Build,Analyzers" />
-                <dependency id="System.Buffers" version="4.5.1" exclude="Build,Analyzers" />
-            </group>
-            <group targetFramework=".NETCore5.0">
-                <dependency id="zlib.net-mutliplatform" version="1.0.4" exclude="Build,Analyzers" />
-                <dependency id="DaanV2.Essentials.Net" version="1.1.7" exclude="Build,Analyzers" />
-                <dependency id="System.Buffers" version="4.5.1" exclude="Build,Analyzers" />
-            </group>
-            <group targetFramework=".NETFramework4.8">
-                <dependency id="zlib.net-mutliplatform" version="1.0.4" exclude="Build,Analyzers" />
-                <dependency id="DaanV2.Essentials.Net" version="1.1.7" exclude="Build,Analyzers" />
-                <dependency id="System.Buffers" version="4.5.1" exclude="Build,Analyzers" />
-            </group>
-			<group targetFramework=".NETStandard2.1">
-                <dependency id="zlib.net-mutliplatform" version="1.0.4" exclude="Build,Analyzers" />
-                <dependency id="DaanV2.Essentials.Net" version="1.1.7" exclude="Build,Analyzers" />
+            <group targetFramework="net5.0">
+                <dependency id="zlib.net-mutliplatform" version="1.0.5" exclude="Build,Analyzers" />
+                <dependency id="DaanV2.Essentials.Net" version="1.4.2" exclude="Build,Analyzers" />
                 <dependency id="System.Buffers" version="4.5.1" exclude="Build,Analyzers" />
             </group>
         </dependencies>
+
+        <references>
+            <group targetFramework="net5.0">
+                <reference file="DaanV2.NBT.Net.dll" />
+            </group>
+        </references>
 
         <!-- ... -->
     </metadata>
     <!-- Optional 'files' node -->
     <files>
+        <file src="..\README.md" target="docs\" />  
         <file src="..\Nuget\images\icon.png" target="images\" />
         <file src="..\LICENSE.txt" target="" />
 
         <!-- Any CPU -->
-        <file src="lib\net48\DaanV2.NBT.*" target="lib\net48\" exclude="*.tmp;*.pdb"/>
-        <file src="lib\netcoreapp3.1\DaanV2.NBT.*" target="lib\netcoreapp3.1\" exclude="*.tmp;*.pdb" />
-        <file src="lib\netcore50\DaanV2.NBT.*" target="lib\netcore50\" exclude="*.tmp;*.pdb"/>
+        <file src="lib\net5.0\*.*" target="lib/net5.0" exclude="*.tmp;*.pdb"/>
 
-        <file src="lib\netstandard2.1\DaanV2.NBT.*" target="lib\netstandard2.1\" exclude="*.tmp;*.pdb" />
+        <!-- Frameworks -->
+        <file src="lib\net5.0\*.dll" target="ref/net5.0" exclude="*.tmp;*.pdb"/>
+        <file src="runtimes\**\*.*" target="runtimes" exclude="*.tmp;*.pdb"/>
     </files>
 </package>

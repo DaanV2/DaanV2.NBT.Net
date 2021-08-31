@@ -83,6 +83,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Classes\NBT Tag String\NBT Tag String - Tag.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Comparison\Static Classes\Comparer\Comparer - Compound.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Comparison\Static Classes\Comparer\Comparer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converter\Static Classes\NBTList\NBTList - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converter\Static Classes\NBTList\NBTList - ToNBT.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enumerators\NBT Compression\NBT Compression.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Enumerators\NBT Tag Information\NBTTagInformation.cs" />

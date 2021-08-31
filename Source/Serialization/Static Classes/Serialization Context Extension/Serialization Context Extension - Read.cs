@@ -1,18 +1,6 @@
 ﻿/*ISC License
 
-Copyright (c) 2019, Daan Verstraten, daanverstraten@hotmail.com
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted, provided that the above
-copyright notice and this permission notice appear in all copies.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
+Copyright (c) 2019, Daan Verstraten */
 using System;
 using System.Runtime.CompilerServices;
 using DaanV2.Binary;
@@ -113,10 +101,10 @@ namespace DaanV2.NBT.Serialization {
             return System.BitConverter.ToDouble(Bytes, 0);
         }
 
-        /// <summary>Reads an <see cref="Int32[]"/> from the given information</summary>
+        /// <summary>Reads an <see cref="Int32"/>[] from the given information</summary>
         /// <param name="Context">The context to use to read</param>
         /// <param name="Length">The amount to read</param>
-        /// <returns>Reads an <see cref="Int32[]"/> from the given information</returns>
+        /// <returns>Reads an <see cref="Int32"/>[] from the given information</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int32[] ReadInt32Array(this SerializationContext Context, Int32 Length) {
             Endianness endianness = Context.Endianness;
@@ -139,10 +127,10 @@ namespace DaanV2.NBT.Serialization {
             return Out;
         }
 
-        /// <summary>Reads an <see cref="Int64[]"/> from the given information</summary>
+        /// <summary>Reads an <see cref="Int64"/>[] from the given information</summary>
         /// <param name="Context">The context to use to read</param>
         /// <param name="Length">The amount to read</param>
-        /// <returns>Reads an <see cref="Int64[]"/> from the given information</returns>
+        /// <returns>Reads an <see cref="Int64"/>[] from the given information</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int64[] ReadInt64Array(this SerializationContext Context, Int32 Length) {
             Endianness endianness = Context.Endianness;
