@@ -5,7 +5,7 @@
     <RootNamespace>DaanV2.NBT</RootNamespace>
     <AssemblyName>DaanV2.NBT.Net</AssemblyName>
     <Platforms>AnyCPU;x64;x86</Platforms>
-    <Version>1.3.0</Version>
+    <Version>1.4.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
