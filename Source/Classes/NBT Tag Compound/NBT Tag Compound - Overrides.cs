@@ -21,7 +21,7 @@ namespace DaanV2.NBT {
         /// <param name="other">The object to compare to</param>
         /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
         public Boolean Equals(NBTTagCompound other) {
-            if (other != null) {
+            if (other is not null) {
                 return Comparison.Comparer.Equals(this, other);
             }
 
@@ -46,8 +46,7 @@ namespace DaanV2.NBT {
             };
         }
 
-        /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
-        /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
+        /// <inheritdoc/>
         public override String ToString() {
             return $"\"{this.Name}\": {{{String.Join(", ", this._Tags)}}}]";
         }

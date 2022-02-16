@@ -29,13 +29,13 @@ namespace DaanV2.NBT.Serialization {
             var Type = (NBTTagType)FirstByte;
             ITag Receiver = NBTTagFactory.Create(Type);
 
-            if (Type == NBTTagType.End || Type == NBTTagType.Unknown) {
+            if (Type is NBTTagType.End or NBTTagType.Unknown) {
                 return Receiver;
             }
 
             NBTReader._Readers.TryGetValue(Type, out ITagReader Reader);
 
-            if (Reader == null) {
+            if (Reader is null) {
                 throw new Exception($"No ITagWriter found for: {Type}");
             }
 
@@ -52,7 +52,7 @@ namespace DaanV2.NBT.Serialization {
         public static void ReadHeader(NBTTagType Type, SerializationContext Context, ITag Receiver) {
             NBTReader._Readers.TryGetValue(Type, out ITagReader Reader);
 
-            if (Reader == null) {
+            if (Reader is null) {
                 throw new Exception($"No ITagWriter found for: {Type}");
             }
 
@@ -66,7 +66,7 @@ namespace DaanV2.NBT.Serialization {
         public static void ReadContent(NBTTagType Type, SerializationContext Context, ITag Receiver) {
             NBTReader._Readers.TryGetValue(Type, out ITagReader Reader);
 
-            if (Reader == null) {
+            if (Reader is null) {
                 throw new Exception($"No ITagWriter found for: {Type}");
             }
 

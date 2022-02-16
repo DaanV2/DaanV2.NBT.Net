@@ -19,14 +19,14 @@ namespace DaanV2.NBT.Serialization.Serialization {
         public void ReadContent(ITag tag, SerializationContext Context) {
             ITag SubTag;
             Object O = tag.GetInformation(NBTTagInformation.ListSubtype);
-            if (O == null) {
+            if (O is null) {
                 throw new Exception("List returned no subtype");
             }
 
             var SubTagType = (NBTTagType)O;
             ITagReader Reader = NBTReader.GetReader(SubTagType);
 
-            if (Reader == null) {
+            if (Reader is null) {
                 throw new Exception($"No reader for type: {SubTagType}");
             }
 

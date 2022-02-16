@@ -11,8 +11,8 @@ namespace DaanV2.NBT.Comparison {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean Equals(NBTTagCompound A, NBTTagCompound B) {
             Int32 Value = 0;
-            if (A != null) { Value++; }
-            if (B != null) { Value++; }
+            if (A is not null) { Value++; }
+            if (B is not null) { Value++; }
 
             if (Value == 0) { return true; }
             if (Value == 1) { return false; }
@@ -26,7 +26,7 @@ namespace DaanV2.NBT.Comparison {
 
                 ITag Compare = B[Item.Name];
 
-                if (Item == null || !Item.Equals(Compare)) {
+                if (Item is null || !Item.Equals(Compare)) {
                     return false;
                 }
             }

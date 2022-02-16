@@ -18,7 +18,7 @@ namespace DaanV2.NBT.Serialization.Serialization {
         public void ReadContent(ITag tag, SerializationContext Context) {
             ITag SubTag = NBTReader.Read(Context);
 
-            while (SubTag != null) {
+            while (SubTag is not null) {
                 tag.Add(SubTag);
                 SubTag = NBTReader.Read(Context);
             }

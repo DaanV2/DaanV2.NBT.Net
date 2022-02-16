@@ -14,7 +14,7 @@ namespace DaanV2.NBT {
                 throw new ArgumentException($"{nameof(stream)} must be able to seek");
             }
 
-            Int32 Temp = (Byte)stream.ReadByte();
+            Int32 Temp = stream.ReadByte();
             stream.Seek(-1, SeekOrigin.Current);
 
             //Byte is a nbt tag type

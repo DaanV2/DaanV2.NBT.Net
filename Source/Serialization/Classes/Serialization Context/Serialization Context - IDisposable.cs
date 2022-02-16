@@ -16,7 +16,7 @@ namespace DaanV2.NBT.Serialization {
         /// <param name="Value">FILL IN</param>
         protected virtual void Dispose(Boolean Value) {
             if (this._Renting) {
-                if (this.Buffer != null) {
+                if (this.Buffer is not null) {
 
                     ArrayPool<Byte>.Shared.Return(this.Buffer);
                     this.Buffer = null;

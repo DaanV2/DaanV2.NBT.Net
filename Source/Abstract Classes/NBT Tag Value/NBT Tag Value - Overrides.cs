@@ -5,8 +5,8 @@ using System;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT {
-    public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<TypeValue>> {
-        /// <summary>Sets the specified information of the tag</summary>
+    public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<TypeValue>>, IEquatable<TypeValue> {
+        /// <inheritdoc/>
         public override void SetInformation(NBTTagInformation InfoType, Object Info) {
             switch (InfoType) {
                 case NBTTagInformation.Name:
@@ -28,32 +28,18 @@ namespace DaanV2.NBT {
             }
         }
 
-        /// <summary>Returns the specified information of this this <see cref="ITag"/></summary>
-        /// <param name="InfoType">The info type to retrieve from this this <see cref="ITag"/></param>
-        /// <returns>Returns the specified information of this this <see cref="ITag"/></returns>
+        /// <inheritdoc/>
         public override Object GetInformation(NBTTagInformation InfoType) {
-            switch (InfoType) {
-                case NBTTagInformation.Name:
-                    return this._Name;
-
-                case NBTTagInformation.Tag:
-                    return this._Tags;
-
-                case NBTTagInformation.ListSize:
-                    return this._Tags.Count;
-
-                case NBTTagInformation.Value:
-                    return this._Value;
-
-                case NBTTagInformation.ListSubtype:
-                default:
-                    return null;
-            }
+            return InfoType switch {
+                NBTTagInformation.Name => this._Name,
+                NBTTagInformation.Tag => this._Tags,
+                NBTTagInformation.ListSize => this._Tags.Count,
+                NBTTagInformation.Value => this._Value,
+                _ => null,
+            };
         }
 
-        /// <summary>Compare this this <see cref="ITag"/> with the given instance if they are the same</summary>
-        /// <param name="obj">The object to compare to</param>
-        /// <returns>Compare this this <see cref="ITag"/> with the given instance if they are the same</returns>
+        /// <inheritdoc/>
         public override Boolean Equals(Object obj) {
             if (obj is NBTTagValue<TypeValue> TValue) {
                 return this.Equals(TValue);
@@ -62,26 +48,30 @@ namespace DaanV2.NBT {
             return base.Equals(obj);
         }
 
-        /// <summary>Compare this this <see cref="ITag"/> with the given instance if they are the same</summary>
-        /// <param name="other">The object to compare to</param>
-        /// <returns>Compare this this <see cref="ITag"/> with the given instance if they are the same</returns>
+        /// <inheritdoc/>
         public Boolean Equals(NBTTagValue<TypeValue> other) {
-            return other != null &&
+            if (other is not null && 
                    EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
-                   EqualityComparer<TypeValue>.Default.Equals(this._Value, other._Value);
+                   EqualityComparer<TypeValue>.Default.Equals(this._Value, other._Value))
+                return true;
+
+            return false;
         }
 
-        /// <summary>Returns the hashcode for this object</summary>
-        /// <returns>Returns the hashcode for this object</returns>
+        /// <inheritdoc/>
+        public Boolean Equals(TypeValue other) {
+            if (other is not null && EqualityComparer<TypeValue>.Default.Equals(this._Value, other))
+                return true;
+
+            return false;
+        }
+
+        /// <inheritdoc/>
         public override Int32 GetHashCode() {
-            Int32 hashCode = 1513385649;
-            hashCode = (hashCode * -1521134295) + EqualityComparer<TypeValue>.Default.GetHashCode(this._Value);
-            hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode(this._Name);
-            return hashCode;
+            return HashCode.Combine(base.GetHashCode(), this._Tags, this._Name, this._Value);
         }
 
-        /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
-        /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
+        /// <inheritdoc/>
         public override String ToString() {
             switch (this.Type) {
                 case NBTTagType.Compound:

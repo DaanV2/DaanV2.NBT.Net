@@ -45,7 +45,7 @@ namespace DaanV2.NBT {
             for (Int32 J = 0; J < TypesLength; J++) {
                 Type Current = Types[J];
 
-                if (Current.GetInterface(Name) != null) {
+                if (Current.GetInterface(Name) is not null) {
                     Out.Add((T)Activator.CreateInstance(Current));
                 }
             }

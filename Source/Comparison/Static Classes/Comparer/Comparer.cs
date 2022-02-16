@@ -15,8 +15,8 @@ namespace DaanV2.NBT.Comparison {
             where T : ITag {
 
             Int32 Value = 0;
-            if (A != null) { Value++; }
-            if (B != null) { Value++; }
+            if (A is not null) { Value++; }
+            if (B is not null) { Value++; }
 
             if (Value == 0) { return true; }
             if (Value == 1) { return false; }
@@ -44,8 +44,8 @@ namespace DaanV2.NBT.Comparison {
             where T : ITag {
 
             Int32 Value = 0;
-            if (A != null) { Value++; }
-            if (B != null) { Value++; }
+            if (A is not null) { Value++; }
+            if (B is not null) { Value++; }
 
             if (Value == 0) { return true; }
             if (Value == 1) { return false; }

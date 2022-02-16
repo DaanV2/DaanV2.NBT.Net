@@ -22,7 +22,7 @@ namespace DaanV2.NBT.Serialization {
         public static void Write(ITag tag, SerializationContext Context) {
             NBTWriter._Writers.TryGetValue(tag.Type, out ITagWriter Writer);
 
-            if (Writer == null) {
+            if (Writer is null) {
                 throw new Exception($"No ITagWriter found for: {tag.Type}");
             }
 
@@ -36,7 +36,7 @@ namespace DaanV2.NBT.Serialization {
         public static void WriteHeader(ITag tag, SerializationContext Context) {
             NBTWriter._Writers.TryGetValue(tag.Type, out ITagWriter Writer);
 
-            if (Writer == null) {
+            if (Writer is null) {
                 throw new Exception($"No ITagWriter found for: {tag.Type}");
             }
 
@@ -49,7 +49,7 @@ namespace DaanV2.NBT.Serialization {
         public static void WriteContent(ITag tag, SerializationContext Context) {
             NBTWriter._Writers.TryGetValue(tag.Type, out ITagWriter Writer);
 
-            if (Writer == null) {
+            if (Writer is null) {
                 throw new Exception($"No ITagWriter found for: {tag.Type}");
             }
 

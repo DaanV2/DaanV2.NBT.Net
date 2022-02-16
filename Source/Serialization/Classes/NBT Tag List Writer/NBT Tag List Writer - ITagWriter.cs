@@ -43,14 +43,14 @@ namespace DaanV2.NBT.Serialization.Serialization {
         public void WriteContent(ITag tag, SerializationContext Context) {
             Object O = tag.GetInformation(NBTTagInformation.ListSubtype);
 
-            if (O == null) {
+            if (O is null) {
                 throw new Exception("Cannot read list sub type");
             }
 
             var SubTagType = (NBTTagType)O;
             ITagWriter Writer = NBTWriter.GetWriter(SubTagType);
 
-            if (Writer == null) {
+            if (Writer is null) {
                 throw new Exception($"Cannot find writer for {SubTagType}");
             }
 
@@ -77,7 +77,7 @@ namespace DaanV2.NBT.Serialization.Serialization {
             NBTTagType SubTagType = tag.SubType;
             ITagWriter Writer = NBTWriter.GetWriter(SubTagType);
 
-            if (Writer == null) {
+            if (Writer is null) {
                 throw new Exception($"Cannot find writer for {SubTagType}");
             }
 

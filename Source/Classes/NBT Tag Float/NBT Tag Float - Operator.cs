@@ -12,8 +12,8 @@ namespace DaanV2.NBT {
         /// <returns>Compare two objects to one another to see if they are equal</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagFloat A, NBTTagFloat B) {
-            Boolean NA = ((Object)A) == null;
-            Boolean NB = ((Object)B) == null;
+            Boolean NA = ((Object)A) is null;
+            Boolean NB = ((Object)B) is null;
 
             if (NA && NB) { return true; }
             if (NA || NB) { return false; }
@@ -36,8 +36,8 @@ namespace DaanV2.NBT {
         /// <returns>Compare two objects to one another to see if they are equal</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagFloat A, Object B) {
-            Boolean NA = ((Object)A) == null;
-            Boolean NB = ((Object)B) == null;
+            Boolean NA = ((Object)A) is null;
+            Boolean NB = ((Object)B) is null;
 
             if (NA && NB) { return true; }
             if (NA || NB) { return false; }

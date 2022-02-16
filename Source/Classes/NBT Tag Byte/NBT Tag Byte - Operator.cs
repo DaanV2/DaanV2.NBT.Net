@@ -12,8 +12,8 @@ namespace DaanV2.NBT {
         /// <returns>Compare the two given tag with each other</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagByte A, NBTTagByte B) {
-            Boolean NA = ((Object)A) == null;
-            Boolean NB = ((Object)B) == null;
+            Boolean NA = ((Object)A) is null;
+            Boolean NB = ((Object)B) is null;
 
             if (NA && NB) {
                 return true;
@@ -31,8 +31,8 @@ namespace DaanV2.NBT {
         /// <returns>Compare the two given tag with each other</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagByte A, NBTTagByte B) {
-            Boolean NA = ((Object)A) == null;
-            Boolean NB = ((Object)B) == null;
+            Boolean NA = ((Object)A) is null;
+            Boolean NB = ((Object)B) is null;
 
             if (NA && NB) {
                 return false;
@@ -50,8 +50,8 @@ namespace DaanV2.NBT {
         /// <returns>Compare the two given tag with each other</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator ==(NBTTagByte A, Object B) {
-            Boolean NA = ((Object)A) == null;
-            Boolean NB = B == null;
+            Boolean NA = ((Object)A) is null;
+            Boolean NB = B is null;
 
             if (NA && NB) {
                 return true;
@@ -69,8 +69,8 @@ namespace DaanV2.NBT {
         /// <returns>Compare the two given tag with each other</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Boolean operator !=(NBTTagByte A, Object B) {
-            Boolean NA = ((Object)A) == null;
-            Boolean NB = B == null;
+            Boolean NA = ((Object)A) is null;
+            Boolean NB = B is null;
 
             if (NA && NB) {
                 return false;

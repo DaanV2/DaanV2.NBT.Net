@@ -21,15 +21,15 @@ namespace DaanV2.NBT {
         public static ITag Create(NBTTagType type, String Name, Object Value) {
             ITag Tag = NBTTagFactory.Create(type);
 
-            if (Tag == null) {
+            if (Tag is null) {
                 return Tag;
             }
 
-            if (Name != null) {
+            if (Name is not null) {
                 Tag.Name = Name;
             }
 
-            if (Value != null) {
+            if (Value is not null) {
                 Tag.SetValue(Value);
             }
 

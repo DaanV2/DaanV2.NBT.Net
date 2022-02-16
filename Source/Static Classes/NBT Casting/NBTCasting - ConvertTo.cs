@@ -12,7 +12,7 @@ namespace DaanV2.NBT {
         /// <returns>Converts the given object into the specified type</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T ConvertTo<T>(Object Value) {
-            if (Value == null) {
+            if (Value is null) {
                 return default;
             }
 

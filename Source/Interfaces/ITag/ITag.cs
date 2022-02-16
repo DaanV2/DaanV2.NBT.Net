@@ -4,7 +4,7 @@ Copyright (c) 2019, Daan Verstraten */
 using System;
 
 namespace DaanV2.NBT {
-    /// <summary>The class that is responsible for forming the contract on how Nbt Tag should behave</summary>
+    /// <summary>The class that is responsible for forming the contract on how NBT Tags should behave</summary>
     public interface ITag : ITagCollection {
         /// <summary>Gets or sets the name of this this <see cref="ITag"/></summary>
         String Name { get; set; }
