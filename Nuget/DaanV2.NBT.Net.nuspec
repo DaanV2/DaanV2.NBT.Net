@@ -3,7 +3,7 @@
     <metadata>
         <!-- Required elements-->
         <id>DaanV2.NBT.Net</id>
-        <version>1.4.0</version>
+        <version>1.4.1</version>
         <description>A NBT library for reading and writing nbt files/data, with Gzip and Zlib Compression, supports for Litte and Big endian structures</description>
         <authors>Daan Verstraten</authors>
 

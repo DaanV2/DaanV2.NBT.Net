@@ -15,9 +15,9 @@ namespace DaanV2.NBT.Serialization {
         /// <returns>Read a string from the given stream</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static String ReadString(Stream Reader, Endianness endianness) {
-            Byte[] Data = new Byte[2];
+            Span<Byte> Data = stackalloc Byte[2];
+            Reader.Read(Data);
 
-            Reader.Read(Data, 0, Data.Length);
             Int32 Length = Binary.BitConverter.Endian.ToInt16(Data, endianness);
 
             if (Length == 0) { return String.Empty; }

@@ -48,7 +48,7 @@ namespace DaanV2.NBT {
 
         /// <inheritdoc/>
         public override String ToString() {
-            return $"\"{this.Name}\": {{{String.Join(", ", this._Tags)}}}]";
+            return $"\"{this.Name}\": {{{String.Join(", ", this._Tags)}}}";
         }
     }
 }

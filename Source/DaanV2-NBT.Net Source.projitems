@@ -96,7 +96,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag Compound Writer\NBT Tag Compound Writer - ITagWriter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Reader\NBT Tag List Reader - ITagReader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\NBT Tag List Writer\NBT Tag List Writer - ITagWriter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Serialization Context\Serialization Context - IDisposable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Serialization Context\Serialization Context - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Serialization Context\Serialization Context - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Serialization Context\Serialization Context - Variables.cs" />

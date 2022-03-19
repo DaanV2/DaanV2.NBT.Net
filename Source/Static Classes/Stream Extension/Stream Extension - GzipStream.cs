@@ -17,8 +17,8 @@ namespace DaanV2.NBT {
                 return -1;
             }
 
-            Byte[] Buffer = new Byte[1];
-            stream.Read(Buffer, 0, 1);
+            Span<Byte> Buffer = stackalloc Byte[1];
+            stream.Read(Buffer);
             return Buffer[0];
         }
     }

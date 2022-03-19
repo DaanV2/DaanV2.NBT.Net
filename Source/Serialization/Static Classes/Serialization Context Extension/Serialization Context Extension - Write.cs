@@ -22,8 +22,9 @@ namespace DaanV2.NBT.Serialization {
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void WriteInt16(this SerializationContext Context, Int16 Value) {
-            Byte[] Buffer = BitConverter.Endian.ToBytes(Value, Context.Endianness);
-            Context.Stream.Write(Buffer, 0, Buffer.Length);
+            Span<Byte> Buffer = stackalloc Byte[sizeof(Int16)];
+            BitConverter.Endian.OntoBytes(Buffer, Value, Context.Endianness);
+            Context.Stream.Write(Buffer);
         }
 
         /// <summary>Writes an <see cref="Int32"/> into the <see cref="Stream"/></summary>
@@ -31,8 +32,9 @@ namespace DaanV2.NBT.Serialization {
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void WriteInt32(this SerializationContext Context, Int32 Value) {
-            BitConverter.Endian.OntoBytes(Context.Buffer, Value, Context.Endianness);
-            Context.Stream.Write(Context.Buffer, 0, sizeof(Int32));
+            Span<Byte> Buffer = stackalloc Byte[sizeof(Int32)];
+            BitConverter.Endian.OntoBytes(Buffer, Value, Context.Endianness);
+            Context.Stream.Write(Buffer);
         }
 
         /// <summary>Writes an <see cref="Int64"/> into the <see cref="Stream"/></summary>
@@ -40,8 +42,9 @@ namespace DaanV2.NBT.Serialization {
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void WriteInt64(this SerializationContext Context, Int64 Value) {
-            BitConverter.Endian.OntoBytes(Context.Buffer, Value, Context.Endianness);
-            Context.Stream.Write(Context.Buffer, 0, sizeof(Int64));
+            Span<Byte> Buffer = stackalloc Byte[sizeof(Int64)];
+            BitConverter.Endian.OntoBytes(Buffer, Value, Context.Endianness);
+            Context.Stream.Write(Buffer);
         }
 
         /// <summary>Writes an <see cref="Single"/> into the <see cref="Stream"/></summary>
@@ -77,16 +80,18 @@ namespace DaanV2.NBT.Serialization {
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void WriteInt32Array(this SerializationContext Context, Int32[] Value) {
+            Span<Byte> Buffer = new Byte[sizeof(Int32)];
+
             if (Context.Endianness == Endianness.BigEndian) {
                 for (Int32 I = 0; I < Value.Length; I++) {
-                    BitConverter.BigEndian.OntoBytes(Context.Buffer, Value[I]);
-                    Context.Stream.Write(Context.Buffer, 0, sizeof(Int32));
+                    BitConverter.BigEndian.OntoBytes(Buffer, Value[I]);
+                    Context.Stream.Write(Buffer);
                 }
             }
             else {
                 for (Int32 I = 0; I < Value.Length; I++) {
-                    BitConverter.LittleEndian.OntoBytes(Context.Buffer, Value[I]);
-                    Context.Stream.Write(Context.Buffer, 0, sizeof(Int32));
+                    BitConverter.LittleEndian.OntoBytes(Buffer, Value[I]);
+                    Context.Stream.Write(Buffer);
                 }
             }
         }
@@ -96,16 +101,18 @@ namespace DaanV2.NBT.Serialization {
         /// <param name="Value">The value to convert and write to <see cref="Stream"/></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void WriteInt64Array(this SerializationContext Context, Int64[] Value) {
+            Span<Byte> Buffer = new Byte[sizeof(Int64)];
+
             if (Context.Endianness == Endianness.BigEndian) {
                 for (Int32 I = 0; I < Value.Length; I++) {
-                    BitConverter.BigEndian.OntoBytes(Context.Buffer, Value[I]);
-                    Context.Stream.Write(Context.Buffer, 0, sizeof(Int64));
+                    BitConverter.BigEndian.OntoBytes(Buffer, Value[I]);
+                    Context.Stream.Write(Buffer);
                 }
             }
             else {
                 for (Int32 I = 0; I < Value.Length; I++) {
-                     BitConverter.LittleEndian.OntoBytes(Context.Buffer, Value[I]);
-                    Context.Stream.Write(Context.Buffer, 0, sizeof(Int64));
+                     BitConverter.LittleEndian.OntoBytes(Buffer, Value[I]);
+                    Context.Stream.Write(Buffer);
                 }
             }
         }
