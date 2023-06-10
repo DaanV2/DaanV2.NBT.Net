@@ -1,7 +1,5 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	]
+  "folders": [
+    { "path": "." }
+  ]
 }
