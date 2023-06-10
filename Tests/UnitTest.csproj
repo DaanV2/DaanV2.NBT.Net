@@ -20,10 +20,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\DaanV2-NBT.Net\DaanV2-NBT.Net.csproj" />
-  </ItemGroup>
-
-  <Import Project="..\Test - Source\Test - Source.projitems" Label="Shared" />
-
 </Project>

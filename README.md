@@ -1,13 +1,11 @@
 # DaanV2-NBT.Net
 
-<p align="center">
-  <a href="https://www.nuget.org/packages/DaanV2.UUID.Net/">
-    <img alt="Nuget" src="https://img.shields.io/nuget/v/DaanV2.UUID.Net?style=for-the-badge">
-    <img alt="Nuget" src="https://img.shields.io/nuget/dt/DaanV2.UUID.Net?style=for-the-badge">
-  </a>
-</p>
+[![.NET Unit test](https://github.com/DaanV2/DaanV2.NBT.Net/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/DaanV2/DaanV2.NBT.Net/actions/workflows/dotnet-test.yml)
+[![📦 Nuget Release](https://github.com/DaanV2/DaanV2.NBT.Net/actions/workflows/publish.yml/badge.svg)](https://github.com/DaanV2/DaanV2.NBT.Net/actions/workflows/publish.yml)  
+![Nuget Version](https://img.shields.io/nuget/v/DaanV2.NBT.Net)
+![Nuget Downloads](https://img.shields.io/nuget/dt/DaanV2.NBT.Net)
 
-An NBT library for reading and writing NBT files/data [Nuget package](https://www.nuget.org/packages/DaanV2.UUID.Net/)
+An NBT library for reading and writing NBT files/data [Nuget package](https://www.nuget.org/packages/DaanV2.NBT.Net/)
 
 # Usage
 
