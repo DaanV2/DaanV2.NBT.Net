@@ -12,7 +12,7 @@ An NBT library for reading and writing NBT files/data [Nuget package](https://ww
 ## Read a file
 
 ```cs
-    Itag Compound = NBTReader.ReadFile("Path to file", Endianness.LittleEndian, NBTCompression.Auto);
+    Itag Compound = NBTReader.ReadFile("Path to file", Endian.Little, NBTCompression.Auto);
 ```
 
 ## Writes to a file
@@ -21,10 +21,10 @@ An NBT library for reading and writing NBT files/data [Nuget package](https://ww
     ITag Tag;
 
     //Writes the tag to the specified file using GZIP compression and little-endian methods
-    NBTWriter.WriteFile("Path to file", Tag, NBTCompression.Gzip, Endianness.LittleEndian);
+    NBTWriter.WriteFile("Path to file", Tag, NBTCompression.Gzip, Endian.Little);
 
     //Writes the tag to the specified file using no compression and little-endian methods
-    NBTWriter.WriteFile("Path to file", Tag, Endianness.LittleEndian);
+    NBTWriter.WriteFile("Path to file", Tag, Endian.Little);
 ```
 
 ## Building a structure
