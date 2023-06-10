@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-using System.IO;
+﻿using System.IO;
 
 namespace DaanV2.NBT.Serialization; 
 /// <summary>The interface responsible for forming the contract on how Tag writer should behave</summary>

@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace DaanV2.NBT.Serialization; 
 public static partial class NBTWriter {

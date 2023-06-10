@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace DaanV2.NBT.Serialization;
 public static partial class SerializationContextExtension {

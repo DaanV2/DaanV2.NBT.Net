@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-
+﻿
 namespace DaanV2.NBT;
 public abstract partial class NBTTagValue<TypeValue> : NBTTag {
     /// <summary>Returns the value of this <see cref="NBTTagValue{TypeValue}"/> as an <see cref="Object"/></summary>

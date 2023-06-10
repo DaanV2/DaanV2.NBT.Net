@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
 namespace DaanV2.NBT.Builders; 

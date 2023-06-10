@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-using System;
+﻿using System;
 
 namespace DaanV2.NBT.Serialization; 
 /// <summary>The class that extends upon the <see cref="SerializationContext"/></summary>

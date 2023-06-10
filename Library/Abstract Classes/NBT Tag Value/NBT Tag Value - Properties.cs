@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace DaanV2.NBT; 
 public abstract partial class NBTTagValue<TypeValue> {

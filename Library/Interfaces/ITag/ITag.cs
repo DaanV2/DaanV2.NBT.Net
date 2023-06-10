@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-using System;
+﻿using System;
 
 namespace DaanV2.NBT; 
 /// <summary>The class that is responsible for forming the contract on how Nbt Tag should behave</summary>

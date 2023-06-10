@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 
 namespace DaanV2.NBT; 

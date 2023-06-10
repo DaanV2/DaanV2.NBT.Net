@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-using System;
+﻿using System;
 
 namespace DaanV2.NBT.Builders; 
 public partial class ListBuilder {

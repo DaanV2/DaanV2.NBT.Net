@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-
+﻿
 namespace DaanV2.NBT.Serialization;
 /// <summary>The context needed per (de)serialization process, only use one SerializationContext per thread. As the resource are not thread safe</summary>
 /// <remarks>This object cannot be shared among different threads</remarks>

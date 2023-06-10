@@ -1,7 +1,4 @@
-﻿/*ISC License
-
-Copyright (c) 2019, Daan Verstraten */
-using System.IO;
+﻿using System.IO;
 
 namespace DaanV2.NBT.Serialization.Serialization; 
 /// <summary>The nbt tag compound reader</summary>
