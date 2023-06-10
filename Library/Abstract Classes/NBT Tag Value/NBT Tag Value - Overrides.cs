@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DaanV2.NBT; 
+﻿namespace DaanV2.NBT;
 public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<TypeValue>> {
     /// <summary>Sets the specified information of the tag</summary>
     public override void SetInformation(NBTTagInformation InfoType, Object Info) {
@@ -51,7 +48,7 @@ public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<Ty
     /// <summary>Compare this this <see cref="ITag"/> with the given instance if they are the same</summary>
     /// <param name="obj">The object to compare to</param>
     /// <returns>Compare this this <see cref="ITag"/> with the given instance if they are the same</returns>
-    public override Boolean Equals(Object obj) {
+    public override Boolean Equals(Object? obj) {
         if (obj is NBTTagValue<TypeValue> TValue) {
             return this.Equals(TValue);
         }
@@ -64,8 +61,8 @@ public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<Ty
     /// <returns>Compare this this <see cref="ITag"/> with the given instance if they are the same</returns>
     public Boolean Equals(NBTTagValue<TypeValue>? other) {
         return other is not null &&
-               EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
-               EqualityComparer<TypeValue>.Default.Equals(this._Value, other._Value);
+               this._Name == other._Name &&
+               this._Value.Equals(other._Value);
     }
 
     /// <summary>Returns the hashcode for this object</summary>

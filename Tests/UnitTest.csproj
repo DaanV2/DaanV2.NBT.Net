@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>Test.Net_5._0</RootNamespace>
+    <RootNamespace>DaanV2.NBT.Test</RootNamespace>
 
     <IsPackable>false</IsPackable>
 

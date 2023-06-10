@@ -1,10 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using System.Text;
 
 
-namespace DaanV2.NBT.Serialization; 
+namespace DaanV2.NBT.Serialization;
 public static partial class NBTReader {
     /// <summary>Read a string from the given stream</summary>
     /// <param name="Reader">The stream to read from</param>
@@ -27,10 +25,6 @@ public static partial class NBTReader {
     /// <returns>Read a string from the given context</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static String ReadString(SerializationContext Context) {
-        Int32 Length = Context.ReadInt16();
-
-        if (Length == 0) { return String.Empty; }
-
-        return Encoding.UTF8.GetString(Context.ReadBytes(Length));
+        return ReadString(Context.Stream, Context.Endian);
     }
 }

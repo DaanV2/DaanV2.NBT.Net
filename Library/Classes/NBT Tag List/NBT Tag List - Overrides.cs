@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DaanV2.NBT; 
-public sealed partial class NBTTagList {
+﻿namespace DaanV2.NBT;
+public sealed partial class NBTTagList : IEquatable<NBTTagList> {
     /// <summary>Sets the specified information of this this <see cref="ITag"/> with the given value</summary>
     /// <param name="InfoType">The into type to store the information in</param>
     /// <param name="Info">The information to store</param>
@@ -65,7 +62,7 @@ public sealed partial class NBTTagList {
     /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
     /// <param name="Obj">The object to compare to</param>
     /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
-    public override Boolean Equals(Object Obj) {
+    public override Boolean Equals(Object? Obj) {
         if (Obj is NBTTagList Tag) {
             return this.Equals(Tag);
         }
@@ -76,10 +73,10 @@ public sealed partial class NBTTagList {
     /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
     /// <param name="other">The object to compare to</param>
     /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
-    public Boolean Equals(NBTTagList other) {
+    public Boolean Equals(NBTTagList? other) {
         return other is not null &&
-               EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
-               EqualityComparer<NBTTagType>.Default.Equals(this._SubType, other._SubType) &&
+               this._Name == other._Name &&
+               this._SubType == other._SubType &&
                Comparison.Comparer.Equals<ITag>(this._Tags, other._Tags);
     }
 

@@ -89,7 +89,7 @@ public static partial class SerializationContextExtension {
         Span<Byte> buffer = stackalloc Byte[SerializationContextExtension.SingleSize];
 
         Context.Stream.Read(buffer);
-        return Binary.ToUInt64(buffer, Context.Endian);
+        return Binary.ToSingle(buffer, Context.Endian);
     }
 
     /// <summary>Reads an <see cref="Double"/> from the given information</summary>
@@ -100,7 +100,7 @@ public static partial class SerializationContextExtension {
         Span<Byte> buffer = stackalloc Byte[SerializationContextExtension.DoubleSize];
 
         Context.Stream.Read(buffer);
-        return Binary.ToUInt64(buffer, Context.Endian);
+        return Binary.ToDouble(buffer, Context.Endian);
     }
 
     /// <summary>Reads an <see cref="Int32"/>[] from the given information</summary>

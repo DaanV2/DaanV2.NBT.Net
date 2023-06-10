@@ -1,10 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using System.Text;
 
 
-namespace DaanV2.NBT.Serialization; 
+namespace DaanV2.NBT.Serialization;
+
 public static partial class NBTWriter {
     /// <summary>Writes a string into the stream</summary>
     /// <param name="Writer">The stream to write to</param>
@@ -13,7 +12,13 @@ public static partial class NBTWriter {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void WriteString(Stream Writer, String Text, Endian Endian) {
         Byte[] Bytes = Encoding.UTF8.GetBytes(Text);
-        Writer.WriteInt16((Int16)Bytes.Length, Endian);
+        Int16 value = (Int16)Bytes.Length;
+
+        if (value < 0 || value != Bytes.Length) {
+            throw new ArgumentException("String is too long");
+        }
+
+        Writer.WriteInt16(value, Endian);
         Writer.WriteBytes(Bytes);
     }
 
@@ -22,8 +27,6 @@ public static partial class NBTWriter {
     /// <param name="Text">The text to write away</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void WriteString(SerializationContext Context, String Text) {
-        Byte[] Bytes = Encoding.UTF8.GetBytes(Text);
-        Context.Stream.WriteInt16((Int16)Bytes.Length, Context.Endian);
-        Context.Stream.WriteBytes(Bytes);
+        WriteString(Context.Stream, Text, Context.Endian);
     }
 }

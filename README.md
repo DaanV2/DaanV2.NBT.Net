@@ -12,29 +12,29 @@ An NBT library for reading and writing NBT files/data [Nuget package](https://ww
 ## Read a file
 
 ```cs
-    Itag Compound = NBTReader.ReadFile("Path to file", Endian.Little, NBTCompression.Auto);
+var Compound = NBTReader.ReadFile("Path to file", Endian.Little, NBTCompression.Auto);
 ```
 
 ## Writes to a file
 
 ```cs
-    ITag Tag;
+ITag Tag;
 
-    //Writes the tag to the specified file using GZIP compression and little-endian methods
-    NBTWriter.WriteFile("Path to file", Tag, NBTCompression.Gzip, Endian.Little);
+//Writes the tag to the specified file using GZIP compression and little-endian methods
+NBTWriter.WriteFile("Path to file", Tag, NBTCompression.Gzip, Endian.Little);
 
-    //Writes the tag to the specified file using no compression and little-endian methods
-    NBTWriter.WriteFile("Path to file", Tag, Endian.Little);
+//Writes the tag to the specified file using no compression and little-endian methods
+NBTWriter.WriteFile("Path to file", Tag, Endian.Little);
 ```
 
 ## Building a structure
 
 ```cs
-    CompoundBuilder Builder = new CompoundBuilder("Root", 10);
-    Builder.Add("IsDetermined", true);
-    Builder.Add("Amount", 5);
+CompoundBuilder Builder = new CompoundBuilder("Root", 10);
+Builder.Add("IsDetermined", true);
+Builder.Add("Amount", 5);
 
-    ITag = Builder.GetResult();
+ITag = Builder.GetResult();
 ```
 
 # Installation

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DaanV2.NBT; 
-public sealed partial class NBTTagLongArray {
+﻿namespace DaanV2.NBT;
+public sealed partial class NBTTagLongArray : IEquatable<NBTTagLongArray> {
     /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
     /// <param name="Obj">The object to compare to</param>
     /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
-    public override Boolean Equals(Object Obj) {
+    public override Boolean Equals(Object? Obj) {
         if (Obj is NBTTagLongArray Tag) {
             return this.Equals(Tag);
         }
@@ -17,10 +14,10 @@ public sealed partial class NBTTagLongArray {
     /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
     /// <param name="other">The object to compare to</param>
     /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
-    public Boolean Equals(NBTTagLongArray other) {
+    public Boolean Equals(NBTTagLongArray? other) {
         return other is not null &&
-               EqualityComparer<Int64[]>.Default.Equals(this._Value, other._Value) &&
-               EqualityComparer<String>.Default.Equals(this._Name, other._Name);
+               this._Value.SequenceEqual(other._Value) &&
+               this._Name == other._Name;
     }
 
     /// <summary>Returns the hashcode of this this <see cref="ITag"/></summary>

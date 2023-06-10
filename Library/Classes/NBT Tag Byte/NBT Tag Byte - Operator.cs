@@ -7,7 +7,7 @@ public sealed partial class NBTTagByte {
     /// <param name="B">The second object to compare</param>
     /// <returns>Compare the two given tag with each other</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Boolean operator ==(NBTTagByte A, NBTTagByte B) {
+    public static Boolean operator ==(NBTTagByte? A, NBTTagByte? B) {
         Boolean NA = A as Object is null;
         Boolean NB = B as Object is null;
 
@@ -18,7 +18,7 @@ public sealed partial class NBTTagByte {
             return false;
         }
 
-        return A._Value.Equals(B._Value) && A._Name.Equals(B._Name);
+        return (A._Value == B._Value) && (A._Name == B._Name);
     }
 
     /// <summary>Compare the two given tag with each other</summary>
@@ -27,17 +27,7 @@ public sealed partial class NBTTagByte {
     /// <returns>Compare the two given tag with each other</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static Boolean operator !=(NBTTagByte? A, NBTTagByte? B) {
-        Boolean NA = A as Object is null;
-        Boolean NB = B as Object is null;
-
-        if (NA && NB) {
-            return false;
-        }
-        else if (NA || NB) {
-            return true;
-        }
-
-        return !(A._Value.Equals(B._Value) || A._Name.Equals(B._Name));
+        return !(A == B);
     }
 
     /// <summary>Compare the two given tag with each other</summary>
@@ -45,9 +35,9 @@ public sealed partial class NBTTagByte {
     /// <param name="B">The second object to compare</param>
     /// <returns>Compare the two given tag with each other</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Boolean operator ==(NBTTagByte A, Object B) {
+    public static Boolean operator ==(NBTTagByte? A, Object? B) {
         Boolean NA = A as Object is null;
-        Boolean NB = B as Object is null;
+        Boolean NB = B is null;
 
         if (NA && NB) {
             return true;
@@ -64,17 +54,7 @@ public sealed partial class NBTTagByte {
     /// <param name="B">The second object to compare</param>
     /// <returns>Compare the two given tag with each other</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Boolean operator !=(NBTTagByte A, Object B) {
-        Boolean NA = A as Object is null;
-        Boolean NB = B as Object is null;
-
-        if (NA && NB) {
-            return false;
-        }
-        else if (NA || NB) {
-            return true;
-        }
-
-        return !A.Equals(B);
+    public static Boolean operator !=(NBTTagByte? A, Object? B) {
+        return !(A == B);
     }
 }

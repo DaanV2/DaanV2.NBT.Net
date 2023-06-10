@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace DaanV2.NBT.Serialization.Serialization; 
+﻿namespace DaanV2.NBT.Serialization.Serialization;
 /// <summary>The type writer for all basic types</summary>
 internal partial class NBTTagBaseTypeWriter : ITagWriter {
     /// <summary>Gets the type for which this object can write</summary>
@@ -39,16 +36,19 @@ internal partial class NBTTagBaseTypeWriter : ITagWriter {
             //Arrays
             case NBTTagType.ByteArray:
                 Byte[] Bytes = tag.GetValue<Byte[]>();
+                Context.WriteInt32(Bytes.Length);
                 Context.WriteBytes(Bytes);
 
                 return;
             case NBTTagType.IntArray:
                 Int32[] Ints = tag.GetValue<Int32[]>();
+                Context.WriteInt32(Ints.Length);
                 Context.WriteInt32Array(Ints);
 
                 return;
             case NBTTagType.LongArray:
                 Int64[] Longs = tag.GetValue<Int64[]>();
+                Context.WriteInt32(Longs.Length);
                 Context.WriteInt64Array(Longs);
 
                 return;

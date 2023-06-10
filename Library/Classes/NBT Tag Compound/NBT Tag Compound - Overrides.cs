@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DaanV2.NBT; 
-public sealed partial class NBTTagCompound {
+﻿namespace DaanV2.NBT;
+public sealed partial class NBTTagCompound: IEquatable<NBTTagCompound> {
     /// <summary>Compares this this <see cref="ITag"/> to the given object</summary>
     /// <param name="Obj">The object to compare to</param>
     /// <returns>Compares this this <see cref="ITag"/> to the given object</returns>
-    public override Boolean Equals(Object Obj) {
+    public override Boolean Equals(Object? Obj) {
         if (Obj is NBTTagCompound Tag) {
             return this.Equals(Tag);
         }
@@ -17,7 +14,7 @@ public sealed partial class NBTTagCompound {
     /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
     /// <param name="other">The object to compare to</param>
     /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
-    public Boolean Equals(NBTTagCompound other) {
+    public Boolean Equals(NBTTagCompound? other) {
         if (other is not null) {
             return Comparison.Comparer.Equals(this, other);
         }

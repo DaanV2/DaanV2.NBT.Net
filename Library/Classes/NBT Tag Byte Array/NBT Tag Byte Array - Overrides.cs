@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DaanV2.NBT; 
+﻿namespace DaanV2.NBT;
 public sealed partial class NBTTagByteArray : IEquatable<NBTTagByteArray> {
     /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
     /// <param name="obj">The object to compare to</param>
     /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
-    public override Boolean Equals(Object obj) {
+    public override Boolean Equals(Object? obj) {
         if (obj is NBTTagByteArray Tag) {
             return this.Equals(Tag);
         }
@@ -19,8 +16,8 @@ public sealed partial class NBTTagByteArray : IEquatable<NBTTagByteArray> {
     /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
     public Boolean Equals(NBTTagByteArray? other) {
         return other is not null &&
-               EqualityComparer<Byte[]>.Default.Equals(this._Value, other._Value) &&
-               EqualityComparer<String>.Default.Equals(this._Name, other._Name);
+                this._Name == other._Name &&
+                this._Value.SequenceEqual(other._Value);
     }
 
     /// <summary>Returns the hashcode of this this <see cref="ITag"/></summary>

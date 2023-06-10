@@ -31,22 +31,8 @@ public abstract partial class NBTTag {
     /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
     public Boolean Equals(NBTTag other) {
         return other is not null &&
-            EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
+            this._Name == other._Name &&
             Comparison.Comparer.Equals(this._Tags, other._Tags);
-    }
-
-    /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
-    /// <param name="other">The object to compare to</param>
-    /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
-    public Boolean Equals(ITag other) {
-        if (other is not null &&
-            EqualityComparer<String>.Default.Equals(this._Name, other.Name) &&
-            Comparison.Comparer.Equals(this._Tags, other)) {
-
-            return true;
-        }
-
-        return false;
     }
 
     /// <summary>Returns this this <see cref="ITag"/> hashcode</summary>

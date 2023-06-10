@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace DaanV2.NBT; 
+﻿namespace DaanV2.NBT;
 public static partial class CompressionStream {
     /// <summary>Detect which compression has been used</summary>
     /// <param name="stream">The stream to read from</param>
@@ -15,7 +12,7 @@ public static partial class CompressionStream {
         stream.Seek(-1, SeekOrigin.Current);
 
         //Byte is a nbt tag type
-        if (Temp >= 0 && Temp <= 12) {
+        if (Temp is >= 0 and <= 12) {
             return NBTCompression.None;
         }
 

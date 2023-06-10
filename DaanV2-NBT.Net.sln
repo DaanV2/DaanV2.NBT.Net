@@ -3,20 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{193B3F7C-7EE1-48CC-A72E-971B074045D4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66E6986E-A3F3-46F9-B6E1-6CC4A586F0B1}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{7570FE9F-1C34-42B5-8669-2A817CB963D2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug Test", "Debug Test", "{543373AC-F18C-46E4-9F98-E457935033BF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "Tests\UnitTest.csproj", "{A65E262A-D37D-4BAB-8550-A96134E1DD73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{F1AB38F2-47D4-48E2-A468-7E29CDF687B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{F1AB38F2-47D4-48E2-A468-7E29CDF687B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +44,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{A65E262A-D37D-4BAB-8550-A96134E1DD73} = {7570FE9F-1C34-42B5-8669-2A817CB963D2}
-		{F1AB38F2-47D4-48E2-A468-7E29CDF687B4} = {193B3F7C-7EE1-48CC-A72E-971B074045D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69C88882-8CC1-49CE-9D41-966C8B20810A}

@@ -1,8 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using ComponentAce.Compression.Libs.zlib;
 
-
-namespace DaanV2.NBT.Serialization; 
+namespace DaanV2.NBT.Serialization;
 public static partial class NBTWriter {
     /// <summary>Writes the given nbtstructure into a file</summary>
     /// <param name="Filepath">The filepath to write to</param>
@@ -15,7 +13,6 @@ public static partial class NBTWriter {
         Stream stream = CompressionStream.GetCompressionStream(Writer, compression);
         Write(Tag, new SerializationContext(Endian, stream));
 
-        stream.Flush();
         stream.Close();
     }
 
@@ -28,6 +25,11 @@ public static partial class NBTWriter {
         stream = CompressionStream.GetCompressionStream(stream, compression);
 
         Write(Tag, new SerializationContext(Endian, stream));
+        stream.Flush();
+
+        if (stream is ZOutputStream ZStream) {
+            ZStream.finish();
+        }
     }
 
     /// <summary>Writes the given nbtstructure into a file</summary>

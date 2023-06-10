@@ -1,7 +1,6 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
-namespace DaanV2.NBT.Comparison; 
+namespace DaanV2.NBT.Comparison;
 ///DOLATER <summary>add description for class: Comparer</summary>
 public static partial class Comparer {
     /// <summary>Compares the two gives list of tags to each other and checks if they are the same</summary>

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 
 namespace DaanV2.NBT; 
-public sealed partial class NBTTagString {
+public sealed partial class NBTTagString: IEquatable<NBTTagString> {
     /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
     /// <param name="Obj">The object to compare to</param>
     /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
-    public override Boolean Equals(Object Obj) {
+    public override Boolean Equals(Object? Obj) {
         if (Obj is NBTTagString Tag) {
             return this.Equals(Tag);
         }
@@ -17,10 +17,10 @@ public sealed partial class NBTTagString {
     /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
     /// <param name="other">The object to compare to</param>
     /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
-    public Boolean Equals(NBTTagString other) {
+    public Boolean Equals(NBTTagString? other) {
         return other is not null &&
-               EqualityComparer<String>.Default.Equals(this._Name, other._Name) &&
-               EqualityComparer<String>.Default.Equals(this._Value, other._Value);
+               this._Name == other._Name &&
+               this._Value == other._Value;
     }
 
     /// <summary>Returns the hashcode of this this <see cref="ITag"/></summary>
