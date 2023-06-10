@@ -1,42 +1,40 @@
 # DaanV2-NBT.Net
 
-<p align="center">
-  <a href="https://www.nuget.org/packages/DaanV2.UUID.Net/">
-    <img alt="Nuget" src="https://img.shields.io/nuget/v/DaanV2.UUID.Net?style=for-the-badge">
-    <img alt="Nuget" src="https://img.shields.io/nuget/dt/DaanV2.UUID.Net?style=for-the-badge">
-  </a>
-</p>
+[![.NET Unit test](https://github.com/DaanV2/DaanV2.NBT.Net/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/DaanV2/DaanV2.NBT.Net/actions/workflows/dotnet-test.yml)
+[![📦 Nuget Release](https://github.com/DaanV2/DaanV2.NBT.Net/actions/workflows/publish.yml/badge.svg)](https://github.com/DaanV2/DaanV2.NBT.Net/actions/workflows/publish.yml)  
+![Nuget Version](https://img.shields.io/nuget/v/DaanV2.NBT.Net)
+![Nuget Downloads](https://img.shields.io/nuget/dt/DaanV2.NBT.Net)
 
-An NBT library for reading and writing NBT files/data [Nuget package](https://www.nuget.org/packages/DaanV2.UUID.Net/)
+An NBT library for reading and writing NBT files/data [Nuget package](https://www.nuget.org/packages/DaanV2.NBT.Net/)
 
 # Usage
 
 ## Read a file
 
 ```cs
-    Itag Compound = NBTReader.ReadFile("Path to file", Endianness.LittleEndian, NBTCompression.Auto);
+var Compound = NBTReader.ReadFile("Path to file", Endian.Little, NBTCompression.Auto);
 ```
 
 ## Writes to a file
 
 ```cs
-    ITag Tag;
+ITag Tag;
 
-    //Writes the tag to the specified file using GZIP compression and little-endian methods
-    NBTWriter.WriteFile("Path to file", Tag, NBTCompression.Gzip, Endianness.LittleEndian);
+//Writes the tag to the specified file using GZIP compression and little-endian methods
+NBTWriter.WriteFile("Path to file", Tag, NBTCompression.Gzip, Endian.Little);
 
-    //Writes the tag to the specified file using no compression and little-endian methods
-    NBTWriter.WriteFile("Path to file", Tag, Endianness.LittleEndian);
+//Writes the tag to the specified file using no compression and little-endian methods
+NBTWriter.WriteFile("Path to file", Tag, Endian.Little);
 ```
 
 ## Building a structure
 
 ```cs
-    CompoundBuilder Builder = new CompoundBuilder("Root", 10);
-    Builder.Add("IsDetermined", true);
-    Builder.Add("Amount", 5);
+CompoundBuilder Builder = new CompoundBuilder("Root", 10);
+Builder.Add("IsDetermined", true);
+Builder.Add("Amount", 5);
 
-    ITag = Builder.GetResult();
+ITag = Builder.GetResult();
 ```
 
 # Installation
