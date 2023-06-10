@@ -20,7 +20,7 @@ jobs:
       contents: read
     environment:
         name: Nuget Release
-        url: https://www.nuget.org/packages/DaanV2.UUID.Net/
+        url: https://www.nuget.org/packages/DaanV2.NBT.Net/
     steps:
       - name: 📦 Checkout repository
         uses: actions/checkout@v3
