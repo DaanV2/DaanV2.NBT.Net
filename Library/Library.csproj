@@ -7,7 +7,7 @@
     <AssemblyName>DaanV2.NBT.Net</AssemblyName>
     <RootNamespace>DaanV2.NBT</RootNamespace>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <Title>DaanV2.UUID.Net</Title>
+    <Title>DaanV2.NBT.Net</Title>
     <Authors>DaanV2</Authors>
     <Copyright>daanverstraten@hotmail.com</Copyright>
     <FileVersion>$(VersionPrefix)</FileVersion>
@@ -15,7 +15,7 @@
     <Version>2.0.0</Version>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <SignAssembly>False</SignAssembly>
-    <Description>An NBT library for reading and writing NBT files/data</Description>
+    <Description>An NBT library for reading and writing NBT files, support Minecraft java and bedrock nbt/data</Description>
     <PackageProjectUrl>https://github.com/DaanV2/DaanV2.NBT.Net</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
