@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace DaanV2.NBT; 
 /// <summary>The base class that handles generic values of an <see cref="NBTTag"/></summary>

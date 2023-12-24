@@ -1,8 +1,6 @@
 ﻿namespace DaanV2.NBT;
 public sealed partial class NBTTagList : IEquatable<NBTTagList> {
-    /// <summary>Sets the specified information of this this <see cref="ITag"/> with the given value</summary>
-    /// <param name="InfoType">The into type to store the information in</param>
-    /// <param name="Info">The information to store</param>
+    /// <inheritdoc/>
     public override void SetInformation(NBTTagInformation InfoType, Object Info) {
         switch (InfoType) {
             case NBTTagInformation.Name:
@@ -36,9 +34,7 @@ public sealed partial class NBTTagList : IEquatable<NBTTagList> {
         }
     }
 
-    /// <summary>Retrieves the specified information</summary>
-    /// <param name="InfoType">The info type to retrieve from this this <see cref="ITag"/></param>
-    /// <returns>Retrieves the specified information</returns>
+    /// <inheritdoc/>
     public override Object GetInformation(NBTTagInformation InfoType) {
         switch (InfoType) {
             case NBTTagInformation.Name:
@@ -59,9 +55,7 @@ public sealed partial class NBTTagList : IEquatable<NBTTagList> {
         }
     }
 
-    /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
-    /// <param name="Obj">The object to compare to</param>
-    /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
+    /// <inheritdoc/>
     public override Boolean Equals(Object? Obj) {
         if (Obj is NBTTagList Tag) {
             return this.Equals(Tag);
@@ -70,9 +64,7 @@ public sealed partial class NBTTagList : IEquatable<NBTTagList> {
         return base.Equals(Obj);
     }
 
-    /// <summary>Compare this this <see cref="ITag"/> to the given object</summary>
-    /// <param name="other">The object to compare to</param>
-    /// <returns>Compare this this <see cref="ITag"/> to the given object</returns>
+    //// <inheritdoc/>
     public Boolean Equals(NBTTagList? other) {
         return other is not null &&
                this._Name == other._Name &&
@@ -80,18 +72,12 @@ public sealed partial class NBTTagList : IEquatable<NBTTagList> {
                Comparison.Comparer.Equals<ITag>(this._Tags, other._Tags);
     }
 
-    /// <summary>Returns the hashcode of this this <see cref="ITag"/></summary>
-    /// <returns>Returns the hashcode of this this <see cref="ITag"/></returns>
+    /// <inheritdoc/>
     public override Int32 GetHashCode() {
-        Int32 hashCode = 1513385649;
-        hashCode = (hashCode * -1521134295) + EqualityComparer<NBTTagType>.Default.GetHashCode(this._SubType);
-        hashCode = (hashCode * -1521134295) + EqualityComparer<List<ITag>>.Default.GetHashCode(this._Tags);
-        hashCode = (hashCode * -1521134295) + EqualityComparer<String>.Default.GetHashCode(this._Name);
-        return hashCode;
+        return HashCode.Combine(this._Name, this._SubType, this._Tags);
     }
 
-    /// <summary>Create a clone of this this <see cref="ITag"/></summary>
-    /// <returns>Create a clone of this this <see cref="ITag"/></returns>
+    /// <inheritdoc/>
     public override ITag Clone() {
         var Out = new NBTTagList(this.SubType, this._Tags.Count) {
             Name = this.Name
@@ -105,8 +91,7 @@ public sealed partial class NBTTagList : IEquatable<NBTTagList> {
         return Out;
     }
 
-    /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
-    /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
+    /// <inheritdoc/>
     public override String ToString() {
         return $"\"{this.Name}\": [{String.Join(", ", this._Tags)}]";
     }

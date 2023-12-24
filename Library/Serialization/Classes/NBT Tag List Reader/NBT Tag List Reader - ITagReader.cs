@@ -14,33 +14,33 @@ internal partial class NBTTagListReader : ITagReader {
     /// <param name="tag">The tag to read from the <see cref="Stream"/></param>
     /// <param name="Context">The context to read from</param>
     public void ReadContent(ITag tag, SerializationContext Context) {
-        ITag SubTag;
+        ITag child;
         Object O = tag.GetInformation(NBTTagInformation.ListSubtype);
         if (O is null) {
             throw new Exception("List returned no subtype");
         }
 
-        var SubTagType = (NBTTagType)O;
-        ITagReader Reader = NBTReader.GetReader(SubTagType);
+        var childType = (NBTTagType)O;
+        ITagReader Reader = NBTReader.GetReader(childType);
 
         if (Reader is null) {
-            throw new Exception($"No reader for type: {SubTagType}");
+            throw new Exception($"No reader for type: {childType}");
         }
 
-        if (SubTagType == NBTTagType.List) {
+        if (childType == NBTTagType.List) {
             for (Int32 I = 0; I < tag.Count; I++) {
-                SubTag = new NBTTagList(SubTagType);
-                SubTag.SetInformation(NBTTagInformation.ListSubtype, (NBTTagType)Context.Stream.ReadByte());
-                SubTag.SetInformation(NBTTagInformation.ListSize, Context.ReadInt32());
-                Reader.ReadContent(SubTag, Context);
-                tag[I] = SubTag;
+                child = new NBTTagList(childType);
+                child.SetInformation(NBTTagInformation.ListSubtype, (NBTTagType)Context.Stream.ReadByte());
+                child.SetInformation(NBTTagInformation.ListSize, Context.ReadInt32());
+                Reader.ReadContent(child, Context);
+                tag[I] = child;
             }
         }
         else {
             for (Int32 I = 0; I < tag.Count; I++) {
-                SubTag = NBTTagFactory.Create(SubTagType);
-                tag[I] = SubTag;
-                Reader.ReadContent(SubTag, Context);
+                child = NBTTagFactory.Create(childType);
+                tag[I] = child;
+                Reader.ReadContent(child, Context);
             }
         }
     }

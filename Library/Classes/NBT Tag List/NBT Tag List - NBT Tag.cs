@@ -1,29 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace DaanV2.NBT;
 
-namespace DaanV2.NBT; 
 public sealed partial class NBTTagList : NBTTag {
-    /// <summary>Returns the tag type of this this <see cref="ITag"/></summary>
+    /// <inheritdoc/>
     private const NBTTagType _Type = NBTTagType.List;
 
-    /// <summary>Returns the tag type of this this <see cref="ITag"/></summary>
+    /// <inheritdoc/>
     public override NBTTagType Type => _Type;
 
-    /// <summary>Returns the value of this this <see cref="ITag"/></summary>
-    /// <returns>Returns the value of this this <see cref="ITag"/></returns>
+    /// <inheritdoc/>
     public override Object GetValue() {
         return this.Tags;
     }
 
-    /// <summary>Converts the value of this this <see cref="ITag"/> to the specified type</summary>
-    /// <typeparam name="T">The type to convert to</typeparam>
-    /// <returns>Converts the value of this this <see cref="ITag"/> to the specified type</returns>
+    /// <inheritdoc/>
     public override T GetValue<T>() {
         return this.Tags is T val ? val : default;
     }
 
-    /// <summary>Sets the value of this this <see cref="ITag"/></summary>
-    /// <param name="O">The value to set</param>
+    /// <inheritdoc/>
+    public override Boolean TryGetValue<T>(out T Value) {
+        if (this.Tags is T Out) {
+            Value = Out;
+            return true;
+        }
+
+        Value = default;
+        return false;
+    }
+
+    /// <inheritdoc/>
     public override void SetValue(Object O) {
         if (O is List<ITag> T) {
             this.Tags = T;
@@ -33,9 +38,7 @@ public sealed partial class NBTTagList : NBTTag {
         }
     }
 
-    /// <summary>Converts the value of this this <see cref="ITag"/> to the specified type</summary>
-    /// <typeparam name="T">The type to convert to</typeparam>
-    /// <returns>Converts the value of this this <see cref="ITag"/> to the specified type</returns>
+    /// <inheritdoc/>
     public override T ConvertValue<T>() {
         return NBTCasting.ConvertTo<T>(this._Tags);
     }

@@ -14,7 +14,7 @@ public static partial class NBTCasting {
         var Out = new List<T>(Count);
 
         for (Int32 I = 0; I < Count; I++) {
-            Out.Add(Tag.GetSubValue<T>(I));
+            Out.Add(Tag.GetChildValue<T>(I));
         }
 
         return Out;

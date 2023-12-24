@@ -25,7 +25,7 @@ public enum NBTTagType : Byte {
     String = 8,
     ///<summary>Marks that the nbt tag stores a List of unnamed tags</summary>
     List = 9,
-    ///<summary>Marks that the nbt tag stores a composite tag of named subtags</summary>
+    ///<summary>Marks that the nbt tag stores a composite tag of named children</summary>
     Compound = 10,
     ///<summary>Marks that the nbt tag stores a <see cref="Int32"/>[] of information</summary>
     IntArray = 11,

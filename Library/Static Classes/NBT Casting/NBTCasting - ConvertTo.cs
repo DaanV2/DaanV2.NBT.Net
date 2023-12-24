@@ -1,53 +1,44 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
-namespace DaanV2.NBT; 
+namespace DaanV2.NBT;
 public static partial class NBTCasting {
     /// <summary>Converts the given object into the specified type</summary>
     /// <typeparam name="T">The type to conver to</typeparam>
     /// <param name="Value">The object to convert</param>
     /// <returns>Converts the given object into the specified type</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static T ConvertTo<T>(Object? Value) {
+    public static T? ConvertTo<T>(Object? Value) {
         if (Value is null) {
             return default;
         }
 
+        if (Value is T t) {
+            return t;
+        }
+
         Type To = typeof(T);
 
-        if (To == Value.GetType()) {
-            return (T)Value;
-        }
-
-        if (Value is Byte B) {
-            return (T)NBTCasting.Convert(B, To);
-        }
-        else if (Value is Byte[] Barray) {
-            return (T)NBTCasting.Convert(Barray, To);
-        }
-        else if (Value is Double D) {
-            return (T)NBTCasting.Convert(D, To);
-        }
-        else if (Value is Single F) {
-            return (T)NBTCasting.Convert(F, To);
-        }
-        else if (Value is Int32 I32) {
-            return (T)NBTCasting.Convert(I32, To);
-        }
-        else if (Value is Int32[] I32array) {
-            return (T)NBTCasting.Convert(I32array, To);
-        }
-        else if (Value is Int64 I64) {
-            return (T)NBTCasting.Convert(I64, To);
-        }
-        else if (Value is Int64[] I64array) {
-            return (T)NBTCasting.Convert(I64array, To);
-        }
-        else if (Value is Int16 I16) {
-            return (T)NBTCasting.Convert(I16, To);
-        }
-        else if (Value is String S) {
-            return (T)NBTCasting.Convert(S, To);
+        switch (Value) {
+            case Byte B:
+                return (T)NBTCasting.Convert(B, To);
+            case Byte[] Barray:
+                return (T)NBTCasting.Convert(Barray, To);
+            case Double D:
+                return (T)NBTCasting.Convert(D, To);
+            case Single F:
+                return (T)NBTCasting.Convert(F, To);
+            case Int32 I32:
+                return (T)NBTCasting.Convert(I32, To);
+            case Int32[] I32array:
+                return (T)NBTCasting.Convert(I32array, To);
+            case Int64 I64:
+                return (T)NBTCasting.Convert(I64, To);
+            case Int64[] I64array:
+                return (T)NBTCasting.Convert(I64array, To);
+            case Int16 I16:
+                return (T)NBTCasting.Convert(I16, To);
+            case String S:
+                return (T)NBTCasting.Convert(S, To);
         }
 
         return (T)Value;

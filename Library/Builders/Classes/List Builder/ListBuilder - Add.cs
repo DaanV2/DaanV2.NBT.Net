@@ -5,72 +5,74 @@ public partial class ListBuilder {
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(Byte Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.Byte, String.Empty, Value));
+        this.Add(NBTTagFactory.Create(NBTTagType.Byte, String.Empty, Value));
     }
 
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(Boolean Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.Byte, String.Empty, (Byte)(Value ? 1 : 0)));
+        this.Add(NBTTagFactory.Create(NBTTagType.Byte, String.Empty, (Byte)(Value ? 1 : 0)));
     }
 
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(Byte[] Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.ByteArray, String.Empty, Value));
+        this.Add(NBTTagFactory.Create(NBTTagType.ByteArray, String.Empty, Value));
     }
 
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(Double Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.Double, String.Empty, Value));
+        this.Add(NBTTagFactory.Create(NBTTagType.Double, String.Empty, Value));
     }
 
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(Single Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.Float, String.Empty, Value));
+        this.Add(NBTTagFactory.Create(NBTTagType.Float, String.Empty, Value));
     }
 
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(Int32 Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.Int, String.Empty, Value));
+        this.Add(NBTTagFactory.Create(NBTTagType.Int, String.Empty, Value));
     }
 
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(Int32[] Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.IntArray, String.Empty, Value));
+        this.Add(NBTTagFactory.Create(NBTTagType.IntArray, String.Empty, Value));
     }
 
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(Int64 Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.Long, String.Empty, Value));
+        this.Add(NBTTagFactory.Create(NBTTagType.Long, String.Empty, Value));
     }
 
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(Int64[] Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.LongArray, String.Empty, Value));
+        this.Add(NBTTagFactory.Create(NBTTagType.LongArray, String.Empty, Value));
     }
 
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(Int16 Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.Short, String.Empty, Value));
+        this.Add(NBTTagFactory.Create(NBTTagType.Short, String.Empty, Value));
     }
 
     /// <summary>Add an item to the list</summary>
     /// <param name="Value">The value of the tag to add to the collection</param>
     public void Add(String Value) {
-        this._Tag.Add(NBTTagFactory.Create(NBTTagType.String, String.Empty, Value));
+        this.Add(NBTTagFactory.Create(NBTTagType.String, String.Empty, Value));
     }
 
     /// <summary>Add a tag to the list</summary>
     /// <param name="Tag">The tag to add</param>
-    public void Add(ITag Tag) {
+    public void Add(ITag? Tag) {
+        if (Tag is null) { return; }
+
         this._Tag.Add(Tag);
     }
 

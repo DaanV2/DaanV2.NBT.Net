@@ -1,6 +1,6 @@
 ﻿namespace DaanV2.NBT;
 public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<TypeValue>> {
-    /// <summary>Sets the specified information of the tag</summary>
+    /// <inheritdoc/>
     public override void SetInformation(NBTTagInformation InfoType, Object Info) {
         switch (InfoType) {
             case NBTTagInformation.Name:
@@ -22,9 +22,7 @@ public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<Ty
         }
     }
 
-    /// <summary>Returns the specified information of this this <see cref="ITag"/></summary>
-    /// <param name="InfoType">The info type to retrieve from this this <see cref="ITag"/></param>
-    /// <returns>Returns the specified information of this this <see cref="ITag"/></returns>
+    /// <inheritdoc/>
     public override Object GetInformation(NBTTagInformation InfoType) {
         switch (InfoType) {
             case NBTTagInformation.Name:
@@ -45,9 +43,7 @@ public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<Ty
         }
     }
 
-    /// <summary>Compare this this <see cref="ITag"/> with the given instance if they are the same</summary>
-    /// <param name="obj">The object to compare to</param>
-    /// <returns>Compare this this <see cref="ITag"/> with the given instance if they are the same</returns>
+    /// <inheritdoc/>
     public override Boolean Equals(Object? obj) {
         if (obj is NBTTagValue<TypeValue> TValue) {
             return this.Equals(TValue);
@@ -56,17 +52,14 @@ public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<Ty
         return base.Equals(obj);
     }
 
-    /// <summary>Compare this this <see cref="ITag"/> with the given instance if they are the same</summary>
-    /// <param name="other">The object to compare to</param>
-    /// <returns>Compare this this <see cref="ITag"/> with the given instance if they are the same</returns>
+    /// <inheritdoc/>
     public Boolean Equals(NBTTagValue<TypeValue>? other) {
         return other is not null &&
                this._Name == other._Name &&
                this._Value.Equals(other._Value);
     }
 
-    /// <summary>Returns the hashcode for this object</summary>
-    /// <returns>Returns the hashcode for this object</returns>
+    /// <inheritdoc/>
     public override Int32 GetHashCode() {
         Int32 hashCode = 1513385649;
         hashCode = (hashCode * -1521134295) + EqualityComparer<TypeValue>.Default.GetHashCode(this._Value);
@@ -74,8 +67,7 @@ public abstract partial class NBTTagValue<TypeValue> : IEquatable<NBTTagValue<Ty
         return hashCode;
     }
 
-    /// <summary>Returns a string representation of this this <see cref="ITag"/></summary>
-    /// <returns>Returns a string representation of this this <see cref="ITag"/></returns>
+    /// <inheritdoc/>
     public override String ToString() {
         switch (this.Type) {
             case NBTTagType.Compound:

@@ -22,10 +22,10 @@ public sealed partial class NBTTagList {
 
     /// <summary>Creates a new instance of <see cref="NBTTagList"/></summary>
     /// <param name="SubType">The type of all the sub <see cref="ITag"/></param>
-    /// <param name="SubTags">The collection of tags to process <see cref="ITag"/></param>
-    public NBTTagList(NBTTagType SubType, ITag[] SubTags) : base(SubTags.Length) {
+    /// <param name="children">The collection of tags to process <see cref="ITag"/></param>
+    public NBTTagList(NBTTagType SubType, ITag[] children) : base(children.Length) {
         this._SubType = SubType;
-        this._Tags.AddRange(SubTags);
+        this._Tags.AddRange(children);
     }
 
     /// <summary>Creates a new instance of <see cref="NBTTagList"/></summary>

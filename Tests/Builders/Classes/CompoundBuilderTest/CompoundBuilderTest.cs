@@ -15,14 +15,14 @@ public partial class CompoundBuilderTest {
 
         NBTTagCompound Out = Builder.GetResult();
 
-        Assert.IsTrue(Out.GetSubValue<Int32>("Hello") == 256, "Hello set wrong");
+        Assert.IsTrue(Out.GetChildValue<Int32>("Hello") == 256, "Hello set wrong");
 
-        ITag SubTag = Out.GetSubTag("Hello");
+        ITag child = Out.GetChild("Me.Hello");
 
-        Assert.IsTrue(SubTag.Type == NBTTagType.List, "List is wrong type");
-        Assert.IsTrue((NBTTagType)SubTag.GetInformation(NBTTagInformation.ListSubtype) == NBTTagType.String, "Wrong sub type");
-        Assert.IsTrue(SubTag.Count == 2, "Wrong amount of items");
-        Assert.IsTrue(SubTag.GetSubValue<String>(0) == "me.Name");
-        Assert.IsTrue(SubTag.GetSubValue<String>(1) == "me.Temp");
+        Assert.IsTrue(child.Type == NBTTagType.List, "List is wrong type");
+        Assert.IsTrue((NBTTagType)child.GetInformation(NBTTagInformation.ListSubtype) == NBTTagType.String, "Wrong sub type");
+        Assert.IsTrue(child.Count == 2, "Wrong amount of items");
+        Assert.IsTrue(child.GetChildValue<String>(0) == "me.Name");
+        Assert.IsTrue(child.GetChildValue<String>(1) == "me.Temp");
     }
 }

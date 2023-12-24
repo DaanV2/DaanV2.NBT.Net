@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Runtime.Serialization;
 
-namespace DaanV2.NBT; 
+namespace DaanV2.NBT;
 public sealed partial class NBTTagList : ITagCollection, IEnumerable<ITag>, IEnumerable {
-    /// <summary>Gets or sets the subtag with the given name</summary>
+    /// <summary>Gets or sets the child with the given name</summary>
     /// <param name="Name">The name of the tag</param>
-    /// <returns>Gets or sets the subtag with the given name</returns>
+    /// <returns>Gets or sets the child with the given name</returns>
     [IgnoreDataMember]
-    public new ITag this[String Name] {
+    public new ITag? this[String Name] {
         get {
             Int32 Max = this._Tags.Count;
 
@@ -22,7 +20,7 @@ public sealed partial class NBTTagList : ITagCollection, IEnumerable<ITag>, IEnu
             return null;
         }
         set {
-            if (value.Type == this.SubType) {
+            if (value?.Type == this.SubType) {
                 throw new ArgumentException($"value type must be same as the lists subtype");
             }
 
@@ -39,9 +37,9 @@ public sealed partial class NBTTagList : ITagCollection, IEnumerable<ITag>, IEnu
         }
     }
 
-    /// <summary>Gets or sets the subtag with the given index</summary>
+    /// <summary>Gets or sets the child with the given index</summary>
     /// <param name="Index">The index of </param>
-    /// <returns>Gets or sets the subtag with the given index</returns>
+    /// <returns>Gets or sets the child with the given index</returns>
     [IgnoreDataMember]
     public new ITag this[Int32 Index] {
         get => this._Tags[Index];

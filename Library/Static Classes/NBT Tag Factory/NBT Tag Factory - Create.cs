@@ -1,24 +1,23 @@
-﻿using System;
-
-namespace DaanV2.NBT; 
+﻿namespace DaanV2.NBT;
 public static partial class NBTTagFactory {
     /// <summary>Creates a tag with the specified tag type</summary>
     /// <param name="type">The tag type</param>
     /// <returns>Creates a tag with the specified tag type</returns>
     public static ITag? Create(NBTTagType type) {
-        if (Types.TryGetValue(type, out Type? value)) {
-            return Activator.CreateInstance(value) as ITag;
+        Type? t = NBTTagFactory.Typeof(type);
+        if (t is null) {
+            return null;
         }
 
-        return null;
+        return Activator.CreateInstance(t) as ITag;
     }
     /// <summary>Creates a tag with the specified information</summary>
     /// <param name="type">The tag type</param>
     /// <param name="Name">The name of the tag</param>
     /// <param name="Value">The value of the type</param>
     /// <returns>Creates a tag with the specified tag type</returns>
-    public static ITag Create(NBTTagType type, String Name, Object Value) {
-        ITag Tag = NBTTagFactory.Create(type);
+    public static ITag? Create(NBTTagType type, String Name, Object Value) {
+        ITag? Tag = NBTTagFactory.Create(type);
 
         if (Tag is null) {
             return Tag;
@@ -39,8 +38,11 @@ public static partial class NBTTagFactory {
     /// <param name="Name">The name of the Tag</param>
     /// <param name="Value">The value of the receiving tag</param>
     /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
-    public static ITag Create(String Name, Boolean Value) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.Byte);
+    public static ITag? Create(String Name, Boolean Value) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.Byte);
+        if (Out is null) {
+            return Out;
+        }
 
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.Value, (Byte)(Value ? 1 : 0));
@@ -52,8 +54,11 @@ public static partial class NBTTagFactory {
     /// <param name="Name">The name of the Tag</param>
     /// <param name="Value">The value of the receiving tag</param>
     /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
-    public static ITag Create(String Name, Byte Value) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.Byte);
+    public static ITag? Create(String Name, Byte Value) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.Byte);
+        if (Out is null) {
+            return Out;
+        }
 
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.Value, Value);
@@ -65,8 +70,11 @@ public static partial class NBTTagFactory {
     /// <param name="Name">The name of the Tag</param>
     /// <param name="Value">The value of the receiving tag</param>
     /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
-    public static ITag Create(String Name, Double Value) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.Double);
+    public static ITag? Create(String Name, Double Value) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.Double);
+        if (Out is null) {
+            return Out;
+        }
 
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.Value, Value);
@@ -78,8 +86,11 @@ public static partial class NBTTagFactory {
     /// <param name="Name">The name of the Tag</param>
     /// <param name="Value">The value of the receiving tag</param>
     /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
-    public static ITag Create(String Name, Single Value) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.Float);
+    public static ITag? Create(String Name, Single Value) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.Float);
+        if (Out is null) {
+            return Out;
+        }
 
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.Value, Value);
@@ -91,8 +102,11 @@ public static partial class NBTTagFactory {
     /// <param name="Name">The name of the Tag</param>
     /// <param name="Value">The value of the receiving tag</param>
     /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
-    public static ITag Create(String Name, Int32 Value) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.Int);
+    public static ITag? Create(String Name, Int32 Value) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.Int);
+        if (Out is null) {
+            return Out;
+        }
 
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.Value, Value);
@@ -104,8 +118,11 @@ public static partial class NBTTagFactory {
     /// <param name="Name">The name of the Tag</param>
     /// <param name="Value">The value of the receiving tag</param>
     /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
-    public static ITag Create(String Name, Int32[] Value) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.IntArray);
+    public static ITag? Create(String Name, Int32[] Value) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.IntArray);
+        if (Out is null) {
+            return Out;
+        }
 
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.Value, Value);
@@ -117,8 +134,11 @@ public static partial class NBTTagFactory {
     /// <param name="Name">The name of the Tag</param>
     /// <param name="Value">The value of the receiving tag</param>
     /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
-    public static ITag Create(String Name, Int64 Value) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.Long);
+    public static ITag? Create(String Name, Int64 Value) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.Long);
+        if (Out is null) {
+            return Out;
+        }
 
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.Value, Value);
@@ -130,8 +150,11 @@ public static partial class NBTTagFactory {
     /// <param name="Name">The name of the Tag</param>
     /// <param name="Value">The value of the receiving tag</param>
     /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
-    public static ITag Create(String Name, Int64[] Value) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.LongArray);
+    public static ITag? Create(String Name, Int64[] Value) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.LongArray);
+        if (Out is null) {
+            return Out;
+        }
 
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.Value, Value);
@@ -143,8 +166,11 @@ public static partial class NBTTagFactory {
     /// <param name="Name">The name of the Tag</param>
     /// <param name="Value">The value of the receiving tag</param>
     /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
-    public static ITag Create(String Name, Int16 Value) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.Short);
+    public static ITag? Create(String Name, Int16 Value) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.Short);
+        if (Out is null) {
+            return Out;
+        }
 
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.Value, Value);
@@ -156,8 +182,11 @@ public static partial class NBTTagFactory {
     /// <param name="Name">The name of the Tag</param>
     /// <param name="Value">The value of the receiving tag</param>
     /// <returns>Creates an this <see cref="ITag"/> that suits the given information</returns>
-    public static ITag Create(String Name, String Value) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.String);
+    public static ITag? Create(String Name, String Value) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.String);
+        if (Out is null) {
+            return Out;
+        }
 
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.Value, Value);

@@ -9,7 +9,7 @@ public enum NBTTagInformation {
     Value,
     /// <summary>Marks that the process should target the name of the tag</summary>
     Name,
-    /// <summary>Marks that the process should target the subtags of the tag</summary>
+    /// <summary>Marks that the process should target the children of the tag</summary>
     Tag,
     /// <summary>Marks that the process should target the size of the list of the tag</summary>
     ListSize,

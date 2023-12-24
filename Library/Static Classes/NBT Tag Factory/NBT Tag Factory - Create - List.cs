@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DaanV2.NBT; 
+﻿namespace DaanV2.NBT;
 public static partial class NBTTagFactory {
     /// <summary>Creates the specified list as a tag</summary>
     /// <param name="Name">The name of the list</param>
     /// <param name="SubType">The subtype to fill</param>
     /// <returns>Creates the specified list as a tag</returns>
     private static (ITag List, Type SubType) CreateList(String Name, NBTTagType SubType) {
-        ITag Out = NBTTagFactory.Create(NBTTagType.List);
-        Out.Name = Name;
-        Out.SetInformation(NBTTagInformation.ListSubtype, SubType);
-
-        if (NBTTagFactory.Types.TryGetValue(SubType, out Type? TagType) == true) {
+        ITag? Out = NBTTagFactory.Create(NBTTagType.List);
+        Type? TagType = NBTTagFactory.Typeof(SubType);
+        if (Out is null) {
             return (Out, TagType);
         }
 
-        return (Out, null);
+        Out.Name = Name;
+        Out.SetInformation(NBTTagInformation.ListSubtype, SubType);
+
+        return (Out, TagType);
     }
 
     /// <summary>Transfers a list of items into a tag as sub tag intems</summary>
@@ -26,12 +24,12 @@ public static partial class NBTTagFactory {
     /// <param name="Source">The source of items to transfer</param>
     private static void Transfer<T>(ITag List, Type SubType, List<T> Source) {
         Int32 Count = Source.Count;
-        ITag SubTag;
+        ITag child;
 
         for (Int32 I = 0; I < Count; I++) {
-            SubTag = (ITag)Activator.CreateInstance(SubType);
-            SubTag.SetValue(Source[I]);
-            List.Add(SubTag);
+            child = (ITag)Activator.CreateInstance(SubType);
+            child.SetValue(Source[I]);
+            List.Add(child);
         }
     }
 
@@ -42,12 +40,12 @@ public static partial class NBTTagFactory {
     public static ITag Create(String Name, List<Boolean> Value) {
         (ITag Out, Type TagType) = NBTTagFactory.CreateList(Name, NBTTagType.Byte);
         Int32 Count = Value.Count;
-        ITag SubTag;
+        ITag child;
 
         for (Int32 I = 0; I < Count; I++) {
-            SubTag = (ITag)Activator.CreateInstance(TagType);
-            SubTag.SetValue((Byte)(Value[I] ? 1 : 0));
-            Out.Add(SubTag);
+            child = (ITag)Activator.CreateInstance(TagType);
+            child.SetValue((Byte)(Value[I] ? 1 : 0));
+            Out.Add(child);
         }
         return Out;
     }

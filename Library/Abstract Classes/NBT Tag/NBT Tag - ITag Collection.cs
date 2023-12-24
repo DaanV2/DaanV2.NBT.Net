@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
-namespace DaanV2.NBT; 
+namespace DaanV2.NBT;
 public abstract partial class NBTTag : ITagCollection {
-    /// <summary>Gets the amount of sub tag this this <see cref="ITag"/> has</summary>
+    /// <inheritdoc/>
     [IgnoreDataMember]
     public Int32 Count => this._Tags.Count;
 
-    /// <summary>Gets or sets the subtag of this this <see cref="ITag"/></summary>
+    /// <inheritdoc/>
     [DataMember]
     public List<ITag> Tags { get => this._Tags; set => this._Tags = value; }
 
-    /// <summary>Gets or sets the subtag with the given name</summary>
-    /// <param name="Name">The name of the tag</param>
-    /// <returns>Gets or sets the subtag with the given name</returns>
+    /// <inheritdoc/>
     [IgnoreDataMember]
-    public ITag this[String Name] {
+    public ITag? this[String Name] {
         get {
             Int32 Max = this._Tags.Count;
 
@@ -42,17 +38,14 @@ public abstract partial class NBTTag : ITagCollection {
         }
     }
 
-    /// <summary>Gets or sets the subtag with the given index</summary>
-    /// <param name="Index">The index of </param>
-    /// <returns>Gets or sets the subtag with the given index</returns>
+    /// <inheritdoc/>
     [IgnoreDataMember]
     public ITag this[Int32 Index] {
         get => this._Tags[Index];
         set => this._Tags[Index] = value;
     }
 
-    /// <summary>Adds the specified tag to this this <see cref="ITag"/></summary>
-    /// <param name="tag">The tag to add</param>
+    /// <inheritdoc/>
     public virtual void Add(ITag tag) {
         Int32 Max = this._Tags.Count;
 
@@ -66,8 +59,7 @@ public abstract partial class NBTTag : ITagCollection {
         this._Tags.Add(tag);
     }
 
-    /// <summary>Adds the given tags to the internal list</summary>
-    /// <param name="tags">The tags to add</param>
+    /// <inheritdoc/>
     public virtual void Add(ITag[] tags) {
         Int32 MaxTag = tags.Length;
         ITag tag;
@@ -87,19 +79,17 @@ public abstract partial class NBTTag : ITagCollection {
         }
     }
 
-    /// <summary>clears the internal list</summary>
+    /// <inheritdoc/>
     public virtual void Clear() {
         this._Tags.Clear();
     }
 
-    /// <summary>Removes the tag at the specified index</summary>
-    /// <param name="Index">The index of the element</param>
+    /// <inheritdoc/>
     public virtual void Remove(Int32 Index) {
         this._Tags.RemoveAt(Index);
     }
 
-    /// <summary>Removes the tag with the specified name</summary>
-    /// <param name="Name">The name of the tag</param>
+    /// <inheritdoc/>
     public virtual void Remove(String Name) {
         Int32 Max = this._Tags.Count;
 
@@ -110,10 +100,8 @@ public abstract partial class NBTTag : ITagCollection {
         }
     }
 
-    /// <summary>Retrieves the tag with the given name</summary>
-    /// <param name="Name">The name to find</param>
-    /// <returns>Retrieves the tag with the given name</returns>
-    public ITag GetSubTag(String Name) {
+    /// <inheritdoc/>
+    public ITag? GetChild(String Name) {
         Int32 Max = this._Tags.Count;
 
         for (Int32 I = 0; I < Max; I++) {
@@ -125,10 +113,8 @@ public abstract partial class NBTTag : ITagCollection {
         return null;
     }
 
-    /// <summary>Retrieves the tag with the given index</summary>
-    /// <param name="Index">The index of the tag to retrieve</param>
-    /// <returns>Retrieves the tag with the given index</returns>
-    public ITag GetSubTag(Int32 Index) {
+    /// <inheritdoc/>
+    public ITag? GetChild(Int32 Index) {
         if (Index >= this._Tags.Count || Index < 0) {
             return null;
         }
@@ -136,11 +122,21 @@ public abstract partial class NBTTag : ITagCollection {
         return this._Tags[Index];
     }
 
-    /// <summary>Retrieves the tag's value with the given name</summary>
-    /// <typeparam name="T">The type to return</typeparam>
-    /// <param name="Name">The name to find</param>
-    /// <returns>Retrieves the tag's value with the given name</returns>
-    public T GetSubValue<T>(String Name) {
+    /// <inheritdoc/>
+    public Boolean HasChild(String Name) {
+        Int32 Max = this._Tags.Count;
+
+        for (Int32 I = 0; I < Max; I++) {
+            if (this._Tags[I].Name == Name) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /// <inheritdoc/>
+    public T GetChildValue<T>(String Name) {
         Int32 Max = this._Tags.Count;
 
         for (Int32 I = 0; I < Max; I++) {
@@ -152,11 +148,8 @@ public abstract partial class NBTTag : ITagCollection {
         return default;
     }
 
-    /// <summary>Retrieves the tag's value with the given index</summary>
-    /// <typeparam name="T">The type to return</typeparam>
-    /// <param name="Index">The index to look at</param>
-    /// <returns>Retrieves the tag's value with the given index</returns>
-    public T GetSubValue<T>(Int32 Index) {
+    /// <inheritdoc/>
+    public T GetChildValue<T>(Int32 Index) {
         return this._Tags[Index].GetValue<T>();
     }
 }

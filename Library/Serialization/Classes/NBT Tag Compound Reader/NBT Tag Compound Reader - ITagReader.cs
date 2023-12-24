@@ -12,11 +12,11 @@ internal partial class NBTTagCompoundReader : ITagReader {
     /// <param name="Context">The context that provides a buffer, the stream and Endian of the NBT</param>
     public void ReadContent(ITag tag, SerializationContext Context) {
         try {
-            ITag SubTag = NBTReader.Read(Context);
+            ITag child = NBTReader.Read(Context);
 
-            while (SubTag is not null) {
-                tag.Add(SubTag);
-                SubTag = NBTReader.Read(Context);
+            while (child is not null) {
+                tag.Add(child);
+                child = NBTReader.Read(Context);
             }
         }
         catch (DeserializationException e) {

@@ -18,6 +18,12 @@ public interface ITag : ITagCollection {
     /// <returns>Converts the value of this this <see cref="ITag"/> to the specified type</returns>
     T GetValue<T>();
 
+    /// <summary>Tries to get the value of this this <see cref="ITag"/> to the specified type</summary>
+    /// <typeparam name="T">The type to convert to</typeparam>
+    /// <param name="Value">The resulting value</param>
+    /// <returns>True if the value is the matching type</returns>
+    Boolean TryGetValue<T>(out T Value);
+
     /// <summary>Converts the value of this this <see cref="ITag"/> to the specified type</summary>
     /// <typeparam name="T">The type to convert to</typeparam>
     /// <returns>Converts the value of this this <see cref="ITag"/> to the specified type</returns>
@@ -35,7 +41,7 @@ public interface ITag : ITagCollection {
     /// <summary>Retrieves the specified information</summary>
     /// <param name="InfoType">The info type to retrieve from this this <see cref="ITag"/></param>
     /// <returns>Retrieves the specified information</returns>
-    Object GetInformation(NBTTagInformation InfoType);
+    Object? GetInformation(NBTTagInformation InfoType);
 
     /// <summary>Creates a copy of this this <see cref="ITag"/></summary>
     /// <returns>Creates a copy of this this <see cref="ITag"/></returns>

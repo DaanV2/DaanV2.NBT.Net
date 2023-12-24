@@ -4,37 +4,42 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.NBT; 
 public sealed partial class NBTTagCompound : NBTTag {
-    /// <summary>The constant type used for this this <see cref="ITag"/></summary>
+    /// <inheritdoc/>
     private const NBTTagType _Type = NBTTagType.Compound;
 
-    /// <summary>Returns the tag's type</summary>
+    /// <inheritdoc/>
     [IgnoreDataMember]
     public override NBTTagType Type => _Type;
 
-    /// <summary>Returns the value of this Nbttag</summary>
-    /// <returns>Returns the value of this Nbttag</returns>
+    /// <inheritdoc/>
     public override Object GetValue() {
         return this._Tags;
     }
 
-    /// <summary>Safetly returns the value of this object, if object is not suspected type then the default value for that type is returned</summary>
-    /// <typeparam name="T">The type to return</typeparam>
-    /// <returns>Safetly returns the value of this object, if object is not suspected type then the default value for that type is returned</returns>
+    /// <inheritdoc/>
     public override T GetValue<T>() {
         return this._Tags is T Out ? Out : default;
     }
 
-    /// <summary>Sets the value of this <see cref="NBTTag" /></summary>
-    /// <param name="O">The object to store</param>
+    /// <inheritdoc/>
+    public override Boolean TryGetValue<T>(out T Value) {
+        if (this._Tags is T Out) {
+            Value = Out;
+            return true;
+        }
+
+        Value = default;
+        return false;
+    }
+
+    /// <inheritdoc/>
     public override void SetValue(Object O) {
         if (O is List<ITag> Temp) {
             this._Tags = Temp;
         }
     }
 
-    /// <summary>Converts the value of this this <see cref="ITag"/> to the specified type</summary>
-    /// <typeparam name="T">The type to convert to</typeparam>
-    /// <returns>Converts the value of this this <see cref="ITag"/> to the specified type</returns>
+    /// <inheritdoc/>
     public override T ConvertValue<T>() {
         throw new NotImplementedException("Cannot cast value of NBTTagCompound");
     }

@@ -26,7 +26,7 @@ public partial class DeserializationException : Exception {
     /// <param name="type">The type of the object</param>
     /// <param name="position">The position in stream / file</param>
     /// <returns>A formatted string</returns>
-    public static String Message(String? name, NBTTagType type, Int64 position) {
+    public new static String Message(String? name, NBTTagType type, Int64 position) {
         String b = $"Error reading nbt at byte offset: {position}";
 
         b += $", type: {type}";

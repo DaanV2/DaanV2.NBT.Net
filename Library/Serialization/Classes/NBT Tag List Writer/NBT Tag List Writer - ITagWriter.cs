@@ -44,15 +44,15 @@ internal partial class NBTTagListWriter : ITagWriter {
             throw new Exception("Cannot read list sub type");
         }
 
-        var SubTagType = (NBTTagType)O;
-        ITagWriter Writer = NBTWriter.GetWriter(SubTagType);
+        var childType = (NBTTagType)O;
+        ITagWriter Writer = NBTWriter.GetWriter(childType);
 
         if (Writer is null) {
-            throw new Exception($"Cannot find writer for {SubTagType}");
+            throw new Exception($"Cannot find writer for {childType}");
         }
 
         Int32 Count = tag.Count;
-        if (SubTagType == NBTTagType.List) {
+        if (childType == NBTTagType.List) {
             for (Int32 I = 0; I < Count; I++) {
                 ITag Item = tag[I];
                 Context.Stream.WriteByte((Byte)Item.GetInformation(NBTTagInformation.ListSubtype));
@@ -71,20 +71,20 @@ internal partial class NBTTagListWriter : ITagWriter {
     /// <param name="tag">The tag to write to the <see cref="Stream"/></param>
     /// <param name="Context">The context to write to</param>
     public static void WriteContent(NBTTagList tag, SerializationContext Context) {
-        NBTTagType SubTagType = tag.SubType;
-        ITagWriter Writer = NBTWriter.GetWriter(SubTagType);
+        NBTTagType childType = tag.SubType;
+        ITagWriter Writer = NBTWriter.GetWriter(childType);
 
         if (Writer is null) {
-            throw new Exception($"Cannot find writer for {SubTagType}");
+            throw new Exception($"Cannot find writer for {childType}");
         }
 
         Int32 Count = tag.Count;
-        if (SubTagType == NBTTagType.List) {
-            /*SubTag = new NBTTagList(SubTagType);
-            SubTag.SetInformation(NBTTagInformation.ListSubtype, (NBTTagType)Context.Stream.ReadByte());
-            SubTag.SetInformation(NBTTagInformation.ListSize, Context.ReadInt32());
-            Reader.ReadContent(SubTag, Context);
-            tag[I] = SubTag;*/
+        if (childType == NBTTagType.List) {
+            /*child = new NBTTagList(childType);
+            child.SetInformation(NBTTagInformation.ListSubtype, (NBTTagType)Context.Stream.ReadByte());
+            child.SetInformation(NBTTagInformation.ListSize, Context.ReadInt32());
+            Reader.ReadContent(child, Context);
+            tag[I] = child;*/
             Context.Stream.WriteByte((Byte)tag.GetInformation(NBTTagInformation.ListSubtype));
             Context.WriteInt32((Int32)tag.GetInformation(NBTTagInformation.ListSize));
 
