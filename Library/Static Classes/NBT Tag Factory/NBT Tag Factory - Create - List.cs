@@ -11,9 +11,12 @@ public static partial class NBTTagFactory {
         ITag Out = NBTTagFactory.Create(NBTTagType.List);
         Out.Name = Name;
         Out.SetInformation(NBTTagInformation.ListSubtype, SubType);
-        Type TagType = NBTTagFactory.Types.ContainsKey(SubType) ? Types[SubType] : null;
 
-        return (Out, TagType);
+        if (NBTTagFactory.Types.TryGetValue(SubType, out Type? TagType) == true) {
+            return (Out, TagType);
+        }
+
+        return (Out, null);
     }
 
     /// <summary>Transfers a list of items into a tag as sub tag intems</summary>

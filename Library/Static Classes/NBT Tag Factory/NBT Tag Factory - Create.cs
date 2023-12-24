@@ -5,10 +5,12 @@ public static partial class NBTTagFactory {
     /// <summary>Creates a tag with the specified tag type</summary>
     /// <param name="type">The tag type</param>
     /// <returns>Creates a tag with the specified tag type</returns>
-    public static ITag Create(NBTTagType type) {
-        return NBTTagFactory.Types.ContainsKey(type) ?
-            (ITag)Activator.CreateInstance(Types[type]) :
-            null;
+    public static ITag? Create(NBTTagType type) {
+        if (Types.TryGetValue(type, out Type? value)) {
+            return Activator.CreateInstance(value) as ITag;
+        }
+
+        return null;
     }
     /// <summary>Creates a tag with the specified information</summary>
     /// <param name="type">The tag type</param>

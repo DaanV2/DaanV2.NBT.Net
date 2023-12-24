@@ -16,7 +16,7 @@ public partial class NBTFuzzyTest {
     [DataRow(1339913606, NBTCompression.Zlib, Endian.Little)]
     public void FuzzyTest(Int32 Seed, NBTCompression compression, Endian endian) {
         var R = new Random(Seed);
-        NBTTagCompound data = this.Create(R);
+        NBTTagCompound data = NBTFuzzyTest.Create(R);
 
         //Serialize
         var stream = new MemoryStream();

@@ -5,9 +5,7 @@ namespace DaanV2.NBT.Test;
 
 public partial class NBTFuzzyTest {
 
-
-
-    public NBTTagCompound Create(Random R) {
+    public static NBTTagCompound Create(Random R) {
         var compound = new CompoundBuilder("root");
 
         //Boolean
