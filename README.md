@@ -13,6 +13,18 @@ An NBT library for reading and writing NBT files/data [Nuget package](https://ww
 
 ```cs
 var Compound = NBTReader.ReadFile("Path to file", Endian.Little, NBTCompression.Auto);
+var age = Compound.GetSubTag("Age");
+
+//Retrieve value if you know what type it should be
+Int32 item = SubTag.GetValue<Int32>();
+
+//OR
+if (SubTag is NBTTagInt a) {
+    Assert.IsTrue(a.Value == 256, "Hello set wrong")
+}
+
+//OR
+var item = Compound.GetSubTag<Int32>("Age");
 ```
 
 ## Writes to a file

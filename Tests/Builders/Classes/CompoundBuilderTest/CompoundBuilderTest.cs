@@ -17,7 +17,7 @@ public partial class CompoundBuilderTest {
 
         Assert.IsTrue(Out.GetSubValue<Int32>("Hello") == 256, "Hello set wrong");
 
-        ITag SubTag = Out.GetSubTag("Me.Hello");
+        ITag SubTag = Out.GetSubTag("Hello");
 
         Assert.IsTrue(SubTag.Type == NBTTagType.List, "List is wrong type");
         Assert.IsTrue((NBTTagType)SubTag.GetInformation(NBTTagInformation.ListSubtype) == NBTTagType.String, "Wrong sub type");
