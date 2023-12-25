@@ -56,8 +56,8 @@ jobs:
       packages: write
       contents: read
     environment:
-        name: Nuget Release
-        url: https://www.nuget.org/packages/DaanV2.NBT.Net/
+      name: Nuget Release
+      url: https://www.nuget.org/packages/DaanV2.NBT.Net/
     steps:
       - name: 📦 Checkout repository
         uses: actions/checkout@v4
